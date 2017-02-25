@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>绑定银行卡</title>
+    <link rel="stylesheet" href="css/bind_bank.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/mh_mobile.js"></script>
+    <script src="js/bind_bank.js"></script>
+    <script>
+        var database = "https://mimikj.com";
+        $(function(){
+            //获取用户名称 银行
+            var name = "毅力起";
+            var bank_name = "中国银行";
+            $(".bank_name").text(bank_name);
+            $(".name").text(name);
+            //银行账户每四位加空格
+            $("#bank_card_num").on("keyup focus",function(e){
+                var val = $(".bank_account").val();
+                if((val.length==4||val.length==9||val.length==14||val.length==19)&&e.keyCode!=8){
+                    $("#bank_card_num").val(val+" ");
+                }
+            });
+            $("#bank_name").on("change",function(){
+                var val = $("#bank_card_num").val().NoSpace();
+                if($(this).find("option:selected").text()!="请选择银行卡"){
+                    $(this).css("color","#000");
+                    if(!isNaN(val)&&!isnull(val)){
+                        $("#submit").removeAttr("disabled").removeClass("disabled");
+                    }
+                }else{
+                    $(this).css("color","#808080");
+                    $("#submit").attr("disabled","disabled").addClass("disabled");
+                }
+            });
+            $("#bank_card_num").on("focus keyup",function(){
+                var val = $(this).val().NoSpace();
+                if(!isNaN(val)&&$("#bank_name").find("option:selected").text()!="请选择银行卡"&&!isnull(val)){
+                    $("#submit").removeAttr("disabled").removeClass("disabled");
+                }else{
+                    $("#submit").attr("disabled","disabled").addClass("disabled");
+                }
+            });
+        });
+        function bindBank(){
+            showLoading();
+            $.fn.alert2({'tip': '验证失败'});
+            //auth_token access_token
+            var auth_token = $("#auth_token").val();
+            var bank_card_num = $("#bank_card_num").val().NoSpace();
+            var access_token = $("#access_token").val();
+            var bank_name = $(".bank_name").text();
+            var bank_branch = $("#bank_branch").val();
+
+            var data =  "auth_token="+ auth_token+ "&bank_card_num="+ bank_card_num+ "&auth_token="+ auth_token+ "&access_token="+ access_token+ "&bank_name="+ bank_name+ "&bank_branch="+ bank_branch;
+            var method = 'POST';
+            var url = database+'/mimikj/user_deal/auth_bank_card_num';
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined") {
+                xhr = new XDomainRequest();
+                xhr.open(method, url);
+            }else{
+                xhr = null;
+            }
+            if (!xhr) {
+                $.fn.alert({'tip': '验证失败'});
+                return false;
+            }
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+            xhr.send(data);
+            xhr.onload = function(){
+                hideLoading();
+                var data = JSON.parse(xhr.responseText);
+                if(data.statusCode == 200){
+                    alert("success"+JSON.stringify(data));
+                }else if(data.errCode==1221){
+                    $.fn.alert({'tip': "绑定银行卡失败"});
+                }else{
+                    if(data.errCode){
+                        if(data.msg){
+                            $.fn.alert({'tip': data.errCode+":"+data.msg});
+                        }else{
+                            $.fn.alert({'tip': data.errCode+":"+data.errMsg});
+                        }
+                    }else{
+                        if(data.msg){
+                            $.fn.alert({'tip': data.state+":"+data.msg});
+                        }else{
+                            $.fn.alert({'tip': data.state+":"+data.errMsg});
+                        }
+                    }
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<main>
+    <div class="tip">
+        <div class="content">
+            <table>
+                <tr class="border_bottom">
+                    <td class="black">持卡人</td>
+                    <td class="gray "><span class="name"></span></td>
+                </tr>
+                <tr>
+                    <td class="black"><div class="bb_mark">*</div>卡号</td>
+                    <td class="gray "><input type="text" value="" class="bank_account" id="bank_card_num"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="tip">
+        <div class="content">
+            <table>
+                <tr class="border_bottom">
+
+                    <td class="black"><div class="bb_mark"></div>银行</td>
+                    <td class="gray ">
+                        <span class="bank_name"></span>
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td class="black">卡类型</td>
+                    <td class="gray "><span>借记卡</span></td>
+                </tr>
+                <tr>
+                    <td class="black">分行</td>
+                    <td class="gray "><input type="text" placeholder="可选填" class="bank_account" id="bank_branch"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <button class="submit disabled" id="submit" onclick="bindBank()" disabled>确认绑定此银行卡</button>
+        <p class="assist"><span class="mark">*</span>请关联与身份认证同名的银行卡，聚财道和米号科技将严格保密你的身份信息，此银行卡只用于你的交易资金转入和转出</p>
+    </div>
+</main>
+<input type="hidden" id="auth_token" value="6ee7459ed97c57d46254dd6bffe472b"/>
+<input type="hidden" id="access_token" value="MrDCKNFxFmrYF89iJTPuWblfvuG42I748WmRwwDN"/>
+<div id='loading_area' class='loading_area'></div>
+<div id='loading_messagehtml' class='loading_messagehtml'></div>
+</body>
+</html>

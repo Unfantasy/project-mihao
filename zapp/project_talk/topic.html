@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/topic.css"/>
+    <title>话题详情</title>
+    <style>
+        *{
+            color:#353535;
+            padding: 0;
+            margin:0;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei";
+        }
+        body{
+            width: 980px;
+        }
+        a, a:hover{
+            text-decoration: none;
+        }
+        .author{
+            padding:46px;
+            height:150px;
+        }
+        .author img{
+            height:107px;
+            width:107px;
+            border-radius: 50%;
+            float:left;
+
+        }
+        .author ul{
+            list-style: none;
+            float:left;
+            padding-top: 15px;
+        }
+        .author .x_status{
+            width:300px;
+
+        }
+        .author span{
+            color:#ffa64f;
+            font-size: 43px;
+            float: left;
+            padding-left: 28px;
+        }
+        .author .louzhu{
+            float: left;
+            background: url("images/xiangqing_louzhu.png");
+            width:95px;
+            height:43px;
+            font-size: 31px;
+            color:#353535;
+            text-align: center;
+            margin:9px 0 3px 18px;
+            
+        }
+        .author .x_time{
+            color:#adadad;
+            font-size:31px;
+            float: left;
+            padding-left: 28px;
+        }
+        .content p{
+            width:17em;
+            margin:0 auto;
+        }/*头部结束*/
+        
+        .content .x_title{
+            font-size: 52px;
+            font-weight: bold;
+            color: #353535;
+            padding-left: 46px;
+            padding-right:46px;
+        }
+        .content .x_p{
+            color: #747474;
+            font-size: 52px;
+            margin-top:88px;
+            padding-left: 46px;
+            padding-right:46px;
+            line-height: 99px;
+        }
+
+        .content .imgs img{
+            margin-top:88px;
+            width:100%;
+        }
+
+        .content .love img{
+
+            margin: 92px auto 67px;
+            margin-left: 400px;
+        }
+        .fensiNum{
+            width:814px;
+            background: url("images/xiangqing_xiantiao.png") no-repeat;
+            background-position: center;
+            color:#ffa64f;
+            font-size: 31px;
+            text-align: center;
+            margin-left: 83px;
+        }
+        .fensi img{
+            border-radius: 50%;
+            height:92px;
+            width:92px;
+            margin-left: 40px;
+            margin-top: 63px;
+        }
+        .fensi .x_gengduo{
+            display: inline-block;
+            background: url("images/xiangqing_gengduo.png") no-repeat center;
+            height: 92px;
+            width: 92px;
+            margin-left: 40px;
+            margin-top: 63px;
+        } /*内容结束*/
+        .comment{
+            margin-top: 92px;
+
+        }
+        .comment .lefth{
+            display: inline-block;
+            width:15px;
+            height:53px;
+            background-color: #FFA047;
+            float: left;
+        }
+        .comment .cmtNav{
+            display: inline-block;
+            font-size: 43px;
+            color: #353535;
+            float: left;
+            padding-left: 31px;
+        }
+        .navauthor{
+            padding-left:46px;
+            padding-top:145px;
+            clear: both;
+        }
+        .navauthor img{
+            height:107px;
+            width:107px;
+            border-radius: 50%;
+            float:left;
+
+        }
+        .navauthor ul{
+            list-style: none;
+            float:left;
+            padding-bottom: 46px;
+        }
+        .navauthor span{
+            color:#ffa64f;
+            font-size: 43px;
+            float: left;
+            padding-left: 28px;
+        }
+        .navauthor .louzhu{
+            float: left;
+            background: url("images/xiangqing_louzhu.png");
+            width:95px;
+            height:43px;
+            font-size: 31px;
+            color:#353535;
+            text-align: center;
+            margin:9px 0 3px 18px;
+        }
+        .navauthor .x_time{
+            color:#adadad;
+            font-size:31px;
+            float: left;
+            padding-left: 28px;
+
+        }
+         .navauthor .x_floor{
+            float: right;
+            font-size: 43px;
+            padding-right: 46px;
+             color: #adadad;
+        }
+        .navauthor .comText{
+            color:#353535;
+            font-size: 43px;
+            margin-top: 141px;
+            margin-left:135px;
+            padding-bottom: 43px;
+            border-bottom: 1px solid #D3CECF;
+        }
+        .navauthor .x_huifu{
+            border-bottom: 1px solid #D3CECF;
+        }
+        .navauthor .x_huifu li{
+            height:100px;
+            padding-left: 135px;
+            padding-top: 46px;
+            clear: both;
+        }
+        .navauthor .x_huifu li a{
+            color: #ffa64f;
+            font-size: 43px;
+        }
+        .navauthor .x_huifu li p{
+            display: inline-block;
+
+            font-size: 43px;
+        }
+        .navauthor  .x_huifu .x_time{
+            padding-left: 0;
+            clear: left;
+            padding-top: 28px;
+        }
+        .navauthor .x_huifu span{
+            padding-left: 0;
+        }
+        /*-第一个评论结束*/
+        .navauthor1{
+            margin-left:46px;
+            padding-top:46px;
+            clear: both;
+            border-bottom: 1px solid #D3CECF;
+        }
+        .navauthor1 img{
+            height:107px;
+            width:107px;
+            border-radius: 50%;
+            float:left;
+
+        }
+        .navauthor1 ul{
+            list-style: none;
+            float:left;
+            margin-bottom: 46px;
+        }
+        .navauthor1 span{
+            color:#ffa64f;
+            font-size: 43px;
+            float: left;
+            padding-left: 28px;
+        }
+        .navauthor1 .louzhu{
+            float: left;
+            background: url("images/xiangqing_louzhu.png");
+            width:95px;
+            height:43px;
+            font-size: 31px;
+            color:#353535;
+            text-align: center;
+            margin:9px 0 3px 18px;
+        }
+        .navauthor1 .x_time{
+            color:#adadad;
+            font-size:31px;
+            float: left;
+            padding-left: 28px;
+
+        }
+        .navauthor1 .x_floor{
+            float: right;
+            font-size: 43px;
+            padding-right: 46px;
+            color: #adadad;
+        }
+        .navauthor1 .comText{
+            color:#353535;
+            font-size: 43px;
+            margin-top: 141px;
+            margin-left:135px;
+            padding-bottom: 43px;
+
+        }
+
+        .navauthor1 .x_huifu li{
+            height:100px;
+            padding-left: 135px;
+            padding-top: 46px;
+            clear: both;
+        }
+        .navauthor1 .x_huifu li a{
+            color: #ffa64f;
+            font-size: 43px;
+        }
+        .navauthor1 .x_huifu li p{
+            display: inline-block;
+
+            font-size: 43px;
+        }
+        .navauthor1  .x_huifu .x_time{
+            padding-left: 0;
+            clear: left;
+            padding-top: 28px;
+        }
+        .navauthor1 .x_huifu span{
+            padding-left: 0;
+        }
+        /*无评论评论结束*/
+
+        .lastnavauthor{
+            padding-left:46px;
+            padding-top:46px;
+            clear: both;
+        }
+        .lastnavauthor img{
+            height:107px;
+            width:107px;
+            border-radius: 50%;
+            float:left;
+
+        }
+        .lastnavauthor ul{
+            list-style: none;
+            float:left;
+            padding-bottom: 46px;
+        }
+        .lastnavauthor span{
+            color:#ffa64f;
+            font-size: 43px;
+            float: left;
+            padding-left: 28px;
+        }
+        .lastnavauthor .louzhu{
+            float: left;
+            background: url("images/xiangqing_louzhu.png");
+            width:95px;
+            height:43px;
+            font-size: 31px;
+            color:#353535;
+            text-align: center;
+            margin:9px 0 3px 18px;
+        }
+        .lastnavauthor .x_time{
+            color:#adadad;
+            font-size:31px;
+            float: left;
+            padding-left: 28px;
+
+        }
+        .lastnavauthor .x_floor{
+            float: right;
+            font-size: 43px;
+            padding-right: 46px;
+            color: #adadad;
+        }
+        .lastnavauthor .comText{
+            color:#353535;
+            font-size: 43px;
+            margin-top: 141px;
+            margin-left:135px;
+            padding-bottom: 43px;
+            border-bottom: 1px solid #D3CECF;
+        }
+        .lastnavauthor .x_huifu{
+            border-bottom: 1px solid #D3CECF;
+        }
+        .lastnavauthor .x_huifu li{
+            height:100px;
+            padding-left: 135px;
+            padding-top: 46px;
+            clear: both;
+        }
+        .lastnavauthor .x_huifu li a{
+            color: #ffa64f;
+            font-size: 43px;
+        }
+        .lastnavauthor .x_huifu li p{
+            display: inline-block;
+
+            font-size: 43px;
+        }
+        .lastnavauthor  .x_huifu .x_time{
+            padding-left: 0;
+            clear: left;
+            padding-top: 28px;
+        }
+        .lastnavauthor .x_huifu span{
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="author">
+    <img src="images/touxiang.jpg" />
+    <ul>
+        <li class="x_status"><a href="#"><span>小丫头</span></a> <div class="louzhu">楼主</div></li>
+        <li class="x_time">3分钟前</li>
+    </ul>
+</div>
+<div class="content">
+    <p class="x_title">晚上睡不着</p>
+    <p class="x_p">有没有什么可以帮助睡眠的办法？<br/>睡眠不好如何自我调理。<br/>想要调理好睡眠，首先我们自己应该找自己睡眠的原因，找到使自己睡眠的远离失眠的第一步哦。<br/>默许在下面写出自己知道的一些容易导致的原因，及调理对知识面的方法。希望可以在晚上不在失眠，舒舒服服的睡个好觉。</p>
+    <div class="imgs">
+        <img src="images/1.jpg" />
+        <img src="images/2.jpg" />
+        <img src="images/1.jpg" />
+        <img src="images/3.jpg" />
+        <img src="images/1.jpg" />
+    </div>
+    <div class="love">
+        <img src="images/xiangqing_dianzanqian.png" />
+    </div>
+    <div class="fensiNum">38个人喜欢</div>
+    <div class="fensi">
+        <img src="images/1.jpg"/>
+        <img src="images/2.jpg"/>
+        <img src="images/3.jpg"/>
+        <img src="images/1.jpg"/>
+        <img src="images/1.jpg"/>
+        <img src="images/1.jpg"/>
+       <div class="x_gengduo"></div>
+    </div>
+</div>
+<div class="comment">
+    <span class="lefth"></span>
+    <span class="cmtNav">
+        最新评论
+    </span>
+    <div class="cmtCont">
+        <div class="navauthor">
+            <img src="images/touxiang.jpg" />
+            <ul>
+                <li class="x_status"><a href="#"><span>小丫头</span></a> <div class="louzhu">楼主</div></li>
+                <li class="x_time">3分钟前</li>
+
+            </ul>
+            <div class="x_floor">479F</div>
+            <p class="comText">亲爱的论坛好友请为我想想办法吧，女子再次先拜一拜。</p>
+            <ul class="x_huifu">
+                <li><a href="#">林公子&nbsp;回复 @小丫头</a><p>：请先拜了再说！</p><span class="x_time">2分钟前</span></li>
+                <li><a href="#"><a href="#"><span>小丫头</span></a> <div class="louzhu">楼主</div></a><p>：有没有好心人？</p><span class="x_time">4分钟前</span></li>
+            </ul>
+        </div>
+        <div class="navauthor1">
+            <img src="images/touxiang.jpg" />
+            <ul>
+                <li class="x_status"><a href="#"><span>江左梅郎</span></a> </li>
+                <li class="x_time">6分钟前</li>
+
+            </ul>
+            <div class="x_floor">478F</div>
+            <p class="comText">妍妍保重</p>
+            <ul class="x_huifu">
+            </ul>
+        </div>
+        <div class="navauthor1">
+            <img src="images/touxiang.jpg" />
+            <ul>
+                <li class="x_status"><a href="#"><span>江左梅郎</span> </a></li>
+                <li class="x_time">6分钟前</li>
+
+            </ul>
+            <div class="x_floor">478F</div>
+            <p class="comText">妍妍保重</p>
+
+        </div>
+        <div class="lastnavauthor">
+            <img src="images/touxiang.jpg" />
+            <ul>
+                <li class="x_status"><a href="#"><span>小屁孩</span> </a></li>
+                <li class="x_time">7分钟前</li>
+            </ul>
+            <div class="x_floor">476F</div>
+            <p class="comText">睡觉就好好睡，别乱发东西，影响我睡觉，说吧怎么赔偿</p>
+            <ul class="x_huifu">
+                <li><a href="#"><span>小屁孩&nbsp;回复 @林公子</span></a><p>：男人走开！</p><span class="x_time">4分钟前</span></li>
+                <li><a href="#"><span>林公子&nbsp;回复 @小屁孩</span></a><p>：想找人陪？</p><span class="x_time">5分钟前</span></li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/topic.js"></script>
+</body>
+</html>

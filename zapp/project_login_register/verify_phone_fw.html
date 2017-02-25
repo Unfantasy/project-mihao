@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>输入验证码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        $(function(){
+            //输入完毕之后下一步显示
+            $(document).on("blur",".verification_code",function(){
+                if(!isnull($(".verification_code")[0])){
+                    $("#next").addClass("btn_red").parent().attr("href","verify_identity_phone.html");
+                }else{
+                    $("#next").removeClass("btn_red").parent().attr("href","");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<header>
+
+    <h1>135&nbsp;1671&nbsp;8011</h1>
+    <p>已发送验证码到你手机。</p>
+</header>
+<section>
+    <div class="input_verification_code">
+        <input type="password" placeholder="验证码" class="verification_code"/>
+        <div class="seconds">60s</div>
+    </div>
+</section>
+<footer>
+    <a href=""><button class="btn_default footer_right" id="next">完成</button></a>
+</footer>
+</body>
+</html>

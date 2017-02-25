@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>周比赛</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/usssg.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/usssg.js"></script>
+    <script>
+        //60s倒计时
+        var i = 61;
+        function countDownPhone() {
+            if (i > 0) {
+                i--;
+                var str = i + "s";
+                $(".count").html(str).unbind("click");
+
+            } else {
+                clearInterval(intervalPhone1);
+                $(".count").html("重新获取").bind("click", getIndentifyCode);
+
+            }
+        }
+        function getIndentifyCode(){
+            i = 61;
+            countDownPhone();
+            intervalPhone1 = setInterval("countDownPhone()", 1000);
+        }
+        function sendData(){
+            var phone = $(".phone").val();
+            var password = $(".password").val();
+            var identifyCode = $('.identify_code').val();
+            if(phone==''){
+                $.fn.alert({tip:'手机号不能为空'});
+                return false;
+            }
+            if(identifyCode==''){
+                $.fn.alert({tip:'验证码不能为空'});
+                return false;
+            }
+            if(password==''){
+                $.fn.alert({tip:'密码不能为空'});
+                return false;
+            }
+        }
+        function closeRegister(){
+            bindTouch();
+            $('body').removeClass("model_register");
+            $(".mask").hide();
+        }
+        $(function(){
+            bindTouch();
+        });
+        function bindTouch(){
+            $(".usssg").on("touchstart", function(e) {
+//                e.preventDefault();
+                startX = e.originalEvent.changedTouches[0].pageX,
+                        startY = e.originalEvent.changedTouches[0].pageY;
+            });
+            $(".usssg").on("touchmove", function(e) {
+                e.preventDefault();
+                moveEndX = e.originalEvent.changedTouches[0].pageX,
+                        moveEndY = e.originalEvent.changedTouches[0].pageY,
+                        X = moveEndX - startX,
+                        Y = moveEndY - startY;
+                $('.main').css('top',Y);
+
+            });
+            $(".usssg").on('touchend',function(){
+                $('.main').animate({'top':0});
+                $(".mask").show();
+                $(".usssg").unbind();
+//                if ( Y < -120) {
+//                    $('.loading_area').show();
+//                    $('.loading_messagehtml').show();
+//                    setTimeout(function(){
+//                        location.href = 'usssg_my_trade.html';},2000);
+//                    setTimeout(function(){$('.loading_area').hide();
+//                        $('.loading_messagehtml').hide();},10000);
+//                }
+            });
+        }
+    </script>
+</head>
+<body class="usssg">
+<div class="mask">
+<div class="register_box">
+    <div class="register_text">
+        <div class="register_title">注册众米账号</div>
+        <div class="register_content">
+            <ul>
+                <li><input type="tel" class="phone" placeholder="请输入手机号"/></li>
+                <li><input type="text" class="identify_code" placeholder="请输入验证码"/> <span class="count" onclick="getIndentifyCode()">获取验证码</span></li>
+                <li><input type="text" class="password" placeholder="设置密码"/></li>
+                <li><input type="button" value="完成" onclick="sendData()"/></li>
+            </ul>
+        </div>
+    </div>
+    <div class="reverse" onclick="closeRegister()"></div>
+</div>
+</div>
+    <div class="main">
+        <section>
+            <a href="#" class="ruleTip">交易规则提示</a>
+            <div class="rankingBox">
+                <img src="images/user2531.jpg" class="usssgUserPhoto"/>
+                <div>未参与 <span hidden>名</span>
+                    <p>当前排名</p>
+                </div>
+            </div>
+            <div class="all_rank"><a href="usssg_all_rank.html">查看全部排名</a></div>
+            <div class="flexBox">
+                <div class="flex3">
+                    <div class="goal"></div>
+                    <p><span id="goal">0</span>分</p>
+                </div>
+                <div class="flex3">
+                    <div class="money"></div>
+                    <p>￥<span id="money">300</span></p>
+                </div>
+                <div class="flex3">
+                    <div class="last_time"></div>
+                    <p><span id="lastTime">12月29日</span></p>
+                </div>
+            </div>
+            <a href="usssg_friend_rank.html" class="friendRanking">与好友之间的比赛排名，第<span>1</span>名
+                <img src="images/touxiangdian.png" class="friendImg"/>
+                <img src="images/user2531.jpg" class="friendImg"/>
+                <img src="images/user2531.jpg" class="friendImg"/>
+                <img src="images/user2531.jpg" class="friendImg"/>
+                <img src="images/user2531.jpg" class="friendImg"/>
+            </a>
+            <div class="wechatLead" hidden="" onclick="hide(this)"></div>
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+<div id="loading_area" class="loading_area"></div>
+<div id="loading_messagehtml" class="loading_messagehtml"></div>
+</body>
+</html>

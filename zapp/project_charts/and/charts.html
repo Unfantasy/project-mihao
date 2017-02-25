@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>p'p
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>收益走势图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="jquery.js"></script>
+    <script src="ichart.1.2.min.js"></script>
+    <script src="charts.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Myriad Pro", "宋体", "Mecrosoft Yahei";
+        }
+        i {
+            font-style: normal;
+        }
+        #canvasDiv {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .ch_yield {
+            width: 100%;
+            margin: 7px auto 17px auto;
+        }
+
+        .ch_yield {
+            font-size: 0;
+        }
+        .yieldBox{
+            width: 33.33%;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .yieldBox p{
+            font-size:.5rem;
+            text-align:center;
+        }
+        .ch_yield_target, .ch_yield_all, .ch_yield_n {
+            width:3.3rem;
+            height:3.3rem;
+            line-height: 3.3rem;
+            border-radius:50%;
+            display: block;
+            font-size: .6rem;
+            color: #fff;
+            margin: 10px auto 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .ch_yield_n {
+            background-color: #ffc601;
+        }
+
+        .ch_yield_target {
+            background-color: #5e93eb;
+        }
+        .ch_yield_all {
+            background-color: #f45531;
+        }
+
+        .ch_yield_target b, .ch_yield_all b, .ch_yield_n b {
+            font-weight: normal;
+            padding-left: 10px;
+        }
+        #canvasDiv canvas {
+            width: 100%;
+            height: 353px;
+        }
+        .x_time{
+            color: #95a2aa;
+            font-size: 13px;
+            height: 33px;
+            margin-top: -16px;
+        }
+        .first_coordinate{
+            float:left;
+            padding-left:10%;
+        }
+        .last_coordinate{
+            float:right;
+            padding-right:10%;
+        }
+    </style>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 300) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        function getStockYield(stocks, target_yield, n) {
+         var stocks = eval(stocks);
+         //alert("n:"+n);
+            n = JSON.parse(n);
+            //alert(n);
+            var nStocks = n.stocks;
+            //alert('nStocks'+nStocks);
+            nStocks = eval(nStocks);
+            //alert('nStocks'+nStocks);
+            //alert(stocks.length+":"+nStocks.length);
+            var nname = n.name;
+            var nYield = parseInt(nStocks[nStocks.length-1].flow*10000)/100;
+            if(!nname){
+                nname = '指数';
+            }
+            var nowTime = getTime();
+            if (stocks.length == 1) {
+                stocks.push({labels: stocks[0].labels, flow: stocks[0].flow});
+                nStocks.push({labels: nStocks[0].labels, flow: nStocks[0].flow});
+            }
+            if (!stocks || stocks.length == 0) {
+                stocks = [{labels: nowTime, flow: 0}, {labels: nowTime, flow: 0}];
+                nStocks = stocks;
+            }
+            //x坐标赋值
+            $(".first_coordinate").text(stocks[0].labels || " ");
+            $(".last_coordinate").text(stocks[stocks.length - 1].labels || " ");
+            var max_yield, min_yield, all_yield;//最大收益率,最小收益率，累计收益率
+            max_yield = stocks[0].flow;
+            min_yield = stocks[0].flow;
+            all_yield = stocks[0].flow;
+            for (var i = 1; i < stocks.length; i++) {
+                if (Number(stocks[i].flow) > Number(max_yield)) {
+                    max_yield = stocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) > Number(max_yield)) {
+                    max_yield = nStocks[i].flow;
+                }
+                if (Number(stocks[i].flow) < Number(min_yield)) {
+                    min_yield = stocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) < Number(min_yield)) {
+                    min_yield = nStocks[i].flow;
+                }
+            }
+            for (var i = 1; i < nStocks.length; i++) {
+                if (Number(nStocks[i].flow) > Number(max_yield)) {
+                    max_yield = nStocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) < Number(min_yield)) {
+                    min_yield = nStocks[i].flow;
+                }
+            }
+            if (max_yield < target_yield) {
+                max_yield = target_yield;//最终的最大收益
+            }
+            if (min_yield > target_yield) {
+                min_yield = target_yield;//最终的最小收益
+            }
+            all_yield = stocks[stocks.length - 1].flow;//累计收益
+            var width = window.screen.width;
+            //所有收益率转换为百分比
+            max_yield *= 100;
+            min_yield *= 100;
+            target_yield = parseInt(target_yield * 10000) / 100;
+            all_yield *= 100;
+
+            var flow1 = [];//目标收益
+            var flow2 = [];//实际收益
+            var flow3 = [];//指数
+            for (var i = 0; i < stocks.length; i++) {
+                flow1.push(target_yield);
+                var temp = stocks[i].flow * 100;
+                temp = parseInt(temp * 100) / 100;//保留小数点后两位
+                flow2.push(temp);
+            }
+            for (var i = 0; i < nStocks.length; i++) {
+                var ntemp = nStocks[i].flow * 100;
+                ntemp = parseInt(ntemp * 100) / 100;//保留小数点后两位
+                flow3.push(ntemp);
+            }
+
+            var data = [
+                {
+                    name: 'RY',
+                    value: flow2,
+                    color: '#f00',
+                    line_width: 2
+                }, {
+                    name: 'TY',
+                    value: flow1,
+                    color: '#5e93eb',
+                    line_width: 2
+                }, {
+                    name: 'AA',
+                    value: flow3,
+                    color: '#ffc601',
+                    line_width: 2
+                }
+            ];
+            var start_scale, end_scale;
+            start_scale = min_yield - 2;
+            end_scale = max_yield + 2;
+            start_scale = (parseInt(start_scale * 100)) / 100;
+            end_scale = (parseInt(end_scale * 100)) / 100;
+            var middle_yield = (end_scale - start_scale) / 2;
+            var scale_space = middle_yield;
+            scale_space = (parseInt(scale_space * 100)) / 100;
+            all_yield = (parseInt(all_yield * 100)) / 100;
+            var chart = new iChart.LineBasic2D({
+                render: 'canvasDiv',
+                data: data,
+                align: 'center',
+                width: width,
+                height: 353,
+                shadow: false,
+                background_color: null,
+                border: null,
+                animation: true,//开启过渡动画
+                animation_duration: 600,//600ms完成动画
+                tip: {
+                    enable: true,
+                    shadow: false,
+                    border: null,
+                    shadow: false,
+                    style: "background-color:#f45531;padding:10px;",
+                    listeners: {
+                        //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                        parseText: function (tip, name, value, text, i) {
+                            var yields = flow2[i] || ' ';
+                            var nYield = flow3[i] || ' ';
+                            var date = stocks[i].labels || ' ';
+                            return "<span style='color:#fff;font-size:13px;'>收益率:" + yields + "%</span><br/>" + "<span style='color:#fff;font-size:13px;'>" + nname + ":" + nYield + "%</span><br/>" + "<span style='color:#fff;font-size:13px;'>日期:" + date + "</span>";
+                        }
+                    }
+                },
+                tipMocker: function (tips, i) {
+                    return tips[0];
+                },
+                tipMockerOffset: Number(0.0),
+                crosshair: {
+                    enable: true,
+                    line_color: '#95a2aa'
+                },
+                sub_option: {
+                    smooth: false,
+                    label: false,
+                    hollow: false,
+                    hollow_inside: false,
+                    point_size: 0
+                },
+                coordinate: {
+                    width: "85%",
+                    height: "85%",
+                    striped: false,
+                    grid_color: '#ccc',
+                    gridHStyle: {
+                        solid: false,
+                        size: 1,
+                        fator: 2
+                    },
+                    axis: {
+                        width: [0, 0, 0, 0]
+                    },
+                    scale: [{
+                        position: 'left',
+                        start_scale: start_scale,
+                        end_scale: end_scale,
+                        scale_space: scale_space,
+                        scale_enable: false,
+                        label: {color: '#000', fontsize: 14, fontweight: 30, offsetx: width - 65, offsety: -10},
+                        listeners: {//配置事件
+                            parseText: function (t) {//设置解析值轴文本
+                                return {text: t + "%"}
+                            }
+                        }
+                    }]
+                }
+            });
+            //开始画图
+            chart.draw();
+            target_yield = parseInt(target_yield * 100) / 100;
+            $(".yieldBoxN p").text(nname);
+            $(".ch_yield_target b").text(target_yield + "%");
+            $(".ch_yield_all b").text(all_yield + "%");
+            $(".ch_yield_n b").text(nYield + "%");
+        }
+        function getTime() {
+            var time = new Date();
+            var years = time.getFullYear();
+            var months = time.getMonth() + 1;
+            var dates = time.getDate();
+            return years + "-" + months + "-" + dates;
+        }
+
+$(function(){
+    var aValue = shareEarn.giveData();
+//alert("aValue:"+aValue);
+    aValue = JSON.parse(aValue);
+    //alert("aValue:"+aValue);
+    getStockYield(aValue.stockYield, aValue.expectYield, aValue.n);
+    });
+
+
+
+    </script>
+</head>
+<body>
+<div id='canvasDiv'></div>
+<div class="x_time"><span class="first_coordinate"></span> <span class="last_coordinate"></span>
+</div>
+<div class="ch_yield">
+    <div class="yieldBox">
+    <span class="ch_yield_target">
+        <b>7.00%</b>
+    </span>
+        <p>目标收益</p>
+    </div>
+    <div class="yieldBox">
+    <span class="ch_yield_all">
+        <b>0.00%</b>
+    </span>
+        <p>累计收益</p>
+    </div>
+    <div class="yieldBox yieldBoxN"><span class="ch_yield_n"><i></i><b>0.00%</b></span>
+        <p>指数</p></div>
+</div>
+</body>
+</html>

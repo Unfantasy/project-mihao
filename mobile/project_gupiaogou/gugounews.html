@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>股狗秘闻</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="css/gogounews.css"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/swiper-3.3.1.jquery.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+    <style>
+        .loadingBox{
+            background:url('images/loading.gif') center center no-repeat;
+            height:48px;
+            width:100%;
+            margin-bottom:17px;
+            display: none;
+        }
+        *,*:before,*:after{
+            box-sizing: border-box;
+        }
+        .returnLeft{
+            width: 24px;
+            padding-left:12px;
+        }
+        .returnRight{
+            width: 12px;
+            padding-right:12px;
+        }
+        .returnLeft,.returnRight{
+            float: left;
+            height: 24px;
+            position: relative;
+            background-color:#fff;
+        }
+        .returnLeft:after{
+            content:'';
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            border-right:12px solid #fff;
+            border-bottom:12px solid transparent;
+            border-top:12px solid transparent;
+            right: 0;
+            top: 0;
+            background-color: #3DB0FF;
+        }
+        .returnRight:before{
+            content:'';
+            position: absolute;
+            left: -16px;
+            border-right:12px solid transparent;
+            border-bottom:12px solid #fff;
+            border-top:12px solid #fff;
+        }
+        .swiper-slide a,.swiper-slide a img{
+            width:100%;
+        }
+    </style>
+    <script>
+        var G_BASE_URL = '${ctx}';
+        if(isMobile()){
+            //加载移动端页面
+            loadjscssfile('css/gogounews_mobile.css','css');
+        }
+    </script>
+    <noscript>
+        <link rel="stylesheet" media="screen and (max-width:560px)" href="css/gogounews_mobile.css"/>
+    </noscript>
+</head>
+<body>
+<div class="main ">
+    <div class="newscontent">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;"><img src="images/gugounewsbanner1.png"/></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="images/gugounewsbanner2.png"/></a></div>
+                <div class="swiper-slide"><a href="http://www.mihaokj.com/forum_post/form?id=404"><img src="images/gugounewsbanner3.png"/></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <script>
+                var mySwiper2 = new Swiper('.swiper-container', {
+                    autoplay: 3000,//可选选项，自动滑动
+                    width : window.innerWidth,
+                    loop:'true',
+                    pagination : '.swiper-pagination',//分页器
+                    autoplayDisableOnInteraction : false,//点击前进后退按钮还可以自动播放
+                })
+            </script>
+        </div>
+
+        <ul class="newslist">
+            <li>
+                <div class="newtime">14:57</div>
+                <div class="newcontent">
+
+                    <div class="circle"><img src="images/testicon.jpg"/>来自微信</div>
+                    <div class="pbox">
+                        <p>芝加哥联储主席 Evans （2017年有投票权）：美联储并不着急12月加息。</p>
+                        <p>12月可能是一个适宜的加息时间，但也未看到年底加息的迫切性。</p>
+                        <p>劳动力市场继续保持小幅扩张和薪资小幅上涨，都是不错的信号。</p>
+                        <p>但通胀目前仍处于美联储2%的目标以下。</p>
+                    </div>
+                    <div class="comment">
+                        <a class="zanLink" onclick="f_praise(1)">
+                            <span class="zan"></span> 23
+                            </a>
+                        <a href="javascript:;"><span class="pinglun"></span></a>
+                        <span class="text-right newLabel" >＃可做谈资</span>
+                    </div>
+
+                </div>
+            </li>
+            <li class="">
+                <div class="newtime">14:57</div>
+                <div class="newcontent">
+
+                    <div class="circle"><img src="images/testicon.jpg"/>来自微信</div>
+                    <div class="pbox">
+                        <p>芝加哥联储主席 Evans （2017年有投票权）：美联储并不着急12月加息。</p>
+                        <p>12月可能是一个适宜的加息时间，但也未看到年底加息的迫切性。</p>
+                        <p>劳动力市场继续保持小幅扩张和薪资小幅上涨，都是不错的信号。</p>
+                        <p>但通胀目前仍处于美联储2%的目标以下。</p>
+                    </div>
+                    <div class="comment">
+                        <a class="zanLink" onclick="f_praise(1)">
+                            <span class="zan"></span> 23
+                        </a>
+                        <a href="javascript:;"><span class="pinglun"></span></a>
+                    </div>
+                    <div class="controlbox">
+                        分享
+                    </div>
+
+                </div>
+            </li>
+            <li class="">
+                <div class="newtime">14:57</div>
+                <div class="newcontent">
+
+                    <div class="circle"><img src="images/testicon.jpg"/>来自微信</div>
+                    <div class="pbox">
+                        <p>芝加哥联储主席 Evans （2017年有投票权）：美联储并不着急12月加息。</p>
+                        <p>12月可能是一个适宜的加息时间，但也未看到年底加息的迫切性。</p>
+                        <p>劳动力市场继续保持小幅扩张和薪资小幅上涨，都是不错的信号。</p>
+                        <p>但通胀目前仍处于美联储2%的目标以下。</p>
+                    </div>
+                    <div class="comment">
+                        <a class="zanLink" onclick="f_praise(1)">
+                            <span class="zan"></span> 23
+                        </a>
+                        <a href="javascript:;"><span class="pinglun"></span></a>
+                    </div>
+                    <div class="controlbox">
+                        分享
+                    </div>
+
+                </div>
+            </li>
+            <li class="">
+                <div class="newtime">14:57</div>
+                <div class="newcontent">
+
+                    <div class="circle"><img src="images/testicon.jpg"/>来自微信</div>
+                    <div class="pbox">
+                        <p>芝加哥联储主席 Evans （2017年有投票权）：美联储并不着急12月加息。</p>
+                        <p>12月可能是一个适宜的加息时间，但也未看到年底加息的迫切性。</p>
+                        <p>劳动力市场继续保持小幅扩张和薪资小幅上涨，都是不错的信号。</p>
+                        <p>但通胀目前仍处于美联储2%的目标以下。</p>
+                    </div>
+                    <div class="comment">
+                        <a class="zanLink" onclick="f_praise(1)">
+                            <span class="zan"></span> 23
+                        </a>
+                        <a href="javascript:;"><span class="pinglun"></span></a>
+                    </div>
+                    <div class="controlbox">
+                        分享
+                    </div>
+
+                </div>
+            </li>
+            <li class="">
+                <div class="newtime">14:57</div>
+                <div class="newcontent">
+
+                    <div class="circle"><img src="images/testicon.jpg"/>来自微信</div>
+                    <div class="pbox">
+                        <p>芝加哥联储主席 Evans （2017年有投票权）：美联储并不着急12月加息。</p>
+                        <p>12月可能是一个适宜的加息时间，但也未看到年底加息的迫切性。</p>
+                        <p>劳动力市场继续保持小幅扩张和薪资小幅上涨，都是不错的信号。</p>
+                        <p>但通胀目前仍处于美联储2%的目标以下。</p>
+                    </div>
+                    <div class="comment">
+                        <a class="zanLink" onclick="f_praise(1)">
+                            <span class="zan"></span> 23
+                        </a>
+                        <a href="javascript:;"><span class="pinglun"></span></a>
+                    </div>
+                    <div class="controlbox">
+                        分享
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+        <div class="loadingBox"></div>
+    </div>
+    <script>
+        $(function(){
+            var length = $('.newslist>li').length;
+          /*  for(var i=0;i<length;i++){
+                if(i%2==0){
+                    switch(i%7){
+                        case 0:
+                            $('.newslist>li').eq(i).addClass('colour1');
+                            break;
+                        case 1:
+                            $('.newslist>li').eq(i).addClass('colour2');
+                            break;
+                        case 2:
+                            $('.newslist>li').eq(i).addClass('colour3');
+                            break;
+                        case 3:
+                            $('.newslist>li').eq(i).addClass('colour4');
+                            break;
+                        case 4:
+                            $('.newslist>li').eq(i).addClass('colour5');
+                            break;
+                        case 5:
+                            $('.newslist>li').eq(i).addClass('colour6');
+                            break;
+                        case 6:
+                            $('.newslist>li').eq(i).addClass('colour7');
+                    }
+                }
+            }*/
+            var addHtml = '<li><a href="voteStudio.html" class="com-grid-paper"><div class="grid-paper-bd"><div class="imgcover pic"><img class=" lazyloaded" src="images/vote1.jpg"></div><div class="count new"></div></div><div class="grid-paper-ft"><div class="title-description"><h3 class="title">你最近一次用搜索引擎，是在搜什么？</h3><p class="description">除了测试 WiFi 有没有断之外，你还会用搜索引擎搜什么？（题图来自：Riikka Laakso）</p><p class="ticketNum">总票数：<span>34</span></p></div></div></a></li>';
+            $('.newslist>li:nth-child(2)').before(addHtml);
+        });
+    </script>
+</div>
+<div class="register newscontent hidden">
+    <form id="register_form"  method="post" action="${ctx }/users/sign_up"  onsubmit="return false;">
+        <div class="inputBox">
+            <input type="text" name="mobile" id="mobile" class="mobile"/>
+            <span class="littleTip">手机号</span>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="vcode" id="vcode" class="vcode"/>
+            <span class="littleTip">验证码</span>
+            <div class="verifyCode none">获取验证码</div>
+            <i class="errVerifyCode"></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" id="password" class="password"/>
+            <span class="littleTip">密码</span>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="user_name" id="user_name" class="user_name"/>
+            <span class="littleTip">昵称 </span>
+        </div>
+        <div class="errorMsg inputBox">
+            <p></p>
+        </div>
+        <div class="inputBtnBox">
+            <button class="registerBtn" disabled onclick="register()">注册</button>
+        </div>
+        <p class="bottomTip">如果你已经有帐号请前往 <a href="javascript:;" onclick="toLogin()">登录</a></p>
+        <script>
+            var G_BASE_URL = '${ctx}';
+            //输入完毕之后下一步显示 注册
+            $(document).on("input propertychange", ".mobile,.vcode,.password,.user_name", function () {
+                if (isPhone($(".mobile")[0]) && isPwd($(".password")[0]) && !isNull($(".vcode")[0]) && !isNull($(".user_name")[0])) {
+                    $(".registerBtn").removeAttr("disabled");
+                } else {
+                    $(".registerBtn").attr("disabled", "disabled");
+                }
+            });
+            //手机号以空格隔开
+            $(".mobile").on("input propertychange", function (e) {
+                var phone = $(this).val();
+                //'-'用空格替换
+                if(phone.length>=13 && phone.indexOf('-')!=-1){
+                    phone = phone.replace(/-/g,' ');
+                    $(this).val(phone);
+                }
+            }).on('keyup',function(e){
+                var phone = $(this).val();
+                if ((phone.length == 3 || phone.length == 8) && e.keyCode != 8)
+                    this.value += " ";
+            });
+            function register(){
+                var phone = $("#mobile").val().NoSpace();
+                $("#mobile").val(phone);
+                // jquery 表单提交
+                $("#register_form").ajaxSubmit({
+                    type: 'post',
+                    dataType: 'json',
+                    success:function(data){
+                        if(data.state=="success"){
+                            toLogin();
+                        }else{
+                            $(".errorMsg").removeAttr('hidden');
+                            if(data.msg=="verify_code_not_exits"){
+                                $(".errorMsg").html('<p>手机验证码错误</p>');
+                            }else if(data.msg=="valid_code_expires"){
+                                $(".errorMsg").html('<p>手机验证码过期</p>');
+                            }else if(data.msg=="nickname_is_error"){
+                                $(".errorMsg").html('<p>用户名不合法</p>');
+                            }else{
+                                $(".errorMsg").html('<p>'+data.msg+'</p>');
+                            }
+                        }
+                    },error:function(xhr){alert('动态页出错\n\n'+xhr.responseText);}
+                });
+                return false;
+            }
+            //点击获取验证码
+            $('.verifyCode').click(function(){
+
+                if($(this).hasClass('none')){
+                    $(this).removeClass('none');
+                    $(this).parents('.inputBox').find('input').focus();
+                    getVerifyCode();
+                }
+            });
+            function getVerifyCode(){
+                var mobileValue = $('#mobile').val().NoSpace();
+                if(mobileValue){
+                    $.get(G_BASE_URL + '/users/send_sms', {phone : mobileValue, flag : 1} , function (result) {
+                        if (result.state == "error"){
+                            $(".errVerifyCode").html('<p class="aw-reg-tips aw-reg-err">' + result.msg  + '</p>');
+                        }
+                    }, 'json');
+                    //成功发送短信之后
+                    var count = 60;
+                    var countInterval = setInterval(function(){
+                        count--;
+                        if(count<0){
+                            clearInterval(countInterval);
+                            $('.verifyCode').text('请重新获取').addClass('none');
+                        }else{
+                            $('.verifyCode').text(count+'s');
+                        }
+                    },1000);
+                }else{
+                    $('.errVerifyCode').html('请输入手机号码');
+                }
+            }
+        </script>
+    </form>
+</div>
+<div class="login newscontent hidden">
+    <div class="return" style="width:55px;height:35px;position: fixed;top:15px;left:13px;text-align: left;padding-left:0;font-size:30px;color:#f45531;background-color:#fff;font-family: 'Microsoft Yahei'" onclick="returnMain('login')"><span class="returnLeft"></span><span class="returnRight"></span></div>
+    <form id="login_form" method="post"  onsubmit="return false;" action="${ctx }/users/log_in" >
+        <div class="inputBox">
+            <input type="hidden" name="flag" id="log_flag" value="1"/>
+            <input type="text" name="login_phone" id="login_phone" class="login_phone"/>
+            <span class="littleTip">手机号</span>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="login_password" id="login_password" class="login_password"/>
+            <span class="littleTip">密码</span>
+        </div>
+        <div class="gotoForgetPwd"><a href="javascript:;" onclick="toForgetPwd()">忘记密码？</a></div>
+        <div class="errorMsg inputBox">
+            <p></p>
+        </div>
+        <div class="inputBtnBox">
+            <button class="loginBtn" disabled onclick="login()">登陆</button>
+        </div>
+        <p class="bottomTip">如果你没有帐号请先 <a href="javascript:;" onclick="toRegister()">注册</a></p>
+    </form>
+    <script>
+        //输入完毕之后下一步显示 登陆
+        $(document).on("input propertychange", ".login_phone,.login_password", function () {
+            if (isPhone($(".login_phone")[0]) && isPwd($(".login_password")[0])) {
+                $(".loginBtn").removeAttr("disabled");
+            } else {
+                $(".loginBtn").attr("disabled", "disabled");
+            }
+        });
+        //手机号以空格隔开
+        $(".login_phone").on("input propertychange", function (e) {
+            var phone = $(this).val();
+            //'-'用空格替换
+            if(phone.length>=13 && phone.indexOf('-')!=-1){
+                phone = phone.replace(/-/g,' ');
+                $(this).val(phone);
+            }
+        }).on('keyup',function(e){
+            var phone = $(this).val();
+            if ((phone.length == 3 || phone.length == 8) && e.keyCode != 8)
+                this.value += " ";
+        });
+        function login(){
+            var username = $("#login_phone").val().NoSpace();
+            $("#login_phone").val(username);
+            // jquery 表单提交
+            $("#login_form").ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success:function(data){
+                    if(data.state=="success"){
+                        location.reload();
+                    }else{
+                        $(".errorMsg").html('<p>用户手机号码或密码错误</p>');
+                    }
+                },error:function(xhr){alert('动态页出错\n\n'+xhr.responseText);}//
+            });
+            return false;
+        }
+    </script>
+</div>
+<div class="forgetPwd newscontent hidden">
+    <form id="find_pwd_form"  method="post" action="${ctx }/users/find_password"  onsubmit="return false;">
+        <div class="inputBox">
+            <input type="text" name="mobile" id="fMobile" class="mobile"/>
+            <span class="littleTip">手机号</span>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="vcode" id="fVcode" class="vcode"/>
+            <span class="littleTip">验证码</span>
+            <div class="verifyCode none">获取验证码</div>
+            <i class="errVerifyCode"></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" id="fPassword" class="password"/>
+            <span class="littleTip">密码</span>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="user_name" id="fPser_name" class="user_name"/>
+            <span class="littleTip">昵称 </span>
+        </div>
+        <div class="errorMsg inputBox">
+            <p></p>
+        </div>
+        <div class="inputBtnBox">
+            <button class="forgetPwdBtn" disabled onclick="findPwd()">确定</button>
+            <p class="bottomTip">如果你已经有帐号请前往 <a href="javascript:;" onclick="toLogin()">登录</a></p>
+        </div>
+
+        <script>
+            var G_BASE_URL = '${ctx}';
+            //输入完毕之后下一步显示 找回密码
+            $(document).on("input propertychange", ".mobile,.vcode,.password,.user_name", function () {
+                if (isPhone($(".mobile")[0]) && isPwd($(".password")[0]) && !isNull($(".vcode")[0]) && !isNull($(".user_name")[0])) {
+                    $(".forgetPwdBtn").removeAttr("disabled");
+                } else {
+                    $(".forgetPwdBtn").attr("disabled", "disabled");
+                }
+            });
+            //手机号以空格隔开
+            $(".mobile").on("input propertychange", function (e) {
+                var phone = $(this).val();
+                //'-'用空格替换
+                if(phone.length>=13 && phone.indexOf('-')!=-1){
+                    phone = phone.replace(/-/g,' ');
+                    $(this).val(phone);
+                }
+            }).on('keyup',function(e){
+                var phone = $(this).val();
+                if ((phone.length == 3 || phone.length == 8) && e.keyCode != 8)
+                    this.value += " ";
+            });
+            function findPwd(){
+                var phone = $("#fMobile").val().NoSpace();
+                $("#mobile").val(phone);
+                // jquery 表单提交
+                $("#find_pwd_form").ajaxSubmit({
+                    type: 'post',
+                    dataType: 'json',
+                    success:function(data){
+                        if(data.state=="success"){
+                            location.reload();
+                        }else{
+                            $(".errorMsg").removeAttr('hidden');
+                            if(data.msg=="verify_code_not_exits"){
+                                $(".errorMsg").html('<p>手机验证码错误</p>');
+                            }else if(data.msg=="valid_code_expires"){
+                                $(".errorMsg").html('<p>手机验证码过期</p>');
+                            }else if(data.msg=="nickname_is_error"){
+                                $(".errorMsg").html('<p>用户名不合法</p>');
+                            }else{
+                                $(".errorMsg").html('<p>'+data.msg+'</p>');
+                            }
+                        }
+                    },error:function(xhr){alert('动态页出错\n\n'+xhr.responseText);}
+                });
+                return false;
+            }
+            //点击获取验证码
+            $('.verifyCode').click(function(){
+
+                if($(this).hasClass('none')){
+                    $(this).removeClass('none');
+                    $(this).parents('.inputBox').find('input').focus();
+                    getVerifyCode();
+                }
+            });
+            function getVerifyCode(){
+                var mobileValue = $('#fMobile').val().NoSpace();
+                if(mobileValue){
+                    $.get(G_BASE_URL + '/users/send_sms', {phone : mobileValue, flag : 1} , function (result) {
+                        if (result.state == "error"){
+                            $(".errVerifyCode").html('<p class="aw-reg-tips aw-reg-err">' + result.msg  + '</p>');
+                        }
+                    }, 'json');
+                    //成功发送短信之后
+                    var count = 60;
+                    var countInterval = setInterval(function(){
+                        count--;
+                        if(count<0){
+                            clearInterval(countInterval);
+                            $('.verifyCode').text('请重新获取').addClass('none');
+                        }else{
+                            $('.verifyCode').text(count+'s');
+                        }
+                    },1000);
+                }else{
+                    $('.errVerifyCode').html('请输入手机号码');
+                }
+            }
+        </script>
+    </form>
+</div>
+<script>
+    $('input').focus(function(){
+        $(this).parents('.inputBox').find('.littleTip').animate({'top':'30px'});
+        $(this).parents('.inputBox').addClass('active').siblings().removeClass('active');
+    }).blur(function(){
+        if(!$(this).val()){
+            $(this).parents('.inputBox').find('.littleTip').animate({'top':'54px'});
+            $(this).parents('.inputBox').addClass('active').removeClass('active');
+        }else{
+            $(this).parents('.inputBox').removeClass('active');
+        }
+    });
+    //登录注册相关
+    $(function(){
+        $('input').each(function(){
+            var val = $(this).val();
+            if(!isNull($(this)[0])){
+                $(this).parents('.inputBox').find('.littleTip').animate({'top':'30px'});
+                $(this).parents('.inputBox').addClass('active').siblings().removeClass('active');
+            }
+        });
+    });
+    function toRegister(){$('.register').removeClass('hidden').siblings().addClass('hidden');}
+    function toForgetPwd(){$('.forgetPwd').removeClass('hidden').siblings().addClass('hidden');}
+    function toLogin(){$('.login').removeClass('hidden').siblings().addClass('hidden');}
+    function returnMain(str){
+        $('.main,section').removeClass('hidden');
+        $('.'+str).addClass('hidden');
+    }
+    $(document).scroll(function(){
+        var scrollBottomHeight = $(this).scrollTop()+window.innerHeight;
+//        console.log('scrollBottomHeight:'+scrollBottomHeight+',dHeight:'+getDocHeight());
+        if(getDocHeight()-scrollBottomHeight<550){
+//            console.log('ok');
+            var pageNum = 2;
+            var pageTotalNum = 0;
+            $(".loadingBox").show();
+            $.ajax({
+                url:'${ctx}/stock_dog_news/list?page='+pageNum,
+                type:'get',
+                success:function(data){
+                    if(data){
+                        var news = data.Rows;
+                        var Total = data.Total;
+                        pageTotalNum = Math.ceil(Total*20);
+                        if(pageTotalNum>pageNum){
+                            for(var i=0;i<news.length;i++){
+                                var comeFrom = '网络';
+                                switch(news[i].come_from){
+                                    case 0:
+                                        comeFrom = '网络';
+                                        break;
+                                    case 1:
+                                        comeFrom = '东方财富';
+                                        break;
+                                    case 2:
+                                        comeFrom = '微信';
+                                        break;
+                                    case 3:
+                                        comeFrom = '无秘';
+                                        break;
+                                    case 4:
+                                        comeFrom = '雪球';
+                                        break;
+                                    case 5:
+                                        comeFrom = '微博';
+                                        break;
+                                    case 6:
+                                        comeFrom = '集思录';
+                                        break;
+                                    case 7:
+                                        comeFrom = '华尔街见闻';
+                                        break;
+                                }
+                                var liHtml = '<li><div class="newtime">'+news[i].create_time+'</div><div class="newcontent"><div class="circle"><img src="images/testicon.jpg"/>来自'+comeFrom+'</div><div class="pbox">'+news[i].content+'</div><div class="comment"><a class="zanLink" onclick="f_praise(1)"><span class="zan"></span>'+news[i].praise_count+'</a><a href="javascript:;"><span class="pinglun"></span>'+news[i].comment_count+'</a><span class="text-right newLabel" >'+news[i].stock_label+'</span></div> </div></li>';
+                                $('.newslist').append(liHtml);
+                            }
+                            $('.loadingBox').hide();
+                        }
+                    }
+                },
+                error:function(e){
+                    alert('获取失败');
+                }
+            })
+        }
+    });
+
+
+
+    
+</script>
+</body>
+</html>

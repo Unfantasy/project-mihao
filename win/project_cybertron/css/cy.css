@@ -1,0 +1,93 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size:16px;
+}
+/*cy-main style*/
+img{
+    max-width:100%;
+}
+a:hover{
+    cursor:pointer;
+}
+a:hover,a:active,a:active{
+    text-decoration:none;
+
+}
+.cy_about{
+    background-color:#FE454A;
+    color:#fff;
+}
+.cy_footer{
+    background-color: #FE454A;
+    color:white;
+    line-height: 4em;
+}
+.cy_footer a{
+    color:white;
+}
+
+.cy-logo img{
+    margin-top: 1em;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.cy-periods:before{
+    content:"#";
+}
+.cy-periods:after{
+    content:".";
+}
+main article header a{
+    color: #000;
+    text-decoration:none;
+}
+main article header a span{
+    color:#999;
+}
+main article header a:hover,main article header a:active{
+    color: #000;
+    text-decoration:none;
+}
+main article header a span:hover{
+    color:#999;
+}
+.cy_secondtext{
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 1em auto;
+    text-align: right;
+    color: #999999;
+}
+.audioPlayer{
+    width: 100%;
+}
+.cy_download{
+    color:#000;
+}
+.cy_barcode img{
+    width:270px;
+    border: 3px solid red;
+    border-radius: 9px;
+}
+
+@media (min-width: 992px){
+    .cy_about{
+        position:fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow: auto;
+        padding-bottom: 4em;
+    }
+    .cy_footer{
+        position:fixed;
+        left: 0;
+        bottom: 0;
+    }
+}
+/* end cy-main style*/
+
+/*cy-vip-plan style*/

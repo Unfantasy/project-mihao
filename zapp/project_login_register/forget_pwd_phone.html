@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        $(function () {
+            $(".phone").on("input propertychange", function (e) {
+
+                //输入完毕之后下一步显示
+                if (isnum(this)) {
+                    $("#to_verify_phone_fw").addClass("btn_red").removeAttr("disabled");
+                } else {
+                    $("#to_verify_phone_fw").removeClass("btn_red").attr("disabled", "disabled");
+                }
+            }).on('focus',function(e){
+                //手机号以空格隔开
+                if (($(this).val().length == 3 || $(this).val().length == 8) && e.keyCode != 8)
+                    this.value += " ";
+            });
+            $("#sms_code").on("input propertychange", function (e) {
+                if (isSmsCode(this)) {
+                    $("#to_set_pwd_phone").addClass("btn_red").removeAttr("disabled");
+                } else {
+                    $("#to_set_pwd_phone").removeClass("btn_red").attr("disabled", "disabled");
+                }
+            });
+            $("#password").on("input propertychange", function (e) {
+                if (ispwd(this)) {
+                    $("#to_login").addClass("btn_red").removeAttr("disabled");
+                } else {
+                    $("#to_login").removeClass("btn_red").attr("disabled", "disabled");
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="" id="forget_pwd_phone">
+    <header>
+        <h1>使用你的手机号码</h1>
+
+        <p>接收Trubuzz美股服务，获得交易功能和高速行情推送。</p>
+    </header>
+    <section>
+        <input type="text" placeholder="手机号码" class="phone" id="phone_fw"/>
+    </section>
+    <footer>
+        <button class="btn_default footer_right" id="to_verify_phone_fw" disabled="disabled" onclick="toImgCode()">下一步
+        </button>
+    </footer>
+    <div class="all_page">
+        <div class="img_code_all text_center">
+            <div class="top">
+                <span>验证码</span> <input type="text" class="verity_code" id="verity_code" name="captcha_value"
+                                        placeholder="输入下图中的字符，区分大小写"/>
+            </div>
+            <div class="middle">
+                <img src="images/loading.gif" class="img_code" id="img_code" onclick="getImgVerify()"/>
+
+                <p>看不清？ <a onclick="getImgVerify()">换一张</a></p>
+            </div>
+            <div class="bottom">
+                <button id="toVerifyPhone" onclick="toVerifyPhoneFw()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hide" id="verify_phone_fw">
+    <header>
+        <h1>135&nbsp;1671&nbsp;8011</h1>
+        <p>已发送验证码到你手机。</p>
+    </header>
+    <section>
+        <div class="input_verification_code">
+            <input type="text" placeholder="验证码" class="verification_code" id="sms_code"/>
+
+            <div class="seconds">60s</div>
+        </div>
+    </section>
+    <footer>
+        <button class="btn_default footer_right" id="to_set_pwd_phone" onclick="toSetPwdPhone()">下一步</button>
+    </footer>
+</div>
+<div class="hide" id="set_pwd_phone">
+    <header>
+
+        <p>此密码用于登录美股账号和交易下单使用请妥善保管。</p>
+
+        <h1>密码限定 <span class="mark">6-20</span>位数字或字母</h1>
+    </header>
+    <section>
+        <div class="pwd">
+            <div class="login_turn_pwd login_hide_pwd"></div>
+            <input type="password" placeholder="密码" class="password" id="password"/>
+        </div>
+    </section>
+    <footer>
+        <button class="btn_default footer_right" disabled id="to_login" onclick="toLogin()">完成</button>
+    </footer>
+</div>
+<input type="hidden" id="intl_code" name="intl_code"/>
+<input type="hidden" id="captcha_key" name="captcha_key"/>
+</body>
+</html>

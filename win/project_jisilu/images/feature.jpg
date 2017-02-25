@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge" />
+<title>集思录 - 低风险投资 - 集思录</title>
+<meta name="keywords" content="集思录,低风险理财,债券,公司债,国债,可转债,A类,新股," />
+<meta name="description" content="集思录是一个低风险投资理财问答社区"  />
+<base href="http://www.jisilu.cn/" /><!--[if IE]></base><![endif]-->
+<!--link href="http://www.jisilu.cn/static/css/jisilu/img/favicon.png?v=20151027" rel="shortcut icon" type="image/x-icon" /-->
+
+<link href="http://www.jisilu.cn/static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+<link href="http://www.jisilu.cn/static/css/default/common.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/link.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/btn-sprite.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/icon-sprite.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/js/plug_module/style.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/js/artdialog/ui-dialog.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/jsl/jsl.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/main.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/jisilu_public.css?v=20151027" rel="stylesheet" type="text/css" />
+<link href="http://www.jisilu.cn/static/css/default/jisilu_index.css?v=20151027" rel="stylesheet" type="text/css" />
+
+<link href="http://www.jisilu.cn/static/css/jisilu/JiSiLu.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	var _1122AE135D7891E90312232D23531144='';
+	var G_POST_HASH=_1122AE135D7891E90312232D23531144;
+	var G_INDEX_SCRIPT = '';
+	var G_SITE_NAME = '集思录';
+	var G_BASE_URL = 'http://www.jisilu.cn';
+	var G_STATIC_URL = 'http://www.jisilu.cn/static';
+	var G_UPLOAD_URL = 'http://www.jisilu.cn/uploads';
+	var G_USER_ID = 0;
+	var G_USER_NAME = '';
+	var G_UPLOAD_ENABLE = 'N';
+	var G_QUICK_PUBLISH_HUMAN_VALID = '';
+	var G_UNREAD_NOTIFICATION = 0;
+	var G_NOTIFICATION_INTERVAL = 180000;
+	var G_CAN_CREATE_TOPIC = '';
+
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?164fe01b1433a19b507595a43bf58262";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="http://www.jisilu.cn/static/js/jquery.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/jquery.form.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/plug_module/plug-in_module.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/functions.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/aw_template.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/common.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/jslcommon.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/app.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/artdialog/dialog-plus-min.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/jsl/jsl.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/jsl/jsl.orange.js?v=20151027" type="text/javascript"></script>
+<script src="http://www.jisilu.cn/static/js/JiSiLuUtils.js?v=20151027" type="text/javascript"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://www.jisilu.cn/static/js/isIE6.js"></script>
+<![endif]-->
+<!--[if IE 7]>
+<link href="http://www.jisilu.cn/static/css/jisilu/ie7.css?v=20151027" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<link type="text/css" rel="stylesheet" href="/static/css/default/global.css?v=20151027"/>
+<a href="#"  id="body_top" name="body_top"></a>
+<div class="J_head_bg">
+	<div class="J_head">
+		<div class="row">
+			<div class="span2">
+				<span class="logo"><a href="/?/" target="_blank"><img src="/static/common/common/transparent.gif" alt="logo" /></a></span>
+			</div>
+			<div class="span7">
+				<ul class="jslmenu">
+					<li class="on"><a href="/?/">首 页</a></li>
+					<li><a href="http://www.jisilu.cn/data/calendar/">低风险投资日历</a></li>
+					<li><a href="http://www.jisilu.cn/data/sfnew/">实时投资数据</a></li>
+					<li><a href="http://www.jisilu.cn/explore/">社区-知识库</a></li>
+				</ul>
+			</div>
+			<!-- 登陆&注册栏 -->
+			<div class="offset8 span4 aw-home-login-register">
+									<p class="pull-right">
+						<a style="text-decoration: none;height: 32px; line-height: 32px; text-align: center; padding: 0 5px; float: left;color: #fff; background: url(static/common/common/j_head.png) no-repeat 0 0; background-position: 0 -197px; float: left; width: 48px; padding: 0; "  href="http://www.jisilu.cn/login/">登录</a>
+						<a style="text-decoration: none;height: 32px; line-height: 32px; text-align: center; padding: 0 5px; float: left;color: #fff; background: url(static/common/common/j_head.png) no-repeat 0 0; padding-right: 1px; background-position: -50px -197px; float: left; width: 48px; padding: 0; margin-left:1px;" href="http://www.jisilu.cn/account/register/">注册</a>
+					</p>
+							</div>
+			<!-- end 登陆&注册栏 -->
+    	</div>
+	</div>
+</div>
+
+
+<div><a href="http://www.nffund.com/upfiles/eb/home/500_huobi/index.html" target="_blank"><div style="height:60px; width:960px; margin: 6px auto 0 auto; background:url(/static/img/ad_mid_banner_nanfang2.jpg)"></div></a></div>
+
+<div class="J_main">
+	<div class="P_index_3">
+		<div class="cols_1">
+	<!-- 低风险投资课堂 -->
+	<div class="J_index_ketang">
+	<h3>低风险投资课堂</h3>
+		<ul>
+<li>
+	<a href="http://www.jisilu.cn/question/9027"  target="_blank">视频讲座：债券投资入门</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+<li>
+	<a href="http://www.jisilu.cn/question/12455"  target="_blank">视频讲座：正回购入门到精通</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+<li>
+	<a href="http://www.jisilu.cn/question/15899"  target="_blank">视频讲座：新股申购入门</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+<li>
+	<a href="http://www.jisilu.cn/question/16035"  target="_blank">视频讲座：期现套利实战</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+<li>
+	<a href="http://www.jisilu.cn/question/20286"  target="_blank">视频讲座：两融绕标打新</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+<li>
+	<a href="http://www.jisilu.cn/question/3072"  target="_blank">分级基金投资入门</a><img class="bg1" alt="" src="/static/common/common/transparent.gif">
+</li>
+		</ul>
+	</div>
+</div>
+
+<div class="cols_2 P_index_3b tags_Mark i_cl_01" id="reminder_content">
+	<div class="hot"><a href="http://www.jisilu.cn/question/49417" target="_blank"><b>2015年11月13日低风险投资提示 - 必看的2015年中国三大金融骗局，以防中年返贫	</b></a></div>
+	<div class="text1">- 南方基金11月13日起下调高铁/互联网/国企改三只分级场内申购费为0</br>
+- 葛总：分级0申购费，免费的才是最贵的</br>
+- 基金公司关联方买入锁仓A，每年挣收益率+管理费，岂不妙哉？</br>
+- 嘉实元和为何突然大涨？</br>
+- 钱丑老师：简评“15山水SCP001”违约</br>
+- 结合ETF期权来玩定投（SELL PUT + Covered CALL）</br> </div>
+	<div class="more Jc_linka"><a href="http://www.jisilu.cn/question/49417" target="_blank">全文&gt;&gt;</a></div>
+	<div class="text2">- <a href="http://weibo.com/jisilu" target="_blank"><font color="#006699">集思录微博</font></a> &nbsp;&nbsp;
+- QQ群：310885293&nbsp;&nbsp;
+- <font color="#006699">微信公众号：jisilu8</font>&nbsp;&nbsp;
+- <a href="http://www.jisilu.cn/question/15659" target="_blank"><font color="#006699">新同学：干货知识贴汇总</font></a> <br>
+- <a href="http://www.jisilu.cn/data/sfnew/strategy_a130/" target="_blank"><font color="red">分级A130混合轮动模型</font></a> &nbsp;&nbsp;- <a href="http://www.jisilu.cn/data/utils/" target="_blank"><font color="#006699">分级基金套利神器</font></a> &nbsp;&nbsp;- <a href="http://www.jisilu.cn/question/17929" target="_blank"><font color="#006699">集思录APP</font></a> &nbsp;&nbsp;- 热门标签： <a href="http://www.jisilu.cn/topic/st%E5%80%BA" target="_blank"><font color="#006699">ST债新规</font></a> &nbsp;  <a href="http://www.jisilu.cn/?/topic/%E6%AD%A3%E5%9B%9E%E8%B4%AD" target="_blank"><font color="#006699">正回购</font></a>  </div>
+</div>
+<div class="cols_2 text2" id="today_event"> <ul></ul></div>
+<div class="clear"></div>
+</div>
+
+<div class=" blank_1"></div>
+
+<div class="box_a P_index_4">
+	<div class="box_a_hd">
+	<h3>实时投资数据</h3>
+		<span style="float:none;margin-left:20px;font-size:16px" class="more">
+			<a href="http://www.jisilu.cn/data/mine/" target="_blank" style="color:red">我的自选</a>
+		</span>
+	</div>
+	<div class="box_a_bd">
+		<ul class="list_2">
+			<li>
+				<strong class="tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/sfnew/#tlink_3" target="_blank" >股票分级</a>
+				</strong>
+				<a href="http://www.jisilu.cn/data/sfnew/#tlink_3" target="_blank" >A类</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/sfnew/#tlink_2" target="_blank" >B类</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/sfnew/#tlink_0" target="_blank" style="color:red">分级套利</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/sfnew/#tlink_5" target="_blank">母基可交易</a>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/bond/" target="_blank">债券</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/cbnew/#tlink_3" target="_blank">可转债</a>
+				</strong>
+				<a href="http://www.jisilu.cn/data/cbnew/#tlink_3" target="_blank">实时折溢价</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/cbnew/#tlink_2" target="_blank">回售</a>
+			</li>
+			<li>
+				<strong class="tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/repo/" target="_blank">现金管理</a>
+				</strong>
+				<a href="http://www.jisilu.cn/data/repo/" target="_blank">回购收益</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/repo/#money_fund" target="_blank">T+0理财</a>
+			</li>
+			<li>
+				<strong class="tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/etf/" target="_blank">ETF基金</a>
+				</strong>
+				<a href="http://www.jisilu.cn/data/etf/" target="_blank">指数ETF</a>
+				<span class="J_vline">|</span>
+				<a href="http://www.jisilu.cn/data/etf/#tlink_0" target="_blank">场内货币ETF</a>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+					<a href="http://www.jisilu.cn/data/taoligu/" target="_blank">套利股</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+					<a href="http://www.jisilu.cn/data/stock/dividend_rate/" target="_blank">股息率</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/cf/" target="_blank">传统封基</a>
+				</strong>
+			</li>
+
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/index_future/" target="_blank" >股指期货</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/qdii/" target="_blank" style="color:red">T+0 QDII</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/lof/" target="_blank">LOF基金</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/bfjf/#tlink_3" target="_blank">债券分级</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/cbf/" target="_blank">封闭债基</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/new_bond/#tlink_1" target="_blank">新债</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/new_stock/#tlink_1" target="_blank">新股</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+					<a href="http://www.jisilu.cn/data/ha/" target="_blank">A/H比价</a>
+				</strong>
+			</li>
+			<li>
+				<strong class="mtitle tit Jc_linka">
+				<a href="http://www.jisilu.cn/data/idx_performance/" target="_blank">指数涨幅</a>
+				</strong>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class=" blank_1"></div>
+
+<div class="box_a P_index_1">
+	<div class="box_a_hd">
+		<h3 >社区-知识库</h3>
+		<span style="float:none;margin-left:20px;font-size:16px" class="more">
+			<a href="http://www.jisilu.cn/question/15659" target="_blank" style="color:red">投资前必看：干货知识贴汇总</a>
+		</span>
+		<span class="more">
+			<a target="_blank" href="http://www.jisilu.cn/topic/%E6%96%B0%E6%89%8B%E4%B8%93%E5%8C%BA">新手专区</a>
+			<span class="J_vline">|</span>
+			<a target="_blank" href="http://www.jisilu.cn/category/3">新股</a>
+			<span class="J_vline">|</span>
+			<a target="_blank" href="http://www.jisilu.cn/category/4">债券/可转债</a>
+			<span class="J_vline">|</span>
+			<a target="_blank" href="http://www.jisilu.cn/category/5">套利</a>
+			<span class="J_vline">|</span>
+			<a target="_blank" href="http://www.jisilu.cn/category/6">其他/价值投资</a>
+			<span class="J_vline">|</span>
+			<a target="_blank" href="http://www.jisilu.cn/question/48275">问题反馈</a>
+		</span>
+</div>
+
+<div class="box_a_bd">
+	<div class="P_index_1a">
+		<h4><span class="Jc_texta">最新</span></h4>
+		<ul class="list_1">
+<li><div class="tit"><a href="http://www.jisilu.cn/question/49459" target="_blank">中小板A150085收益率只有3%，A基溢价3%，还有1年半到期，快跑啊</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/150085" target="_blank" class="aw-topic-name"><span>150085</span></a><span class="Jc_textb num">6个回复</span><span class="Jc_textb num">197次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49442" target="_blank">122213这又是怎么了，也跌去3块钱了</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/122213" target="_blank" class="aw-topic-name"><span>122213</span></a><a href="http://www.jisilu.cn/topic/12松建化" target="_blank" class="aw-topic-name"><span>12松建化</span></a><span class="Jc_textb num">6个回复</span><span class="Jc_textb num">355次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49467" target="_blank">150172今天会上折吗？</a></div><div class="text Jc_linka"><span class="Jc_textb num">0个回复</span><span class="Jc_textb num">8次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49439" target="_blank">14冀融投怎么一直在跌？有什么事情发生吗？</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/124868" target="_blank" class="aw-topic-name"><span>124868</span></a><span class="Jc_textb num">7个回复</span><span class="Jc_textb num">323次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49464" target="_blank">几大垃圾债都甩出大卖单来了</a></div><div class="text Jc_linka"><span class="Jc_textb num">2个回复</span><span class="Jc_textb num">176次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/45949" target="_blank">论坛实战高手：3年20万到800万，建议其经常来发言，为社区提升价值！</a></div><div class="text Jc_linka"><span class="Jc_textb num">118个回复</span><span class="Jc_textb num">8876次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49457" target="_blank">判断一下124161的安全性</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/债券" target="_blank" class="aw-topic-name"><span>债券</span></a><span class="Jc_textb num">11个回复</span><span class="Jc_textb num">259次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49460" target="_blank">蚂蚁聚宝——果然阿里也不放过这口肉啊</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/基金" target="_blank" class="aw-topic-name"><span>基金</span></a><a href="http://www.jisilu.cn/topic/阿里" target="_blank" class="aw-topic-name"><span>阿里</span></a><span class="Jc_textb num">7个回复</span><span class="Jc_textb num">709次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49360" target="_blank">将全部124216和部分130换112037</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/112037" target="_blank" class="aw-topic-name"><span>112037</span></a><span class="Jc_textb num">11个回复</span><span class="Jc_textb num">618次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49434" target="_blank">新能源A和传媒A这些快上折的A强势的原因？</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/150217" target="_blank" class="aw-topic-name"><span>150217</span></a><span class="Jc_textb num">4个回复</span><span class="Jc_textb num">262次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49448" target="_blank">犹豫是不是买入A，还是觉得贵</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/分级A" target="_blank" class="aw-topic-name"><span>分级A</span></a><span class="Jc_textb num">9个回复</span><span class="Jc_textb num">591次浏览</span></div></li>		</ul>
+	</div>
+	<div class="P_index_1b">
+		<h4><span class="Jc_texta">热门</span></h4>
+		<ul class="list_1">
+<li><div class="tit"><a href="http://www.jisilu.cn/question/49292" target="_blank">债基好不靠谱啊，安信宝利（167501）净值日跌0.58%；嘉实超短债跌0.98%</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/167501" target="_blank" class="aw-topic-name"><span>167501</span></a><span class="Jc_textb num">113个回复</span><span class="Jc_textb num">5672次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49248" target="_blank">112037是要ST的节奏么，还有大半年到期，可以介入么</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/112037" target="_blank" class="aw-topic-name"><span>112037</span></a><span class="Jc_textb num">93个回复</span><span class="Jc_textb num">4787次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/48949" target="_blank">中国就业研究所所长：要准备迎接第二轮下岗潮。大家怎么看，利好A吗？</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/下岗" target="_blank" class="aw-topic-name"><span>下岗</span></a><span class="Jc_textb num">176个回复</span><span class="Jc_textb num">7995次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49261" target="_blank">聊聊150222的投资价值</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/150222" target="_blank" class="aw-topic-name"><span>150222</span></a><a href="http://www.jisilu.cn/topic/分级B" target="_blank" class="aw-topic-name"><span>分级B</span></a><span class="Jc_textb num">57个回复</span><span class="Jc_textb num">4375次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/49371" target="_blank">2015年中国三大金融骗局</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/金融骗局" target="_blank" class="aw-topic-name"><span>金融骗局</span></a><span class="Jc_textb num">53个回复</span><span class="Jc_textb num">7519次浏览</span></div></li>		</ul>
+		<div class="J_line_1"></div>
+		<h4><span class="Jc_texta">实盘</span></h4>
+		<ul class="list_1">
+<li><div class="tit"><a href="http://www.jisilu.cn/question/44186" target="_blank">A130指数及A轮动/套利实盘</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/A轮动" target="_blank" class="aw-topic-name"><span>A轮动</span></a><a href="http://www.jisilu.cn/topic/套利" target="_blank" class="aw-topic-name"><span>套利</span></a><a href="http://www.jisilu.cn/topic/指数" target="_blank" class="aw-topic-name"><span>指数</span></a><a href="http://www.jisilu.cn/topic/轮动" target="_blank" class="aw-topic-name"><span>轮动</span></a><span class="Jc_textb num">399个回复</span><span class="Jc_textb num">34808次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/15706" target="_blank">西胖子的分级基金A类 轮动模型 (V2.85) </a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/分级A" target="_blank" class="aw-topic-name"><span>分级A</span></a><a href="http://www.jisilu.cn/topic/轮动" target="_blank" class="aw-topic-name"><span>轮动</span></a><span class="Jc_textb num">1809个回复</span><span class="Jc_textb num">237733次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/15776" target="_blank">穿越牛熊，将A类基金进行到底，2015年操作实录</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/分级A" target="_blank" class="aw-topic-name"><span>分级A</span></a><span class="Jc_textb num">796个回复</span><span class="Jc_textb num">172866次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/15211" target="_blank">这是最好的时代——2015实证</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/实盘" target="_blank" class="aw-topic-name"><span>实盘</span></a><a href="http://www.jisilu.cn/topic/打新" target="_blank" class="aw-topic-name"><span>打新</span></a><a href="http://www.jisilu.cn/topic/投资总结" target="_blank" class="aw-topic-name"><span>投资总结</span></a><span class="Jc_textb num">730个回复</span><span class="Jc_textb num">96665次浏览</span></div></li><li><div class="tit"><a href="http://www.jisilu.cn/question/15308" target="_blank">对冲交易实录（2015）</a></div><div class="text Jc_linka"><a href="http://www.jisilu.cn/topic/实盘" target="_blank" class="aw-topic-name"><span>实盘</span></a><a href="http://www.jisilu.cn/topic/对冲" target="_blank" class="aw-topic-name"><span>对冲</span></a><span class="Jc_textb num">444个回复</span><span class="Jc_textb num">73773次浏览</span></div></li>		</ul>
+	</div>
+	<div class="clear"></div>
+	<a class="scanWeiXin" href="http://www.jisilu.cn/question/11475" target="_blank"></a>
+</div>
+
+</div>
+
+<div class="foot_ad" style="margin-top:20px">
+	<div><strong>赞助商：</strong></div>
+	<div>
+	<a href="http://v.tensynchina.com/servlet/clk/clk;06107-0001?http://www.xcfunds.com/include_2012/fjjj/newfjindex.shtml" target="_blank"><img style="width:185px;height:81px;border:1px solid black;" src="/static/img/ad_banner_citicprufunds.jpg" alt="信诚基金" /></a>
+	<a href="http://www.phfund.com.cn/ztbd/ratingfundApp/index.html" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_penghua.jpg" alt="鹏华基金" /></a>
+	<a href="http://www.gtfund.com/2015/Jeek/index.html" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_guotai.jpg" alt="国泰基金" /></a>
+	<a href="http://www.fullgoal.com.cn/zhishu/index.html" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_fuguo.jpg" alt="富国基金" /></a>
+	<a href="http://www.swsmu.com/pop/fenjijijin/ShowFenJiNewAction.do?method=show" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_shenwan.gif" alt="申万菱信基金" /></a>
+	</div>
+	<div style="padding-top:10px">
+	<a href="http://www.htsc.com.cn/hb2" target="_blank"><img style="width:185px;height:81px;border:1px solid black;" src="/static/img/ad_banner_huatai.jpg" alt="华泰基金" /></a>
+	<a href="http://v.tensynchina.com/servlet/clk/clk;06338-0003?http://www.huaan.com.cn/service/2015/fenjidang/index.html" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_huaan.jpg" alt="华安基金" /></a>
+	<a href="http://www.jsfund.cn" target="_blank"><img style="width:185px;height:81px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_jiashi.jpg" alt="嘉实基金" /></a>
+	<a href="http://www.cmfchina.com/main/index/index.shtml" target="_blank"><img style="width:184px;height:80px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_zhaoshang.jpg" alt="招商基金" /></a>
+	<a href="http://www.yhfund.com.cn/activezone/511880/index.html" target="_blank"><img style="width:184px;height:80px;border:1px solid black;margin-left:1px;" src="/static/img/ad_banner_yinhua.jpg" alt="银华基金" /></a>
+	</div>
+</div>
+
+<div class="J_foot_bg">
+	<div class="J_foot">
+		<div class="text">
+			<a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备12044618号</a>
+			<span class="J_vline">|</span>
+			<a href="http://weibo.com/jisilu" target="_blank">关注本站微博</a>　
+			<a href="http://www.jisilu.com/question/48275" target="_blank">问题反馈</a>　
+			<a href="http://www.jisilu.com/question/10876" target="_blank" style="color:red">加入我们</a>
+			<span class="J_vline">|</span>
+			&copy;2012-2015 - 集思录&nbsp;&nbsp;Powered by AW<br />
+			使用Chrome浏览本站最佳
+			<span class="J_vline">|</span>
+			声明：本站所有内容均为网友自发提供，不构成投资建议，请谨慎参考 
+	  </div>
+		<a href="#body_top" class="top"><img src="/static/common/common/transparent.gif" alt="top" /></a>
+	</div>
+</div>
+
+
+
+
+<!-- DO NOT REMOVE -->
+<div id="ajax_data" style="display:none"></div>
+<div style="display:none;" id="__crond">
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#__crond').html(unescape('%3Cimg%20src%3D%22' + G_BASE_URL + '/crond/run/1447397139%22%20width%3D%221%22%20height%3D%221%22%20/%3E'));
+		});
+
+	</script>
+</div>
+<!-- Escape time: 0.025340795516968 --><!-- / DO NOT REMOVE -->
+<script type="text/javascript" id="bdshare_js" data="type=tools" ></script><!--站外分享-->
+<script type="text/javascript" src="/static/js/dc.js"></script>
+</body>
+</html>

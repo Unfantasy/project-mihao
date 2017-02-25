@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link rel="stylesheet" href="css/table.css"/>
+
+</head>
+<body>
+<div class="content">
+
+    <div class="container-fluid">
+        <div id="pad-wrapper">
+
+            <!-- products table-->
+            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+            <div class="table-wrapper products-table section">
+                <div class="row-fluid head">
+                    <div class="span12">
+                        <h4>素材列表</h4>
+                    </div>
+                </div>
+
+
+                <div class="row-fluid filter-block">
+                    <div class="pull-right">
+                        <a class="btn-flat success new-product" href="addNews.html" target="rightFrame"><span style="margin-right:5px;">+</span> 新增素材</a>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="span3">
+                                标题
+                            </th>
+                            <th class="span4">
+                                <span class="line"></span>正文
+                            </th>
+                            <th class="span2">
+                                <span class="line pull-right"></span>删除
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- row -->
+
+                        <!--<tr class=''>
+                            <td>
+                                <div class="img">
+                                    <img src="images/icon.png" />
+                                </div>
+                                <a href="#" class="name">游资和机构龙虎榜</a>
+                            </td>
+                            <td class="description">
+                                游资和机构龙虎榜浩丰科技（300419）一家机构席位买入1.35亿斯莱克（3...
+
+                            </td>
+                            <td>
+                                <span class="label label-success"></span>
+                                <ul class="actions">
+                                    <li class="last"><a href="#" onclick="setHiddenState()">删 除</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class=''>
+                            <td>
+                                <div class="img">
+                                    <img src="images/icon.png" />
+                                </div>
+                                <a href="#" class="name">游资和机构龙虎榜</a>
+                            </td>
+                            <td class="description">
+                                游资和机构龙虎榜浩丰科技（300419）一家机构席位买入1.35亿斯莱克（3...
+                            </td>
+                            <td>
+                                <span class="label label-success"></span>
+                                <ul class="actions">
+                                    <li class="last"><a href="#" onclick="setHiddenState()">删 除</a></li>
+                                </ul>
+                            </td>
+                        </tr><tr class=''>
+                            <td>
+                                <div class="img">
+                                    <img src="images/icon.png" />
+                                </div>
+                                <a href="#" class="name">游资和机构龙虎榜</a>
+                            </td>
+                            <td class="description">
+                                游资和机构龙虎榜浩丰科技（300419）一家机构席位买入1.35亿斯莱克（3...
+                            </td>
+                            <td>
+                                <span class="label label-success"></span>
+                                <ul class="actions">
+                                    <li class="last"><a href="#" onclick="setHiddenState()">删 除</a></li>
+                                </ul>
+                            </td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end products table -->
+            <div class="pagination pull-right">
+                <!--<ul>
+                    <li><a  href="#">&#8249;</a></li>
+                    <li><a class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&#8250;</a></li>
+                </ul>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap2.js"></script>
+<script src="js/bootstrap-paginator.min.js"></script>
+<script src="js/updateNews.js"></script>
+<script type="text/javascript">
+
+    function setHiddenState(material_id){
+        $.ajax({
+            url: "<%= admins_set_material_hidden_state_path %>",
+            type: 'post',
+            dataType: 'json',
+            data: {
+                material_id: material_id,
+            },
+            success: function(data) {
+                parent.location.reload();
+            }
+        })
+    }
+
+    $(document).ready(function() {
+
+        $("a#popup").fancybox({
+            'hideOnContentClick': true,
+            'width': '70%',
+            'autoSize': false,
+            'z-index': 200,
+            'text-align': 'center'
+
+        });
+
+
+    });
+</script>
+</body>
+</html>

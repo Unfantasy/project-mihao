@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册账号</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        $(function () {
+            $(".phone").on("focus keyup", function (e) {
+                //手机号以空格隔开
+                if (($(this).val().length == 3 || $(this).val().length == 8) && e.keyCode != 8)
+                    this.value += " ";
+                //输入完毕之后下一步显示
+                if (isnum($(".phone")[0])) {
+                    $("#toSetPwd").addClass("btn_red").bind("click touch", function () {
+                        $("#register_phone").addClass("hide");
+                        $("#set_pwd_phone").removeClass("hide");
+                    });
+                } else {
+                    $("#toSetPwd").removeClass("btn_red").unbind("click touch");
+                }
+            });
+            $(".password").on("focus keyup", function () {
+                if (ispwd($(".password")[0])) {
+                    $("#imgCode").addClass("btn_red").removeAttr("disabled");
+
+                } else {
+                    $("#imgCode").removeClass("btn_red").attr("disabled", "disabled");
+                }
+            });
+            $("#verification_code").on("focus keyup", function () {
+                if (isSmsCode($("#verification_code")[0])) {
+                    $("#to_verify_identity_phone").addClass("btn_red").removeAttr("disabled");
+                } else {
+                    $("#to_verify_identity_phone").removeClass("btn_red").attr("disabled", "disabled");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="register_phone" class="">
+    <header>
+        <h1>使用你的手机号码</h1>
+
+        <p>注册聚财道美股服务，获得交易功能和高速行情推送。</p>
+    </header>
+    <section>
+        <input type="text" placeholder="手机号码" class="phone" id="phone" name="phone"/>
+        <p class="lt"><span>注册即表示你同意 <a href="service_agreement_zhongmi.html">《众米服务协议》</a></span></p>
+    </section>
+    <footer>
+        <!--<a href="register_mailbox.html" class="footer_right_top">使用电子邮箱注册</a>-->
+        <button class="btn_default footer_right" class="next" id="toSetPwd">下一步</button>
+    </footer>
+</div>
+<div id="set_pwd_phone" class="hide">
+    <header>
+        <p>此密码用于登录美股账号和交易下单使用请妥善保管。</p>
+
+        <h1>密码限定 <span class="mark">6-20</span>位数字或字母</h1>
+    </header>
+    <section>
+        <div class="pwd">
+            <div class="login_turn_pwd login_hide_pwd"></div>
+            <input type="password" placeholder="密码" class="password" id="password" name="password"/>
+        </div>
+    </section>
+    <footer>
+        <button class="btn_default footer_right" class="next" id="imgCode" disabled="disabled" onclick="toImgCode()">
+            下一步
+        </button>
+    </footer>
+    <div class="all_page">
+        <div class="img_code_all text_center">
+            <div class="top">
+                <span>验证码</span> <input type="text" class="verity_code" id="verity_code" name="captcha_value"
+                                        placeholder="输入下图中的字符，区分大小写"/>
+            </div>
+            <div class="middle">
+                <img src="images/loading.gif" class="img_code" id="img_code" onclick="getImgVerify()"/>
+
+                <p>看不清？ <a onclick="getImgVerify()">换一张</a></p>
+            </div>
+            <div class="bottom">
+                <button id="toVerifyPhone" onclick="toVerifyPhone()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="verify_phone" class="hide">
+    <header>
+        <h1>135&nbsp;1671&nbsp;8011</h1>
+
+        <p>已发送验证码到你手机。</p>
+    </header>
+    <section>
+        <div class="input_verification_code">
+            <input type="text" placeholder="验证码" class="verification_code" name="" id="verification_code"/>
+
+            <div class="seconds">60s</div>
+        </div>
+    </section>
+    <footer>
+        <button class="btn_default footer_right" class="next" disabled id="to_verify_identity_phone"
+                onclick="registerForPhone()">下一步
+        </button>
+    </footer>
+</div>
+<div id="verify_identity_phone" class="hide">
+    <header>
+        <h1>使用你的身份证</h1>
+
+        <p>输入姓名和身份证号码进行验证，完成交易注册</p>
+    </header>
+    <section class="verify_identity_section">
+        <input type="text" placeholder="真实姓名" class="name" id="id_name" />
+        <input type="text" placeholder="身份证号码" class="identity_num" id="id_num"/>
+        <p class="lt">验证即表示你同意 <a href="service_agreement_trade.html">《聚财道交易服务协议》</a></p>
+        <div class="agree_all">
+            <a href="login_phone.html"><button class="btn_agree_all" id="btn_agree_all" onclick="verifyIdentityPhoneRegister()">我已阅读并同意上述协议</button></a>
+        </div>
+    </section>
+</div>
+<input type="hidden" id="captcha_key" name="captcha_key"/>
+<input id="client_id" name="client_id" type="hidden" value="2MBy2FRYkaEXBYDYdAljjCbQROudlwDlWrqIQbDZ"/>
+<input id="agency" name="agency" type="hidden" value="MI-US-STK"/>
+<input type="hidden" name="auth_code" id="auth_code"/>
+<input type="hidden" name="auth_token" id="auth_token" value="dcbc114b24eb94b5a5f0d810ae0c2fb0"/>
+
+</body>
+</html>

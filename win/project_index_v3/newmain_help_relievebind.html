@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link href="images/zm_log.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/newmain.js"></script>
+    <script src="js/register.js"></script>
+    <script>
+        // JavaScript Document
+        function loadjscssfile(filename,filetype){
+
+            if(filetype == "js"){
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type","text/javascript");
+                fileref.setAttribute("src",filename);
+            }else if(filetype == "css"){
+
+                var fileref = document.createElement('link');
+                fileref.setAttribute("rel","stylesheet");
+                fileref.setAttribute("type","text/css");
+                fileref.setAttribute("href",filename);
+            }
+            if(typeof fileref != "undefined"){
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+
+        }
+        $(function(){
+            if(isMobile()){
+                loadjscssfile("css/newmain_mobile.css","css");
+            }
+        })
+
+    </script>
+    <script>
+        //判断是否是手机页面
+        function isMobile() {
+            if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)))
+                return true;
+            else
+                return false;
+        }
+		var docHeight = document.documentElement.clientHeight;;
+        $(function(){
+
+            //验证
+            verify_register_form('.rb');
+            //解绑
+            //手机号
+            $(".rb #mobile").on("keyup",function(){
+                var phone = $(this).val().NoSpace();
+                if(ismobile(phone)){
+                    $("#to-phonenum").removeAttr("disabled").removeClass("nm-noactive").addClass("nm-active");
+                }else{
+                    $("#to-phonenum").attr("disabled","disabled").removeClass("nm-active").addClass("nm-noactive");
+                }
+            });
+            //短信验证码成功后
+            $(".rb #phone-verify-code-num").on("keyup focus",function(){
+                var num = $(this).val().NoSpace();
+                if(isSmsCode(num)){
+                    $("#relieve-bind").removeAttr("disabled").removeClass("nm-noactive").addClass("nm-active");
+                }else{
+                    $("#relieve-bind").attr("disabled","disabled").removeClass("nm-active").addClass("nm-noactive");
+                }
+            });
+			if(isMobile()){
+                //解绑
+                $("#aw_login>div").css({"height":docHeight/2});
+                $(".aw-mod").css({"position":"absolute","top":docHeight/2+"px","margin-top":"-180px"});
+            }
+        })
+
+    </script>
+</head>
+<body>
+<section id="aw_login">
+    <div class="container aw_login">
+        <a href="http://www.mihaokj.com/">
+            <img src="images/shouye_icon.png" alt=""/><span>众米</span>
+        </a>
+        <div class="row rb">
+
+            <div>
+                <div class="aw-mod">
+                    <div class="aw-mod-body register_body">
+                        <form id="register_form" method="post" onsubmit="return false">
+                            <ul class="" id="rb">
+                                <li class="aw-register-first">
+                                    <input class="aw-register-mobile" type="text" placeholder="请输入交易注册登录的手机号码" id="mobile"
+                                           name="mobile" errortips="请输入11位大陆地区手机号码" onkeydown="pressEnter('toPhoneNum()')">
+                                </li>
+                                <li class="rb_submit"><button id="to-phonenum" onclick="toPhoneNum()" disabled="disabled" class="nm-noactive next">下一步</button></li>
+
+                            </ul>
+                            <ul class="hide" id="rb-phone-num">
+                                <li class="aw-register-first">
+                                    <input class="aw-register-mobile" type="text" placeholder="输入手机验证码" name="phone-verify-code-num" id="phone-verify-code-num" onkeydown="pressEnter('relieveBind()')"><div class="seconds">60s</div>
+                                </li>
+                                <li class="rb_submit"><button id="relieve-bind" onclick="relieveBind()" disabled="disabled" class="nm-noactive next">下一步</button></li>
+
+                            </ul>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

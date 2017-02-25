@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <title>讨论</title>
+    <link rel="stylesheet" href="css/talk.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+</head>
+<body>
+<div class="page" id="main">
+<!--轮播图-->
+<div class="addWrap">
+    <div class="swipe" id="mySwipe">
+        <div class="swipe-wrap">
+            <div class=""><a href="javascript:;"><img class="img-responsive" src="images/the_sweetest_company.png" height="548px"/></a></div>
+            <div><a href="javascript:;"><img class="img-responsive" src="images/ezura_cyberspace_dribbble.png" height="548px"/></a></div>
+            <div><a href="javascript:;"><img class="img-responsive" src="images/800_600.png" height="548px"/></a></div>
+        </div>
+    </div>
+    <ul id="position">
+        <li class="cur"></li>
+        <li class=""></li>
+        <li class="" id="lastdot"></li>
+    </ul>
+</div>
+<!--轮播图结束-->
+<div class="nav">
+    <ul>
+        <li>
+            <a href="javascript:;" target="_blank">
+                <img src="images/taolun_yijianfankui.png" width="119px" height="92px"/>
+                <b>产品反馈</b><i>Feedback</i>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" target="_blank">
+                <img src="images/taolun_xianliao.png" width="119px" height="92px" class="navImgCenter"/>
+                <b class="navTextCenter">闲聊</b><i>Chat</i>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;"target="_blank" >
+                <img src="images/taolun_ganhuofenxiang.png" width="119px" height="92px"/>
+                <b>干货分享</b><i>Share</i>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--导航区结束-->
+<div class="bg">
+<!--<div class="content">
+    <table class="fankui">
+        <tr>
+            <td>馈</td>
+        </tr>
+    </table>
+
+    <div class="title">软件不错继续加油 <span class="time">刚刚</span></div>
+    <div class="titleNav">喜欢这个软件非常直接展示用户需求</div>
+    <div class="imgs">
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img3"><div class="photoNum">共10张</div></div>
+    </div>
+    <div class="name">
+        <span >高冷的姑娘</span>
+        <div class="number">
+            <img src="images/taolun_pinglun.png"/><span>220</span>
+        </div>
+    </div>
+</div>--></div>
+<!-- 内容结束 -->
+
+<div class="extra"><a href="javascript:;" target="_blank"></a><img src="images/taolun_tianjia.png"/></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/talk.js"></script>
+
+<script type="text/javascript">
+    //轮播
+    $(".swipe-wrap img").width(document.body.clientWidth);
+    console.log(document.body.clientWidth);
+    $(".swipe-wrap").height($(".swipe-wrap img").height());
+//    console.log($(".swipe-wrap img").height());
+    $(".content").width((document.body.clientWidth-36)+"px");
+    var bullets = document.getElementById('position').getElementsByTagName('li');
+    var banner = Swipe(document.getElementById('mySwipe'), {
+        auto: 2000,
+        continuous: true,
+        disableScroll: false,
+        callback: function (pos) {
+            var i = bullets.length;
+            while (i--) {
+                bullets[i].className = ' ';
+            }
+            bullets[pos].className = 'cur';
+        }
+    });
+</script>
+
+</body>
+</html>

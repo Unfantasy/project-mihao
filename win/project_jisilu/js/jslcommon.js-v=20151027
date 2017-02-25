@@ -1,0 +1,14 @@
+function baiduSearch () {
+	var wd=document.getElementById("aw-search-query").value;
+	if(wd){
+		var link="http://www.baidu.com/s?si=www.jisilu.cn&cl=3&ct=2097152&tn=baidulocal&word="+wd;
+		window.open(link);
+	}
+}
+function googleSearch () {
+	var wq=document.getElementById("aw-search-query").value;
+	if(wq){
+		var link="http://www.google.com/search?domains=www.jisilu.cn&sitesearch=www.jisilu.cn&q="+wq;
+		window.open(link);
+	}
+}

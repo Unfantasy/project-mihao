@@ -1,0 +1,49 @@
+/** 对命名空间的支持 */
+function namespace(ns){
+    if(typeof(ns)!="string")return;
+    ns=ns.split(".");
+    var o,ni;
+    for(var i=0,len=ns.length;i<len,ni=ns[i];i++){
+       try{o=(o?(o[ni]=o[ni]||{}):(eval(ni+"="+ni+"||{}")))}catch(e){o=eval(ni+"={}")}
+    }
+}
+
+/** 默认命名空间 */
+namespace('JSL');
+
+/** 名空间别名函数 */
+JSL.ns = function(ns){
+    namespace(ns);
+};
+
+
+//======== 下列提醒函数需要 jquery 与 jquery-easyui 的支持 ========
+JSL.showOk = function(title, msg){
+	title = title || '操作成功';
+	msg = msg || title;
+	if(window['jQuery'] && $.messager){
+		$.messager.show({
+			title:title,
+			msg: msg,
+			timeout:3000,
+			showType:'slide'
+		});
+	}else{
+		alert(title + '\n' + msg);
+	}
+
+};
+
+JSL.showErr = function(title, msg){
+	title = title || '操作失败';
+	msg = msg || title;
+	if(window['jQuery'] && $.messager){
+		$.messager.show({
+			title:title,
+			msg: msg,
+			showType:'slide'
+		});
+	}else{
+		alert(title + '\n' + msg);
+	}
+};

@@ -1,0 +1,238 @@
+.container {
+    width: 100%;
+    padding: 0;
+}
+
+nav, .page1, .page2, .page3 {
+    min-width: 0;
+}
+
+/*.mainList {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../images/nm_list.png") no-repeat;
+    background-size: 100% 100%;
+}*/
+
+.page1, .absolute {
+    position: relative;
+    top: 0;
+}
+
+.page1Nav {
+    display: none;
+}
+
+.page2Nav {
+    display: block;
+    opacity: 1;
+    background: #ffffff;
+}
+
+.navbar-header {
+    position: relative;
+}
+
+.zmIcon img {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.container>.navbar-header{
+    margin-left: 0;
+    margin-right: 0;
+}
+.navbar-toggle {
+    margin: 0;
+    padding:0;
+    width:.75rem;
+    height:.75rem;
+    margin-right: .65rem;
+    margin-top: .47rem;
+    margin-bottom: .47rem;
+    position: relative;
+}
+.navLine{
+    width: .61rem;
+    height:1px;
+    display: block;
+    background-color: #f45531;
+}
+.navLineBox{
+    width:.75rem;
+    height:.75rem;
+    padding-left: .07rem;
+    padding-right: .07rem;
+    position: absolute;
+    transition:all .5s;
+    top: 0;
+    left: 0;
+}
+.navLineBoxTop{
+    padding-top:.25rem;
+}
+.navLineBoxBottom{
+    padding-top:.52rem;
+}
+.navAopen .navLineBoxTop{
+    transform: rotate(45deg);
+    padding-top: .37rem;
+}
+.navAopen .navLineBoxBottom{
+    transform: rotate(-45deg);
+    padding-top:.37rem;
+}
+.zmTab li {
+    width: 100%;
+}
+.zmTab>ul>li:hover{
+    background:#fff;
+}
+/*nav*/
+.navbar-fixed-top .navbar-collapse {
+    max-height: none;
+    overflow: hidden;
+}
+
+#navbar-collapse li {
+    padding: 0;
+    text-align: center;
+    height: auto;
+}
+
+#navbar-collapse li > a {
+    line-height: 2;
+    font-size: .65rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding: .27rem 0;
+    color: #050505;
+}
+
+.navbar-brand > span {
+    font-size: 30px;
+    position: relative;
+    top: 17px;
+}
+
+.navbar-nav {
+    padding: 0 .7rem;
+    height: 100vh;
+}
+
+#navbar-collapse .active {
+    background: none;
+}
+
+.page2Nav li.active:before {
+    position: static;
+}
+
+.mainJoinUsBox {
+    font-size: 17px;
+    position: static;
+    border: none;
+    width: 100%;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background: #fff;
+}
+.mainJoinUsBox div {
+    padding: 0;
+}
+/*end nav*/
+.page1 .vertical-center {
+    width: 100%;
+}
+
+.page1 h1 {
+    font-size: 1rem;
+}
+
+.page1 p {
+    font-size: .65rem;
+}
+
+.loadBtn {
+    font-size: .65rem;
+    width: 70%;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    margin-top: 3.4rem;
+}
+
+.loadBtn:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+}
+
+.yelloLine {
+    height: 1px;
+}
+
+.page2 {
+    padding-top: .36rem;
+    padding-bottom: .36rem;
+}
+
+.page2 .tip {
+    width: 45%;
+    height: 10rem;
+    display: inline-block;
+    margin: .33rem .36rem;
+}
+
+.page2 .tipTile {
+    font-size: .5rem;
+}
+
+.page2 .tipDescription {
+    font-size: .32rem;
+}
+
+.page2 .number {
+    font-size: .47rem;
+    bottom: .217rem;
+}
+
+.page3 {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+    height: auto;
+    background: #060606 url(../images/home_background2.png) no-repeat;
+    background-position: -.4rem -3.8rem;
+    background-size: 158% auto;
+}
+
+.aboutUs {
+    width: 86%;
+    padding: 1.37rem .64rem;
+    margin-right: 7%;
+}
+.aboutUs .title {
+    font-size: .64rem;
+}
+.aboutUs .blackLine {
+    width: 1rem;
+    height: 1px;
+    margin: .5rem auto 1.5rem;
+    background-color: #484848;
+}
+.aboutUs .description{
+    font-size: .46rem;
+}
+.showQrcode:hover + .zmSubscriptionImg{
+    width: 10rem;
+    height: 10rem;
+}

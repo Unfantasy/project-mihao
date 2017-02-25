@@ -1,0 +1,79 @@
+html, body,p {
+    margin: 0;
+    padding: 0;
+    font-family:"Microsoft Yahei";
+    font-size:14px;
+}
+/*tradeSupport main*/
+.tr_contant{
+    width:100%;
+    padding:0;
+    margin:0;
+    font-size:1rem;
+    color:#95a2aa;
+    background-color:#f5f7fa;
+    height:100%;
+}
+.tr_contant ul{
+    padding:0;
+    margin:0;
+    background-color:#fff;
+}
+.tr_contant ul li{
+    height:3rem;
+    line-height:3rem;
+    list-style: none;
+    border-top:.6px solid #bbb;
+}
+.tr_contant ul li a{
+    width:100%;
+}
+.tr_contant ul li span{
+    padding-left:1rem;
+}
+.tr_contant ul li img{
+    float: right;
+    padding-right: 1rem;
+    height:1rem;
+    margin-top:1rem;
+    margin-bottom:auto;
+    border:none;
+}
+.tr_contant .tr_last{
+    border-bottom:.6px solid #bbb;
+}
+/* end tradeSupport main*/
+
+/*tradeSupport clause*/
+article{
+    padding-left:1rem;
+    padding-right: 1rem;
+}
+article h2{
+    font-size:1.2rem;
+}
+article h2 img{
+    width:3px;
+    height:19px;
+    position:relative;
+    top:3px;
+    right:3px;
+}
+article p{
+    font-size:1.1rem;
+    color:#555;
+    padding-left:.7rem;
+    line-height:2;
+}
+
+/*²¹³ä*/
+article .tst_add{
+    background-color: #d8d8d8;
+    margin-top: 2em;
+    padding:.9rem;
+    padding-left:0px;
+}
+article .tst_add p{
+    color:#fff;
+}
+/* end tradeSupport clause*/

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="shortcut icon" href="images/zm_log.ico "/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="css/newmain_mobile.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js "></script>
+</head>
+<script>
+    var huilv = 6.6;
+    var TIMENUM1 = 0;
+    $(function(){
+        $(".home_nav li").click(function(){
+            var $this = $(this);
+            var index = $this.index();
+            index = index==0?1:index;
+            $(".home_nav li").eq(index).addClass("active").siblings().removeClass("active");
+            $(".home_content").eq(index-1).removeClass("hide").siblings().addClass("hide");
+            $(".home_content").eq(index-1).find(".home_input").focus();
+        });
+        $(".home_input_in").keyup(function(){
+            var dollar = $(this).text();
+            var renminbi = (dollar*huilv).toFixed(2);
+            $(".home_in_renminbi").text(renminbi);
+        });
+        $(".home_input_out").keyup(function(){
+            var dollar = $(this).text();
+            var renminbi = (dollar*huilv).toFixed(2);
+            $(".home_out_renminbi").text(renminbi);
+        });
+        $(".home_exit").click(function(e){
+            e.stopPropagation();
+        });
+        $(".home_button").on('mousedown touchstart',function(){
+            $(this).css({top:'2px',left:'2px'});
+        });
+        $(".home_button").on('mouseup touchend',function(){
+            $(this).css({top:'0',left:'0'});
+        });
+
+    });
+
+    function fundInNotice(){
+        var TokenScope = 'ominBasic';
+        var amount = "6.00";
+        var memo = '582469';
+        var payType = 'Bank';
+        var subAccount = 'omin0000000002';
+        //30s只能点击一次
+        console.log(TIMENUM1);
+        var time1;
+        if(TIMENUM1==0) {
+            time1 = setInterval(function () {
+                TIMENUM1++;
+                if (TIMENUM1>=10) {
+                    clearInterval(time1);
+                    TIMENUM1 = 0;
+                }
+            }, 1000);
+        }else{return false;}
+        console.log('Hello World!');
+//        $.ajax({
+//            url:"https://proxy.trubuzz.cn/omin/api/bank/deposit",
+//            type:'post',
+//            datatype:"json",
+//            crossDomain: true,
+//            data:{TokenScope:TokenScope,amount:amount,memo:memo,payType:payType,subAccount:subAccount},
+//            headers:{'Authorization': 'Bearer rHi3Ekff2Yvmu7y7x5tMB1C4vmCJtf3mmeUgSQOi','Content-Type': 'application/json','Access-Control-Allow-Origin':'*'},
+//            beforeSend:function(xhr){
+//
+//            },
+//            success:function(data){
+//                alert(data);
+//            },
+//            error:function(){
+//
+//            }
+//        })
+    }
+</script>
+<body>
+<nav class="home_nav">
+    <div>
+        <ul>
+            <li><span>张学友</span><a href="#" class="home_exit"><img src="images/gerenzhongxin_guangbi.png" alt="" title="关闭"/></a></li>
+            <li class="active">我的账户</li>
+            <li>美股资产</li>
+            <li>资金转入</li>
+            <li>资金转出</li>
+        </ul>
+    </div>
+</nav>
+<div class="navbar-fixed-top home_nav_top">
+    <div class="navbar-header">
+        <a class="navbar-brand" src="http://www.mihaokj.com/"><img src="images/zhongmilogo.png" alt="钟米图标"
+                                                                   id="nm-icon"/></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                type="button">
+            <span class="nm-list"></span>
+            <!--<span class="glyphicon glyphicon-menu-hamburger" style="font-size: 20px;color:#000"></span>-->
+        </button>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="newmain.html" class="active">首页</a></li>
+            <li><a href="newmain_mycompany.html">公司</a></li>
+            <li><a href="newmain_help.html">帮助</a></li>
+            <li><a href="">官方论坛</a></li>
+            <li><a href="#" target="_blank">Cybertron工作室</a></li>
+        </ul>
+    </div>
+</div>
+<section>
+    <div class="home_content home_content1">
+        <div class="home_mycount">
+            <div class="home_mycount_title">交易账户</div>
+            <table>
+                <tr>
+                    <td>账户名</td>
+                    <td>123&nbsp;4567&nbsp;8901</td>
+                </tr>
+                <tr>
+                    <td>名字</td>
+                    <td>李道杨</td>
+                </tr>
+                <tr>
+                    <td>交易帐号</td>
+                    <td>622700213221030</td>
+                </tr>
+                <tr>
+                    <td>账户状态</td>
+                    <td>同app</td>
+                </tr>
+            </table>
+        </div>
+        <div class="home_mycount">
+            <div class="home_mycount_title">众米账户</div>
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td>名侦探柯南</td>
+                    <td><a href="" class="home_relievebind">解除绑定</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="home_content home_content2 hide">
+        <div class="home_mycount">
+            <div class="home_mycount_title">账户概览</div>
+            <table>
+                <tr>
+                    <td>总资产</td>
+                    <td>$123</td>
+                </tr>
+                <tr>
+                    <td>持仓</td>
+                    <td>$133311</td>
+                </tr>
+                <tr>
+                    <td>浮动盈利</td>
+                    <td>$4112</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="home_content home_content3 hide">
+        <div class="home_moneyflow home_moneyflow1">
+            <div class="home_mycount_title">提交汇款通知</div>
+            <table class="home_moneyflow_table">
+                <tr>
+                    <td><img src="images/gerenzhongxin_meiguo.png" alt=""/></td>
+                    <td><span>$</span><span class="home_input home_input_in" contenteditable="true"></span></td>
+                </tr>
+                <tr>
+                    <td><img src="images/gerenzhongxin_zhuanhuan.png" alt=""/></td>
+                    <td>$1.00=$6.60</td>
+                </tr>
+                <tr>
+                    <td><img src="images/gerenzhongxin_zhongguo.png" alt=""/></td>
+                    <td>￥<span class="home_in_renminbi">0.00</span></td>
+                </tr>
+            </table>
+            <div class="block-center home_button_box"><button class="home_button" onclick="fundInNotice()">提交资金转入通知</button></div>
+        </div>
+        <div class="home_moneyflow home_moneyflow2">
+            <div class="home_mycount_title">入金指引</div>
+            <table>
+                <tr>
+                    <td colspan="2" class="bold">汇款人信息</td>
+                </tr>
+                <tr>
+                    <td>姓名</td>
+                    <td>李道杨</td>
+                </tr>
+                <tr>
+                    <td>银行账户</td>
+                    <td>6227002432210395030</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="bold">收款人信息</td>
+                </tr>
+                <tr>
+                    <td>账户名</td>
+                    <td>柯南道尔</td>
+                </tr>
+                <tr>
+                    <td>开户行</td>
+                    <td>中国银行</td>
+                </tr>
+                <tr>
+                    <td>银行账号</td>
+                    <td>6227002432210395030</td>
+                </tr>
+                <tr>
+                    <td>备注信息</td>
+                    <td>备注中请填入你的入金识别码 <span class="mark">23423</span>方便核对</td>
+                </tr>
+            </table>
+            <p class="home_prompt"><span class="mark">*</span> 提交汇款通知后，请使用网银或银行柜台完成人民币入金汇款
+                完成汇款后最快2个小时资金即可到账。</p>
+        </div>
+    </div>
+    <div class="home_content home_content4 hide">
+        <div class="home_moneyflow home_moneyflow1">
+            <div class="home_mycount_title">提交转出通知</div>
+            <table class="home_moneyflow_table">
+                <tr>
+                    <td><img src="images/gerenzhongxin_meiguo.png" alt=""/></td>
+                    <td><span>$</span><span class="home_input home_input_out" contenteditable="true"></span> </td>
+                </tr>
+                <tr>
+                    <td><img src="images/gerenzhongxin_zhuanhuan.png" alt=""/></td>
+                    <td>$1.00=$6.60</td>
+                </tr>
+                <tr>
+                    <td><img src="images/gerenzhongxin_zhongguo.png" alt=""/></td>
+                    <td>￥<span class="home_out_renminbi">0.00</span></td>
+                </tr>
+            </table>
+            <div class="block-center home_button_box"><button class="home_button">提交资金转出通知</button></div>
+        </div>
+        <div class="home_moneyflow home_moneyflow2">
+            <div class="home_mycount_title">收款账户</div>
+            <table>
+                <tr>
+                    <td>账户名</td>
+                    <td>李道杨</td>
+                </tr>
+                <tr>
+                    <td>银行账户</td>
+                    <td>6227002432210395030</td>
+                </tr>
+            </table>
+            <p class="home_prompt"><span class="mark">*</span>提交转出资金通知后，最快2个小时将对应的人民币金额赚到
+                你的绑定银行账户。</p>
+        </div>
+        <div class="home_moneyflow home_moneyflow3">
+            <div class="home_mycount_title"></div>
+            <div class="home_moneyflow_content">
+                <p class="mark">可取金额</p>
+                <p>$ <span>17533</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

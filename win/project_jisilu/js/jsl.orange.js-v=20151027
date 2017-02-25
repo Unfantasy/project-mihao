@@ -1,0 +1,73 @@
+JSL.ns('JSL.aw.orange');
+
+JSL.aw.showLogin = function(callback){
+	if($('#jsl_login_dialog').length==0){
+		var dlg = [];
+		dlg.push('<div id="jsl_login_dialog" class="modal hide fade" style="width:250px;height:200px" tabindex="-1" role="dialog" aria-labelledby="jslSuccessModalLabel" aria-hidden="true">');
+		dlg.push('<div class="modal-header">');
+		dlg.push('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>');
+		dlg.push('<h3 id="jslSuccessModalLabel">用户登录</h3>');
+		dlg.push('</div>');
+		dlg.push('<div class="modal-body">');
+		dlg.push('<form id="jsl_login_form" method="post" onsubmit="return false" action="/account/ajax/login_process/">');
+		dlg.push('<ul>');
+		dlg.push('<li>');
+		dlg.push('<input type="text" placeholder="用户名/手机号/邮箱" name="user_name" value="" style="width:150px;font-size:14px;font-weight:normal"/>');
+		dlg.push('</li>');
+		dlg.push('<li>');
+		dlg.push('<input type="password" placeholder="密码" name="password" style="width:150px;font-size:14px;font-weight:normal"/>');
+		dlg.push('</li>');
+		dlg.push('<li>');
+		dlg.push('<a href="javascript:;" onclick="ajax_post($(\'#jsl_login_form\'), JSL.aw.afterLoginFormProcesser);" class="pull-right btn btn-large btn-success">登录</a>');
+		dlg.push('<input id="jsl_login_radio" type="checkbox" value="1" checked="true" name="net_auto_login" />');
+		dlg.push('<label for="jsl_login_radio" style="display:inline">记住我</label>');
+		dlg.push('</li>');
+		dlg.push('</ul>');
+		dlg.push('</form>');
+		dlg.push('</div>');
+		dlg.push('</div>');
+		$(dlg.join('')).appendTo($('body'));
+	}
+	JSL.aw.onLoginSuccess = callback;
+	$('#jsl_login_dialog').modal('show');
+}
+
+JSL.aw.afterLoginFormProcesser = function(result){
+	if (result.errno != 1 && result.err) {
+		alert(result.err);
+		return false;
+	}else{
+		$('#jsl_login_dialog').modal('hide');
+		JSL.aw.isLoginSuccess = true;
+		if(typeof JSL.aw.onLoginSuccess === 'function'){
+			return JSL.aw.onLoginSuccess.apply(JSL.aw);
+		}
+		return true;
+	}
+}
+
+JSL.aw.orange.trySubscribe = function(){
+	if(0 == G_USER_ID && !JSL.aw.isLoginSuccess){
+		JSL.aw.showLogin(JSL.aw.orange.doSubscribe);
+	}else{
+		JSL.aw.orange.doSubscribe();
+	}
+};
+
+JSL.aw.orange.doSubscribe = function(){
+	$.get('/jsl/orange/',function(result){
+		if(result.reapply){
+			var d = dialog({
+			    title: '重复申购',
+			    content: result.msg
+			});
+			d.showModal();
+		}else{
+			var d = dialog({
+			    title: result.isError ? '申购失败' : '申购成功',
+			    content: result.msg
+			});
+			d.showModal();
+		}
+	},'json');
+};

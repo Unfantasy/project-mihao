@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="css/usssg.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/swiper-3.3.1.jquery.min.js"></script>
+    <script src="js/usssg.js"></script>
+    <script>
+        $(function(){
+            $("label").on('click',function(){
+                $("input:checked").parent('label').addClass("active");
+                $("input:checked").parents('td').siblings().find("label").removeClass("active");
+            });
+            $(".switch").click(function(){
+                if($(this).hasClass('switch_active')){
+                    $(".usssg_search_content").hide();
+                    $(this).removeClass('switch_active').find("span").animate({left:'.98rem'});
+                }else{
+                    $(".usssg_search_content").show();
+                    $(this).addClass('switch_active').find("span").animate({left:'1px'});
+                }
+            });
+        });
+    </script>
+</head>
+<body class="usssg_search">
+<section>
+    <div class="usssg_search_tip">允许查看交易记录 <span class="switch switch_active"><span></span></span></div>
+    <div class="usssg_search_content">
+        <p class="usssg_search_content_title">付费定价</p>
+        <p class="usssg_search_content_content">你可以设定一个价格，其他人需要付费才能查看你在进行比赛的交易记录，公开交易记录也能赚得收益。</p>
+        <table class="selects">
+            <tr>
+                <td><label for="select_1" class="active">
+                    <input type="radio" id="select_1" hidden name="setup_money" value="免费"/>免费
+                </label></td>
+                <td><label for="select_2">
+                    <input type="radio" id="select_2" hidden name="setup_money" value="￥1"/>￥1
+                </label></td>
+                <td><label for="select_3">
+                    <input type="radio" id="select_3" hidden name="setup_money" value="￥5"/>￥5
+                </label></td>
+                <td><label for="select_4">
+                    <input type="radio" id="select_4" hidden name="setup_money" value="￥9"/>￥9
+                </label></td>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

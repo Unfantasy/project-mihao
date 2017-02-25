@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>帮助</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/newmain.js"></script>
+    <script>
+        // JavaScript Document
+        function loadjscssfile(filename,filetype){
+
+            if(filetype == "js"){
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type","text/javascript");
+                fileref.setAttribute("src",filename);
+            }else if(filetype == "css"){
+
+                var fileref = document.createElement('link');
+                fileref.setAttribute("rel","stylesheet");
+                fileref.setAttribute("type","text/css");
+                fileref.setAttribute("href",filename);
+            }
+            if(typeof fileref != "undefined"){
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+
+        }
+        $(function(){
+            if(isMobile()){
+                loadjscssfile("css/newmain_mobile.css","css");
+            }
+        })
+
+    </script>
+</head>
+<body>
+<nav class="navbar-fixed-top">
+
+    <div class="container nm-nav">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.mihaokj.com/"><img src="images/zhongmilogo.png" alt="钟米图标"
+                                                                        id="nm-icon"/></a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                        type="button">
+                    <span class="nm-list"></span>
+                </button>
+
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="newmain.html">首页</a></li>
+                <li><a href="newmain_mycompany.html">公司</a></li>
+                <li><a href="newmain_help.html" class="active">帮助</a></li>
+                <li><a href="">官方论坛</a></li>
+                <li><a href="#" target="_blank">Cybertron工作室</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="container nm-help-content">
+        <div class="request-answers">
+            <div class="tip">交易</div>
+            <div class="qa-container">
+                <h5 class="show"><span class="down"></span>1.交易时间</h5>
+                <div class="answer answer-show">
+                    美国东部时间（EDT）：周一至周五9:30～16:00 <br/><br/>
+                    美夏令时（4月－11月）：北京时间21:30～4:00 <br/><br/>
+                    美冬令时（11月－次年4月）：北京时间22:30～5:00
+                </div>
+
+                <h5 class="show"><span class="down"></span>2.下单时间</h5>
+                <div class="answer answer-show">
+                    现阶段只支持交易时间才能提交委托订单，我们会逐步完善交易，尽快提供24小时的订单委托服务。
+                </div>
+                <h5 class="show"><span class="down"></span>3.交易订单类型</h5>
+                <div class="answer answer-show">
+                    <table>
+                        <tr>
+                            <td style="min-width:6em">当日现订单：</td>
+                            <td>订单以用户限定的价格或者“更好”的价格成交，订单当日有效，类似于A股的普通下单 <br/><br/></td>
+                        </tr>
+                        <tr>
+                            <td>限时市价单：</td>
+                            <td>
+                                订单按照买/卖对手方一方的要价成交，订单即时成交有效，不能成交立即撤销委托，类似于A股的扫单功能，可以保证订单成交，但是会一定的成交价格风险。
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+                <h5 class="show"><span class="down"></span>4.下单交易流程</h5>
+                <div class="answer answer-show">
+                    <div class="answer-container">
+                        <div class="block-center">
+                            <div class="register-guide usstock-trade">
+                                1.美股交易（卖出）
+                            </div>
+                            <div class="register-guide input-price">
+                                2.输入价格
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <div class="container-fluid">
+        <div class="row nm-footer">杭州米号科技有限公司版权所有 浙ICP备14016681号 <a href="newmain_pravicy.html">隐私条款</a></div>
+    </div>
+</footer>
+</body>
+</html>

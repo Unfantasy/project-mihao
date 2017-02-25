@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        function toVerifyMailFw(){
+            var username = $("#mail_fw").val();
+            username = username.NoSpace();
+            $.ajax({
+                url:" https://tb2devapi.trubuzz.com/web/sso/forget-password/web",
+                type : 'post',
+                dataType : 'json',
+                data:{username:username},
+                success:function(data){
+                    if(data){
+                        alert(JSON.stringify(data));
+                    }
+                }
+            })
+        }
+        $(function(){
+            //输入完毕之后下一步显示
+            $(".mailbox").bind("keyup",function(){
+                if(ismail($(".mailbox")[0])){
+                    $("#to_verify_mail_fw").addClass("btn_red").removeAttr("disabled");
+                }else {
+                    $("#to_verify_mail_fw").removeClass("btn_red").attr("disabled","disabled");
+                }
+                })
+        });
+    </script>
+</head>
+<body>
+<div id="forget_pwd_mailbox">
+<header>
+    <h1>使用你的电子邮箱</h1>
+    <p>接收Trubuzz美股服务，获得交易功能和高速行情推送</p>
+</header>
+<section>
+    <input type="text" placeholder="电子邮箱" class="mailbox" id="mail_fw"/>
+</section>
+<footer>
+    <button class="btn_default footer_right" disabled id="to_verify_mail_fw" onclick="toVerifyMailFw()">下一步</button>
+</footer>
+</div>
+<div id="verify_mailbox_fw" class="hidw">
+    <header class="verify_mailbox_header">
+        <p>验证邮件已经发送到 <span class="mark">13516718011@163.com</span> 请登录此邮箱，点击验证激活链接，通过后可以进行身 份验证，完成交易注册。</p>
+    </header>
+    <footer>
+        <a href=""><button class="btn_default btn_red footer_right">完成</button></a>
+    </footer>
+</div>
+</body>
+</html>

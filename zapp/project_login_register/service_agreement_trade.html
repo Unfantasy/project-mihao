@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>交易服务协议</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html,body{
+            font-family:"Microsoft Yahei";
+            font-size:14px;
+            margin: 0;
+            padding: 0;
+            color:#000;
+            height:100%;
+        }
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <input type="text" id="test"/>
+
+</div>
+<script>
+$("#test").blur(function(){
+   console.log(this);
+    console.log([this]);
+    console.log($(this));
+});
+</script>
+</body>
+</html>

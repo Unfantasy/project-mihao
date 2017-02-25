@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册账号</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        $(function(){
+            //输入完毕之后下一步显示
+            $(".mailbox").on("keyup",function(e){
+                //输入完毕之后下一步显示
+                if(ismail($(".mailbox")[0])){
+                    $("#to_set_pwd_mailbox").addClass("btn_red").removeAttr("disabled");
+                }else{
+                    $("#to_set_pwd_mailbox").removeClass("btn_red").attr("disabled","disabled");
+                }
+            });
+        });
+        function toSetPwdMailBox(){
+            var email = $(".mailbox").val();
+            email = email.NoSpace();
+            $.ajax({
+                url : "https://tb2devapi.trubuzz.com/web/sso/resend-confirm-mail/web",
+                type : 'post',
+                dataType : 'json',
+                data:{email:email},
+                success:function(){
+                    if(data){
+                        alert(JSON.stringify(data));
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="register_mailbox" class="register_mailbox">
+    <header>
+        <h1>使用你的电子邮箱</h1>
+        <p>注册聚财道美股服务，获得交易功能和高速行情推送。</p>
+    </header>
+    <section>
+        <input type="text" placeholder="电子邮箱" class="mailbox"/>
+        <p class="lt"><span>注册意味着你同意 <a href="service_agreement_zhongmi.html">众米服务协议</a></span></p>
+    </section>
+    <footer>
+        <a href="register_phone.html" class="footer_left register_mailbox_tab">使用手机号注册</a>
+        <button class="btn_default footer_right" id="to_set_pwd_mailbox" disabled onclick="toSetPwdMailBox()">下一步</button>
+    </footer>
+</div>
+<div id="set_pwd_mailbox" class="set_pwd_mailbox hide">
+    <header>
+
+        <p>此密码用于登录美股账号和交易下单使用请妥善保管。</p>
+        <h1>密码限定 <span class="mark">4-20</span>位,英文数字结合</h1>
+    </header>
+    <section>
+        <input type="password" placeholder="密码" class="password"/>
+    </section>
+    <footer>
+        <a href=""><button class="btn_default footer_right" id="next">下一步</button></a>
+    </footer>
+</div>
+<div id="verify_mailbox" class="hide">
+    <header class="verify_mailbox_header">
+        <p>验证邮件已经发送到 <span class="mark">13516718011@163.com</span> 请登录此邮箱，点击验证激活链接，通过后可以进行身 份验证，完成交易注册。</p>
+    </header>
+    <footer>
+        <a href=""><button class="btn_default btn_red footer_right">下一步</button></a>
+    </footer>
+</div>
+<div id="verify_identity_mailbox" class="hide">
+    <section class="verify_identity_section">
+        <input type="text" placeholder="真实姓名" class="name"/>
+        <input type="text" placeholder="身份证号码" class="identity_num"/>
+        <p class="lt">仔细阅读 <a href="service_agreement_trade.html">《交易服务协议》</a></p>
+
+        <div class="agree_all">
+            <a href="login_mailbox.html"><button class="btn_agree_all" id="btn_agree_all">我已阅读并同意上述协议</button></a>
+        </div>
+    </section>
+</div>
+</body>
+</html>

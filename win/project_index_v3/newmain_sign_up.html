@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>报名</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="images/zm_log.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/newmain.js"></script>
+    <script>
+        $(function () {
+            //报名验证
+            verify_register_form('#register_form');
+            //全部成功后
+            $(document).on("keyup focus","#nm_name,#nm_class,#nm_stud_num,#nm_phone",function(){
+                var name = $("#nm_name").val();
+                var student_class  = $("#nm_class").val();
+                var student_id  = $("#nm_stud_num").val();
+                var phone  = $("#nm_phone").val();
+                if(name && student_class && student_id && phone){
+                    $("#register_submit").removeAttr("disabled").removeClass("nm-noactive");
+                }else{
+                    $("#register_submit").attr("disabled","disabled").addClass("nm-noactive");
+                }
+            });
+        });
+        function submitForm1() {
+            // jquery 表单提交
+            $("#register_form").ajaxSubmit({
+                type: 'post',
+                dataType: 'json',
+                success:function(data){
+                    if(data.success){
+                        location.href = "newmain_sign_up_complete.html";
+                    }
+                    else{
+                        $.ligerDialog.error('发送失败');
+                    }
+                }
+            });
+            return false;
+            // 必需返回false，不然表单会本人再做一次提交操作，并且页面跳转
+        }
+        function signUp(){
+            submitForm1();
+        }
+    </script>
+</head>
+<body>
+<section id="aw_login">
+    <div class="container aw_login">
+        <a href="http://www.mihaokj.com/">
+            <img src="images/shouye_icon.png" alt=""/><span>众米</span>
+        </a>
+        <div class="row">
+
+            <div>
+                <div class="aw-mod">
+                    <div class="aw-mod-body register_body">
+                        <form action="${ctx }/us_stock_contest/save" method="post" id="register_form" onsubmit="return false;">
+                            <ul class="" id="register">
+                                <li class="nm-register-first">
+                                    <input class="nm_name" type="text" placeholder="请输入你的名字" id="nm_name"
+                                           name="name" errortips="名字不能为空">
+                                </li>
+                                <li>
+                                    <input class="nm_class" type="text" name="student_class" placeholder="请输入你的班级"id="nm_class" errortips="班级不能为空" value="">
+                                </li>
+                                <li>
+                                    <input class="nm_stud_num" type="text" name="student_id" id="nm_stud_num" placeholder="请输入你的学号" errortips="学号不能为空" >
+                                </li>
+                                <li>
+                                    <input class="nm_phone" type="text" name="phone" id="nm_phone" placeholder="请输入你的手机号" errortips="手机号不能为空" onkeydown="pressEnter('signUp()')">
+                                </li>
+
+                                <li class="register_submit"><button id="register_submit" onclick="signUp()" disabled="disabled" class="nm-noactive">报名</button></li>
+
+                            </ul>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid">
+        <div class="row nm-footer">杭州米号科技有限公司版权所有 浙ICP备14016681号 <a href="newmain_pravicy.html">隐私条款</a></div>
+    </div>
+</footer>
+</body>
+</html>

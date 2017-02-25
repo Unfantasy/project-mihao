@@ -1,0 +1,418 @@
+
+i {
+    font-style: normal;
+}
+
+a {
+    color: #888;
+}
+
+.red {
+    color: #fe3a44;
+}
+
+.green {
+    color: #58a73e;
+}
+
+a:hover, a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+thead {
+    margin-bottom: 10px;
+}
+
+thead td {
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+}
+
+tbody td {
+
+    padding: 0;
+}
+
+.table td.span4 {
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.table tr.aw-stock-zh td {
+    border: 0;
+}
+
+.aw-content-wrap .table{
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+.aw-content-wrap .table td{
+    font-size:16px;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 10em;
+}
+.aw-content-wrap .table thead{
+    font-weight: 600;
+}
+.aw-content-wrap .table tbody td:nth-child(1){
+    width:6em;
+}
+.aw-content-wrap tbody td:nth-child(1),.aw-content-wrap tbody td:nth-child(3),.aw-content-wrap tbody td:nth-child(4){
+    color:#999;
+}
+.aw-content-wrap tbody .stock-num{
+    font-size: 14px;
+    color:#999;
+}
+.aw-content-wrap .table tbody .sss-stock span{
+    font-size: 18px;
+    display:block;/*内联对象需加*/
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容*/
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.aw-stock-zh td .total-stock {
+    box-sizing: border-box;
+    width: 172px;
+    height: 172px;
+    margin: 16px;
+    padding: 20px 0;
+    color:#f45531;
+    font-family: "Circular", "Helvetica Neue", Arial, sans-serif;
+}
+
+.aw-stock-zh td .total-stock .param1 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+.aw-stock-zh td .total-stock .param2 {
+    margin-top: 20px;
+    font-size:.8rem;
+}
+
+
+.aw-stock-zh td .total-stock .param3 {
+    margin-top: 15px;
+    font-size: 15px;
+    padding-right: 10px;
+    color:#999;
+}
+
+
+tbody td {
+    font-size: 22px;
+    color: black;
+    height: 30px;
+    padding-top: 15px;
+    margin-bottom: auto;
+}
+
+#operation-history td span {
+    /*background-color:#999;
+    border-radius: 8px;
+    color:white;*/
+    font-size: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 10px;
+}
+
+#operation-history td span.index {
+    background: none;
+    color: black;
+}
+
+#operation-history-text {
+    margin-top: 20px;
+    width: 620px;
+    height: 100px;
+    font-size: 14px;
+    padding: 15px;
+}
+
+/*投资计划输入框*/
+.invest-plan p {
+    display: inline-block;
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 10px;
+    line-height: 26px;
+}
+
+.invest-plan input {
+    width: 497px;
+    height: 26px;
+    line-height: 26px;
+    border-left: none;
+}
+
+/*end 投资计划输入框*/
+#invest-plan-text {
+    width: 620px;
+    height: 100px;
+    font-size: 14px;
+    padding: 15px;
+}
+
+/*输入框宽度控制一样*/
+#invest-plan .input-prepend .add-on {
+    width: 120px;
+}
+
+/*股票代码*/
+.stock {
+    font-size: 19px;
+}
+
+.stock span {
+}
+
+.stock div {
+    font-size: 14px;
+}
+
+tbody td.stock-increase, tfoot td.stock-increase {
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody td.stock-select, tfoot td.stock-select {
+    font-size: 19px;
+    vertical-align: middle;
+}
+
+.stock-select select {
+    margin-bottom: 0;
+}
+
+.dropdpwn a span {
+    text-decoration: none;
+}
+
+/*操盘日志预览界面*/
+.aw-publish-prepend h1 {
+    font-weight: normal;
+}
+
+.aw-publish-prepend .prepend-title {
+
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.aw-publish-prepend thead td {
+    font-size: 20px;
+}
+
+.aw-publish-prepend tfoot tr, .aw-publish-prepend tbody tr {
+    font-size: 20px;
+}
+
+.aw-publish-prepend tfoot tr .stock span {
+    font-size: 20px;
+}
+
+.aw-publish-prepend tfoot tr .stock .stock-num {
+    font-size: 15px;
+}
+
+.aw-publish-prepend tfoot tr .stock-increase {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.aw-publish-prepend tfoot tr .stock-select {
+    padding-right: 40px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.aw-publish-prepend tfoot tr .stock-select img {
+    width: 30px;
+}
+
+.aw-mod-footer {
+    padding-bottom: 30px;
+}
+
+#aw-publish-prepend .little-title {
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 40px;
+    padding-top:0;
+    padding-bottom:0;
+    margin-left: -10px;
+    margin-bottom: 20px;
+}
+#aw-publish-prepend .today-analyse {
+    background-position: 238px 18px;
+    background-size: 45px;
+}
+
+#aw-publish-prepend .today-analyse td {
+    text-align: center;
+}
+
+.aw-history-content .little-title {
+    background: url("../images/operation_history.png") no-repeat 4px 2px;
+    background-size: 30px;
+}
+
+.aw-invest-plan .little-title {
+    background: url("../images/invest_plan.png") no-repeat 4px 4px;
+    background-size: 30px;
+}
+
+.aw-history-content, .aw-invest-plan {
+    padding-left: 10px;
+}
+
+.aw-invest-plan p {
+    margin: 0;
+}
+.aw-invest-plan p.invest-plan{
+    margin-top:1rem;
+}
+.table .today-analyse td, .table .operation-history td, .table .invest-plan td {
+    vertical-align: middle;
+    padding-top: 20px;
+    text-indent: 1.4em;
+}
+.table .today-analyse td, .table .operation-history td, .table .invest-plan td{
+     box-shadow: 0 -5px 6px -1px #ccc;
+}
+#aw-publish-prepend .today-analyse .title{
+    font-size:2.5rem;
+    text-align: center;
+    line-height: 2;
+    padding-left: 70px;
+}
+#aw-publish-prepend tbody .aw-stock-zh{
+    box-shadow: 0 -5px 6px -1px #ccc;
+}
+#aw-publish-prepend>table{
+    box-shadow: 0 -5px 6px -1px #ccc;
+}
+.aw-history-content,.aw-invest-plan{
+    box-shadow: 0 -5px 6px -1px #ccc;
+}
+
+.US-stock td span, .operation-history td span, .invest-plan td span, .invest-plan td div {
+    text-indent: 0;
+}
+
+.today-analyse {
+    background: url("../images/today_analyse.png") no-repeat 4px 19px;
+    background-size: 30px;
+}
+
+.operation-history {
+    background: url("../images/operation_history.png") no-repeat 4px 14px;
+    background-size: 30px;
+}
+
+.invest-plan {
+    background: url("../images/invest_plan.png") no-repeat 4px 16px;
+    background-size: 30px;
+}
+
+.in-table {
+    width: 100%;
+}
+
+.in-table thead tr td:nth-child(1) {
+    max-width: 4.5em;
+}
+
+.table .in-table thead tr td:nth-child(2) {
+    max-width: 3.5em;
+}
+
+.table .in-table td {
+    padding: 0;
+    font-size: 20px;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table .in-table tbody td {
+    font-size: 16px;
+}
+
+.red_get {
+    height: 20px;
+    width: 80px;
+    background: #fe9ca1;
+    -webkit-text-size-adjust: none;
+    margin: 2px 0;
+    font-size: 14px;
+    padding-right: 0;
+    overflow: hidden;
+    margin: auto;
+}
+
+.red_get .red_first {
+    background: #fe3a44;
+    float: left;
+    padding: 0 5px;
+    color: #fff;
+}
+
+.red_get .li {
+    float: left;
+    padding: 0 2px;
+    color: #fff;
+}
+
+.green_get {
+    height: 20px;
+    width: 80px;
+    background: #abd39e;
+    -webkit-text-size-adjust: none;
+    margin: 2px 0;
+    font-size: 14px;
+    padding-right: 0;
+    overflow: hidden;
+    margin: auto;
+}
+
+.green_get .green_first {
+    background: #58a73e;
+    float: left;
+    padding: 0 5px;
+    color: #fff;
+}
+
+.green_get .li {
+    float: left;
+    padding: 0 2px;
+    color: #fff;
+}
+
+.star_light {
+    background: url("../images/star_light.png") no-repeat;
+    background-size: cover;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+}
+
+.star_dark {
+    background: url("../images/star_dark.png") no-repeat;
+    background-size: cover;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+}
+
+.markitup-box .table-in ul, #markItUpPreviewFrames .table-in ul {
+    list-style-type: square;
+    margin: auto;
+    padding: 0;
+}

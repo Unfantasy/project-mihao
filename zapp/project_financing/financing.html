@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>融资</title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/financing.css"/>
+    <link rel="stylesheet" href="css/zmMobile.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+</head>
+<body class="finacing">
+<section>
+    <div class="banner">
+        <img src="images/rongzi_group.png"/>
+            <div class="vertical-middle">
+                <h2 class="">融资</h2>
+                <p>精确定位财富</p>
+            </div>
+    </div>
+    <div class="bannerOpened">
+
+        <div class="vertical-middle">
+            <img src="images/tanchuang_mairu.png"/>
+            <p>已开启融资</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="parameter">
+            <p class="tip">可融资金额：</p>
+            <p class="tipContent">最多为1倍总资产金额。</p>
+        </div>
+        <div class="parameter">
+            <p class="tip">融资利率：</p>
+            <p class="tipContent">年化6.5%、按360天计算。</p>
+        </div>
+        <div class="parameter">
+            <p class="tip">计算标准：</p>
+            <p class="tipContent">以秒计算利息，计算条件，当用户持仓金额大于用户现金净值时，开始计息，用户持仓金额小于用户现金停止计息，利息直接由用户账户扣除。</p>
+        </div>
+        <div class="finacingBtnBox"><button onclick='openFinancing()'>申请开启融资</button></div>
+        <input type="hidden" id="subAccount" value=""/>
+        <input type="hidden" id="Authorization" value=""/>
+    </div>
+</section>
+<footer>
+    <p>开启融资后不使用融资金额，无利息费用。</p>
+</footer>
+<script>
+    $("#subAccount").val(theRequest['subAccount']||'');
+    $("#Authorization").val(theRequest['token']||'');
+    var leverage = theRequest['Leverage'];
+    if(leverage==2){
+        $("body").addClass('finacingOpened');
+    }
+    //footer
+    window.onload = function(){
+        var fHeight = $('footer').outerHeight(),dHeight = getDocHeight(),secHeight = $('section').outerHeight();
+        if(dHeight<fHeight+secHeight)
+            $('footer').css('position','static');
+    };
+
+    //开启融资方法
+    function openFinancing(){
+        showLoading();
+        var DOMAIN = 'https://proxy.jucaidao.com/omin';
+//        var DOMAIN = 'http://devominapi.jucaidao.com:8866';//test
+        var subAccount = $("#subAccount").val();
+        var Authorization = 'Bearer '+ $("#Authorization").val();
+//        alert('Authorization:'+Authorization);
+        var data = {'agency': 'MI-US-STK', 'platform': 'IB', 'subAccount': subAccount, 'leverage': '2','Authorization':Authorization};
+        $.ajax({
+            url:DOMAIN+'/api/sub-account/leverage',
+            type:'POST',
+            data:data,
+            dataType:'json',
+            beforeSend:function(xhr){
+                xhr.setRequestHeader('Authorization', Authorization);
+            },
+            success:function(e){
+                hideLoading();
+                if(e.success==true){
+                    //成功
+                    showTip('成功开启',function(){
+                        $("body").addClass('finacingOpened');
+                        if(isIOS){
+                            setupWebViewJavascriptBridge(function(bridge) {
+                                var leverage = '2';
+                                bridge.callHandler('leverageInHandler', leverage, function() {})
+                            });
+                        }
+                    });
+                }else{
+                    alert(JSON.stringify(e));
+                }
+            },
+            error:function(error){
+                hideLoading();
+                if(error.status==401){
+                    showTip('登录异常',function(){
+                        if(isIOS){
+                            setupWebViewJavascriptBridge(function(bridge) {
+                                var errorCode = '401';
+                                bridge.callHandler('noUserInHandler', errorCode, function(data) {
+                                    var responseData = data;
+                                    responseCallback(responseData)
+                                })
+                            });
+                        }
+                    });
+                }else{
+                    alert('Failed:'+JSON.stringify(error))
+                }
+            }
+        });
+
+    }
+</script>
+</body>
+</html>

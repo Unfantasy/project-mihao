@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>杭州米号科技有限公司</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link href="images/zm_log.ico" rel="shortcut icon" />
+    <meta name="description" content="">
+    <meta name="keywords" content="众米,米号">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/owl.theme.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 500px)" href="css/newmain_mobile.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/newmain.js"></script>
+    <script>
+
+        $(function(){
+            var width = $(".box").width();
+            var index = 0;
+            var len = $(".box").length;
+            $(".right_arrow").click(function(){
+                $(".left_arrow").show().removeClass("hide");
+                index++;
+                var now = index+1;
+                $(".page_2 h2").text($(".page_2 h2").attr("data-"+now));
+                if(now==len){
+                    $(".right_arrow").hide();
+                }
+                $(".ulbox ul").animate({"left":-index*width});
+                $(".dot").eq(index).addClass("active").siblings().removeClass("active");
+            });
+            $(".left_arrow").click(function(){
+                $(".right_arrow").show();
+                index--;
+                var now = index+1;
+                $(".page_2 h2").text($(".page_2 h2").attr("data-"+now));
+                if(now==1){
+                    $(".left_arrow").hide();
+                }
+                $(".ulbox ul").animate({"left":-index*width});
+                $(".dot").eq(index).addClass("active").siblings().removeClass("active");
+            });
+            $(".dot").click(function(){
+                var index = $(this).index();
+                var now = index+1;
+                $(".page_2 h2").text($(".page_2 h2").attr("data-"+now));
+                $(".ulbox ul").animate({"left":-index*width});
+                $(this).addClass("active").siblings().removeClass("active");
+                if(now==1&&len>=2){
+                    $(".left_arrow").hide();
+                    $(".right_arrow").show();
+                }else if(now==len){
+                    $(".right_arrow").hide();
+                    $(".left_arrow").show().removeClass("hide");
+                }
+            });
+            //移动端轮播
+            $("#carousel_mobile").owlCarousel({
+                navigation : true,
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                singleItem : true
+                // "singleItem:true" is a shortcut for:
+                // items : 1,
+                // itemsDesktop : false,
+                // itemsDesktopSmall : false,
+                // itemsTablet: false,
+                // itemsMobile : false
+
+            });
+        });
+        /*//预加载图片
+        var images = new Array()
+        function preloadImages() {
+            for (i = 0; i < preloadImages.arguments.length; i++) {
+                images[i] = new Image()
+                images[i].src = preloadImages.arguments[i]
+            }
+        }
+        preloadImages("images/shouye.png");*/
+
+    </script>
+</head>
+<body>
+<nav class="navbar-fixed-top">
+
+    <div class="container nm-nav">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.mihaokj.com/"><img src="images/zhongmilogo.png" alt="钟米图标"
+                                                                        id="nm-icon"/></a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                        type="button">
+                    <span class="nm-list"></span>
+                </button>
+
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="newmain.html" class="active">首页</a></li>
+                <li><a href="newmain_mycompany.html">公司</a></li>
+                <li><a href="newmain_help.html">帮助</a></li>
+                <li><a href="">官方论坛</a></li>
+                <li><a href="#" target="_blank">Cybertron工作室</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <section>
+        <!--download-->
+        <div class="container-fluid nm-nav-download" >
+            <div class="row text-center ">
+                <div class="col-xs-1 col-md-1"></div>
+                <div class="col-xs-5 col-md-5 nm-downloadbox1 ">
+                    <img src="images/ios.png" alt="ios下载地址" class="nm-downloadimg"/>
+                    <img src="images/shouye_ios.png"/></div>
+                <div class="col-xs-5 col-md-5 nm-downloadbox2">
+                    <img src="images/android.png" alt="android下载地址" class="nm-downloadimg"/>
+                    <img src="images/shouye_androis.png"/>
+                </div>
+                <div class="col-xs-1 col-md-1"></div>
+            </div>
+            <div class="row text-center nm-pull">
+                <a  id="nm-pull-on"><img src="images/shouye_shouqi.png"/>
+                <p>收起</p></a>
+            </div>
+        </div>
+        <!--download-->
+        <div class="page page_1 table_box">
+            <div class="table_cell_box">
+                <h1 >众米</h1>
+                <h1 style="color:#888;">有态度的投资方式</h1>
+                <a href="javascript:;" class="nm_download" id="nm_download">软件免费下载</a>
+            </div>
+        </div>
+
+        <div class="page page_2 ">
+            <h2 class="text-center" data-2="拥有世界领先公司" data-1="一个账户配置全球市场">一个账户配置全球市场</h2>
+            <div class="ulbox">
+                <ul>
+                    <div class="box box_1" >
+                        <li>
+                            <div class="img">CHAU</div>
+                            <span>沪深300做多</span>
+                        </li>
+                        <li>
+                            <div class="img">CHAD</div>
+                            <span>沪深300做空</span>
+                        </li>
+                        <li>
+                            <div class="img">USO</div>
+                            <span>石油指数做多</span>
+                        </li>
+                        <li>
+                            <div class="img">SCO</div>
+                            <span>原油指数2倍做空</span>
+                        </li>
+                        <li>
+                            <div class="img">GDX</div>
+                            <span>黄金做多</span>
+                        </li>
+                        <li>
+                            <div class="img">SLV</div>
+                            <span>白银做多</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>标普500</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>英国指数</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>德国指数</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>法国指数</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>日本指数</span>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <span>香港指数</span>
+                        </li>
+                    </div>
+                    <div class="box box_2">
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                        </li>
+                    </div>
+                </ul>
+                <div class="dotlist">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+
+            </div>
+            <div class="left_arrow hide"></div>
+            <div class="right_arrow"></div>
+        </div>
+        <div class="page_2_mobile">
+            <div id="carousel_mobile">
+                <div class="item item1">
+                    <h2>一个账户配置全球市场</h2>
+                    <div>
+                        <div class="img">CHAU</div>
+                        <span>沪深300做多</span>
+                    </div>
+                    <div>
+                        <div class="img">CHAD</div>
+                        <span>沪深300做空</span>
+                    </div>
+                    <div>
+                        <div class="img">USO</div>
+                        <span>石油指数做多</span>
+                    </div>
+                    <div>
+                        <div class="img">SCO</div>
+                        <span>原油指数2倍做空</span>
+                    </div>
+                    <div>
+                        <div class="img">GDX</div>
+                        <span>黄金做多</span>
+                    </div>
+                    <div>
+                        <div class="img">SLV</div>
+                        <span>白银做多</span>
+                    </div>
+                </div>
+                <div class="item item2">
+                    <h2>一个账户配置全球市场</h2>
+                    <div>
+                        <div class="img"></div>
+                        <span>标普500</span>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                        <span>英国指数</span>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                        <span>德国指数</span>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                        <span>法国指数</span>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                        <span>日本指数</span>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                        <span>香港指数</span>
+                    </div>
+                </div>
+                <div class="item item3">
+                    <h2>拥有世界领先公司</h2>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="item item4">
+                    <h2>拥有世界领先公司</h2>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="item item5">
+                    <h2>拥有世界领先公司</h2>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                    <div>
+                        <div class="img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="register_trade_1">
+            <div class="nm_content">
+                 <img src="images/iphone.png" alt="" class="rt_img_1"/>
+                <div class="rt_right" >
+                    <div class="title">
+                        从注册到交易只需3步
+                    </div>
+                    <div class="rt_first">
+                        <p class="tip">1.交易注册</p>
+                        <p class="tip_content">只需本人手机和身份证，10分钟可完成注册申请到审核完成。转入资金后即可开启全球投资之旅</p>
+                        <button class="rt_button">立即注册</button>
+                        <button class="rt_button">了解更多</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="register_trade_2">
+            <div class="nm_content">
+                <img src="images/nexus-5.png" alt="" class="rt_img_2"/>
+
+                <div class="rt_left">
+                    <div class="rt_second">
+                        <p class="tip">2.转入资金</p>
+                        <p class="tip_content">绑定银行账户、人民币入金、最快两小时到达交易账户。转入转出资金使用固定汇率计算，避免汇率波动损失。SIPC最高50万美元资金保险</p>
+                        <br/>
+                    </div>
+                    <div class="rt_third">
+                        <p class="tip">3.下单交易</p>
+
+                        <p class="tip_content">无最低资金要求、最少可以买卖1股、无限制T+0交易、盈透底层交易通道保证交易订单安全快速成交</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="register_trade_mobile page_3">
+            <h2 class="text-center">从注册到交易只需3步</h2>
+            <div class="center-block nm_content">
+                <div class="row text-center">
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/free.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>1.交易注册</h4>
+                        <p>只需本人手机和身份证，10分钟可完成注册申请到审核完成。转入资金后即可开启全球投资之旅</p>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/fenxi.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>2.转入资金</h4>
+                        <p>绑定银行账户、人民币入金、最快两小时到达交易账户。转入转出资金使用固定汇率计算，避免汇率波动损失。SIPC最高50万美元资金保险</p>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/xinxi.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>3.下单交易</h4>
+                        <p>无最低资金要求、最少可以买卖1股、无限制T+0交易、盈透底层交易通道保证交易订单安全快速成交</p>
+                    </div>
+                </div>
+                <a href=""><button class="rt_button">立即注册</button></a>
+                <a href=""><button class="rt_button">了解更多</button></a>
+
+            </div>
+            <!--<img src="images/iphone.png" alt="" class="rt_img_1"/>
+            <div class="title">
+                从注册到交易只需3步
+            </div>
+            <div class="rt_first">
+                <p class="tip">1.交易注册</p>
+                <p class="tip_content">只需本人手机和身份证，10分钟可完成注册申请到审核完成。转入资金后即可开启全球投资之旅</p>
+
+            </div>
+            <div class="rt_second">
+                <p class="tip">2.转入资金</p>
+                <p class="tip_content">绑定银行账户、人民币入金、最快两小时到达交易账户。转入转出资金使用固定汇率计算，避免汇率波动损失。SIPC最高50万美元资金保险</p>
+                <br/>
+            </div>
+            <div class="rt_third">
+                <p class="tip">3.下单交易</p>
+                <p class="tip_content">无最低资金要求、最少可以买卖1股、无限制T+0交易、盈透底层交易通道保证交易订单安全快速成交</p>
+                <button class="rt_button">立即注册</button>
+                <button class="rt_button">了解更多</button>
+            </div>-->
+        </div>
+        <div class="page page_3">
+            <h2 class="text-center">实用功能提高投资效率</h2>
+            <div class="center-block nm_content">
+                <div class="row text-center">
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/free.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>免费实时行情服务</h4>
+                        <p>提供A股、美股免费实时行情数据，快速及时，遍览全球股市行情</p>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/fenxi.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>自选个股分析</h4>
+                        <p>个股收益率提醒，让你不会错过买卖点。今日收益分享，可以与好友投资互动。相关个股设置，方便关注行业其他个股联动</p>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <img src="images/xinxi.png" class="nm_img_3"  alt="free" title="free"/>
+                        <h4>免费实时行情服务</h4>
+                        <p>提供A股、美股免费实时行情数据，快速及时，遍览全球股市行情</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+       <!-- <div class="container ">
+
+            <div class="row ">
+                <div class="col-md-1 col-xs-2"></div>
+                <div class="col-xs-8 col-md-3">
+                    <img src="images/shouye_phone.png" alt="iphone6s" id="nm-phone"/>
+                </div>
+                <div class="col-xs-12 col-md-8 text-center">
+                    <div class="row text-center">
+                        <p class="nm-text1">有态度的投资方式</p>
+                        <p class="nm-text2">high-profile investment</p>
+                        <img src="images/shouye_shifang.png" alt="下载" id="nm-download"/>
+                        <img src="images/shouye_leixing.png" alt="下载类型" id="nm-download-type"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row nm-content-list text-center">
+                <div class="col-xs-12 col-md-6 col-md-push-5"><img src="images/shouye_shuju.png" alt="数据" class="nm-content-type"/></div>
+                <div class="col-xs-12 col-md-6 col-md-pull-6">
+                    <h1>行情数据&nbsp;实时查看</h1>
+                    <p>提供A股、美股免费实时行情数据，快速及时。不管你在何时何地，都能准确获得所需要的行情信息</p>
+                </div>
+            </div>
+            <div class="row nm-content-list text-center">
+                <div class="col-xs-12 col-md-5"><img src="images/shouye_maimaimeigu.png" alt="数据" class="nm-content-type"/></div>
+                <div class="col-xs-12 col-md-6 to-top-3">
+                    <h1>买卖美股&nbsp;投资全球</h1>
+                <p>10分钟快速注册审核，人民币出入金2小时到账，交易佣金$0.01/股，最低买卖1股，一个交易账户，就可以投资全球优质资产。</p>
+                    <a href="intrduce_USstocktrade.html" target="_blank"><button class="btn-red btn-right">了解更多</button></a>
+                    <a href="newmain_register.html" target="_blank" id="nm-register"><button class="btn-red btn-left">开始注册</button></a>
+                </div>
+            </div>
+            <div class="row nm-content-list text-center">
+                <div class="col-xs-12 col-md-6 col-md-push-5"><img src="images/shouye_naozhong.png" alt="闹钟" class="nm-content-type"/></div>
+                <div class="col-xs-12 col-md-6 col-md-pull-6">
+                    <h1>收益提醒&nbsp;走势分析</h1>
+                    <p>设置一个目标收益率，当个股到达预先设定的收益率，系统会及时发送提醒信息，提醒你进行交易操作。同时也可以查看收益走势分析，方便你复盘总结。</p>
+                </div>
+            </div>
+            <div class="row nm-content-list text-center">
+                <div class="col-xs-12 col-md-5"><img src="images/shouye_fenxiang.png" alt="数据" class="nm-content-type"/></div>
+                <div class="col-xs-12 col-md-6">
+                    <h1>收益分享&nbsp;乐趣无限</h1>
+                    <p>个股收益分享给好友，使用实物化的方式来表示你的个股当日收益，并不爆露收益的具体金额。</p>
+                </div>
+            </div>
+            <div class="row nm-content-list text-center">
+                <div class="col-xs-12 col-md-6 col-md-push-5"><img src="images/shouye_gegu.png" alt="数据" class="nm-content-type"/></div>
+                <div class="col-xs-12 col-md-6 col-md-pull-6">
+                    <h1>相关个股&nbsp;及时查看</h1>
+                    <p>添加关注个股的关联个股或指数，这样可以方便查看个股联动，板块行情变化，不需要全部添加到自选股。</p>
+                </div>
+            </div>
+        </div>-->
+        <!--about us-->
+        <div class="container-fluid ">
+        <div class="row nm-last">
+            <div class="col-xs-12 col-md-6 col-md-push-6 text-center full_v_box"><img src="images/erweima.png" alt="数据" class="nm-content-type middle_box"/>
+            </div>
+            <div class="col-xs-12 col-md-6 col-md-pull-6 full_v_box">
+                <div class="middle_box">
+                    <h4>关于我们</h4>
+                    <p>众米是由杭州米号科技有限公司于2014年末推出的一款轻量、简洁的自选股管家应用，在版本的开发中，我们深入挖掘用户的需求，着重打造了证券信息传递这一功能。</p><br/>
+                    <p>产品反馈及讨论QQ群： 419619824</p>
+                    <p>微信服务号：微信搜索“众米订阅号”</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <!--end about us-->
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <div class="row nm-footer">杭州米号科技有限公司版权所有 浙ICP备14016681号 <a href="newmain_pravicy.html">隐私条款</a></div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

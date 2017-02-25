@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width"/>
+    <style>
+        html,body{
+            padding:0;
+            margin:0;
+            color: #fff;
+            position: relative;
+        }
+        section{
+            position: relative;
+            padding:1px .5rem 5rem;
+            background: #5c43ab;
+            border-radius: 0 0 .5rem .5rem;
+            background-image: -ms-linear-gradient(bottom left,#5c43ab 0,#8f43ab 50%,#ab4388 100%);
+            background-image: -o-linear-gradient(bottom left,#5c43ab 0,#8f43ab 50%,#ab4388 100%);
+            background-image: -webkit-linear-gradient(bottom left,#5c43ab 0,#8f43ab 50%,#ab4388 100%);
+            background-image: -moz-linear-gradient(bottom left,#5c43ab 0,#8f43ab 50%,#ab4388 100%);
+            background-image: linear-gradient(to top right,#5c43ab 0,#8f43ab 50%,#ab4388 100%);
+        }
+        .rankingBox{
+            width:4.926rem;
+            height:4.5rem;
+            background: url("images/bisai_mingci.png") no-repeat center center;
+            background-size: 100% auto;
+            padding-top:.5rem;
+            padding-bottom:.5rem;
+            font-size: .4rem;
+            text-align: center;
+            padding-left:.4rem;
+            margin:.5rem auto;
+            line-height: 4.5rem;
+        }
+        .ranking{
+            font-size: 1.2rem;
+        }
+
+        .flexBox p{
+            font-size: .35rem;
+            margin:.13rem 0;
+        }
+        .flex3{
+            display:inline-block;
+            width: 33%;
+            text-align: center;
+            float: left;
+        }
+        .flex3>div{
+            width:2.2rem;
+            height:2.2rem;
+            border-radius: 50%;
+            margin: 0 auto;
+            line-height: 2.2rem;
+            font-size: .38rem;
+        }
+        .flex3:nth-child(1)>div{
+            background-color: #71a6ff;
+        }
+        .flex3:nth-child(2)>div{
+            background-color: #f45531;
+        }
+        .flex3:nth-child(3)>div{
+            background-color: #ffc700;
+        }
+        .ruleTip{
+            position: absolute;
+            bottom:.5rem;
+            right:.5rem;
+            color:#fff;
+            font-size: .35rem;
+            text-decoration: none;
+        }
+        footer{
+            position:fixed;
+            bottom: 0;
+            overflow: hidden;
+            height:2.5rem;
+            width:5rem;
+            overflow: hidden;
+            text-align: center;
+            left:50%;
+            -webkit-transform: translatex(-50%);
+            -moz-transform: translatex(-50%);
+            -ms-transform: translatex(-50%);
+            -o-transform: translatex(-50%);
+            transform: translatex(-50%);
+        }
+        .download{
+            width: 100%;
+            color:#fff;
+            line-height:3rem;
+            font-size: .67rem;
+            text-decoration: none;
+            position: absolute;
+            top:0;
+            left: 0;
+            z-index: 5;
+        }
+        .bg{
+            background-color: rgba(0,0,0,.8);
+            border-radius: 50%;
+            width:5rem;
+            height:5rem;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .wechatLead{
+            background: rgba(0,0,0,.7) url("m/images/wechat_lead.png") no-repeat center;
+            background-size: 100%;
+            width:100%;
+            height:100%;
+            height:100vh;
+            position:fixed;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script>
+            var dpr, rem, scale;
+            var docEl = document.documentElement;
+            var fontEl = document.createElement('style');
+            var metaEl = document.querySelector('meta[name="viewport"]');
+            dpr = window.devicePixelRatio || 1;
+            rem = docEl.clientWidth * dpr / 10;
+            scale = 1 / dpr;
+            // 设置viewport，进行缩放，达到高清效果
+            metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+            // 设置data-dpr属性，留作的css hack之用
+            docEl.setAttribute('data-dpr', dpr);
+            // 动态写入样式
+            docEl.firstElementChild.appendChild(fontEl);
+            fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+            // 给js调用的，某一dpr下rem和px之间的转换函数
+            window.rem2px = function(v) {
+                v = parseFloat(v);
+                return v * rem;
+            };
+            window.px2rem = function(v) {
+                v = parseFloat(v);
+                return v / rem;
+            };
+            window.dpr = dpr;
+            window.rem = rem;
+            function hide(e){
+                $(e).attr("hidden","true");
+            }
+            function wechatTip(){
+                if(is_weixn()){
+                    $(".wechatLead").removeAttr("hidden");
+                }
+            }
+            //是否是在微信浏览器里面
+            function is_weixn(){
+                var ua = navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+    </script>
+</head>
+<body>
+<section>
+    <div class="rankingBox"><span class="ranking" id="ranking">4</span>名</div>
+    <div class="flexBox">
+        <div class="flex3">
+            <div class="goal" id="goal"></div>
+            <p>积分</p>
+        </div>
+        <div class="flex3">
+            <div class="money" id="money"></div>
+            <p>奖励</p>
+        </div>
+        <div class="flex3">
+            <div class="last_time" id="lastTime"></div>
+            <p>截止时间</p>
+        </div>
+    </div>
+    <a href="http://mihaokj.com/html/trade_rule.html" class="ruleTip">交易规则提示</a>
+    <div class="wechatLead" hidden onclick="hide(this)"></div>
+</section>
+<footer>
+    <a id="download" class="download" href="#" onclick="wechatTip()">开始下载</a>
+    <div class="bg"></div>
+</footer>
+<script>
+    //判断是否是IOS
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    var download = document.getElementById("download");
+    if(isiOS){
+        download.href = "https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8";
+    }else{
+        download.href = "http://mimikj.com:8081/mimikj/app/zhongmiApp.apk";
+    }
+
+    //网址获取参数并注入
+    var username,ranking,goal,money,lastTime,rankingEle,usernameEle,goalEle,lastTimeEle;
+    var theRequest = new Object();
+    var src = window.location.search; //获取url中"?"符后的字串
+//    var src= "?username=名侦探柯南&ranking=6&goal=500&money=￥200&lastTime=3月20日";
+    if (src.indexOf("?") != -1) {
+        var str = src.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+        }
+    }
+    usernameEle = document.getElementsByTagName("title")[0];
+    rankingEle = document.getElementById("ranking");
+    goalEle = document.getElementById("goal");
+    moneyEle = document.getElementById("money");
+    lastTimeEle = document.getElementById("lastTime");
+    username = theRequest['username']||"";
+    usernameEle.innerText = username+"的分享";
+    rankingEle.innerText = theRequest['ranking']||"";
+    theRequest['goal'] = parseInt(theRequest['goal']);
+    goalEle.innerText = theRequest['goal']||"0";
+    moneyEle.innerText = theRequest['money']||"0";
+    lastTimeEle.innerText = theRequest['lastTime']||"";
+</script>
+</body>
+</html>

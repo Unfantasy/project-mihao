@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>闲人搭</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=HbUVYMUg6PwbOnXkztdgSQlQ"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/common_icon.css"/>
+    <link rel="stylesheet" href="css/fsgallery.css"/>
+    <link rel="stylesheet" href="css/rent.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/fs_forse.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/rent.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .go {
+            margin: 3rem auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid #f00;
+            font-size: 60px;
+            line-height: 95px;
+            color: #000;
+
+        }
+
+    </style>
+    <script>
+
+        $(function () {
+            $(".modal-footer button").click(function(){
+
+            });
+            var screenHeight = window.screen.height;
+            var dialogHeight = $(".modal-dialog").height();
+            $(".modal-dialog").css("top",screenHeight-dialogHeight/2);
+        });
+    </script>
+</head>
+<body>
+<div class="addWrap rent_photos">
+    <div class="swipe" id="mySwipe">
+        <div class="swipe-wrap">
+            <div><a href="images/1a.jpg"><img class="img-responsive" src="images/1a.jpg"/></a></div>
+        </div>
+    </div>
+
+</div>
+
+<div id="summary" class="panel room-section">
+    <div class="page-container-responsive">
+        <div class="row" style="padding:20px 0">
+            <div class="col-md-3 space-sm-2 text-center">
+                <div class="media-photo-badge">
+                    <a class="media-photo media-round">
+                        <img class="host-profile-image rent_landlord" src="images/kenan.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="text-center-sm">14:00-16:00</div>
+                <h1 class="overflow h3 space-1 space-top-1 text-center-sm">这是一个主题</h1>
+
+                <div id="display-address" class="space-2 text-center-sm">Fondettes, Centre, 法国</div>
+
+                <div class="row row-condensed text-muted text-center">
+                    <div class="col-sm-3"><i class="icon icon-private-room icon-size-2"></i></div>
+                    <div class="col-sm-3"><i class="icon icon-group icon-size-2"></i></div>
+                    <div class="col-sm-3"><i class="icon icon-double-bed icon-size-2"></i></div>
+                </div>
+                <div class="row row-condensed text-muted text-center">
+                    <div class="col-sm-3">独立房间</div>
+                    <div class="col-sm-3">4位房客</div>
+                    <div class="col-sm-3">1张床</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+</div>
+</div>
+<div id="details" class="page-container-responsive">
+    <div class="row space-top-4">
+        <div class="col-lg-8 js-details-column">
+            <h4 class="space-4 text-center-sm">
+                <span>Party规则</span>
+            </h4>
+
+            <div>
+                <p>
+                    <span>(URL HIDDEN)Une expérience insolite, pour une occasion exceptionnelle. Un lit rond de 2,4 m de diamètre, où on peut dormir à deux, ou en famille à 3 ou 4 si les enfants sont petits.</span>
+                    <br><span>Petit déjeuner et pique-nique possibles sur demande.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- end Party规则-->
+</div>
+
+<div class="page-container-responsive">
+
+    <!-- 地图 -->
+    <div class="row rent_map_1">
+        <div class="rent_map" id="rent_map"></div>
+    </div>
+    <!--end 地图-->
+    <!-- 便利设施-->
+    <div class="row amenity">
+        <div class="col-md-3">
+            <span>参与条件</span>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div>
+                        <div class="space-1">
+                            <span><i class="icon h3 icon-internet"></i></span>
+                            <span>带宠物</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="space-1">
+                            <span><i class="icon h3 icon-parking"></i></span>
+                            <span>带食物</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div>
+                        <div class="space-1">
+                            <span><i class="icon h3 icon-cup"></i></span>
+                            <span>带伴侣</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="space-1">
+                            <span><i class="icon h3 icon-family"></i></span>
+                            <span>欢迎家庭/携带孩子入住</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 便利设施-->
+    <!-- 评论-->
+    <div class="row">
+        <div class=" ac_comment ">
+            <dl>
+                <dd>
+                    <dl>
+                        <dt><span>留言</span>
+                        </dt>
+                        <dd>
+                            <div class="ac_comment_card">
+                                <div class="username">帅牛
+                                    <time class="time">2015-12-23</time>
+                                </div>
+                                <div class="score">
+
+                                </div>
+                                <div class="comment">
+                                    360目前好像还未看到SC13 E3，
+                                    还未正式签署最终私有化协议，不过媒体已经大肆报道谈妥，应该也没什么风险，就是个走流程时间问题，这家资质比较好，过桥资金量也比较大，后面进程会比较快。中概股私有化行情已经到鱼尾阶段了。
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="ac_comment_card">
+                                <div class="username ">showhand
+                                    <time class="time">2015-12-03</time>
+                                </div>
+                                <div class="comment">
+                                    新手学习，怎么开户买美股
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="ac_comment_card">
+                                <div class="username ">竹语松涛</div>
+                                <div class="score">
+                                    <time class="time">2015-12-23</time>
+                                </div>
+                                <div class="comment">
+                                    鱼尾巴留给你了。我昨天已经清空了。
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="ac_comment_card">
+                                <div class="username ">子非虫
+                                    <time class="time">2015-12-13</time>
+                                </div>
+                                <div class="comment">
+                                    这样的话可以考虑下航美传媒，九月三十号就达成协议了，比奇虎早两个月，并且现在折价7.33%
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div class="ac_comment_card">
+                                <div class="username ">九年一剑
+                                    <time class="time">2015-11-03</time>
+                                </div>
+                                <div class="comment">
+                                    资料显示，奇虎360创始人周鸿祎及与之合作的投资机构于6月提出不具约束性的私有化要约，希望以每存托凭证77美元(即每普通股51.33美元)的价格完成这家以网络安全为主业公司的私有化。除创始人周鸿祎外，其他与周合作参与此次私有化的投资机构包括，中信证券、金砖丝路资本、华兴资本、红杉中国或以上这些公司的附属公司。
+
+                                    　　消息人称，奇虎360的贷款将由牵头行和账簿管理人中国工商银行“全部包销”，中国工商银行已经邀请中国另外两家银行参与对奇虎360贷款交易。奇虎360的贷款包括价值30亿美元的7年期贷款和价值4亿美元的过桥贷款，借款人为一家国内公司，预计这起贷款交易将在今年底前完成。
+
+                                    　　汤森路透资料显示，包括奇虎360在内，今年在美国上市的中国概念股因私有化交易贷款总额上升至至少74.5亿美元。
+                                </div>
+                            </div>
+                        </dd>
+
+                    </dl>
+                </dd>
+                <dd class="ac_db">
+                    <a href="#">
+                        <div class="ac_more">
+                            查看全部10541条评价
+                        </div>
+                    </a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- end 评论-->
+    <div class="room-section">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="go" data-toggle="modal" data-target="#myModal">搭</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="给房主说一句话来打动ta把"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">搭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end 房屋信息-->
+</body>
+</html>

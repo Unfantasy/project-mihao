@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <title>股市合伙人---发现最搭的投资战友</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/link.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/btn-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/icon-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/ui-dialog.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jsl.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/JiSiLu.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript">
+        var _BAFB79922DFEE330B61725535E940D9E = '';
+        var G_POST_HASH = _BAFB79922DFEE330B61725535E940D9E;
+        var G_INDEX_SCRIPT = '';
+        var G_SITE_NAME = '集思录';
+        var G_BASE_URL = 'http://www.jisilu.cn/';
+        var G_STATIC_URL = 'http://www.jisilu.cn/static';
+        var G_UPLOAD_URL = 'http://www.jisilu.cn/uploads';
+        var G_USER_ID = 0;
+        var G_USER_NAME = '';
+        var G_UPLOAD_ENABLE = 'N';
+        var G_QUICK_PUBLISH_HUMAN_VALID = '';
+        var G_UNREAD_NOTIFICATION = 0;
+        var G_NOTIFICATION_INTERVAL = 180000;
+        var G_CAN_CREATE_TOPIC = '';
+    </script>
+    <script src="js/jquery.js"type="text/javascript"></script>
+    <script src="js/jquery.form.js-v=20151027" type="text/javascript"></script>
+    <script src="js/common.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jslcommon.js-v=20151027" type="text/javascript"></script>
+    <script src="js/dialog-plus-min.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.orange.js-v=20151027" type="text/javascript"></script>
+    <style>
+        .sss-content-first{
+            font-size: 20px;
+            line-height: 30px;
+            width:500px;
+            margin-left:auto;
+            margin-right:auto;
+            text-indent:2em;
+            margin-top:50px;
+            font-family: '宋体';
+
+        }
+        /*自选股样式 */
+        .sss-content-pro{
+            font-size: 20px;
+            line-height: 30px;
+            width:500px;
+            margin-left:auto;
+            margin-right:auto;
+            text-indent:2em;
+            margin-top:50px;
+            font-family: '宋体';
+        }
+        .sss-content-pro table thead{
+
+        }
+        .sss-content-pro table td{
+            vertical-align:middle;
+            text-align: center;
+        }
+        .sss-content-pro table thead td{
+            text-align: center;
+            font-size:40px;
+            line-height: 50px;
+        }
+        .sss-minusyield,.sss-addyield{
+            width:30px;
+        }
+        .sss-content-pro tbody input{
+            width:100px;
+            margin: 0 5px;
+            text-align:center;
+        }
+        .sss-content-pro .sss-promp{
+            text-align:left;
+        }
+        .sss-content-pro tfoot input{
+            width:100px;
+            text-align:center;
+        }
+        .sss-content-pro tfoot img{
+            width:30px;
+            padding-right:10px
+        }
+        /* end 自选股样式 */
+    </style>
+    <script>
+        /*文字渐渐出现效果*/
+        var str ="尊敬的众米会员，欢迎您进入玩转自选股界面，在这里您可以体会到不一样的股票购买方式。。。 ";
+        var len = str.length;
+        var i= 0;
+        function showWord(){
+            $(".sss-content-first span").text(str.substr(0,i));
+            i++;
+            if(i>len){
+                $("#sss-go").css("display","block");
+                clearInterval(done);
+            }
+            console.log(i);
+        $(".aw-main-content").click(function(){
+            clearInterval(done);
+            $(".sss-content-first span").text(str);
+            $("#sss-go").css("display","block");
+        });
+        }
+        var done = setInterval("showWord()",300);
+    /*end 文字出现效果*/
+
+        $(function(){
+
+            /*/!*点击进入自选股*!/
+            $("#sss-go").click(function(){
+                $(this).parent().css("display","none");
+                $(this).parent().siblings().css("display","block");
+            })
+            /!*end 点击进入自选股*!/*/
+            /*目标收益率点击增加减少*/
+            $(".sss-minusyield").click(function(){
+                var yieldStock = parseInt($("#yield").val());
+                var min = 0;
+                if(yieldStock>min){
+                    yieldStock-=1;
+                    $("#yield").val(yieldStock);
+                    $('.sss-addyield').attr("src","images/tixingshezhi_jia.png");
+                }else{
+                    $(this).attr("src","images/tixingshezhi_jianzhihou.png");
+                }
+            });
+            $(".sss-addyield").click(function(){
+                var yieldStock = parseInt($("#yield").val());
+                var max = 99;
+                if(yieldStock < max){
+                    yieldStock+=1;
+                    $("#yield").val(yieldStock);
+                    $(".sss-minusyield").attr("src","images/tixingshezhi_jian.png");
+                }else{
+                    $(this).attr("src","images/tixingshezhi_jiahou.png")
+                }
+            });
+            /* end 目标收益率点击增加减少*/
+            //收益必须是数字的判断
+            $("#yield").blur(function(){
+                if(isNaN($(this).val())){
+                    alert("请输入数字！");
+                    $(this).val("0");
+                }
+                if($(this).val()==''){
+                    $(this).val("0");
+                }
+            });
+            $("#amount").blur(function(){
+                var val = $(this).val();
+                if(isNaN(val)||val<=0 || val>1000000){
+                    alert("股票数量只能是1-1000000");
+                    $(this).val("0");
+                }
+                if($(this).val()==''){
+                    $(this).val("0");
+                }
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+<div class="aw-top-menu-wrap">
+    <div class="aw-wecenter aw-top-menu">
+        <div class="row">
+            <!-- logo -->
+            <div class="span6 aw-logo">
+                <a href="#">
+                    <img src="" alt=""/>
+                </a>
+                <a href="#" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;">»首 页</a>
+
+                <a href="index.htm" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;font-weight: normal;letter-spacing: 0.1em">社区-股市合伙人--发现自己最合适的投资战友</a>
+            </div>
+            <!-- end logo -->
+            <!-- 登陆&注册栏 -->
+            <div class="span6 aw-login-register">
+                <div class="pull-right offset1 aw-user-nav-dropdown">
+                    <a href="indexuser-setting.html">
+                        <span class="pull-left">心如琉璃</span>
+
+                        <img class="pull-left" alt="心如琉璃" src="http://www.jisilu.cn/uploads/avatar/000/12/40/72_avatar_mid.jpg">
+                    </a>
+                    <div class="dropdown-menu aw-dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <span><i class="aw-icon i-dropdown-triangle active"></i></span>
+                        <ul>
+                            <li><a href="indexuser-people.html" tabindex="-1">主页 <i class="aw-icon i-user-post"></i></a></li>
+                            <li><a href="indexuser-mine.html" tabindex="-1">我的关注</a></li>
+                            <li><a href="indexuser-setting-blacklist.html" tabindex="-1">黑名单</a></li>
+
+                            <li><a href="indexuser-setting.html">设置 <i class="aw-icon i-setting-no-hover"></i></a></li>
+                            <li><a href="index.htm">退出 <i class="aw-icon i-logout"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pull-right aw-logined-nav">
+                    <ul>
+                        <li><a href="indexuser-inbox.html">私信<span id="inbox_unread" class="badge badge-important" style="">1</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end 登陆&注册栏 -->
+        </div>
+    </div>
+    <div class="aw-wecenter aw-nav">
+        <div class="row">
+            <div class="span10 aw-nav-wrap">
+                <div class="aw-nav-left"></div>
+                <div class="aw-nav-middle">
+                    <!-- 导航条 -->
+                    <div class="aw-nav-main pull-left">
+                        <ul class="aw-top-nav">
+                            <li><a href="indexuser-mine.html"><i class="aw-icon i-index-no-hover"></i>我的关注<i class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser.htm"><i
+                                    class="aw-icon i-question-no-hover"></i>广场<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser-findboss.html" ><i
+                                    class="aw-icon i-topic-no-hover"></i>发现牛人<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li class="pull-right"><a href="indexuser-mimic.html" class="active"><i
+                                    class="aw-icon i-question-no-hover"></i>寻找战友<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- end 导航条 -->
+
+                </div>
+
+                <div class="aw-nav-right"></div>
+            </div>
+            <div class="span2 aw-pulish">
+                <a id="header_publish" href="indexuser-faqi.htm" class="aw-btn b-start-question">发起</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aw-container-wrap">
+    <div class="aw-container aw-wecenter">
+
+
+        <div class="row aw-content-wrap">
+            <div class="span9 aw-main-content aw-all-question">
+                <!-- 第一次点击进入效果
+                <div class="sss-content-first"><span>1尊敬的众米会员，欢迎您进入玩转自选股界面，在这里您可以体会到不同的股票购买方式。。。 </span><a id="sss-go" style="display:none">点击进入我的自选股</a></div>
+                 end 第一次点击进入效果-->
+                <div class="sss-content-pro"> <!--style="display: none"-->
+                    <div class="row text-center stock-search">
+                        <span><input type="text" class="span5" placeholder="请输入股票代码"></span><span><button class="btn" style="margin-bottom: 10px">搜索</button></span>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td colspan="2">0</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="sss-promp">目标收益率（%）</td>
+                            <td><img src="images/tixingshezhi_jian.png"class="sss-minusyield"/><input id="yield" type="text" value="0"/><img src="images/tixingshezhi_jia.png"class="sss-addyield"/></td>
+                        </tr>
+                        <tr>
+                            <td class="sss-promp">持有数量（股）</td>
+                            <td><input type="text" id="amount" value="200"/></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td class="sss-promp"><img src="images/tixingshezhi_chushijiage.png"/>初始价格（元）</td>
+                            <td><input type="text" readonly value="6.06"/></td>
+                        </tr>
+                        <tr>
+                            <td class="sss-promp"><img src="images/tixingshezhi_mubiaojiage.png"/>目标价格（元）</td>
+                            <td>6.48</td>
+                        </tr>
+                        <tr>
+                            <td class="sss-promp"><img src="images/tixingshezhi_yutixing.png"/>预提醒</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td class="sss-promp"><img src="images/tixingshezhi_fengxianyujin.png"/>风险预警</td>
+                            <td>6%</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <a href="indexuser-mystocks.html"><button class="btn btn-primary pull-right"> 添加到我的自选股 </button></a>
+                    <br/><br/><br/>
+                </div>
+
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="span3 aw-side-bar">
+                <div class="aw-side-bar-mod aw-text-align-justify aw-no-border-bottom">
+                    <div class="aw-mod-head">
+                        <h3>热门用户</h3>
+                    </div>
+                    <div class="aw-mod-body">
+
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="#"><img
+                                        src="images/avatar-mid-img.jpg"/></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a href="#"
+                                   data-id="8906" class="aw-user-name">梦想会计师 </a>
+
+                                <p>回复了 <b>1623</b> 个问题, 获得 <b>616</b> 次赞同</p>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="#"><img alt=""src="images/avatar-mid-img.jpg"/></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a href="#" data-id="7381"
+                                   class="aw-user-name">svlla </a>
+
+                                <p>回复了 <b>2612</b> 个问题, 获得 <b>905</b> 次赞同</p>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="#"><img alt=""src="images/avatar-mid-img.jpg"/></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a href="#" data-id="7381"
+                                   class="aw-user-name">svlla </a>
+
+                                <p>回复了 <b>2612</b> 个问题, 获得 <b>905</b> 次赞同</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="#"><img alt=""src="images/avatar-mid-img.jpg"/></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a href="#" data-id="7381"
+                                   class="aw-user-name">svlla </a>
+
+                                <p>回复了 <b>2612</b> 个问题, 获得 <b>905</b> 次赞同</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="#"><img alt=""src="images/avatar-mid-img.jpg"/></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a href="#" data-id="7381"
+                                   class="aw-user-name">svlla </a>
+
+                                <p>回复了 <b>2612</b> 个问题, 获得 <b>905</b> 次赞同</p>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- end 侧边栏 -->
+        </div>
+    </div>
+</div>
+
+<div class="aw-footer-wrap">
+    <div class="aw-footer aw-wecenter">
+        <div class="row">
+            <center>
+  <span class="i_tc">
+  	<a target="_blank"
+       href="#">浙ICP备14016681号</a> &nbsp;&nbsp;
+  	|
+  	&nbsp;&nbsp;<a target="_blank"
+                   href="http://weibo.com/zmstock">关注本站微博</a>&nbsp;<a target="_blank" href="#">问题反馈</a></span>
+                <br>
+  <span class="i_tc"> 
+  使用Chrome浏览本站最佳 &nbsp;|&nbsp;&nbsp;声明：本站所有内容均为网友自发提供，不构成投资建议，请谨慎参考 </span>
+            </center>
+        </div>
+    </div>
+</div>
+
+<script src="js/aw-click.js"></script>
+</body>
+</html>

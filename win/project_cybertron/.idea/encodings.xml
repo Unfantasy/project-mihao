@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/css/bootstrap.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/font-awesome.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/summernote.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/cybertron.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/zm_log.ico" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/analytics.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/cy.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/summernote.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mp3/Bang! Bang!.mp3" charset="UTF-8" />
+  </component>
+</project>

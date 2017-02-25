@@ -1,0 +1,153 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.rent_landlord{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+}
+.rent_photos img{
+    max-height:400px;
+}
+.rent_price{
+    position:absolute;
+    bottom:30px;
+    left:0;
+    padding: 7px 10px;
+    background-color: rgba(60,63,64,0.9);
+}
+
+#details{
+    background-color:#fff;
+}
+.book-it__price{
+    background-color: rgba(60,63,64,0.9);
+    border: 0;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+    text-transform: capitalize;
+    width: 315px;
+    z-index: 1001;
+}
+.book-it__price-amount {
+    padding: 6px 0;
+    margin:0;
+}
+.book-it__payment-period {
+    padding: 9px 0;
+}
+.book-it{
+    margin-top: -41px;
+    position: relative;
+    width: 315px;
+}
+.panel{
+    margin-bottom:0;
+}
+@media (max-width:1100px){
+    .book-it{
+        display:none;
+    }
+}
+@media(min-width:1100px){
+    .rent_price{
+        display:none;
+    }
+}
+
+/*comment*/
+.grey,.gray{
+    color:grey;
+}
+
+.yellow{
+    color:#f90;
+}
+.ac_comment{
+    margin-top:20px;
+    background-color:#fff;
+    width:100%;
+
+    padding-left:.5rem;
+}
+
+.ac_comment dl dd{
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:0;
+}
+.ac_comment>dl>dd{
+    padding-bottom:0;
+}
+.ac_comment dl dd dl dt,.ac_comment dl dd dl dd{
+    border-bottom:1px solid grey;
+}
+.ac_comment dl dd dl dt{
+    line-height:2em;
+}
+.ac_comment dl dd dl dt .pull-right {
+    padding-right:1em;
+}
+dl{
+    margin-bottom:0;
+}
+
+.username{
+    color:#666;
+    font-size: .8em;
+}
+.time{
+    color:#999;
+    margin-left: 10px;
+}
+.score .glyphicon{
+    font-size: .8em;
+}
+.ac_comment .ac_db{
+    padding-top: 0;
+}
+.ac_more{
+    position:relative;
+    line-height: 2em;
+    font-size: 1em;
+    height:2em;
+}
+.comment{
+    margin-top:10px;
+}
+.ac_more img{
+    position:absolute;
+    right:1rem;
+    height:1em;
+    margin-top: .5em;
+}
+
+.amenity{
+    background-color:#fff;
+    margin-top:10px;
+}
+
+.rent_map{
+    width:100%;
+    max-width:500px;
+    height:200px;
+    margin-bottom:20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.rent_map_1{
+    background-color: #fff;
+}
+
+/*模态框*/
+.modal[aria-hidden="true"] {
+     z-index: 2000;
+}
+@media (max-width: 767px) {
+    .modal-footer {
+        position: relative;
+    }
+}
+/*模态框*/

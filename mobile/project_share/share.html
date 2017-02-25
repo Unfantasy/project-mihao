@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的分享</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="images/zm_log.ico"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/newmain.css"/>
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="css/newmain_mobile.css">
+    <link rel="stylesheet" href="css/share.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar-fixed-top">
+    <div class="container nm_content">
+        <div class="navbar-header">
+            <a class="navbar-brand" src="http://www.mihaokj.com/"><img src="images/zhongmilogo.png" alt="钟米图标"
+                                                                       id="nm-icon"/></a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                    type="button">
+                <span class="nm-list"></span>
+                <!--<span class="glyphicon glyphicon-menu-hamburger" style="font-size: 20px;color:#000"></span>-->
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://www.mihaokj.com/" class="active">首页</a></li>
+                <li><a href="https://www.mihaokj.com/index_company.jsp">公司</a></li>
+                <li><a href="https://www.mihaokj.com/index_help.jsp">帮助</a></li>
+                <li><a href="https://www.mihaokj.com/forum_post/list">官方论坛</a></li>
+                <li><a href="https://www.mihaokj.com/cybertron/cybertron_list" target="_blank">Cybertron工作室</a></li>
+                <li class="register_login"><a href="https://www.mihaokj.com/jsp/user_deal/index_user_deal_login.jsp">登录</a>&nbsp;| &nbsp;<a href="https://www.mihaokj.com/user_deal/index_regist">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    $(".navbar-toggle").click(function(){
+        if(!$("#navbar-collapse").hasClass("in")){
+            if($(this).children().hasClass("nm-list")){
+                $(this).children().removeClass("nm-list").addClass("to-remove");
+            }else{
+                $(this).children().removeClass("to-list").addClass("to-remove");
+            }
+            $(".to-remove").css({"background-image":"url('images/toremove.gif')","background-repeat":"no-repeat","background-size":"100% 100%"});
+        }else{
+            $(this).children().removeClass("to-remove").addClass("to-list");
+            $(".to-list").css({"background-image":"url('images/tolist.gif')","background-repeat":"no-repeat","background-size":"100% 100%"});
+        }
+    });
+</script>
+<div class="notice_mark"></div>
+<div class="notice_img">
+    <img src="images/wechat_lead.png" onclick="hideThis(this)">
+</div>
+<script src="js/share.js"></script>
+</body>
+</html>

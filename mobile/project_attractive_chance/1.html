@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:#FFFFFF;
+        }
+        .alpha1,.alpha2{
+            width:100%;
+            height:auto;
+            min-height:250px;/* 必需 */
+            _height:250px;/* 必需 */
+            overflow:hidden;
+            background-color:#FF0000;/* 背景色 */
+        }
+        .alpha1{
+            filter:alpha(opacity=20); /* IE 透明度20% */
+        }
+        .alpha2{
+            background-color:#FFFFFF;
+            -moz-opacity:0.8; /* Moz + FF 透明度20%*/
+            opacity: 0.8; /* 支持CSS3的浏览器（FF 1.5也支持）透明度20%*/
+        }
+        .alpha2{
+            position:absolute;
+        }
+        -->
+    </style>
+
+</head>
+<body>
+
+<!--S Demo-->
+<div class="alpha1">
+    <div class="ap2">
+        <p>背景为红色(#FF0000)，透明度20%。</p>
+    </div>
+    <!--[if IE]><![if !IE]><![endif]--> <div class="alpha2"></div> <!--[if IE]><![endif]><![endif]-->
+</div>
+</body>
+</html>

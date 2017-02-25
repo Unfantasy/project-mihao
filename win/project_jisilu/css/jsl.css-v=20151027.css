@@ -1,0 +1,329 @@
+.nav-tabs>.active>a{
+  background-color: #86C5E3;
+  font-weight: bold;
+}
+
+.scanWeiXinWD {
+    background:url("../images/indexWeiXin.jpg")/*tpa=http://www.jisilu.cn/static/img/indexWeiXin.jpg*/ no-repeat;
+    width:120px;
+    height:150px;
+    position:fixed;
+    left:50%;
+    margin-left:480px;
+    bottom:10px;
+}
+
+.jsl_staff_icon{
+  width: 16px;
+  height: 16px;
+
+  display: inline-block;
+  background-image: url("../www.jisilu.cn/static/jsl/img/jsl.ico")/*tpa=http://www.jisilu.cn/static/jsl/img/jsl.ico*/;
+  background-repeat: no-repeat;
+}
+
+.jsl_advistor_icon{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("../www.jisilu.cn/static/jsl/img/advistor.png")/*tpa=http://www.jisilu.cn/static/jsl/img/advistor.png*/;
+  background-repeat: no-repeat;
+}
+
+.jsl_icon_plus{background:url("../www.jisilu.cn/static/jsl/icons/plus.png")/*tpa=http://www.jisilu.cn/static/jsl/icons/plus.png*/ no-repeat center center;width:18px}
+.jsl_icon_del{background:url("../www.jisilu.cn/static/jsl/icons/del.png")/*tpa=http://www.jisilu.cn/static/jsl/icons/del.png*/ no-repeat center center;width:18px}
+
+.jsl-form-table{
+	width:100%;
+	+width:95%;
+	_width:95%;
+	margin:0;
+	font-size:12px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+}
+
+.jsl-form-table > tbody > tr{
+	height:25px;
+}
+.jsl-form-table > tbody > tr > th{
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	font-size:14px;
+	font-weight: bold;
+	text-align: right;
+	color: #004080;
+	padding-left: 3px;
+	padding-right: 3px;
+	white-space:nowrap;
+}
+.jsl-form-table > tbody > tr > td{
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.jsl-search-table{
+	width:100%;
+	+width:95%;
+	_width:95%;
+	margin:0;
+	font-size:12px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+}
+
+.jsl-search-table > tbody > tr{
+	height:25px;
+}
+
+.jsl-search-table > tbody > tr > td{
+	border-width: 0px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.jsl-data-container{
+	margin:0px 20px 0px 20px;
+}
+.jsl-data-table-title{
+	height:25px;
+	background-color: #CDCDCD;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.jsl-data-table{
+	width:100%;
+	+width:95%;
+	_width:95%;
+	font-size:13px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(204, 204, 204);
+	border-collapse: collapse;
+}
+
+.jsl-data-table > tbody > tr, .jsl-data-table > thead > tr{
+	height:25px;
+}
+.jsl-data-table > thead > tr > th{
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(204, 204, 204);
+	border-collapse: collapse;
+	font-size:14px;
+	text-align: center;
+	color: #333;
+	padding-left: 3px;
+	padding-right: 3px;
+	white-space:nowrap;
+	background-color: #86C5E3;
+}
+.jsl-data-table > thead > tr > th a{
+	color: #333;
+}
+.jsl-data-table > thead > tr > th.yellow{
+	background-color: yellow;
+}
+.jsl-data-table > tbody > tr > td, .jsl-data-table > thead > tr > td{
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(204, 204, 204);
+	border-collapse: collapse;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.jsl-data-table > thead > tr.tbt > td{
+	background-color: #CDCDCD;
+}
+
+.jsl-data-table > tbody > tr > td.tc, .jsl-data-table > thead > tr > td.tc{
+	text-align: center;
+}
+
+.jsl-data-table > tbody > tr > td.tl, .jsl-data-table > thead > tr > td.tl{
+	text-align: left;
+}
+
+.jsl-data-table > tbody > tr > td.bn, .jsl-data-table > thead > tr > td.bn{
+	white-space:nowrap;
+}
+
+.jsl-data-table > tbody > tr > td.np, .jsl-data-table > thead > tr > td.np{
+	color: red;
+}
+
+.jsl-data-table > tbody > tr > td.nn, .jsl-data-table > thead > tr > td.nn{
+	color: #008040;
+}
+
+.wfixed{
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-moz-binding: url("ellipsis.xml#ellipsis")/*tpa=http://www.jisilu.cn/static/jsl/ellipsis.xml#ellipsis*/;
+}
+.fs10{
+	font-size:10px;
+}
+.fs9{
+	font-size:9px;
+}
+table.jsl_datatable{
+	font-family:arial;
+	margin:0pt 0pt 15px;
+	font-size: 13px;
+	width: 100%;
+	text-align: left;
+	border:1px solid #CCC;
+}
+table.jsl_datatable > thead > tr > td{
+	background-color: #CDCDCD;
+}
+table.jsl_datatable > thead > tr > td.title{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: bold;
+}
+table.jsl_datatable > thead > tr > td.aleft{
+	text-align: left;
+}
+table.jsl_datatable > thead > tr > td.aright{
+	text-align: right;
+}
+table.jsl_datatable > thead > tr > th{
+	white-space:nowrap;
+	text-align: center;
+	background-color: #86C5E3;
+	border: 1px solid #CCC;
+	font-size: .9em;
+	padding: 4px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	cursor: pointer;
+	color: #333;
+}
+table.jsl_datatable > thead > tr > th.unsortable{
+	cursor: default;
+}
+table.jsl_datatable > thead > tr > td a{
+	font-size: 14px;
+	font-weight: normal;
+}
+table.jsl_datatable > thead > tr > th a{
+	font-weight: normal;
+	color: #333;
+}
+table.jsl_datatable > thead > tr > th.up{
+	background-image: url("../www.jisilu.cn/static/jsl/img/asc.gif")/*tpa=http://www.jisilu.cn/static/jsl/img/asc.gif*/;
+}
+table.jsl_datatable > thead > tr th.down{
+	background-image: url("../www.jisilu.cn/static/jsl/img/desc.gif")/*tpa=http://www.jisilu.cn/static/jsl/img/desc.gif*/;
+}
+table.jsl_datatable > thead > tr th.down, table.jsl_datatable > thead > tr th.up{
+	background-color: #8dbdd8;
+}
+table.jsl_datatable > thead > tr > th.bgyellow{
+	background-color: yellow;
+}
+table.jsl_datatable > tbody > tr > td{
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+	border: 1px solid #CCC;
+}
+table.jsl_datatable > tbody > tr.odd > td{
+	background-color:#F0F0F6;
+}
+table.jsl_datatable > tbody > tr > td.red{
+	color: red;
+}
+table.jsl_datatable > tbody > tr > td.green{
+	color: green;
+}
+table.jsl_datatable > tbody > tr > td.acenter{
+	text-align: center;
+}
+table.jsl_datatable > tbody > tr > td.aleft{
+	text-align: left;
+}
+table.jsl_datatable > tbody > tr > td.aright{
+	text-align: right;
+}
+table.jsl_datatable > tbody > tr > td.nowrap{
+	white-space:nowrap;
+}
+table.jsl_datatable > tbody > tr.highlight > td{
+	background-color: #eaf2ff;
+}
+table.jsl_datatable > tbody > tr.selected > td{
+	background-color: #fbec88;
+}
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/*
+	if width will be 100% horizontal scrollbar will apear
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/*
+	it is very important, if line-height not setted or setted
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url("../images/indicator.gif")/*tpa=http://www.jisilu.cn/static/jsl/indicator.gif*/ right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}

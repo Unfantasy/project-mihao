@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>资金记录</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family:"Microsoft Yahei";
+            background-color:#F6F7FB;
+            min-height:100%;
+            line-height:1.5;
+        }
+        .black{
+            color:#000;
+        }
+        .gray{
+            color:#b2b2b2;
+        }
+        .in_money{
+            float:right;
+            padding-right:1rem;
+            color:#FFAF02;
+        }
+        .tip{
+            background-color:#4B608F;
+            color:#fff;
+            padding-left:1rem;
+        }
+        .tip span{
+            line-height:3;
+        }
+        table{
+            width:100%;
+            border-bottom:1px solid #c8c7cc;
+        }
+        table tr td{
+            font-size:2rem;
+            font-weight:bold;
+            line-height:1.5;
+            vertical-align:top
+        }
+        .money {
+            font-size: 4rem;
+        }
+        .list ul{
+            padding-left:0;
+            margin:0;
+        }
+        .list li{
+            list-style:none;
+            padding-left:0;
+            border-bottom:1px solid #c8c7cc;
+            line-height:2.5;
+            font-size: .9rem;
+        }
+        .list .black{
+            padding-left:1rem;
+            width:5em;
+            display:inline-block;
+        }
+        .send,.yes{
+            background-color:#fff;
+        }
+        .yes{
+            margin-top:1rem;
+            margin-bottom:5rem;
+        }
+    </style>
+</head>
+<script>
+    $(function(){
+        var subAccount = "omin0000000001";
+        var Authorization = "Id6uAnV3I4juvzFygnzWaW95AMiZQrAz6yaOrA8A";
+        $.ajax({
+            url:"http://devominapi.jucaidao.com:8866/api/bank/record/subAccount/"+subAccount+"/0/10",
+            type:"get",
+            dataType:"json",
+            headers:{"Authorization":"Bearer "+Authorization},
+            success:function(data){
+                if(data){
+                    alert(JSON.stringify(data));
+                }
+            }
+        })
+    });
+</script>
+<body>
+<div class="send">
+    <div class="tip">
+        <span style="color:rgba(255,255,255,.8)">已送出</span> <span class="in_money">入金</span>
+        <table>
+            <tr>
+                <td style="width:1em;line-height:2.5;">￥</td>
+                <td class="money">25421</td>
+            </tr>
+        </table>
+    </div>
+    <div class="list">
+        <ul>
+            <li><span class="black">流水号</span> <span class="gray">d9dd56f3­d54c­47e4­b73d­de9b7f2391b3</span></li>
+            <li><span class="black">申请时间</span> <span class="gray">2016­01­14T13:57:09+08:00</span></li>
+            <li><span class="black">到账时间</span> <span class="gray">2016­01­14T17:57:09+08:00</span></li>
+        </ul>
+    </div>
+</div>
+<div class="yes">
+    <div class="tip">
+        <span style="color:rgba(255,255,255,.8)">已确认</span> <span class="in_money">入金</span>
+        <table>
+            <tr>
+                <td style="width:1em;line-height:2.5;">￥</td>
+                <td class="money">25421</td>
+            </tr>
+        </table>
+    </div>
+    <div class="list">
+        <ul>
+            <li><span class="black">流水号</span> <span class="gray">d9dd56f3­d54c­47e4­b73d­de9b7f2391b3</span></li>
+            <li><span class="black">申请时间</span> <span class="gray">2016­01­14T13:57:09+08:00</span></li>
+            <li><span class="black">到账时间</span> <span class="gray">2016­01­14T17:57:09+08:00</span></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

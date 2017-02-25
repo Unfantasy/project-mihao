@@ -1,0 +1,62 @@
+body .page-content {
+    margin: 54px auto 0;
+    padding: 15px;
+    min-height: 100%;
+    width: auto;
+    background: #eee;
+}
+.papers.index .page-content .papers .com-grid-paper{
+    max-width: 100%;
+}
+.papers.index .page-content .papers .com-grid-paper{
+    height:auto;
+    display: block;
+}
+.com-grid-paper, .com-grid-paper .grid-paper-bd {
+    height: 304px;
+}
+
+
+.com-grid-paper .grid-paper-ft{
+    background: rgba(65,65,65,.5);
+    height:auto;
+    color:#fff;
+}
+.com-grid-paper .grid-paper-ft:before{
+    display: none;
+}
+.com-grid-paper .grid-paper-ft .title-description {
+    position: static;
+    padding: 3px 15px 12px;
+}
+.com-grid-paper .grid-paper-ft .title-description .title {
+    font-size: 24px;
+}
+.com-grid-paper .grid-paper-ft .title-description .description{
+    font-size: 13px;
+    line-height: 18px;
+    color:#fff;
+}
+.com-grid-paper .grid-paper-ft .title-description .ticketNum{
+    color:#fff;
+    font-size: 14px;
+    padding:20px 0 10px;
+    margin:0;
+}
+.papers.index .page-content .papers .com-grid-paper{
+    height: 304px;
+}
+span.iconTitle{
+    font-size: 12px;
+    padding: 0 3px;
+    position: absolute;
+    left: calc(50% + 17px);
+}
+.com-grid-paper .grid-paper-bd .count{
+    top:16px;
+    right:16px;
+    width:1.2rem;
+    height:1rem;
+    background:url('../images/new.png') center no-repeat;
+    background-size:100% ;
+}

@@ -1,0 +1,421 @@
+html{
+    font-family:"Microsoft Yahei";
+    font-size:14px;
+    margin: 0;
+    padding: 0;
+    color:#000;
+    min-height:100%;
+}
+body{
+    margin:0;
+    padding:0;
+}
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+*{
+    box-sizing: border-box;
+}
+input{
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+header{
+    padding-top:2.2rem;
+}
+header,section{
+    padding-left:1rem;
+}
+footer{
+    width:100%;
+    height:4.4rem;
+    border-top:1px solid rgba(0,0,0,.1);
+    position:fixed;
+    bottom:0;
+    background-color:#fff;
+}
+
+header h1{
+    font-weight: normal;
+    font-size:21px;
+}
+input{
+    width:100%;
+    border:none;
+    line-height: 1.5;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    font-size:17px;
+    color:#000;
+    margin-top:1.5rem;
+    letter-spacing: .1rem;
+    border-radius: 0;
+    background-color:#fff;
+}
+input:focus{
+    border:none;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    outline:none;
+}
+a,a:focus,a:active, a:visited{
+    text-decoration:none;
+    font-size: 14px;
+}
+a{
+    color:#f45531;
+}
+a:hover{
+    cursor: pointer;
+}
+span{
+    color:#747b84;
+}
+p{
+    color:#000;
+    font-size:13px;
+    line-height:1.5;
+}
+.block{
+    display:block;
+}
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.lt{
+    font-size:11px;
+}
+.lg{
+    font-size:14px;
+}
+.mark{
+    color:#f45531;
+}
+.text_center{
+    text-align: center;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn_default{
+    width:90px;
+    height:35px;
+    border-radius:8px;
+    font-size:14px;
+    line-height: 35px;
+    border:1px solid rgba(0,0,0,.1);
+    color:#b2b2b2;
+    background-color:#fff;
+    outline: none;
+}
+.btn_red{
+    background-color:#f45531;
+    color:#fff;
+    border:none;
+}
+.footer_right_top{
+    position:absolute;
+    top:-2.5rem;
+    right:1.5rem;
+}
+.footer_left{
+    margin-left:1.5rem;
+    line-height: 4rem;
+}
+.footer_right {
+    float: right;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.5rem;
+}
+
+/*login_mailbox style*/
+/* end login_mailbox style*/
+
+/*login_phone style*/
+.login_phone_header{
+    margin-top:7rem;
+}
+.pwd{
+    position:relative;
+}
+.login_show_pwd{
+    width:2.6rem;
+    height:1.5rem;
+    background:url("images/zhongmi_biyan.png") no-repeat;
+    background-size: 100% 100%;
+    position:absolute;
+    bottom:.8rem;
+    right:1rem;
+}
+.login_hide_pwd{
+    width:2.6rem;
+    height:1.5rem;
+    background:url("images/zhongmi_kaiyan.png") no-repeat;
+    background-size: 100% 100%;
+    position:absolute;
+    bottom:.8rem;
+    right:1rem;
+}
+/* end login_phone style*/
+
+/*register_mailbox style*/
+.mailbox{
+    margin-top:6rem;
+}
+
+/* end register_mailbox style*/
+
+/*register_phone*/
+.phone{
+    margin-top:6rem;
+    margin-bottom:1rem;
+}
+/* end register_phone*/
+
+/*set_pwd style*/
+.all_page{
+    width:100%;
+    height:1000px;
+    position:fixed;
+    z-index: 999;
+    top: -1000px;
+    background-color:rgba(0,0,0,0.3);
+}
+.img_code_all{
+    background-color:#fff;
+    padding-top:2rem;
+}
+.top{
+    height:4rem;
+    font-size:13px;
+    color:#000;
+    line-height: 2.5rem;
+    border-top:1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
+}
+.top span{
+    color:#000;
+    margin-left:1rem;
+}
+.verity_code{
+    max-width:70%;
+    font-size:13px;
+    border: none;
+    margin-top:1rem;
+    margin-left:1rem;
+}
+.verity_code:focus{
+    border: none;
+}
+.middle{
+    padding:1rem 0;
+}
+.bottom{
+    width:100%;
+    padding:0 1rem 1rem;
+}
+.bottom button{
+    width:100%;
+    height:3.5rem;
+    background-color:#f45531;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    font-size:14px;
+}
+/* end set_pwd style*/
+
+/*verification_code style*/
+.input_verification_code{
+    position:relative;
+}
+.seconds {
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+    border-radius:.8rem;
+    background-color:#f45531;
+    position: absolute;
+    bottom:.6rem;
+    right:1.5rem;
+    text-align: center;
+    color:#fff;
+    line-height:1.5;
+    font-size:13px;
+}
+/* end verification_code style*/
+
+/*verify_mailbox*/
+.verify_mailbox_header{
+    margin-top:2rem;
+    padding-right:1rem;
+}
+/* end verify_mailbox*/
+
+/*verify_identity style*/
+.verify_identity_section{
+    margin-top:7rem;
+}
+.agree_all{
+    margin-right:1rem;
+}
+.btn_agree_all{
+    width:100%;
+    color:#fff;
+    line-height:3;
+    text-align: center;
+    margin:6rem auto;
+    background-color:#f45531;
+    border:none;
+    outline: none;
+    border-radius:5px;
+    font-size: 15px;
+}
+/* end verify_identity style*/
+
+/*login_register style*/
+.logo{
+    width:36%;
+    margin: 7.5rem auto 6rem;
+}
+
+.register{
+    width:100%;
+    max-width: 500px;
+    margin-top:7.5rem;
+    line-height: 3;
+    background-color:#f45531;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    font-size:15px;
+}
+.login{
+    width:100%;
+    max-width: 500px;
+    margin-top:1rem;
+    line-height: 3;
+    background-color:#fff;
+    border:1px solid #f45531;
+    color:#f45531;
+    border-radius:5px;
+    font-size:15px;
+}
+/*iphone 5*/
+@media screen and (min-height:500px){
+    .register{
+        margin-top:5rem;
+    }
+    .logo{
+        margin:5rem auto 3.5rem;
+    }
+}
+
+@media screen and (min-height:555px){
+    .register{
+        margin-top:5.5rem;
+    }
+    .logo{
+        margin:5.5rem auto 4rem;
+    }
+}
+/*iphone 6*/
+
+
+/*iphone6 p*/
+@media screen and (min-height:670px){
+    .logo {
+        margin: 7.3rem auto 5.8rem;
+    }
+    .register{
+        margin-top:7.3rem;
+    }
+}
+
+/* end login_register style*/
+/*loading*/
+.loading_area
+{
+    z-index: 10000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    background-color: rgb(204, 204, 204);
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+.success_messagehtml{
+    z-index: 20000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    line-height: 3;
+    opacity: 1;
+    width:60%;
+    background-color: #f45531;
+    color:#fff;
+    font-size:18px;
+    text-align: center;
+    display: none;
+}
+.loading_messagehtml{
+    z-index: 20000;
+    background: url( 'images/loading2.gif' ) no-repeat scroll 0px 0px #fff;
+    background-size: 100% 100%;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 50%;
+    line-height: 32px;
+    position: absolute;
+    opacity: 1;
+    margin: auto;
+    height: 48px;
+    width:48px;
+    display:none;
+}
+/*end loading*/
+/*呼出键盘时控制高度变化*/
+@media screen and (max-height:230px){
+    .login_phone_header{
+        margin-top:1rem;
+    }
+}
+/*服务协议条款*/
+.register-agreement {
+    position: relative;
+    padding: 20px 10px 20px 20px;
+    background: #DEDEDE;
+    border-radius: 10px;
+    margin: 10px 25px 5rem -25px;
+    font-size: 10px;
+    color: #666;
+    left: 20px;
+}
+.register-agreement-txt{
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.only_one{
+    margin-top: 6rem;
+}

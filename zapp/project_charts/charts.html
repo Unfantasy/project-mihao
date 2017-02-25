@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>收益走势图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/ichart.1.2.1.min.beta.20151124.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Myriad Pro", "宋体", "Mecrosoft Yahei";
+        }
+        
+        i {
+            font-style: normal;
+        }
+
+        #canvasDiv {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .ch_yield {
+            width: 100%;
+            margin: 7px auto 17px auto;
+        }
+
+        .ch_yield {
+            font-size: 0;
+        }
+        .yieldBox{
+            width: 33.33%;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .yieldBox p{
+            font-size:.5rem;
+            text-align:center;
+        }
+        .ch_yield_target, .ch_yield_all, .ch_yield_n {
+            width:3.3rem;
+            height:3.3rem;
+            line-height: 3.3rem;
+            border-radius:50%;
+            display: block;
+            font-size: .6rem;
+            color: #fff;
+            margin: 10px auto 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .ch_yield_n {
+            background-color: #ffc601;
+        }
+
+        .ch_yield_target {
+            background-color: #5e93eb;
+        }
+
+        .ch_yield_all {
+            background-color: #f45531;
+        }
+
+        .ch_yield_target b, .ch_yield_all b, .ch_yield_n b {
+            font-weight: normal;
+            padding-left: 10px;
+        }
+
+        #canvasDiv canvas {
+            width: 100%;
+            height: 353px;
+        }
+
+        .x_time {
+            color: #95a2aa;
+            font-size: 13px;
+            height: 33px;
+            margin-top: -16px;
+        }
+
+        .first_coordinate {
+            float: left;
+            padding-left: 10%;
+        }
+
+        .last_coordinate {
+            float: right;
+            padding-right: 10%;
+        }
+    </style>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 300) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        function getStockYield(stocks, target_yield, n) {
+         var stocks = eval(stocks);
+    //            n = JSON.parse(n);
+            var nStocks = n.stocks;
+    //            nStocks = JSON.stringify(nStocks);
+    //            nStocks = eval(nStocks);
+            var nname = n.name;
+            var nYield = parseInt(nStocks[nStocks.length-1].flow*10000)/100;
+            if(!nname){
+                nname = '指数';
+            }
+            var nowTime = getTime();
+            if (stocks.length == 1) {
+                stocks.push({labels: stocks[0].labels, flow: stocks[0].flow});
+                nStocks.push({labels: nStocks[0].labels, flow: nStocks[0].flow});
+            }
+            if (!stocks || stocks.length == 0) {
+                stocks = [{labels: nowTime, flow: 0}, {labels: nowTime, flow: 0}];
+                nStocks = stocks;
+            }
+            //x坐标赋值
+            $(".first_coordinate").text(stocks[0].labels || " ");
+            $(".last_coordinate").text(stocks[stocks.length - 1].labels || " ");
+            var max_yield, min_yield, all_yield;//最大收益率,最小收益率，累计收益率
+            max_yield = stocks[0].flow;
+            min_yield = stocks[0].flow;
+            all_yield = stocks[0].flow;
+            for (var i = 1; i < stocks.length; i++) {
+                if (Number(stocks[i].flow) > Number(max_yield)) {
+                    max_yield = stocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) > Number(max_yield)) {
+                    max_yield = nStocks[i].flow;
+                }
+                if (Number(stocks[i].flow) < Number(min_yield)) {
+                    min_yield = stocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) < Number(min_yield)) {
+                    min_yield = nStocks[i].flow;
+                }
+            }
+            for (var i = 1; i < nStocks.length; i++) {
+                if (Number(nStocks[i].flow) > Number(max_yield)) {
+                    max_yield = nStocks[i].flow;
+                }
+                if (Number(nStocks[i].flow) < Number(min_yield)) {
+                    min_yield = nStocks[i].flow;
+                }
+            }
+            if (max_yield < target_yield) {
+                max_yield = target_yield;//最终的最大收益
+            }
+            if (min_yield > target_yield) {
+                min_yield = target_yield;//最终的最小收益
+            }
+            all_yield = stocks[stocks.length - 1].flow;//累计收益
+            var width = window.screen.width;
+            //所有收益率转换为百分比
+            max_yield *= 100;
+            min_yield *= 100;
+            target_yield = parseInt(target_yield * 10000) / 100;
+            all_yield *= 100;
+
+            var flow1 = [];//目标收益
+            var flow2 = [];//实际收益
+            var flow3 = [];//指数
+            for (var i = 0; i < stocks.length; i++) {
+                flow1.push(target_yield);
+                var temp = stocks[i].flow * 100;
+                temp = parseInt(temp * 100) / 100;//保留小数点后两位
+                flow2.push(temp);
+            }
+            for (var i = 0; i < nStocks.length; i++) {
+                var ntemp = nStocks[i].flow * 100;
+                ntemp = parseInt(ntemp * 100) / 100;//保留小数点后两位
+                flow3.push(ntemp);
+            }
+
+            var data = [
+                {
+                    name: 'RY',
+                    value: flow2,
+                    color: '#f00',
+                    line_width: 2
+                }, {
+                    name: 'TY',
+                    value: flow1,
+                    color: '#5e93eb',
+                    line_width: 2
+                }, {
+                    name: 'AA',
+                    value: flow3,
+                    color: '#ffc601',
+                    line_width: 2
+                }
+            ];
+            var start_scale, end_scale;
+            start_scale = min_yield - 2;
+            end_scale = max_yield + 2;
+            start_scale = (parseInt(start_scale * 100)) / 100;
+            end_scale = (parseInt(end_scale * 100)) / 100;
+            var middle_yield = (end_scale - start_scale) / 2;
+            var scale_space = middle_yield;
+            scale_space = (parseInt(scale_space * 100)) / 100;
+            all_yield = (parseInt(all_yield * 100)) / 100;
+            var chart = new iChart.LineBasic2D({
+                render: 'canvasDiv',
+                data: data,
+                align: 'center',
+                width: width,
+                height: 353,
+                shadow: false,
+                background_color: null,
+                border: null,
+                animation: true,//开启过渡动画
+                animation_duration: 600,//600ms完成动画
+                tip: {
+                    enable: true,
+                    shadow: false,
+                    border: null,
+                    shadow: false,
+                    style: "background-color:#f45531;padding:10px;",
+                    listeners: {
+                        //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                        parseText: function (tip, name, value, text, i) {
+                            var yields = flow2[i] || ' ';
+                            var nYield = flow3[i] || ' ';
+                            var date = stocks[i].labels || ' ';
+                            return "<span style='color:#fff;font-size:13px;'>收益率:" + yields + "%</span><br/>" + "<span style='color:#fff;font-size:13px;'>" + nname + ":" + nYield + "%</span><br/>" + "<span style='color:#fff;font-size:13px;'>日期:" + date + "</span>";
+                        }
+                    }
+                },
+                tipMocker: function (tips, i) {
+                    return tips[0];
+                },
+                tipMockerOffset: Number(0.0),
+                crosshair: {
+                    enable: true,
+                    line_color: '#95a2aa'
+                },
+                sub_option: {
+                    smooth: false,
+                    label: false,
+                    hollow: false,
+                    hollow_inside: false,
+                    point_size: 0
+                },
+                coordinate: {
+                    width: "85%",
+                    height: "85%",
+                    striped: false,
+                    grid_color: '#ccc',
+                    gridHStyle: {
+                        solid: false,
+                        size: 1,
+                        fator: 2
+                    },
+                    axis: {
+                        width: [0, 0, 0, 0]
+                    },
+                    scale: [{
+                        position: 'left',
+                        start_scale: start_scale,
+                        end_scale: end_scale,
+                        scale_space: scale_space,
+                        scale_enable: false,
+                        label: {color: '#000', fontsize: 14, fontweight: 30, offsetx: width - 65, offsety: -10},
+                        listeners: {//配置事件
+                            parseText: function (t) {//设置解析值轴文本
+                                return {text: t + "%"}
+                            }
+                        }
+                    }]
+                }
+            });
+            //开始画图
+            chart.draw();
+            console.log('start_scale:'+start_scale);
+            console.log('end_scale:'+end_scale);
+            console.log('scale_space:'+scale_space);
+            target_yield = parseInt(target_yield * 100) / 100;
+            $(".yieldBoxN p").text(nname);
+            $(".ch_yield_target b").text(target_yield + "%");
+            $(".ch_yield_all b").text(all_yield + "%");
+            $(".ch_yield_n b").text(nYield + "%");
+        }
+        $(function () {
+            var aValue = {
+                expectYield:"0.0700",n:{
+                    name:"道琼斯",stocks:[{
+                        flow:"0.0000",labels:"2016-06-15",
+                    },
+                    {
+                        flow:"0.0053",labels:"2016-06-16",
+                    },
+                    {
+                        flow:"0.0020",labels:"2016-06-17",
+                    },
+                    {
+                        flow:"0.0093",labels:"2016-06-20",
+                    },
+                    {
+                        flow:"0.0107",labels:"2016-06-21",
+                    },
+                    {
+                        flow:"0.0080",labels:"2016-06-22",
+                    },
+                    {
+                        flow:"0.0210",labels:"2016-06-23",
+                    },
+                    {
+                        flow:"-0.0136",labels:"2016-06-24",
+                    },
+                    {
+                        flow:"-0.0283",labels:"2016-06-27",
+                    },
+                    {
+                        flow:"-0.0131",labels:"2016-06-28",
+                    },
+                    {
+                        flow:"0.0031",labels:"2016-06-29",
+                    },
+                    {
+                        flow:"0.0164",labels:"2016-06-30",
+                    },
+                    {
+                        flow:"0.0175",labels:"2016-07-01",
+                    },
+                    {
+                        flow:"0.0114",labels:"2016-07-05",
+                    },
+                    {
+                        flow:"0.0158",labels:"2016-07-06",
+                    },
+                    {
+                        flow:"0.0145",labels:"2016-07-07",
+                    },
+                    {
+                        flow:"0.0287",labels:"2016-07-08",
+                    },
+                    {
+                        flow:"0.0333",labels:"2016-07-11",
+                    },
+                    {
+                        flow:"0.0401",labels:"2016-07-12",
+                    },
+                    {
+                        flow:"0.0415",labels:"2016-07-13",
+                    },
+                    {
+                        flow:"0.0491",labels:"2016-07-14",
+                    },
+                    {
+                        flow:"0.0497",labels:"2016-07-15",
+                    },
+                    {
+                        flow:"0.0506",labels:"2016-07-18",
+                    },
+                    {
+                        flow:"0.0521",labels:"2016-07-19",
+                    },
+                    {
+                        flow:"0.0541",labels:"2016-07-20",
+                    },
+                    {
+                        flow:"0.0497",labels:"2016-07-21",
+                    },
+                    {
+                        flow:"0.0528",labels:"2016-07-22",
+                    },
+                    {
+                        flow:"0.0483",labels:"2016-07-25",
+                    },
+                    {
+                        flow:"0.0473",labels:"2016-07-26",
+                    },
+                    {
+                        flow:"0.0472",labels:"2016-07-27",
+                    },
+                    {
+                        flow:"0.0463",labels:"2016-07-28",
+                    },
+                    {
+                        flow:"0.0449",labels:"2016-07-29",
+                    },
+                    {
+                        flow:"0.0433",labels:"2016-08-01",
+                    },
+                    {
+                        flow:"0.0382",labels:"2016-08-02",
+                    },
+                    {
+                        flow:"0.0405",labels:"2016-08-03",
+                    },
+                    {
+                        flow:"0.0404",labels:"2016-08-04",
+                    },
+                    {
+                        flow:"0.0512",labels:"2016-08-05",
+                    },
+                    {
+                        flow:"0.0504",labels:"2016-08-08",
+                    },
+                    {
+                        flow:"0.0506",labels:"2016-08-09",
+                    },
+                    {
+                        flow:"0.0485",labels:"2016-08-10",
+                    },
+                    {
+                        flow:"0.0552",labels:"2016-08-11",
+                    },
+                    {
+                        flow:"0.0531",labels:"2016-08-12",
+                    },
+                    {
+                        flow:"0.0565",labels:"2016-08-15",
+                    },
+                    {
+                        flow:"0.0517",labels:"2016-08-16",
+                    },
+                    {
+                        flow:"0.0529",labels:"2016-08-17",
+                    },
+                    {
+                        flow:"0.0543",labels:"2016-08-18",
+                    },
+                    {
+                        flow:"0.0517",labels:"2016-08-19",
+                    },
+                    {
+                        flow:"0.0504",labels:"2016-08-22",
+                    },
+                    {
+                        flow:"0.0514",labels:"2016-08-23",
+                    },
+                    {
+                        flow:"0.0477",labels:"2016-08-24",
+                    },
+                    {
+                        flow:"0.0458",labels:"2016-08-25",
+                    },
+                    {
+                        flow:"0.0428",labels:"2016-08-26",
+                    },
+                    {
+                        flow:"0.0489",labels:"2016-08-29",
+                    },
+                    {
+                        flow:"0.0462",labels:"2016-08-30",
+                    },
+                    {
+                        flow:"0.0431",labels:"2016-08-31",
+                    },
+                    {
+                        flow:"0.0442",labels:"2016-09-01",
+                    },
+                    {
+                        flow:"0.0483",labels:"2016-09-02",
+                    },
+                    {
+                        flow:"0.0509",labels:"2016-09-06",
+                    },
+                    {
+                        flow:"0.0502",labels:"2016-09-07",
+                    },
+                    {
+                        flow:"0.0476",labels:"2016-09-08",
+                    },
+                    {
+                        flow:"0.0252",labels:"2016-09-09",
+                    },
+                    {
+                        flow:"0.0388",labels:"2016-09-12",
+                    },
+                    {
+                        flow:"0.0242",labels:"2016-09-13",
+                    },
+                    {
+                        flow:"0.0224",labels:"2016-09-14",
+                    },
+                    {
+                        flow:"0.0325",labels:"2016-09-15",
+                    },
+                    {
+                        flow:"0.0274",labels:"2016-09-16",
+                    },
+                    {
+                        flow:"0.0272",labels:"2016-09-19",
+                    },
+                    {
+                        flow:"0.0278",labels:"2016-09-20",
+                    },
+                    {
+                        flow:"0.0370",labels:"2016-09-21",
+                    },
+                    {
+                        flow:"0.0370",labels:"2016-09-22",
+                    }],
+                },stockYield:[{
+                    flow:"-0.0011",labels:"2016-06-15",
+                },
+                {
+                    flow:"0.0071",labels:"2016-06-16",
+                },
+                {
+                    flow:"-0.0042",labels:"2016-06-17",
+                },
+                {
+                    flow:"0.0150",labels:"2016-06-20",
+                },
+                {
+                    flow:"0.0219",labels:"2016-06-21",
+                },
+                {
+                    flow:"0.0165",labels:"2016-06-22",
+                },
+                {
+                    flow:"0.0569",labels:"2016-06-23",
+                },
+                {
+                    flow:"-0.0576",labels:"2016-06-24",
+                },
+                {
+                    flow:"-0.1125",labels:"2016-06-27",
+                },
+                {
+                    flow:"-0.0605",labels:"2016-06-28",
+                },
+                {
+                    flow:"-0.0114",labels:"2016-06-29",
+                },
+                {
+                    flow:"0.0289",labels:"2016-06-30",
+                },
+                {
+                    flow:"0.0343",labels:"2016-07-01",
+                },
+                {
+                    flow:"0.0130",labels:"2016-07-05",
+                },
+                {
+                    flow:"0.0295",labels:"2016-07-06",
+                },
+                {
+                    flow:"0.0281",labels:"2016-07-07",
+                },
+                {
+                    flow:"0.0736",labels:"2016-07-08",
+                },
+                {
+                    flow:"0.0847",labels:"2016-07-11",
+                },
+                {
+                    flow:"0.1089",labels:"2016-07-12",
+                },
+                {
+                    flow:"0.1099",labels:"2016-07-13",
+                },
+                {
+                    flow:"0.1250",labels:"2016-07-14",
+                },
+                {
+                    flow:"0.1241",labels:"2016-07-15",
+                },
+                {
+                    flow:"0.1310",labels:"2016-07-18",
+                },
+                {
+                    flow:"0.1281",labels:"2016-07-19",
+                },
+                {
+                    flow:"0.1424",labels:"2016-07-20",
+                },
+                {
+                    flow:"0.1293",labels:"2016-07-21",
+                },
+                {
+                    flow:"0.1438",labels:"2016-07-22",
+                },
+                {
+                    flow:"0.1352",labels:"2016-07-25",
+                },
+                {
+                    flow:"0.1361",labels:"2016-07-26",
+                },
+                {
+                    flow:"0.1335",labels:"2016-07-27",
+                },
+                {
+                    flow:"0.1373",labels:"2016-07-28",
+                },
+                {
+                    flow:"0.1441",labels:"2016-07-29",
+                },
+                {
+                    flow:"0.1386",labels:"2016-08-01",
+                },
+                {
+                    flow:"0.1187",labels:"2016-08-02",
+                },
+                {
+                    flow:"0.1244",labels:"2016-08-03",
+                },
+                {
+                    flow:"0.1307",labels:"2016-08-04",
+                },
+                {
+                    flow:"0.1571",labels:"2016-08-05",
+                },
+                {
+                    flow:"0.1538",labels:"2016-08-08",
+                },
+                {
+                    flow:"0.1577",labels:"2016-08-09",
+                },
+                {
+                    flow:"0.1489",labels:"2016-08-10",
+                },
+                {
+                    flow:"0.1649",labels:"2016-08-11",
+                },
+                {
+                    flow:"0.1620",labels:"2016-08-12",
+                },
+                {
+                    flow:"0.1720",labels:"2016-08-15",
+                },
+                {
+                    flow:"0.1548",labels:"2016-08-16",
+                },
+                {
+                    flow:"0.1597",labels:"2016-08-17",
+                },
+                {
+                    flow:"0.1676",labels:"2016-08-18",
+                },
+                {
+                    flow:"0.1629",labels:"2016-08-19",
+                },
+                {
+                    flow:"0.1623",labels:"2016-08-22",
+                },
+                {
+                    flow:"0.1685",labels:"2016-08-23",
+                },
+                {
+                    flow:"0.1528",labels:"2016-08-24",
+                },
+                {
+                    flow:"0.1495",labels:"2016-08-25",
+                },
+                {
+                    flow:"0.1410",labels:"2016-08-26",
+                },
+                {
+                    flow:"0.1583",labels:"2016-08-29",
+                },
+                {
+                    flow:"0.1523",labels:"2016-08-30",
+                },
+                {
+                    flow:"0.1433",labels:"2016-08-31",
+                },
+                {
+                    flow:"0.1415",labels:"2016-09-01",
+                },
+                {
+                    flow:"0.1586",labels:"2016-09-02",
+                },
+                {
+                    flow:"0.1693",labels:"2016-09-06",
+                },
+                {
+                    flow:"0.1679",labels:"2016-09-07",
+                },
+                {
+                    flow:"0.1603",labels:"2016-09-08",
+                },
+                {
+                    flow:"0.0779",labels:"2016-09-09",
+                },
+                {
+                    flow:"0.1241",labels:"2016-09-12",
+                },
+                {
+                    flow:"0.0762",labels:"2016-09-13",
+                },
+                {
+                    flow:"0.0722",labels:"2016-09-14",
+                },
+                {
+                    flow:"0.1040",labels:"2016-09-15",
+                },
+                {
+                    flow:"0.0935",labels:"2016-09-16",
+                },
+                {
+                    flow:"0.0920",labels:"2016-09-19",
+                },
+                {
+                    flow:"0.0943",labels:"2016-09-20",
+                },
+                {
+                    flow:"0.1299",labels:"2016-09-21",
+                },
+                {
+                    flow:"0.1295",labels:"2016-09-22",
+                }],
+            }
+
+        getStockYield(aValue.stockYield,aValue.expectYield, aValue.n);
+    //            console.log(typeof aValue.stockYield);
+    ////            aValue = JSON.parse(aValue);
+    //            getStockYield(aValue.stockYield, aValue.expectYield, aValue.n);
+
+
+        });
+        function getTime() {
+            var time = new Date();
+            var years = time.getFullYear();
+            var months = time.getMonth() + 1;
+            var dates = time.getDate();
+            return years + "-" + months + "-" + dates;
+        }
+    </script>
+</head>
+<body>
+<div id='canvasDiv'></div>
+<div class="x_time"><span class="first_coordinate"></span> <span class="last_coordinate"></span></div>
+<div class="ch_yield">
+
+    <div class="yieldBox">
+    <span class="ch_yield_target">
+        <b>7.00%</b>
+    </span>
+        <p>目标收益</p>
+    </div>
+    <div class="yieldBox">
+    <span class="ch_yield_all">
+        <b>0.00%</b>
+    </span> <p>累计收益</p>
+    </div>
+    <div class="yieldBox yieldBoxN"><span class="ch_yield_n"><i></i><b>0.00%</b></span><p>指数</p></div>
+</div>
+</body>
+</html>

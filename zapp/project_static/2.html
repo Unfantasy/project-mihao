@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!--<script src="js/jquery.media.js"></script>-->
+    <style>
+        body{
+            margin: 0;
+            font-size: 25px;
+        }
+        .circleProgress_wrapper{
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top:5%;
+            left:5%;
+        }
+        .wrapper{
+            width: 1rem;
+            height: 2rem;
+            position: absolute;
+            top:0;
+            overflow: hidden;
+        }
+        .right{
+            right:0;
+        }
+        .left{
+            left:0;
+        }
+        .circleProgress{
+            width: 1.6rem;
+            height: 1.6rem;
+            border:1px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top:0;
+            -webkit-transform: rotate(45deg);
+        }
+        .rightcircle{
+            border-top:1px solid #f45531;
+            border-right:1px solid #f45531;
+            right:0;
+            -webkit-animation: circleProgressLoad_right 2s linear infinite;
+        }
+        .leftcircle{
+            border-bottom:1px solid #f45531;
+            border-left:1px solid #f45531;
+            left:0;
+            -webkit-animation: circleProgressLoad_left 2s linear infinite;
+        }
+        @-webkit-keyframes circleProgressLoad_right{
+            0%{
+                border-top:1px solid #f45531;
+                border-right:1px solid #f45531;
+                -webkit-transform: rotate(45deg);
+            }
+            50%{
+                border-top:1px solid #f45531;
+                border-right:1px solid #f45531;
+                border-left:1px solid #fff;
+                border-bottom:1px solid #fff;
+                -webkit-transform: rotate(225deg);
+            }
+            100%{
+                border-left:1px solid #ffffff;
+                border-bottom:1px solid #ffffff;
+                -webkit-transform: rotate(225deg);
+            }
+        }
+        @-webkit-keyframes circleProgressLoad_left{
+            0%{
+                border-bottom:1px solid #f45531;
+                border-left:1px solid #f45531;
+                -webkit-transform: rotate(45deg);
+            }
+            50%{
+                border-bottom:1px solid #f45531;
+                border-left:1px solid #f45531;
+                border-top:1px solid #fff;
+                border-right:1px solid #fff;
+                -webkit-transform: rotate(45deg);
+            }
+            100%{
+                border-top:1px solid #fff;
+                border-right:1px solid #fff;
+                -webkit-transform: rotate(225deg);
+            }
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<p>aaaaaaaa</p>
+<script>
+    alert('break');
+    document.write('<p>bbbb</p>');
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的分享</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="css/share_only_new.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/flipsnap.js"></script>
+    <script src="js/zepto.min.js"></script>
+</head>
+<body>
+
+<script src="js/share_only_new.js"></script>
+<script>
+    //分享页面的滑动
+    var $pointer=$('.footer li');
+
+    var flipsnap=Flipsnap('.inner', {
+        disableTouch: false     //true 鼠标不可拖动;  false 鼠标可拖动
+    });
+
+    //ul长度设置
+    var ulLength = innerMarginLeft;
+    for(var i=0;i<$pointer.length;i++){
+        ulLength+=$pointer.eq(i).outerWidth(true);
+    }
+    $(".s_nav").width(ulLength);
+
+    //下面导航栏滑动
+    var slideLength = document.body.clientWidth;
+    var ulWidth = 0;
+    for(var i=0;i<$pointer.length;i++){
+        ulWidth += $pointer.eq(i).width()+16;
+    }
+    var n = parseInt(ulWidth/(slideLength/2));
+    var flipsnap2 = Flipsnap('.s_nav',{
+        distance:slideLength/2,
+        disableTouch: false,
+        maxPoint:n
+    });
+
+    flipsnap.element.addEventListener('fsmoveend',function(){
+        $pointer.filter('.active').removeClass('active');            //filter 为jquery的筛选器，筛选出与指定表达式匹配的元素集合
+        $pointer.eq(flipsnap.currentPoint).addClass('active');
+    },false);
+
+    //给下面的股票绑定点击事件
+    $(".s_nav li").click(function(){
+        flipsnap.moveToPoint($(this).index());
+    });
+
+    //左右滑动下面li跟随
+    var startPosition, endPosition, deltaX, deltaY, moveLength;
+    $(".s_content").swipeLeft(function(){
+        var index = $(this).index();
+        var liWidth = 0;
+        for(i=0;i<index+1;i++){
+            liWidth += $pointer.eq(i).width()+16;
+        }
+        liWidth -= ($pointer.eq(index+1).width()/2);
+        var _n2 = parseInt(liWidth/(slideLength/2));
+        if(index!=$(".s_nav li").length-1)
+            flipsnap2.moveToPoint(_n2);
+    });
+    $(".s_content").swipeRight(function(){
+        var index = $(this).index();
+        var liWidth = 0;
+        for(i=0;i<index-1;i++){
+            liWidth += $pointer.eq(i).width()+16;
+        }
+        var _n2 = parseInt(liWidth/slideLength*2);
+        flipsnap2.moveToPoint(_n2);
+    });
+    function getStockIndex(){
+        return $(".s_nav").find(".active").index();
+    }
+    ;
+</script>
+
+</body>
+</html>

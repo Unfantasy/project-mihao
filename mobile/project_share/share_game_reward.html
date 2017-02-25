@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        i{
+            font-style: normal;
+        }
+        .content{
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color:#fff;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+        }
+        .tipBox:nth-child(1){
+            border-radius: .1rem .1rem 0 0;
+        }
+        .tipBox{
+            padding:.5rem;
+            background-color:rgba(244,85,49,.7);
+            position:relative;
+        }
+        .tipBox h4{
+            font-weight: normal;
+            font-size: .53rem;
+            text-align: center;
+            margin-bottom:0;
+        }
+        .content1{
+            border-bottom: #d6c7e6;
+        }
+        .monthRanking,.weekRanking{
+            width:100%;
+            text-align: center;
+        }
+        .monthRanking span,.weekRanking span{
+            line-height: 1.3;
+            font-size: .45rem;
+            background-color: #f7a800;
+            border-radius: .4rem;
+            padding:.1rem .2rem;
+            color:#fff;
+        }
+        .ranking{
+            background: url('images/hexagon.png') no-repeat center;
+            background-size: 100% auto;
+            width: 2.5rem;
+            height:2.5rem;
+            padding:.5rem 0 .5rem .4rem;
+            line-height: 2.5rem;
+            font-size: .4rem;
+            text-align: center;
+            position:absolute;
+            top:0;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .content2 h4{
+            margin-top:1.5rem;
+            margin-bottom:.5rem;
+        }
+        .ranking i{
+            font-size: 1.2rem;
+        }
+        .downloadBtn{
+            width:100%;
+            font-size: .45rem;
+            line-height: 3;
+            text-align: center;
+            background-color: #f45531;
+            border-radius: 0 0 .1rem .1rem;
+        }
+        .downloadBtn a{
+            color:#fff;
+            text-decoration: none;
+            width: 100%;
+            display: block;
+        }
+        .bg{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            height:100vh;
+            background: url("images/race.jpg") no-repeat bottom center;
+            background-size: 100% auto;
+        }
+        .wechatLead{
+            background: rgba(0,0,0,.7) url("m/images/wechat_lead.png") no-repeat center;
+            background-size: 100%;
+            width:100%;
+            height:100%;
+            height:100vh;
+            position:fixed;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script>
+        var dpr, rem, scale;
+        var docEl = document.documentElement;
+        var fontEl = document.createElement('style');
+        var metaEl = document.querySelector('meta[name="viewport"]');
+        dpr = window.devicePixelRatio || 1;
+        rem = docEl.clientWidth * dpr / 10;
+        scale = 1 / dpr;
+        // 设置viewport，进行缩放，达到高清效果
+        metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+        // 设置data-dpr属性，留作的css hack之用
+        docEl.setAttribute('data-dpr', dpr);
+        // 动态写入样式
+        docEl.firstElementChild.appendChild(fontEl);
+        fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+        // 给js调用的，某一dpr下rem和px之间的转换函数
+        window.rem2px = function(v) {
+            v = parseFloat(v);
+            return v * rem;
+        };
+        window.px2rem = function(v) {
+            v = parseFloat(v);
+            return v / rem;
+        };
+        window.dpr = dpr;
+        window.rem = rem;
+        function hide(e){
+            $(e).attr("hidden","true");
+        }
+        function wechatTip(){
+            if(is_weixn()){
+                $(".wechatLead").removeAttr("hidden");
+            }
+        }
+        //是否是在微信浏览器里面
+        function is_weixn(){
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <div class="content content1"  hidden>
+            <div class="tipBox">
+                <div class="monthRanking"> <span>月排名：<i>4</i>名</span></div>
+                <h4>奖励：<i>5000</i>元</h4>
+            </div>
+            <div class="tipBox">
+                <div class="weekRanking"> <span>周排名：<i>4</i>名</span></div>
+                <h4>奖励：<i>5000</i>元</h4>
+            </div>
+            <div class="downloadBtn"><a href="#" class="download" onclick="wechatTip()">下载</a></div>
+        </div>
+
+        <div class="content content2" hidden>
+            <div class="tipBox">
+                <div class="ranking"> <i>4</i>名</div>
+                <h4>奖励：<i>5000</i>元</h4>
+            </div>
+            <div class="downloadBtn"><a href="#" class="download" onclick="wechatTip()">下载</a></div>
+        </div>
+        <div class="wechatLead" hidden onclick="hide(this)"></div>
+    </section>
+    <script>
+        //判断是否是IOS
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        var download = document.getElementsByClassName("download");
+        if(isiOS){
+            for(var i=0;i<download.length;i++){
+                download[i].href = "https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8";
+            }
+        }else{
+            for(var i=0;i<download.length;i++){
+                download[i].href = "http://mimikj.com:8081/mimikj/app/zhongmiApp.apk";
+            }
+        }
+
+
+
+        var theRequest = new Object();
+        var src = window.location.search; //获取url中"?"符后的字串
+//        var src= "?username=小石头&weekRanking=5&weekReward=50&monthRanking=6&monthReward=60";
+//        var src = "?username=小石头&weekRanking=5&weekReward=50";
+        if (src.indexOf("?") != -1) {
+            var str = src.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+            }
+        }
+        var username = theRequest['username']||"";
+        $('title').text(username+"的分享");
+        if(theRequest['monthRanking']){
+            $(".content1").removeAttr("hidden");
+            $(".monthRanking i").text(theRequest["monthRanking"]||"0");
+            theRequest['monthReward'] = parseInt(theRequest['monthReward']);
+            $(".monthRanking").next().find("i").text(theRequest["monthReward"]||"0");
+            $(".weekRanking i").text(theRequest["weekRanking"]||"0");
+            theRequest['weekReward'] = parseInt(theRequest['weekReward']);
+            $(".weekRanking").next().find("i").text(theRequest["weekReward"]||"0");
+        }else{
+            $(".content2").removeAttr("hidden");
+            $(".ranking i").text(theRequest["weekRanking"]||"0");
+            theRequest['weekReward'] = parseInt(theRequest['weekReward']);
+            $(".ranking").next().find("i").text(theRequest["weekReward"]||"0");
+        }
+    </script>
+</body>
+</html>

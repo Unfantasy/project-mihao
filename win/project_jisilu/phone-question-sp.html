@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>股市合伙人---发现最搭的投资战友</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.js"type="text/javascript"></script>
+    <style>
+        body,html{
+            width:100%;
+        }
+
+        .nav-pills{
+            background-color:#F2F2F2;
+        }
+        .nav-pills li a{
+            color:black;
+
+        }
+        .nav{
+            margin-bottom:0px;
+        }
+        .nav-pills>li{
+            width: 25%;
+            text-align: center;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        .container-fluid{
+            padding-right:0;
+        }
+        #phone_top{
+            width:100%;
+            height:50px;
+        }
+        .dropdown-menu{
+            min-width: 50px;
+        }
+        /*重写common中的样式，改为手机上适应的*/
+        .aw-question-list .aw-questoin-content h4{
+            width:100%;
+        }
+        .aw-main-content{
+            width:100%;
+        }
+        .span12{
+            width:100%;
+            margin:0;
+        }
+        .aw-main-content{
+            padding-bottom:0px;
+        }
+
+        .category .span12 > ul > li.active {
+            background: #225599;
+        }
+        .category .span12 > ul > li{
+            height: 20px;
+            line-height: 20px;
+            border-radius:10px;
+        }
+        .aw-content-wrap{
+            padding: 0;
+        }
+        .category .span12 > ul > li:hover, .category dl:hover {
+            position: relative;
+            z-index: 999;
+            background: #225599;
+        }
+        .aw-main-content{
+            padding-left:20px;
+            padding-top:0px;
+            padding-right:20px;
+        }
+        .aw-content-wrap .aw-all-question {
+            padding-top: 10px;
+        }
+        .aw-question-detail-box .aw-dynamic-topic .aw-item .aw-user-img{
+            top:32px;
+        }
+        /* end 重写common中的样式，改为手机上适应的 */
+        .span4{
+            width:33.3%;
+        }
+
+        .aw-stock-zh td{
+            border-top:0;
+        }
+        .aw-stock-zh td .total-stock{
+            box-sizing: border-box;
+            background-color: #FFFAE3;
+            width:90px;
+            height:90px;
+            margin: 0 auto;
+            padding:7px;
+        }
+        #v_stock_index td{
+            padding-left:0;
+            padding-right:0;
+        }
+        .aw-stock-zh td .total-stock .param1{
+            margin-top:5px;
+            font-size: 15px;
+        }
+        .aw-stock-zh td .total-stock .param2{
+            margin-top:5px;
+        }
+        .aw-stock-zh td .total-stock .param2 span{
+            color: #008A2E;
+            font-size: 14px;
+        }
+        .aw-stock-zh td .total-stock .param3{
+            margin-top:2px;
+            font-size: 7px;
+        }
+        .aw-stock-zh td .total-stock .param3 span{
+            padding-right: 10px;
+        }
+        .stock span{
+            padding-left:10px;
+        }
+        .stock div{
+            font-size: 15px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        #stock-log tbody td.stock-increase,#stock-log tfoot td.stock-increase{
+            text-align:center;
+            vertical-align:middle;
+            padding-top:0px;
+        }
+        #stock-log tbody td.stock-select,#stock-log tfoot td.stock-select{
+            vertical-align:middle;
+            text-align:right;
+            padding-right:20px;
+            padding-top:0px;
+        }
+        #stock-log tbody td.stock-select img,#stock-log tfoot td.stock-select img{
+            vertical-align: middle;
+            width:30px;
+        }
+
+        .aw-reset-nav-tabs h2{
+            position:relative;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <img src="images/banner.png" id="phone_top" alt="顶部图片"/>
+
+        <div class="span12">
+            <ul class="nav nav-pills">
+                <li><a href="phone-indexuser.html">&nbsp;&nbsp;&nbsp;广场</a></li>
+                <li><a href="phone-findboss.html">发现牛人</a></li>
+                <li><a href="phone-mimic.html">寻找战友</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#">
+                        我
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="phone-people.html">我的主页</a></li>
+                        <li><a href="phone-inbox.html">私信</a></li>
+                        <li><a href="phone-setting.html">设置</a></li>
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="row aw-content-wrap">
+        <div class="span12 aw-main-content aw-all-question">
+            <!-- 问题列表 -->
+            <div class="aw-mod aw-item aw-question-detail-title">
+                <div class="aw-mod-head">
+                    <h1>12.29龙虎榜工作组（加强版）</h1>
+
+
+                    <div class="aw-topic-editor" id="question_topic_editor" data-type="question" data-id="49999">
+
+
+
+                        <a href="/mimikj_manage/forum_post/list?type=3" class="aw-topic-name">操盘手日志</a>
+
+
+                    </div>
+
+                </div>
+                <div class="aw-mod-body">
+                    <div class="aw-question-detail-txt markitup-box">
+
+                        <div id="aw-publish-prepend">
+                            <table class="table" id="stock-log">
+                                <thead>
+                                <tr>
+                                    <td colspan="3" class="span12 little-title" style="text-align: center;">今日复盘</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="aw-stock-zh" id="v_stock_index">
+                                    <td class="span4">
+                                        <div class="total-stock">
+                                            <div class=" text-center param1" id="stock_0">
+                                                <div>上证综指</div>
+                                            </div>
+                                            <div class=" text-center param2" id="price_0">
+                                                <span>3563.74</span>
+                                            </div>
+                                            <div class=" text-center param3" id="change_percent_0">
+                                                <span>29.96</span><i>0.85%</i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="span4">
+                                        <div class="total-stock">
+                                            <div class=" text-center param1" id="stock_1">
+                                                <div>深证成指</div>
+                                            </div>
+                                            <div class=" text-center param2" id="price_1">
+                                                <span>12806.16</span>
+                                            </div>
+                                            <div class=" text-center param3" id="change_percent_1">
+                                                <span>-11.92%</span><i>-11.92%</i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="span4">
+                                        <div class="total-stock">
+                                            <div class=" text-center param1" id="stock_2">
+                                                <div>创业板指</div>
+                                            </div>
+                                            <div class=" text-center param2" id="price_2">
+                                                <span>2749</span>
+                                            </div>
+                                            <div class=" text-center param3" id="change_percent_2">
+                                                <span>14.33</span><i>0.52%</i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="span4" style="padding-left: 20px;">名称代码</td>
+                                    <td class="span4 " style="text-align: center">涨跌幅</td>
+                                    <td class="span4" style="text-align: right;padding-right: 40px">标签</td>
+                                </tr>
+                                </tbody>
+                                <tfoot><tr><td class="stock"><span>万好万家</span><div class="stock-num">600576</div> </td><td class="stock-increase"> <span>-3.52%</span></td> <td class="stock-select">横盘整理 </td> </tr><tr><td class="stock"><span>得利斯</span><div class="stock-num">002330</div> </td><td class="stock-increase"> <span>-1.81%</span></td> <td class="stock-select">横盘整理 </td> </tr><tr><td class="stock"><span>鸿利光电</span><div class="stock-num">300219</div> </td><td class="stock-increase"> <span>-1.04%</span></td> <td class="stock-select">横盘整理 </td> </tr></tfoot>
+                            </table>
+                            <div class="aw-history-content">
+                                <p class="little-title">操作回顾</p>
+                                <p class="history-content" style="text-indent: 2em">万好万家600576逢低介入；亏损3.52%
+                                    得利斯002330继续持有；亏损10%
+                                    鸿利光电300219继续持有。盈利2%</p>
+                            </div>
+                            <div class="aw-invest-plan">
+                                <p class="little-title">投资计划</p>
+                                <p class="zhubanzoushi">主 板 走 势：<span>市小幅低开，早盘热点不明，指数维持小幅震荡，午后证券、银行、煤炭、工程机械、石油、钢铁等权重板块均有不同程度的表现，推动两市指数上扬。新能源题材表现突出，锂电池、新能源汽车、石墨烯、光伏等题材较为活跃。收周一B股、A股齐跌影响，周二早盘，两</span></p> <br>
+                                <p class="cangweikongzhi">仓 位 控 制：<span>6成</span></p> <br>
+                                <p class="yujizijin">预计资金流向：<span>流入，与昨日增速减缓</span></p> <br>
+                                <p class="chugumubiao">持股目标价位：<span>盘面上，造纸、石油矿业开采、半导体及元件、视听器材等板块涨幅居前；无板块下跌；超级电容、充电桩、汽车电子、车联网、物联网等题材表现活跃。</span></p> <br>
+                                <p class="invest-content" style="text-indent: 2em">　　进场仓位控制策略：
+
+                                    　　我计划买100万，怕短期波动，把100万分成5份，每份20万。先按100元现价无脑买20万。
+
+                                    1、设的初始止损是10%，股价跌破90元我就把20万割肉，亏损2万。
+
+                                    2、买了以后继续涨怎么办？每涨5%，加仓20万。105——110——115——120元的时候加满100万。
+
+                                    3、先涨后跌怎么办？从最高价往下跌10%就全卖了。比如这股买入后一度涨到110元，导致加仓了2次，持仓60万，成本是（100+105+110）/3=105元。那么它往下跌破99元就清仓，大概会亏3.4万。
+                                    　
+                                    4、当天买入先往上涨，再掉头崩，卖不掉怎么办？so 点子背你就认了吧。
+
+                                    这套方案的优点如下：
+
+                                    1、就算你运气差到极点了，理论最大亏损不会超过计划舱位的3%，小成本跟上大行情
+                                    2、加仓都是在帐户盈利的状态，勇往直前心情好
+                                    3、如果该股涨到120元，导致你满仓了，此时你全仓成本是112元，有7%浮盈，止损线接近成本，即可安心持股。　　
+                                    ---------------------------------------------------------------  众米龙虎榜工作小组
+                                    QQ群：499906059
+                                    微信公众号：众米订阅号
+                                    声明，本方案大部分思路都是借鉴海龟交易的舱位控制，感谢先哲。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="aw-question-detail-meta">
+                        <span class="pull-left aw-text-color-999">2015-12-29 16:23:08.0</span>
+                        <!-- Baidu Button BEGIN -->
+                        <div class="bdsharebuttonbox bdshare-button-style0-16" style="display:inline-table; margin-left: 0" data-bd-bind="1451909348357">
+                            <a href="javascript:;" onclick="" class="aw-text-color-999" data-cmd="more" style="float: none; background: none;"><i class="aw-icon i-share"></i>分享</a>
+                            <a href="#" style="float: none;" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" style="float: none;" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" style="float: none;" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                        <script>
+                            window._bd_share_config={"common":{"bdSnsKey":{},
+                                "bdText":"",
+                                "bdMini":"1",
+                                "bdMiniList":false,
+                                "bdDesc":"",
+                                "bdPic":"",
+                                "bdStyle":"0",
+                                "bdSize":"16"},
+                                "share":{}};
+                            with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                        <!-- Baidu Button END -->
+
+                        <a href="javascript:;" class="aw-text-color-999" id="report" onclick="f_report()"><i class="aw-icon i-no-help"></i>举报</a>
+                        <a href="javascript:;" class="aw-text-color-999" title="点击拉黑" id="push_black" onclick="f_push_black()">拉黑</a>
+
+                        <!-- 投票栏 -->
+                        <a id="praise_flag" title="给楼主点赞" class="aw-text-color-999 aw-question-vote-bar" onclick="f_praise(1)">
+                            <i data-original-title="给楼主点赞" class="aw-icon i-question-agree" data-toggle="tooltip" title="" data-placement="right"></i>
+                            <span id="pcount" class="aw-vote-bar-count">0</span> 个赞同</a>
+                        <a id="unpraise_flag" title="反对楼主" class="aw-text-color-999 aw-question-vote-bar " onclick="f_praise(-1)">
+                            <i data-original-title="反对楼主" class="aw-icon i-question-unagree" data-toggle="tooltip" title="" data-placement="right"></i>
+                            <span id="opcount" class="aw-vote-bar-count">0</span> 个反对</a>
+                        <!-- end 投票栏 -->
+                    </div>
+                </div>
+            </div>
+            <div class="aw-mod aw-question-detail-box">
+                <div class="aw-mod-head">
+                    <ul class="nav nav-tabs aw-reset-nav-tabs">
+
+                        <h2>2 个评论</h2>
+                    </ul>
+                </div>
+                <div class="aw-mod-body aw-dynamic-topic">
+
+                    <div class="aw-item" id="answer_2">
+                        <!-- 用户头像 -->
+                        <a class="aw-user-img aw-border-radius-5 pull-right" href="#" data-id="2">
+
+
+
+                            <img class="bd-rs-normal" alt="李道杨" src="http://mimikj.com/uploads/user/avatar/2063/avatar.jpg">
+
+
+                        </a>
+                        <!-- end 用户头像 -->
+                        <div class="aw-mod-body clearfix">
+                            <!-- end 投票栏 -->
+                            <div class="pull-left aw-dynamic-topic-content">
+                                <!-- 评论内容 -->
+                                <div>
+                                    <p><a class="aw-user-name" href="http://www.jisilu.cn/people/xiaopeiake" data-id="2">李道杨</a> </p>
+                                    <div class="markitup-box">
+                                        的撒范德萨分顶顶顶顶顶顶顶顶顶顶顶																					</div>
+                                </div>
+                                <!-- end 评论内容 -->
+                                <!-- 社交操作 -->
+                                <div class="aw-dynamic-topic-meta">
+                                    <span class="pull-left aw-text-color-999">2015-12-01 18:50:53.0</span>
+                                </div>
+                                <!-- end 社交操作 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aw-item" id="answer_1">
+                        <!-- 用户头像 -->
+                        <a class="aw-user-img aw-border-radius-5 pull-right" href="#" data-id="1">
+
+
+
+                            <img class="bd-rs-normal" alt="李道杨" src="http://mimikj.com/uploads/user/avatar/2063/avatar.jpg">
+
+
+                        </a>
+                        <!-- end 用户头像 -->
+                        <div class="aw-mod-body clearfix">
+                            <!-- end 投票栏 -->
+                            <div class="pull-left aw-dynamic-topic-content">
+                                <!-- 评论内容 -->
+                                <div>
+                                    <p><a class="aw-user-name" href="http://www.jisilu.cn/people/xiaopeiake" data-id="1">李道杨</a> </p>
+                                    <div class="markitup-box">
+                                        ddasfdsa																					</div>
+                                </div>
+                                <!-- end 评论内容 -->
+                                <!-- 社交操作 -->
+                                <div class="aw-dynamic-topic-meta">
+                                    <span class="pull-left aw-text-color-999">2015-12-01 18:49:48.0</span>
+                                </div>
+                                <!-- end 社交操作 -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end 问题列表 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

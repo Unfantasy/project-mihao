@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .box{border:1px solid #C0C0C0;width:182px;height:19px;clip:rect(0px,181px,18px,0px);overflow:hidden;}
+        .box2{border:1px solid #F4F4F4;width:180px;height:17px;clip:rect(0px,179px,16px,0px);overflow:hidden;}
+        select{position:relative;left:-2px;top:-2px;font-size:12px;width:183px;line-height:14px;border:0px;color:#f00;}
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+
+<div class="box hide"><div class=box2><select hidefocus>
+    <option selected>网站的封面
+    <option value=031113>上海夏天(一一友情提供)
+    <option value=031106>上海夏天(一)
+    <option value=030916>上海夏天出版了
+    <option value=031018>在雨中(二)
+    <option value=030915>开往黎明的地铁(二)
+    <option value=030913>开往黎明的地铁
+    <option value=031029>亲爱的你们在干什么
+    <option value=000000>更多封面……
+</select></div></div>
+<h3 class="aaa" >
+    lalalal
+</h3>
+<p class="hide">下一次你们说龙虎榜的时候 完全可以引用或联系到钟摆理论 然后就顺其自然的带到了他的下一个话题
+    这样的衔接就会给听众一种在听连续剧的感觉了 回顾上集的 又期待下期。嗯 完全可以做一个系列 你可以慢慢深入
+</p>
+<h3 class="aaa" >
+    lalalal
+</h3>
+<p class="hide">下一次你们说龙虎榜的时候 完全可以引用或联系到钟摆理论 然后就顺其自然的带到了他的下一个话题
+    这样的衔接就会给听众一种在听连续剧的感觉了 回顾上集的 又期待下期。嗯 完全可以做一个系列 你可以慢慢深入
+</p>
+<h3 class="aaa" >
+    lalalal
+</h3>
+<p class="hide">下一次你们说龙虎榜的时候 完全可以引用或联系到钟摆理论 然后就顺其自然的带到了他的下一个话题
+    这样的衔接就会给听众一种在听连续剧的感觉了 回顾上集的 又期待下期。嗯 完全可以做一个系列 你可以慢慢深入
+</p>
+<script>
+    $("h3").click(function(){
+        if($(this).hasClass("show")){
+            $(this).removeClass("show");
+            $(this).next().slideUp();
+//            alert("hide");
+        }else{
+            $(this).addClass("show");
+            $(this).next().slideDown();
+//            alert("hide");
+        }
+    })
+</script>
+</html>

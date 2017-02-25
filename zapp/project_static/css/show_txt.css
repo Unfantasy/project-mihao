@@ -1,0 +1,218 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -khtml-user-select:none; /*早期浏览器*/
+    -moz-user-select:none;/*火狐*/
+    -ms-user-select:none; /*IE10*/
+    user-select:none;
+}
+
+body {
+    padding-top: 4rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+.txt {
+    position: absolute;
+    font-size: 1rem;
+    margin: 0;
+    line-height:1.5;
+    width: 100%;
+    padding: 0 1.5em;
+    max-height: 15em;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    word-break: normal;
+    top: 50%;
+    left:0;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.game_time {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-align: center;
+    display: none;
+}
+
+/* time scroll*/
+.pie {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    background: #fff;
+}
+
+.pie1 {
+    border: 1px solid #fff;
+    clip: rect(0px, 1.5rem, 1.5rem, .75rem);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    background-color: #f45531;
+}
+
+.pie2 {
+    border: 1px solid #fff;
+    clip: rect(0px, .75rem, 1.5rem, 0px);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    background-color: #f45531;
+}
+
+.hold {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+}
+
+.time {
+    color: #f45531;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: .1rem 0 0 .1rem;
+    background-color: #fff;
+    border-radius: 1.3rem;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.3rem;
+    font-size: .5rem;
+}
+
+/*阅读完之后样式*/
+.after_look {
+    width: 100%;
+    padding: 0 .6rem;
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.fixTab{
+    height:2.2rem;
+    width:100%;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    position:fixed;
+    top:0;
+    left:0;
+    display: none;
+}
+.img{
+    width:1.5rem;
+    height:100%;
+    display: inline-block;
+    margin:0 .2rem 0 .5rem;
+}
+.img img{
+    width:1.5rem;
+    height:1.5rem;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: .25rem;
+    margin-top:.35rem;
+}
+.zm{
+    display: inline-block;
+}
+.zmTitle{
+    font-size: .6rem;
+    color:#000;
+    margin:0;
+    line-height: 1.5;
+    margin-top:0;
+}
+.zmIntro{
+    font-size: .5rem;
+    color:#c1c1c1;
+    margin:0;
+}
+.openApp {
+    width: 3rem;
+    background: #f45531;
+    color: #fff;
+    border-radius: 5px;
+    font-size: .48rem;
+    text-align: center;
+    float: right;
+    margin-top:.5rem;
+    margin-right:.35rem;
+    line-height: 2.5;
+    border: none;
+    outline: none;
+}
+.afterLookImg img{
+    width:45%;
+}
+.after_look p {
+    margin: 2rem;
+    font-size: .58rem;
+    color: #000;
+}
+
+
+
+/*微信端提示*/
+.notice_mark {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99998;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.notice_img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.notice_img img {
+    width: 100%;
+}

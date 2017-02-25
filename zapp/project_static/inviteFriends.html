@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>邀请好友</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/qrcode.js"></script>
+    <!--<script src="http://192.168.31.117:8888/target/target-script-min.js#anonymous"></script>-->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .fixTab{
+            height:2.2rem;
+            width:100%;
+            background-color:rgba(255,255,255,.8);
+            border-bottom:1px solid rgba(0,0,0,.1);
+            position:fixed;
+            top:0;
+            left:0;
+        }
+        .img{
+            width:1.5rem;
+            height:100%;
+            display: inline-block;
+            margin:0 .2rem 0 .5rem;
+            vertical-align: middle;
+        }
+        .img img{
+            width:1.5rem;
+            height:1.5rem;
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius: .25rem;
+            margin-top:.35rem;
+        }
+        .zm{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .zmTitle{
+            font-size: .6rem;
+            color:#000;
+            margin:0;
+            line-height: 1.5;
+            margin-top:0;
+
+        }
+        .zmIntro{
+            font-size: .5rem;
+            color:#c1c1c1;
+            margin:0;
+        }
+        .openApp {
+            width: 3rem;
+            background: #f45531;
+            color: #fff;
+            border-radius: 5px;
+            font-size: .48rem;
+            text-align: center;
+            float: right;
+            margin-top:.5rem;
+            margin-right:.35rem;
+            line-height: 2.5;
+            border: none;
+            outline: none;
+        }
+        /*contentBox style*/
+        .contentBox{
+            padding:2rem 1.4rem 0;
+        }
+        .topContent{
+            text-align: center;
+            margin-top:1.3rem;
+            border-bottom:1px solid rgba(0,0,0,.1);
+        }
+        .topContent img{
+            width:60%;
+        }
+        .contentBox p{
+            text-align: center;
+            margin:.8rem 0;
+            font-size: .6rem;
+            padding:0 1.5rem;
+        }
+        .midContent{
+            text-align: center;
+            margin-top:1.2rem;
+            margin-bottom: 2rem;
+        }
+        #qrcode img{
+            margin: 0 auto;
+        }
+        .midContent p{
+            text-align: left;
+            margin-top:.6rem;
+        }
+        /*微信端提示*/
+        .notice_mark {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99998;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            filter: alpha(opacity=70);
+            -moz-opacity: 0.7;
+            opacity: 0.7;
+        }
+
+        .notice_img {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99999;
+            display: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .notice_img img {
+            width: 100%;
+        }
+        /*微信端提示*/
+    </style>
+    <script>
+        //移动端约束
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 300) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        //生成二维码
+        var text = location.search;//获取url？后面的内容；
+        text = text.substr(1);
+        if(text.indexOf('&')){
+            var texts = text.split('&');
+            text = texts[0];
+        }
+        text = ('http://mihaokj.com/html/m?'+text) || 'http://mihaokj.com';
+
+//        var text = '萨瓦迪卡';
+        var imgWidth = window.screen.availWidth*.37;
+        $(function(){
+            new QRCode(document.getElementById("qrcode"), {
+                width: imgWidth,
+                height:imgWidth,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                text:text
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="fixTab">
+    <div class="img"><img src="images/zhongmilogo.png" alt=""/></div>
+    <ul class="zm">
+        <li class="zmTitle">众米</li>
+        <li class="zmIntro">证券人的社交应用</li>
+    </ul>
+    <button id="openApp" class="openApp">立即打开</button>
+</div>
+<!--微信打不开提示-->
+<div class="notice_mark"></div>
+<div class="notice_img">
+    <img src="images/wechat_lead.png" onclick="hideThis(this)">
+</div>
+<!--end 微信打不开提示-->
+<div class="contentBox">
+    <div class="topContent">
+        <img src="images/yaoqinghaoyou.png"/>
+        <p>更多抽奖好礼送不停</p>
+    </div>
+    <div class="midContent">
+        <div id="qrcode"></div>
+        <p class="text-center">下载“众米”后扫描二维码，加我为好友，我们各获得一张抽奖卡。</p>
+    </div>
+</div>
+<script>
+    //打开APP方法
+    //根据URL获取参数
+    var src = window.location.search; //获取url中"?"符后的字串
+    var parameters = '';
+    if(src.indexOf("?")!=-1){
+        var parameters = src.substring(src.indexOf("?"));
+    }
+    var configIos = {
+        scheme: 'zhongmiCode://space/'+parameters,
+        path: 'https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8'
+    };
+    var configAdr = {
+        scheme: 'zhongmicode://space/'+parameters,
+        path: 'http://mimikj.com:8081/mimikj/app/zhongmiApp.apk'
+    };
+    var pc_path = 'http://mimikj.com:8081/mimikj/app/zhongmiApp.apk';
+
+    //doc加载完成初始化数据
+    $(document).ready(function() {
+        init_argument();
+    });
+
+    /**
+     浏览器版本信息
+     * @type {Object}
+     * @return {Boolean}  返回布尔值
+     */
+    function browser(){
+        var u = window.navigator.userAgent.toLowerCase();
+        var app = navigator.appVersion.toLowerCase();
+        return {
+            txt: u, // 浏览器版本信息
+            version: (u.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1], // 版本号
+            msie: /msie/.test(u) && !/opera/.test(u), // IE内核
+            mozilla: /mozilla/.test(u) && !/(compatible|webkit)/.test(u), // 火狐浏览器
+            safari: /safari/.test(u) && !/chrome/.test(u), //是否为safair
+            chrome: /chrome/.test(u), //是否为chrome
+            opera: /opera/.test(u), //是否为oprea
+            presto: u.indexOf('presto/') > -1, //opera内核
+            webKit: u.indexOf('applewebkit/') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('gecko/') > -1 && u.indexOf('khtml') == -1, //火狐内核
+            mobile: !!u.match(/applewebkit.*mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( u;)? cpu.+mac os x/), //ios终端
+            android: u.indexOf('android') > -1, //android终端
+            iPhone: u.indexOf('iphone') > -1, //是否为iPhone
+            iPad: u.indexOf('ipad') > -1, //是否iPad
+            webApp: !!u.match(/applewebkit.*mobile.*/) && u.indexOf('safari/') == -1, //是否web应该程序，没有头部与底部
+            weiXin:u.match(/MicroMessenger/i) == 'micromessenger'
+        };
+    }
+
+    //页面参数信息体
+    var config = {
+        scheme: '',
+        path: '',
+        device:{
+            weixin:false,
+            ios:false,
+            android:false,
+            other:false
+        }
+    };
+
+    function init_argument() {
+        var b=browser();
+
+        if (b.weiXin) {
+            config.device.weixin = true;
+        }
+
+        if(b.ios||b.iPhone||b.iPad){
+            config.scheme = configIos.scheme;//初始化替换
+            config.path = configIos.path;//初始化替换
+            config.device.ios = true;
+
+        }else if(b.android){
+            config.scheme = configAdr.scheme;//初始化替换
+            config.path = configAdr.path;//初始化替换
+            config.device.android = true;
+        }else {
+            //非客户端浏览器打开
+            config.device.other = true;
+            config.path = pc_path;
+        }
+    }
+
+    function open_appstore() {
+        window.location= config.path;
+    }
+
+    function open_client() {
+        //alert('open_client');
+
+        if (config.device.weixin || config.device.other) {
+            //alert('1'+JSON.stringify(config));
+            open_hint_ui();
+        } else {
+            //alert('2'+JSON.stringify(config));
+            window.location=config.scheme;
+        }
+
+    }
+
+
+    //非客户端浏览器打开页面
+    function open_hint_ui() {
+
+        $(".notice_mark").click(function(){
+            $(".notice_mark,.notice_img").hide();
+        });
+        if(config.device.ios){
+            //alert('ios ui');
+            $(".notice_mark,.notice_img").show();
+        }else if(config.device.android){
+            $(".notice_mark,.notice_img").show();
+        }else {
+            open_appstore();
+            //非客户端浏览器打开
+            //$(".notice_mark,.notice_img").show();
+        }
+    }
+
+    function hideThis(e){
+        $('.notice_img').hide();
+        $(".notice_mark").hide();
+    }
+    window.addEventListener("DOMContentLoaded", function(){
+        document.getElementById("openApp").addEventListener('click',open_client,false);
+    }, false);
+</script>
+</body>
+</html>

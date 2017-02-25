@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>位置</title>
+    <link rel="stylesheet" href="css/common_rent.css"/>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=HbUVYMUg6PwbOnXkztdgSQlQ"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/function_rent.js"></script>
+    <style>
+        nav p{
+            font-size:2rem;
+            line-height:2.5;
+        }
+        input{
+            border:none;
+            border-bottom:1px solid #444;
+            width:75%;
+            line-height: 1.5;
+        }
+        input:focus{
+            outline: none;
+        }
+        main{
+            background-color:#fff;
+        }
+        .search{
+            padding:.3rem;
+        }
+        .btn_search{
+            max-width:20%;
+        }
+        .map{
+            width:100%;
+            max-width:800px;
+            height:400px;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            getAddr();
+        });
+
+
+
+    </script>
+</head>
+<body>
+<nav class="center">
+    <p>您的公寓在哪个城市？</p>
+</nav>
+<main class="center">
+    <div class="search"><input type="text" placeholder="城市" id="search_val"/><button class="btn_search" onclick="getAddr()">寻找</button></div>
+    <div class="map" id="map"></div>
+</main>
+<footer>
+    <a href="release_party.html"><button >下一步</button></a>
+</footer>
+<!--选择后地图的坐标-->
+<input type="hidden" id="lng" name="n_lng" />
+<input type="hidden" id="lat" name="n_lat" />
+</body>
+</html>

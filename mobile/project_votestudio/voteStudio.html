@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>投票工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="images/zm_log.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/common-vote.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/newmain.css"/>
+    <link rel="stylesheet" href="css/voteStudio.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+        //判断是否是手机页面
+        function isMobile() {
+            if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)))
+                return true;
+            else
+                return false;
+
+        }
+        // JavaScript 加载文件
+        function loadjscssfile(filename,filetype){
+
+            if(filetype == "js"){
+                var fileref = document.createElement('script');
+                fileref.setAttribute("type","text/javascript");
+                fileref.setAttribute("src",filename);
+            }else if(filetype == "css"){
+
+                var fileref = document.createElement('link');
+                fileref.setAttribute("rel","stylesheet");
+                fileref.setAttribute("type","text/css");
+                fileref.setAttribute("href",filename);
+            }
+            if(typeof fileref != "undefined"){
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+
+        }
+        if(isMobile()){
+            //移动端标准
+            (function(doc, win) {
+                var docEl = doc.documentElement,
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                        recalc = function() {
+                            var clientWidth = docEl.clientWidth;
+                            if (!clientWidth) return;
+                            docEl.style.fontSize = 20 * (clientWidth / 300) + 'px';
+                        };
+
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+            //加载移动端页面
+            loadjscssfile('css/voteStudioMobile.css','css');
+        }
+    </script>
+    <noscript>
+        <link rel="stylesheet" media="screen and (max-width:560px)" href="css/voteStudioMobile.css"/>
+    </noscript>
+    <style>
+        input[type='checkbox']{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar-fixed-top">
+    <div class="container nm_content">
+        <div class="navbar-header">
+            <a class="navbar-brand" src="http://www.mihaokj.com/"><img src="images/zhongmilogo.png" id="nm-icon"/><span class="iconTitle">投票工作室</span></a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                    type="button">
+                <span class="nm-list"></span>
+                <!--<span class="glyphicon glyphicon-menu-hamburger" style="font-size: 20px;color:#000"></span>-->
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="newmain.html" class="active">首页</a></li>
+                <li><a href="">官方论坛</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    $(".navbar-toggle").click(function(){
+        if(!$("#navbar-collapse").hasClass("in")){
+            if($(this).children().hasClass("nm-list")){
+                $(this).children().removeClass("nm-list").addClass("to-remove");
+            }else{
+                $(this).children().removeClass("to-list").addClass("to-remove");
+            }
+            $(".to-remove").css({"background-image":"url('images/toremove.gif')","background-repeat":"no-repeat","background-size":"100% 100%"});
+        }else{
+            $(this).children().removeClass("to-remove").addClass("to-list");
+            $(".to-list").css({"background-image":"url('images/tolist.gif')","background-repeat":"no-repeat","background-size":"100% 100%"});
+        }
+    });
+</script>
+<section class="vote">
+    <div class="vote_title">
+
+        <div class="voteTitleImgBox">
+            <img src="images/vote1.jpg"/>
+        </div>
+        <div class="vote_title_description">
+            <h2 class="title">关于“理财”这件事，你都曾用过怎样的方法？</h2>
+            <p class="description">目前，你都如何让钱生钱？（题图来自：CAMILLE DE CUSSA）</p>
+        </div>
+    </div>
+    <div class="vote_content">
+        <ul class="options clearfix">
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+            <li class="option">
+                <div class="pic"><img src="images/option1.gif" alt=""/><span class="iconfont icon-selected"></span></div>
+                <div class="vertical-wrapper"><div class="vertical"><span class="text">花不完的钱丢余额宝</span></div></div>
+                <span class="iconfont icon-checkbox"></span>
+                <input type="checkbox" id="q1"/>
+            </li>
+        </ul>
+        <div class="submitBtnBox text-center">
+            <a href="voteResult.html">
+            <button class="submitBtn">投票</button></a>
+        </div>
+    </div>
+    <div class="comments">
+        <div class="commentsHeader">
+            <p class="count">11条评论</p>
+            <a href="javascript:;" class="avatar"><img src="images/missing_face.png" alt="默认头像"></a>
+            <textarea name="content" placeholder="我有意见"></textarea>
+            <div class="commentBtnBox clearfix">
+                <a href="#" class="commentBtn">评论</a>
+            </div>
+        </div>
+        <div class="commentsBody">
+            <div class="items">
+                <div class="item">
+                    <div class="commentLeft">
+                        <a href="javascript:void(0)" class="avatar">
+                            <img  alt="虚拟姬" src="images/photo1.jpg">
+                        </a>
+
+                    </div>
+                    <div class="commentRight">
+                        <div class="nameDate">
+                            <a href="javascript:void(0)" class="name">虚拟姬</a>
+
+                        </div>
+                        <p class="commentText">这是余额宝广告吧</p>
+                        <span class="date">10 月 8 日</span>
+                    </div>
+                </div>
+            </div>
+            <div class="loader">
+                <p class="notext">没有更多了</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+    $(".options .option").click(function(){
+        $(this).toggleClass('selected');
+        if($(this).hasClass('selected')){
+            $(this).find('.iconfont').removeClass('icon-checkbox').addClass('icon-checkbox-selected');
+            $(this).find('input[type="checkbox"]').attr('checked','checked');
+        }else{
+            $(this).find('.iconfont').removeClass('icon-checkbox-selected').addClass('icon-checkbox');
+            $(this).find('input[type="checkbox"]').attr('checked',false);
+        }
+    });
+</script>
+</body>
+</html>

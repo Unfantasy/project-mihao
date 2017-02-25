@@ -1,0 +1,18 @@
+body {
+    color: #4c4c4c;
+    font-size: .48rem;
+}
+.num{
+    font-size: .72rem;
+}
+.title {
+    padding: .4rem .6rem;
+    line-height: 1.5;
+}
+.totleBusiness{
+    margin:.8rem 0;
+}
+.totleBusiness tbody td{
+    width: 33%;;
+    padding-top:.24rem;
+}

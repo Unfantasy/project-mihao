@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <style>
+        body{
+            padding-top: 55px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="settings-wrapper" id="pad-wrapper">
+            <div class="span6 ">
+                <div class="row-fluid ">
+                    <form >
+                        <input  class="span7 " name="search" type="text"/>
+                        <button class="btn btn-primary " style="margin-bottom: 10px">搜索</button>
+                    </form>
+                    <table>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap2.js"></script>
+<script>
+    function changeimg () {
+        document.getElementsByClassName("img-circle1")[0].src=window.URL.createObjectURL(upload_cover.files[0]);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size:14px;
+    font-family:"·½ÕýÀ¼Í¤ÖÐºÚ", -apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans","Noto Sans CJK Sc","Microsoft YaHei","Microsoft Jhenghei",sans-serif;
+}
+
+article{
+    padding:0 1.2rem;
+}
+.mark{
+    color:#f45531;
+}
+.tilte{
+    position:relative;
+}
+
+.title h4{
+    font-size:16px;
+    line-height: 1.1;
+    margin:1.5rem 0;
+    vertical-align: middle;
+    padding-left:5px;
+    /*background: url("../images/title_gelan.png") no-repeat left 48%;*/
+    /*background-size: 2px 58%;*/
+    border-left:2px solid #f45531;
+}
+.content .bold{
+    font-weight: bold;
+}
+.content p{
+    font-size:14px;
+    margin:8px 0;
+    line-height: 1.5;
+}
+.content p img{
+    max-width:100%;
+}
+.content h4{
+    margin:1rem 0;
+}
+.content{
+    padding-bottom:1rem;
+}
+footer{
+    padding-top:.8rem;
+    border-top: .8px solid #aaa;
+    background-color:#F6F7FB;
+}
+footer img{
+    width:100%;
+}

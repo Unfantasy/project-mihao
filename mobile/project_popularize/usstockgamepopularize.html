@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鱼塘大赛</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <link href="images/zm_log.ico" rel="shortcut icon" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    <script src="js/mh_mobile.js"></script>
+    <style>
+        @font-face {
+            font-family: zhanku_happy;
+            src:url('fonts/zhanku_happy.woff');
+        }
+        html,body{
+            margin:0;
+            padding:0;
+            width:100%;
+            min-height:100%;
+        }
+        *[hidden] { display: none; }
+        .swiper-container {
+            width: 100%;
+            width:100vw;
+            height: 100%;
+            height: 100vh;
+            background: #000;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-color: #fff;
+            color: #fff;
+            font-size: .6rem;
+
+        }
+        .ani {
+            position: absolute;
+        }
+
+        .a{
+            background: linear-gradient(bottom,rgb(127,48,255),rgb(8,161,239));
+            background: -ms-linear-gradient(bottom,rgb(127,48,255),rgb(8,161,239));
+            background: -webkit-linear-gradient(bottom,rgb(127,48,255),rgb(8,161,239));
+            background: -o-linear-gradient(bottom,rgb(127,48,255),rgb(8,161,239));
+            background: -moz-linear-gradient(bottom,rgb(127,48,255),rgb(8,161,239));
+        }
+        .b{
+            background-color: #fff;
+        }
+        .bg{
+            left:0;
+            right:0;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            z-index: 2;
+        }
+        .bg_img{
+            margin-left: auto;
+            margin-right: auto;
+            width:150%;
+            height:105%;
+        }
+        .mihaologo{
+            width:30%;
+            position:absolute;
+            left:5%;
+            top:5%;
+        }
+        #audio_btn {
+            position: absolute;
+            right: .9rem;
+            top: .9rem;
+            z-index: 200;
+            display: none;
+            width: 1.1rem;
+            height: 1.1rem;
+            background-repeat: no-repeat;
+        }
+        .off {
+            background-image: url('images/normalmusic.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .rotate {
+            -webkit-animation: rotating 1.2s linear infinite;
+            -moz-animation: rotating 1.2s linear infinite;
+            -o-animation: rotating 1.2s linear infinite;
+            animation: rotating 1.2s linear infinite;
+        }
+        .show1_1{
+            top:20%;
+            width: 100%;
+            text-align: center;
+            font-family: zhanku_happy;
+            z-index: 10;
+        }
+        .show1_1p{
+            margin-top: 1rem;
+            color:rgb(127,48,255);
+            font-size: 1.7rem;
+            margin-bottom:4rem;
+            transform: rotateZ(355deg);
+        }
+        .show1_2p{
+            font-size: .9rem;
+            line-height: 2;
+            margin:0;
+        }
+        .show2_1{
+            color:rgb(255, 84, 0);
+            font-size: 1rem;
+            width:100%;
+        }
+        .show2_1 p{
+            margin:0;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .popularize_button{
+            width:55%;
+        }
+        .slideArrow {
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            z-index: 10000;
+            margin-left: -.44rem;
+        }
+        .slideArrow span {
+            position: absolute;
+            width: .88rem;
+            height: .66rem;
+            background: url('images/arrow.png') no-repeat;
+            background-size: 100% 100%;
+            -webkit-animation: start 1.5s infinite ease-in-out;
+            animation: start 1.5s infinite ease-in-out;
+        }
+        @-webkit-keyframes start{0,30%{opacity:0;-webkit-transform:translate(0,.26rem)}60%{opacity:1;-webkit-transform:translate(0,0)} 100%{opacity:0;-webkit-transform:translate(0,-.2rem)} }
+        @keyframes start{0,30%{opacity:0;transform:translate(0,.26rem)}60%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(0,-.2rem)}}
+        @keyframes rotating {0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}
+        @-webkit-keyframes rotating {0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}
+        @media screen and (min-width:1250px){
+            .swiper-container{
+                max-width: 600px;
+            }
+            .slideArrow{
+                margin-left: -20px;
+                bottom: 80px;
+            }
+            .slideArrow span{
+                width:40px;
+                height:30px;
+            }
+            .swiper-slide{
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div hidden><img src="images/share_app.png" alt="share_picture"/></div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide a">
+            <div class="ani show1_1" data-slide-in="at 500 from zoomIn use swing during 1500">
+                <p class="show1_1p">有史以来</p>
+                <p class="show1_2p">最傻、最天真</p>
+                <p class="show1_2p">的炒股游戏</p>
+            </div>
+            <!-- 固定内容-->
+            <div class="ani bg" data-slide-in="at 2000 from zoomIn use swing during 1500">
+                <img  src="images/bg_1.png" class="bg_img"/>
+            </div>
+            <img src="images/mihaologo.png" class="mihaologo"/>
+            <div id="audio_btn" class="off video_exist rotate"style="display: block;">
+                <audio loop="" src="music/筷子兄弟%20-%20老男孩.mp3" id="media" autoplay="" preload=""></audio>
+            </div>
+            <div class="slideArrow"> <span></span> </div>
+            <!-- end 固定内容-->
+        </div>
+        <div class="swiper-slide a">
+            <div class="ani big-green show2_1" data-slide-in="at 500 from bounceInRight use swing during 500">
+                <p>参加模拟炒股</p><p>即有机会领取</p><p>每月一万元现金奖励</p>
+            </div>
+            <div class="ani big-green show2_2" data-slide-in="at 1000 from zoomInLeft use swing during 1500"><a
+                    href="introduce_down.html"><img src="images/popularize_button.png" class="popularize_button"/></a>
+            </div>
+            <!-- 固定内容-->
+            <div class="ani bg" data-slide-in="at 2000 from zoomIn use swing during 1500">
+                <img  src="images/bg_1.png" class="bg_img"/>
+            </div>
+            <img src="images/mihaologo.png" class="mihaologo"/>
+            <div id="audio_btn" class="off video_exist rotate"style="display: block;">
+                <audio loop="" src="music/筷子兄弟%20-%20老男孩.mp3" id="media" autoplay="" preload=""></audio>
+            </div>
+            <div class="slideArrow"> <span></span> </div>
+            <!-- end 固定内容-->
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        effect:'flip',
+        onInit: function (swiper) {
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper);
+        },
+        onTransitionEnd: function (swiper) {
+            // swiperAnimate(swiper);
+        }
+    });
+
+    //音乐暂停播放
+    $("#audio_btn").click(function(){
+        $(this).toggleClass("rotate");
+        if ($(this).find("audio").hasClass('pause')) {
+            $(this).find("audio").trigger("play");
+            $(this).find("audio").removeClass('pause');
+            $(this).find("audio").addClass('play');
+        } else {
+            $(this).find("audio").trigger("pause");
+            $(this).find("audio").removeClass('play');
+            $(this).find("audio").addClass('pause');
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<style>
+    html,body{
+        margin:0;
+        padding:0;
+    }
+</style>
+<body>
+<span class="txt"></span>
+<script type="text/javascript">
+    'use strict';
+    $.get('videoSrc.txt',function(data){
+        var videoArr = data.split('\n');
+        var videoSrcsArr = [];
+        for(let i=0;i<videoArr.length;i++){
+            if(videoArr[i]===''){
+                videoArr.splice(i,1);
+            }
+            let videoSrcArr = videoArr[i].split(',')
+            if(videoSrcArr[0]&&videoSrcArr[1]){
+                videoSrcsArr.push({videoName:videoSrcArr[0],video:videoSrcArr[1]});
+            }
+        }
+        console.log(videoSrcsArr);
+    });
+//    console.log(videoSrcsArr);
+</script>
+</body>
+</html>

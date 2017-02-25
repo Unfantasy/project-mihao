@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        html,body{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            width:100%;
+        }
+        .title {
+            width:100%;
+            box-sizing: border-box;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #353535;
+            padding: 0 20px;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+
+        }
+        .create_artical{
+
+            padding: 0 20px;
+            max-width: 100%;
+            margin:0 auto;
+
+        }
+    </style>
+</head>
+<body>
+<div class="title"></div>
+<div class="create_artical"></div>
+<script>
+//    $("img").width(document.body.clientWidth );
+    $("img").width(function(){
+        return $(this).parent().width();
+    } );
+    $(".title").text(window.opener.document.getElementById("the_title").value);
+
+    $(".create_artical").html(window.opener.document.getElementsByClassName("note-editable")[0].innerHTML);
+</script>
+</body>
+</html>

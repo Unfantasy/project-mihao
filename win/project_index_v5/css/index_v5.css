@@ -1,0 +1,385 @@
+.container {
+    width: 980px;
+    margin: 0 auto;
+    clear: both;
+    padding: 0;
+}
+nav,.page1,.page2,.page3{
+    min-width: 980px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    color: rgba(255,255,255,1);
+    background: rgba(0,0,0,0);
+}
+
+.zmTab {
+    position: relative;
+}
+
+.zmTab ul > li{
+    float: left;
+    font-size: 17px;
+    line-height: 40px;
+    position: relative;
+    height: 100px;
+    cursor:pointer;
+}
+.zmTab ul > li>a{
+    padding: 30px 24px;
+    line-height: 40px;
+    display: block;
+}
+.zmTab li.active:before{
+    content:'';
+    position: absolute;
+    height:1px;
+    width: 38px;
+    background-color: #ffffff;
+    top:70%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+
+.zmIcon img{
+    margin-top:30px;
+}
+.zmIconImg{
+    width:40px;
+    height: 40px;
+}
+.zmTab a {
+    color: #fff;
+    text-decoration: none;
+}
+.page1Nav{
+    opacity: 1;
+}
+.page2Nav{
+    display: none;
+    opacity: 0;
+    color:rgb(143,142,148);
+}
+.page2Nav .zmTab a{
+    color:rgb(143,142,148);
+}
+.page2Nav .zmTab a:hover{
+    background: none;
+}
+.page2Nav li.active{
+    color:rgb(5,5,5);
+}
+.page2Nav li.active:before{
+    content:'';
+    position: absolute;
+    height:1px;
+    width: 38px;
+    background-color: rgb(5,5,5);
+    top:68%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+.page2Nav .zmTab ul > li.active a{
+    color:rgb(5,5,5);
+}
+.zmTab>ul>li:hover{
+    background: rgba(3,3,3,.1);
+}
+.zmTab>ul>li:hover>a{
+    color: #3db0ff;
+}
+.page2Nav .zmTab>ul>li:hover>a{
+    color: #000;
+}
+/*关于我们*/
+.mainJoinUsBox{
+    position: absolute;
+    background: rgba(3,3,3,.1);
+    color:#fff;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    top:100%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    display: none;
+}
+.mainJoinUsBox div{
+    padding:15px 0;
+}
+.page1Nav .mainJoinUsBox div:hover a{
+    color: #3db0ff;
+}
+.page2Nav .mainJoinUsBox div:hover a{
+    color: #000;
+}
+/*end 关于我们*/
+.page1 {
+    background: #2461EF url("../images/home_background1.png") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    width:100%;
+    margin-left : auto;
+    margin-right: auto;
+    position: fixed;
+    top:0;
+}
+.page1 h1 {
+    font-size: 42px;
+    font-weight: normal;
+}
+
+.yelloLine {
+    width: 34px;
+    height: 4px;
+    margin: 26px auto;
+    background-color: #ffdd09;
+}
+
+.page1 p {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.loadBtnBox {
+    margin-top: 7.8%;
+}
+
+.loadBtn {
+    border: 1px solid #fff;
+    text-align: center;
+    width: 294px;
+    height: 49px;
+    line-height: 49px;
+    outline: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: all .7s;
+    font-size: 20px;
+    user-select: none;
+}
+.loadBtn:hover{
+    background-color: #062aff;
+    border:none;
+}
+.downloadCodeBox{
+    position: fixed;
+    z-index: 1999;
+    left:-100%;
+    height: 100%;
+    width:30%;
+    background:#1E3D9A;
+}
+.downloadCode{
+    margin-top:30px;
+}
+.downloadExit{
+    width:25px;
+    height:25px;
+    margin-right:28px;
+    margin-top:28px;
+    float: right;
+    position: relative;
+    cursor: pointer;
+}
+.downloadExit:before{
+    content: '';
+    position: absolute;
+    top:50%;
+    width: 35px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+.downloadExit:after{
+    content: '';
+    position: absolute;
+    top:50%;
+    width: 35px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(-45deg);
+}
+.downloadCode img{
+    width: 262px;
+    height: 262px;
+}
+.downloadCode p{
+    color:#fff;
+    font-size: 20px;
+    margin-top:22px;
+    text-align: center;
+}
+
+
+.absolute{
+    position: absolute;
+    width:100%;
+    top:100vh;
+}
+.page2 {
+    background-color: #f5f5f5;
+    padding: 140px 0;
+    color: #5e5e5e;
+    width:100%;
+    margin:0 auto;
+}
+
+.page2 .tipBox {
+    font-size: 0;
+    text-align: center;
+}
+
+.page2 .tip {
+    width: 278px;
+    height: 414px;
+    display: inline-block;
+    margin: 25px 24px;
+    padding-top:35px;
+    position: relative;
+    transition:all .7s;
+}
+.page2 .tip:hover{
+    box-shadow: 0 2px 38px 0 rgba(51,67,81,0.23);
+}
+.page2 .tip:nth-child(1){
+    background:#ffffff url("../images/home_data.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tip:nth-child(2){
+    background:#ffffff url("../images/home_language.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tip:nth-child(3){
+    background:#ffffff url("../images/home_sweep.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tip:nth-child(4){
+    background:#ffffff url("../images/home_money.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tip:nth-child(5){
+    background:#ffffff url("../images/home_privatep.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tip:nth-child(6){
+    background:#ffffff url("../images/home_friend.png") center no-repeat;
+    background-size: 100%;
+}
+.page2 .tipTile {
+    font-size: 22px
+}
+
+.page2 .tipDescription {
+    color: #8f8e94;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.page2 .number {
+    color: #f45531;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    bottom:20px;
+    width: 100%;
+}
+
+.page3 {
+    background: #000000 url("../images/home_background2.png") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 187px;
+    padding-bottom: 252px;
+    height:1081px;
+}
+
+.aboutUs {
+    margin-right: 25px;
+    padding:80px 100px;
+    background-color: #1D1E20;
+    color:#fff;
+    width: 625px;
+    text-align: center;
+}
+.aboutUs .title{
+    font-size: 20px;
+}
+.aboutUs .description{
+    font-size: 16px;
+}
+.aboutUs .blackLine{
+    width:31px;
+    height: 1px;
+    margin:18px auto 60px;
+    background-color: #484848;
+}
+.showQrcodeBox{
+    position: relative;
+}
+.aboutUs .showQrcode{
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    line-height: 48px;
+    height: 48px;
+    width:243px;
+    color:#FFC240;
+    font-size: 16px;
+    margin-top:41px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    user-select: none;
+}
+.showQrcode:hover + .zmSubscriptionImg{
+    width: 250px;
+    height: 250px;
+}
+.zmSubscriptionImg{
+    width:0;
+    height: 0;
+    position:absolute;
+    top:60px;
+    left:50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    transition: all .3s;
+}
+.footer{
+    background: #222;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+}

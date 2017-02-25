@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head xml:lang="zh-CN">
+		<title>股票狗</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="images/zm_log.ico" rel="shortcut icon" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css"/>
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-noscript.css"/>
+        </noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css"/><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css"/><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<!--<div id="bg"></div>-->
+			<!--<div id="overlay"></div>-->
+			<div id="main">
+                <!-- Header -->
+					<header id="header">
+						<!--<h1>Adam Jensen</h1>-->
+						<!--<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>-->
+						<p><img id="logo" src="images/logo.png" ></p>
+                        <nav>
+							<ul>
+                                <li>
+                                    <a href="#wechat-modal" rel="leanModal" class="link-icon wx-icon">
+                                    </a>
+                                    <div class="icon-text">微信公众号</div>
+                                </li>
+                                <li>
+                                    <a href="https://xueqiu.com/4544581192" class="link-icon xueqiu-icon">
+                                    </a>
+                                    <div class="icon-text">雪球</div>
+                                </li>
+                                <li>
+                                    <a href="http://weibo.com/p/1005056042464884/home?from=page_100505&mod=TAB&is_all=1#place" class="link-icon weibo-icon">
+                                    </a>
+                                    <div class="icon-text">新浪微博</div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link-icon phoneapp-icon">
+                                    </a>
+                                    <div class="icon-text">手机应用</div>
+                                </li>
+
+							</ul>
+						</nav>
+					</header>
+				
+			</div>
+		</div>
+
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+        <script type="text/javascript">
+            //判断是否是手机页面
+            function isMobile() {
+                if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)))
+                    return true;
+                else
+                    return false;
+            }
+            //判断是否是ios系统
+            var u = navigator.userAgent, app = navigator.appVersion;
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            $(function() {
+                $('a[rel*=leanModal]').leanModal({ top : 100, closeButton: ".modal_close" });
+                if(isiOS){//IOS系统
+                    $('.phoneapp-icon').attr('href','https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8');
+                }else{//非IOS系统全部转为android链接
+                    $('.phoneapp-icon').attr('href','http://mimikj.com:8081/mimikj/app/zhongmiApp.apk');
+                }
+            });
+
+        </script>
+
+        <div id="wechat-modal">
+            <img src="images/stockDogErweima.jpg" alt="众米公众号">
+        </div>
+	</body>
+</html>

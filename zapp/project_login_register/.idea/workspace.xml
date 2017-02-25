@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="54130456-0e9d-4d0f-aa8c-49e53f2a6fc4" name="默认的" comment="" />
+    <ignored path="project_login_register.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="project_login_register" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="login_phone.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login_phone.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.0555556">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_register.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/login_register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="625" column="12" selection-start-line="625" selection-start-column="12" selection-end-line="625" selection-end-column="12" />
+              <folding>
+                <marker date="1457427205623" expanded="true" signature="484:580" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="600:855" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="869:923" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="938:1067" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="1114:1139" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="1154:1235" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="2691:2787" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="2807:3062" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="3076:3130" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="3145:3274" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="3321:3346" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="3361:3442" placeholder="..." />
+                <marker date="1457427205623" expanded="true" signature="3507:3618" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_register_and.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/login_register_and.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="622" column="4" selection-start-line="622" selection-start-column="4" selection-end-line="622" selection-end-column="33" />
+              <folding>
+                <element signature="n#!!block;n#toImgCode#0" expanded="false" />
+                <element signature="n#!!block;n#toVerifyPhoneFw#0" expanded="false" />
+                <element signature="n#!!block;n#toLogin#0" expanded="false" />
+                <marker date="1457407280681" expanded="true" signature="471:567" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="587:842" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="856:910" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="925:1054" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="1101:1126" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="1141:1222" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="2678:2774" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="2794:3049" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="3063:3117" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="3132:3261" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="3308:3333" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="3348:3429" placeholder="..." />
+                <marker date="1457407280681" expanded="true" signature="3494:3605" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_register.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/login_register.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="323" column="41" selection-start-line="323" selection-start-column="41" selection-end-line="323" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_register_ios.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/login_register_ios.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9145631">
+              <caret line="631" column="16" selection-start-line="631" selection-start-column="16" selection-end-line="631" selection-end-column="16" />
+              <folding>
+                <marker date="1457429215145" expanded="true" signature="720:816" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="836:1091" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="1105:1159" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="1174:1303" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="1350:1375" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="1390:1471" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="2927:3023" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3043:3298" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3312:3366" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3381:3510" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3557:3582" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3597:3678" placeholder="..." />
+                <marker date="1457429215145" expanded="true" signature="3743:3854" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jucaidao_introduce.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jucaidao_introduce.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="mobile html" />
+        <option value="Html5" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/service_agreement_zhongmi.html" />
+        <option value="$PROJECT_DIR$/set_pwd_mail.html" />
+        <option value="$PROJECT_DIR$/verify_phone_fw.html" />
+        <option value="$PROJECT_DIR$/verify_mailbox.html" />
+        <option value="$PROJECT_DIR$/verify_mailbox_fw.html" />
+        <option value="$PROJECT_DIR$/verify_phone.html" />
+        <option value="$PROJECT_DIR$/set_pwd_mailbox.html" />
+        <option value="$PROJECT_DIR$/verify_identity_mailbox.html" />
+        <option value="$PROJECT_DIR$/set_pwd_phone.html" />
+        <option value="$PROJECT_DIR$/login_mailbox.html" />
+        <option value="$PROJECT_DIR$/register_mailbox.html" />
+        <option value="$PROJECT_DIR$/1.html" />
+        <option value="$PROJECT_DIR$/forget_pwd_mailbox.html" />
+        <option value="$PROJECT_DIR$/golden_guide.html" />
+        <option value="$PROJECT_DIR$/fixed.html" />
+        <option value="$PROJECT_DIR$/verify_identity_phone.html" />
+        <option value="$PROJECT_DIR$/login_register.html" />
+        <option value="$PROJECT_DIR$/forget_pwd_phone.html" />
+        <option value="$PROJECT_DIR$/daps.html" />
+        <option value="$PROJECT_DIR$/zhongmi_download.html" />
+        <option value="$PROJECT_DIR$/service_agreement_trade.html" />
+        <option value="$PROJECT_DIR$/register_phone.html" />
+        <option value="$PROJECT_DIR$/hello.html" />
+        <option value="$PROJECT_DIR$/css/jucaidao_introduce.css" />
+        <option value="$PROJECT_DIR$/jucaidao_introduce.html" />
+        <option value="$PROJECT_DIR$/css/login_register.css" />
+        <option value="$PROJECT_DIR$/js/login_register_and.js" />
+        <option value="$PROJECT_DIR$/login_phone.html" />
+        <option value="$PROJECT_DIR$/js/login_register.js" />
+        <option value="$PROJECT_DIR$/js/login_register_ios.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="添加" />
+    <OptionsSetting value="true" id="移除" />
+    <OptionsSetting value="true" id="签出" />
+    <OptionsSetting value="true" id="更新" />
+    <OptionsSetting value="true" id="状态" />
+    <OptionsSetting value="true" id="编辑" />
+    <ConfirmationsSetting value="0" id="添加" />
+    <ConfirmationsSetting value="0" id="移除" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project_login_register" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/css/login_register_gai.css" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\zapp\project_login_register\images" />
+      <recent name="C:\workspace\zapp\project_login_register\css" />
+      <recent name="C:\workspace\zapp\project_login_register\js" />
+      <recent name="C:\workspace\zapp\project_login_register" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54130456-0e9d-4d0f-aa8c-49e53f2a6fc4" name="默认的" comment="" />
+      <created>1452677055609</created>
+      <option name="number" value="Default" />
+      <updated>1452677055609</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25074628" sideWeight="0.5058043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25074628" sideWeight="0.4941957" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jucaidao_introduce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="136" selection-end-column="64" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1457427205623" expanded="true" signature="484:580" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="600:855" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="869:923" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="938:1067" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1114:1139" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1154:1235" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2691:2787" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2807:3062" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3076:3130" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3145:3274" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3321:3346" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3361:3442" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3507:3618" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="321" column="22" selection-start-line="321" selection-start-column="22" selection-end-line="321" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="136" selection-end-column="64" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1457427205623" expanded="true" signature="484:580" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="600:855" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="869:923" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="938:1067" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1114:1139" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1154:1235" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2691:2787" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2807:3062" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3076:3130" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3145:3274" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3321:3346" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3361:3442" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3507:3618" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="321" column="22" selection-start-line="321" selection-start-column="22" selection-end-line="321" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="75" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="7" selection-start-line="137" selection-start-column="7" selection-end-line="137" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1457427205623" expanded="true" signature="484:580" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="600:855" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="869:923" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="938:1067" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1114:1139" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1154:1235" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2691:2787" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2807:3062" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3076:3130" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3145:3274" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3321:3346" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3361:3442" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3507:3618" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="332" column="17" selection-start-line="332" selection-start-column="17" selection-end-line="332" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="75" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jucaidao_introduce.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forget_pwd_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="85" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../project_golden_guide/golden_guide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../project_golden_guide/golden_guide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.580645">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_anniuhou.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_anniuqian.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_biyan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_kaiyan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_xiayibu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/zhongmi_yanzhengma.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/loading.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forget_pwd_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.032258">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service_agreement_zhongmi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2789855">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golden_guide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0126812">
+          <caret line="86" column="79" selection-start-line="86" selection-start-column="79" selection-end-line="86" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-2.1.4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service_agreement_trade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="120" column="43" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="43" />
+          <folding>
+            <element signature="n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daps.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jucaidao_introduce.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register_and.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="622" column="4" selection-start-line="622" selection-start-column="4" selection-end-line="622" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#toImgCode#0" expanded="false" />
+            <element signature="n#!!block;n#toVerifyPhoneFw#0" expanded="false" />
+            <element signature="n#!!block;n#toLogin#0" expanded="false" />
+            <marker date="1457407280681" expanded="true" signature="471:567" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="587:842" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="856:910" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="925:1054" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="1101:1126" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="1141:1222" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="2678:2774" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="2794:3049" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="3063:3117" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="3132:3261" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="3308:3333" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="3348:3429" placeholder="..." />
+            <marker date="1457407280681" expanded="true" signature="3494:3605" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0555556">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="625" column="12" selection-start-line="625" selection-start-column="12" selection-end-line="625" selection-end-column="12" />
+          <folding>
+            <marker date="1457427205623" expanded="true" signature="484:580" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="600:855" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="869:923" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="938:1067" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1114:1139" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="1154:1235" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2691:2787" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="2807:3062" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3076:3130" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3145:3274" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3321:3346" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3361:3442" placeholder="..." />
+            <marker date="1457427205623" expanded="true" signature="3507:3618" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jucaidao_introduce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="323" column="41" selection-start-line="323" selection-start-column="41" selection-end-line="323" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login_register_ios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9145631">
+          <caret line="631" column="16" selection-start-line="631" selection-start-column="16" selection-end-line="631" selection-end-column="16" />
+          <folding>
+            <marker date="1457429215145" expanded="true" signature="720:816" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="836:1091" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="1105:1159" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="1174:1303" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="1350:1375" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="1390:1471" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="2927:3023" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3043:3298" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3312:3366" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3381:3510" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3557:3582" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3597:3678" placeholder="..." />
+            <marker date="1457429215145" expanded="true" signature="3743:3854" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

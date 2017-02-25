@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <script type="text/javascript">
+        for(let i=0;i<10;i++){
+            console.log('test'+i);
+        }
+        console.log('i:'+i);
+        var attime;
+        function clock(){
+            var time=new Date();
+            var hs = time.getHours()/10>=1?time.getHours():"0"+time.getHours();
+            var ms = time.getMinutes()/10>=1?time.getMinutes():"0"+time.getMinutes();
+            var ss = time.getSeconds()/10>=1?time.getSeconds():"0"+time.getSeconds();
+            attime = hs+':'+ms+':'+ss;
+            document.body.innerText = "";
+//            $("body").html("");
+           document.write(attime);
+        }
+        var int=setInterval(clock,1000);
+    </script>
+    <script>
+//        var a=[];
+//        alert(null==0);//false
+//        alert(null>=0);//true
+//        alert(null<=0);//true
+//        alert(a==false);//true
+//        alert([]==[]);//false
+//        alert([]==![]);//true
+//        alert(a==[]);//false
+//        alert([]==false);//true
+//        alert(![]);//false
+//        alert(!a);//false
+    </script>
+</head>
+<body>
+
+    <div class="click"></div>
+    <p>问：随意是傻子吗？</p>
+    <p>答：必须是啊哈哈哈哈</p>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>闲人搭</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/common_rent.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/flipsnap.js"></script>
+
+    <style>
+
+
+        /*main style*/
+        .main_img{
+            width:100%;
+            height:450px;
+            background:url("images/biantouxiang.jpg") no-repeat center;
+            background-size:cover;
+            margin-top:60px;
+        }
+        .content h1{
+            color:#222;
+            font-weight: normal;
+            padding-top:1rem;
+            padding-left:1rem;
+        }
+        .content p{
+            color:#333;
+            padding-left:1rem;
+        }
+        .list{
+            border-top: 1px solid #999;
+            padding:10px 0 0 0;
+        }
+        .list h3{
+            font-weight: normal;
+            line-height: 2.5;
+            margin:0;
+            padding-left:1.3rem;
+        }
+        .all{
+            width:100%;
+            overflow: hidden;
+        }
+        .rent_list{
+            position: relative;
+            width:222222px;
+            height:335px;
+            margin-left:10px;
+        }
+        .msg{
+            display: inline-block;
+            width:100%;
+            float: left;
+            position: relative;
+        }
+        .msg .msg_img{
+            width:100%;
+            height:250px;
+            background:#aaa url("images/1a.jpg") no-repeat center;
+            background-size: cover;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+            color:#ddd;
+        }
+        .msg .msg_img p{
+            position:absolute;
+            left:0;
+            bottom:1rem;
+            font-size:1.5rem;
+            line-height: 2;
+            display: inline-block;
+            background-color: rgba(0,0,0,0.3);
+        }
+        .msg .msg_content{
+            padding:1rem 0;
+        }
+        .msg .msg_content h1{
+            padding-left:1rem;
+            font-size:1.1rem;
+            font-weight:normal;
+            margin: 0;
+
+        }
+        .msg .msg_content p{
+            padding-left:1rem;
+            margin:.5rem 0;
+        }
+        .msg .msg_content{
+            position:relative;
+        }
+        .msg .msg_content .img{
+            width:60px;
+            height:60px;
+            background:#333 url("images/s_icon.jpg") center no-repeat;
+            background-size:cover;
+            position:absolute;
+            border-radius: 50%;
+            border:2px solid #fff;
+            top:-30px;
+            right:1.5rem;
+
+        }
+        /* end main style*/
+
+    </style>
+    <script>
+        function click_scroll() {
+            var scroll_offset = $("#rent_list").offset(); //得到pos这个div层的offset，包含两个值，top和left
+            $("body,html").animate({
+                scrollTop:scroll_offset.top-62 //让body的scrollTop等于pos的top，就实现了滚动
+            },200);
+            $(".nav li").removeClass("active_mine");
+            $(".nav_list").addClass("active_mine");
+
+        }
+        $(function(){
+            var width = window.screen.availWidth;
+            var height = window.screen.height;
+            var imgHeight = height-$(".nav li").outerHeight()-$(".content h1").outerHeight()-$(".content p").outerHeight()-40;
+            $(".main_img").height(imgHeight);
+            $(".list .msg").width(width-20);
+            $(".list .msg .msg_img").width($(".msg").width()*0.98);
+            Flipsnap('.rent_list1',{
+                distance:$(".msg").width(),
+                disableTouch: false
+            });
+            Flipsnap('.rent_list2',{
+                distance:$(".msg").width(),
+                disableTouch: false
+            });
+
+
+        });
+        window.onscroll = function(){
+            var scroll_offset = $("#rent_list").offset();
+            var top=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+            if(top>=scroll_offset.top-62){
+                $(".nav li").removeClass("active_mine");
+                $(".nav_list").addClass("active_mine");
+            }else{
+                $(".nav li").removeClass("active_mine");
+                $(".nav_main").addClass("active_mine");
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="nav nav-pills navbar-fixed-top">
+            <li class="active_mine nav_main"><a href="#"><img src="images/main.png" alt=""/></a></li>
+            <li class="nav_list"><a onclick="click_scroll()" ><img src="images/list.png" alt=""/></a></li>
+            <li><a href="release_party.html" class="mark">发起</a></li>
+            <li><a><img src="images/doorbell.png" alt=""/></a></li>
+            <li><a><img src="images/s_icon.jpg" class="user_img"/></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="content">
+            <div class="main_img">
+
+            </div>
+            <h1>Mike0023你好！</h1>
+            <p>快叫上你的好友，开始属于你的活动吧。</p>
+        </div>
+
+        <div class="list">
+            <h3>今日推荐主题活动</h3>
+            <div class="all">
+                <div class="rent_list rent_list1">
+                    <div class="msg">
+                        <a href="rent.html">
+                        <div class="msg_img">
+                            <p>玩艺术</p>
+                        </div>
+                        <div class="msg_content">
+                            <h1>天目山路华鸿大厦附近</h1>
+                            <p>公寓楼</p>
+                            <div class="img">
+
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <h3>附近好友活动趴</h3>
+            <div class="all">
+                <div class="rent_list rent_list2">
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="msg">
+                        <a href="rent.html">
+                            <div class="msg_img">
+                                <p>玩艺术</p>
+                            </div>
+                            <div class="msg_content">
+                                <h1>天目山路华鸿大厦附近</h1>
+                                <p>公寓楼</p>
+                                <div class="img">
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div id="rent_list">
+            <div class="msg">
+                <div class="msg_img"></div>
+                <div class="msg_content">
+                    <h1>Happy Party</h1>
+                    <p>杭州市西湖区天目山路</p>
+                </div>
+            </div>
+            <div class="msg">
+                <div class="msg_img"></div>
+                <div class="msg_content">
+                    <h1>Happy Party</h1>
+                    <p>杭州市西湖区天目山路</p>
+                </div>
+            </div>
+            <div class="msg">
+                <div class="msg_img"></div>
+                <div class="msg_content">
+                    <h1>Happy Party</h1>
+                    <p>杭州市西湖区天目山路</p>
+                </div>
+            </div>
+            <div class="msg">
+                <div class="msg_img"></div>
+                <div class="msg_content">
+                    <h1>Happy Party</h1>
+                    <p>杭州市西湖区天目山路</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

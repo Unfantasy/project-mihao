@@ -1,0 +1,205 @@
+html,body,.s_content{
+    width: 100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei";
+}
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+body{
+    position:relative;
+}
+
+.s_content{
+    position: relative;
+    background-image: linear-gradient(to top,#ECEAE8 ,white ) ;
+}
+.s_bg{
+    width:82.5%;
+    height: 73.15%;
+    /*background:url("../images/fenxiang_diebeijing.png") no-repeat;*/
+    /*background-size: 100% auto;*/
+    position: relative;
+    top:15%;
+    left:9%;
+}
+.s_bgimg{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    border-radius: 4%;
+}
+.s_headimg{
+    width: 24.24%;
+    border-radius: 100%;
+    position: absolute;
+    top:10.35%;
+    left:37.88%;
+}
+.s_number{
+    position: absolute;
+    top:32.898%;
+    left:64.77%;
+    color:#00C93A;
+    font-size: 2.3rem;
+    font-weight: bold;
+    -webkit-text-stroke:1px  #fff;
+}
+.s_earn{
+    width: 54.92%;
+    position: absolute;
+    top:36.38%;
+    left:22.54%
+}
+.s_ucenter{
+    position:absolute;
+    top:27.71%;
+    width:100%;
+    text-align: center;
+    font-size: 1.6rem;
+    color: white;
+}
+.s_ucenter span{
+    color:#fff;
+    font-size: 1.5rem;
+}
+.s_name,.s_data{
+    width: 30%;
+    position:absolute;
+    font-size: 1.6rem;
+    color: white;
+    top:74.13%;
+}
+.s_name{
+    left:25%
+}
+.s_data{
+    left:57%
+}
+.s_yingkui{
+    width:48.86%;
+    position:absolute;
+    top:88.327%;
+    left:25.57%;
+}
+/*底部样式*/
+ul{
+    list-style: none;
+}
+.fixTab{
+    height:4.42rem;
+    width:100%;
+    background: #fff;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    position:fixed;
+    bottom:0;
+    left:0;
+}
+.img{
+    width:3rem;
+    height:100%;
+    display: inline-block;
+    margin:0 .2rem 0 .5rem;
+}
+.img img{
+    width:3rem;
+    height:3rem;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    margin-top:.7rem;
+}
+.zm{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0;
+}
+.zmTitle{
+    font-size: 1.2rem;
+    color:#000;
+    margin:0;
+    line-height: 1.5;
+    vertical-align: middle;
+    margin-top: .6rem;
+}
+.zmIntro{
+    font-size:1rem;
+    color:#c1c1c1;
+    margin:0;
+}
+.openApp {
+    width: 6rem;
+    background: #f45531;
+    color: #fff;
+    border-radius: 5px;
+    font-size: .96rem;
+    text-align: center;
+    float: right;
+    margin-top:1rem;
+    margin-right:.7rem;
+    line-height: 2.5;
+    border: none;
+    outline: none;
+}
+.afterLookImg img{
+    width:45%;
+}
+.after_look p {
+    margin: 4rem;
+    font-size: 1.16rem;
+    color: #000;
+}
+
+
+
+/*微信端提示*/
+.notice_mark {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99998;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.notice_img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.notice_img img {
+    width: 100%;
+}
+
+@media screen and (min-width : 1243px) {
+    .s_number{
+        font-size: 23px;
+    }
+    .s_ucenter span {
+        color: #fff;
+        font-size: 18px;
+    }
+    .s_ucenter{
+        top:23%;
+    }
+    .s_name, .s_data{
+        font-size: 18px;
+    }
+}

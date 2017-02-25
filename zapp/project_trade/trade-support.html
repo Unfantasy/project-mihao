@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>交易支持</title>
+    <link rel="stylesheet" href="css/trade-support.css"/>
+    <style>
+        body,html{
+            height:100%;
+        }
+        a{
+            color:#95a2aa;
+            text-decoration:none;
+        }
+        a:hover,a:active,a:link,a:focus{
+            text-decoration:none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var lis = document.querySelectorAll(".tr_contant li");
+            for(var i=0;i<lis.length;i++){
+                lis[i].onclick = function(){
+                    var li = this;
+                    var as = this.getElementsByTagName("a");
+                    window.location.href = as[0].href;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="tr_contant">
+    <ul >
+        <li><a href="trade-support-cost.html" data-transition="slide"><span>交易费用</span><img src="images/disclosure-arrow.png"/></a></li>
+        <li><a href="trade-support-T+0.html"><span>T+0</span><img src="images/disclosure-arrow.png"/></a></li>
+        <li><a href="trade-support-time.html"><span>交易时间</span><img src="images/disclosure-arrow.png"/></a></li>
+        <li><a href="trade-support-explain.html"><span>名词解释</span><img src="images/disclosure-arrow.png"/></a></li>
+        <li><a href="trade-support-price.html"><span>行情政策</span><img src="images/disclosure-arrow.png"/></a></li>
+        <li class="tr_last"><a href="trade-support-charcater.html"><span>美股不同交易时段的特点</span><img src="images/disclosure-arrow.png"/></a></li>
+    </ul>
+</div>
+
+</body>
+</html>

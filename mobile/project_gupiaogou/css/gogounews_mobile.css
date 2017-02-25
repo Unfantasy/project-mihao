@@ -1,0 +1,220 @@
+/*clear win style*/
+.controlbox{
+    display: none;
+}
+.pbox{
+    width: auto;
+    float:none;
+}
+.main{
+    margin-top:0;
+}
+/*end clear win style*/
+.newstitle,.newstimeline,.circle{
+    display: block;
+}
+
+body{
+    background-color: #fff;
+}
+.newslist>li{
+    margin-bottom: 17px;
+    position:relative;
+    color: #222;
+    background-color: #fff;
+    padding: 0;
+}
+.newslist>li .newtime{
+    color: #222;
+    background-color: #fff;
+}
+li.colour1 .newcontent,li.colour1 .newcontent p{
+    background-color: #64C896;
+    color:#fff;
+}
+li.colour2 .newcontent,li.colour2 .newcontent p{
+    background-color: #F4BE78;
+    color:#fff;
+}
+li.colour3 .newcontent,li.colour3 .newcontent p{
+    background-color: #FF966E;
+    color:#fff;
+}
+li.colour4 .newcontent,li.colour4 .newcontent p{
+    background-color: #EB96BF;
+    color:#fff;
+}
+li.colour5 .newcontent,li.colour5 .newcontent p{
+    background-color: #3C4145;
+    color:#fff;
+}
+li.colour6 .newcontent,li.colour6 .newcontent p{
+    background-color: #59B4C7;
+    color:#fff;
+}
+li.colour7 .newcontent, li.colour7 .newcontent p{
+    background-color: #82C369;
+    color:#fff;
+}
+.colour1 .comment a .zan,.colour2 .comment a .zan,.colour3 .comment a .zan,.colour4 .comment a .zan,.colour5 .comment a .zan,.colour6 .comment a .zan,.colour7 .comment a .zan{
+    background: url('../images/dianzan_bai.png') center center no-repeat;
+    background-size: 100%;
+}
+.colour1 .comment a .pinglun,.colour2 .comment a .pinglun,.colour3 .comment a .pinglun,.colour4 .comment a .pinglun,.colour5 .comment a .pinglun,.colour6 .comment a .pinglun,.colour7 .comment a .pinglun{
+    background: url('../images/pinglun.png') center center no-repeat;
+    background-size: 100%;
+}
+.pbox{
+    font-size: 16px;
+}
+.newstitle{
+    position:fixed;
+    top:51px;
+    width: 100%;
+    z-index: 100;
+    color:#f45531;
+    text-align: center;
+    font-size: 18px;
+    line-height: 44px;
+    height:44px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fff;
+}
+.newscontent{
+    min-width: 0;
+    position:relative;
+    margin-top:54px;
+}
+.newstimeline{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 21px;
+    width: 2px;
+    background: #d4e9f7;
+    z-index: 2;
+}
+.circle{
+    border-radius: 50%;
+    z-index: 10;
+    text-align: right;
+    margin:10px auto;
+    clear: both;
+    line-height: 36px;
+}
+.circle img{
+    width:36px;
+    height : 36px;
+    vertical-align: middle;
+    float: left;
+    border-radius: 50%;
+}
+.newtime{
+    display: none;
+    /*float: left;*/
+    /*display: block;*/
+    /*width: 53px;*/
+    /*text-align: center;*/
+    /*font-size: 14px;*/
+    /*line-height: 22px;*/
+    /*margin-right:12px;*/
+}
+.newcontent{
+    width: auto;
+    display: block;
+    font-size: 15px;
+    line-height: 22px;
+    min-height: 42px;
+    padding-right:10px;
+    padding-left: 10px;
+    padding-top:1px;
+}
+span.iconTitle{
+    font-size: 12px;
+    padding: 0 3px;
+    position: absolute;
+    left: 35px;
+}
+.newslist .comment{
+    display: block;
+}
+.comment {
+    padding: 5px 0;
+}
+.comment a{
+    color:#424242;
+    font-size:14px;
+    display: inline-block;
+}
+.comment a .zan{
+    display: inline-block;
+    width:21px;
+    height:21px;
+    background: url('../images/dianzan_hei.png') center center no-repeat;
+    background-size: 100%;
+    vertical-align: bottom;
+}
+.comment a .zan.active{
+    background: url('../images/dianzan_hong.png') center center no-repeat;
+    background-size: 100%;
+}
+.comment a .pinglun{
+    display: inline-block;
+    width:21px;
+    height:21px;
+    background: url('../images/pinglun_hei.png') center center no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+}
+nav #nm-icon {
+    width: 58px;
+}
+/*投票工作室内容*/
+.pic img{
+    width: 100%;
+    height:305px;
+}
+
+.com-grid-paper{
+    height:305px;
+    position:relative;
+    max-width: 100%;
+    display: block;
+}
+.com-grid-paper .grid-paper-ft{
+    background: rgba(65,65,65,.5);
+    color:#fff;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:auto;
+}
+.com-grid-paper .grid-paper-ft .title-description {
+    position: static;
+    padding: 3px 15px 12px;
+}
+.com-grid-paper .grid-paper-ft .title-description .title {
+    font-size: 24px;
+    margin-top:20px;
+    margin-bottom:5px;
+}
+.com-grid-paper .grid-paper-ft .title-description .description{
+    font-size: 13px;
+    line-height: 18px;
+    color:#fff;
+}
+.com-grid-paper .grid-paper-ft .title-description .ticketNum{
+    color:#fff;
+    font-size: 14px;
+    padding:6px 0 2px;
+}
+.com-grid-paper .grid-paper-bd .count {
+    position:absolute;
+    top: 16px;
+    right: 16px;
+    width: 1.2rem;
+    height: 1rem;
+    background: url(../images/new.png) center no-repeat;
+    background-size: 100%;
+}

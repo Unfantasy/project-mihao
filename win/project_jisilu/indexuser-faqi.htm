@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <title>股市合伙人---发现最搭的投资战友</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/link.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/btn-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/icon-sprite.css-v=20151027.css"/>
+    <link href="css/style.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jsl.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/JiSiLu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/summernote.css"/>
+    <link rel="stylesheet" href="css/indexuser-faqi.css"/>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap2.js"></script>
+    <script src="js/jsl.js-v=20151027" type="text/javascript"></script>
+    <script src="js/summernote.min.js"></script>
+    <script>
+        function addRow(){
+            $("#btn_add").prev().find("table").append('<tr class="interation">'+
+            '<td class="stock">'+
+            '<span>川投能源</span>'+
+            '<div class="stock-num">600674</div>'+
+            '</td>'+
+            '</td>'+
+            '<td class="stock-increase">'+
+            '<span>0.46%</span>'+
+            '</td>'+
+            '<td class="stars">'+
+            '<div class="star_light star"></div>'+
+            '<div class="star_light star"></div>'+
+            '<div class="star_dark star"></div>'+
+            '</td>'+
+            '<td><input type="radio" name="red_green" class="red_green " value="red"> <span class="red">利多</span> &nbsp;<input type="radio" name="red_green" class="red_green" value="green"> <span class="green">利空</span> </td>'+
+            '<td class="stock-select">'+
+            '<select>'+
+            '<option value="0">选项.....</option>'+
+            '<option value="1">早盘拉升</option>'+
+            '<option value="2">低开高走</option>'+
+            '<option value="3">盘中异动</option>'+
+            '<option value="4">尾盘拉升</option>'+
+            '<option value="5">横盘整理</option>'+
+            '</select>'+
+            '<a onclick="removeRow(this)"><img src="images/aw-minus.jpg" width="30px"></a>'+
+            '</td>'+
+            '</tr>');
+            $(".star").click(selectStars);
+        }
+        function removeRow(obj){
+            $(obj).parent().parent().remove();
+        }
+        function selectStars(){
+            var index = $(this).index();
+            var $this = $(this);
+            var stars = $(this).parent().children();
+            switch(index){
+                case 0:
+                    $this.removeClass("star_dark").addClass("star_light");
+                    $this.siblings().removeClass("star_light").addClass("star_dark");
+                    break;
+                case 1:
+                    $this.prev().removeClass("star_dark").addClass("star_light");
+                    $this.removeClass("star_dark").addClass("star_light");
+                    $this.next().removeClass("star_light").addClass("star_dark");
+                    break;
+                case 2:
+                    stars.removeClass("star_dark").addClass("star_light");
+                    break;
+            }
+        }
+        $(function(){
+            $(".star").click(function(){
+               var index = $(this).index();
+                var $this = $(this);
+                var stars = $(this).parent().children();
+                switch(index){
+                    case 0:
+                        $this.removeClass("star_dark").addClass("star_light");
+                        $this.siblings().removeClass("star_light").addClass("star_dark");
+                        break;
+                    case 1:
+                        $this.prev().removeClass("star_dark").addClass("star_light");
+                        $this.removeClass("star_dark").addClass("star_light");
+                        $this.next().removeClass("star_light").addClass("star_dark");
+                        break;
+                    case 2:
+                        stars.removeClass("star_dark").addClass("star_light");
+                    break;
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div class="aw-top-menu-wrap">
+    <div class="aw-wecenter aw-top-menu">
+        <div class="row">
+
+            <!-- logo -->
+            <div class="span6 aw-logo">
+                <a href="#">
+                    <img src="" alt=""/>
+                </a>
+                <a href="#" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;">»首 页</a>
+
+                <a href="index.htm"
+                   style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;font-weight: normal;letter-spacing: 0.1em">社区-股市合伙人--发现自己最合适的投资战友</a>
+            </div>
+            <!-- end logo -->
+            <!-- 登陆&注册栏 -->
+            <div class="span6 aw-login-register">
+                <div class="pull-right offset1 aw-user-nav-dropdown">
+                    <a href="http://www.jisilu.cn/people/%E5%BF%83%E5%A6%82%E7%90%89%E7%92%83">
+                        <span class="pull-left">心如琉璃</span>
+
+                        <img class="pull-left" alt="心如琉璃"
+                             src="http://www.jisilu.cn/uploads/avatar/000/12/40/72_avatar_mid.jpg">
+                    </a>
+
+                    <div class="dropdown-menu aw-dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <span><i class="aw-icon i-dropdown-triangle active"></i></span>
+                        <ul>
+                            <li><a href="indexuser-people.html" tabindex="-1">主页 <i class="aw-icon i-user-post"></i></a>
+                            </li>
+                            <li><a href="indexuser-mine.html" tabindex="-1">我的关注</a></li>
+                            <li><a href="indexuser-setting-blacklist.html" tabindex="-1">黑名单</a></li>
+
+                            <li><a href="indexuser-setting.html">设置 <i class="aw-icon i-setting-no-hover"></i></a></li>
+                            <li><a href="index.htm">退出 <i class="aw-icon i-logout"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pull-right aw-logined-nav">
+                    <ul>
+                        <li><a href="indexuser-inbox.html">私信<span id="inbox_unread" class="badge badge-important"
+                                                                   style="">1</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end 登陆&注册栏 -->
+        </div>
+    </div>
+    <div class="aw-wecenter aw-nav">
+        <div class="row">
+            <div class="span10 aw-nav-wrap">
+                <div class="aw-nav-left"></div>
+                <div class="aw-nav-middle">
+                    <!-- 导航条 -->
+                    <div class="aw-nav-main pull-left">
+                        <ul class="aw-top-nav">
+                            <li><a href="indexuser-mine.html"><i class="aw-icon i-index-no-hover"></i>我的关注<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser.htm"><i
+                                    class="aw-icon i-question-no-hover"></i>广场<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser-findboss.html"><i
+                                    class="aw-icon i-question-no-hover"></i>发现牛人<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- end 导航条 -->
+
+                </div>
+
+                <div class="aw-nav-right"></div>
+            </div>
+            <div class="span2 aw-pulish">
+                <a id="header_publish" href="indexuser-faqi.htm" class="aw-btn b-start-question active">发起</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aw-container-wrap">
+    <div class="aw-container aw-wecenter">
+        <div class="aw-container-wrap">
+            <div class="aw-container aw-wecenter">
+                <div class="row aw-content-wrap">
+                    <div class="span9 aw-main-content">
+                        <form action="" method="post" id="question_form" onsubmit="return false;">
+                            <input type="hidden" name="post_hash" value="9c79a7b3bce9c99b">
+                            <input type="hidden" name="attach_access_key" value="cc21efd3cdda1fb106f64a97594d89bb">
+                            <input type="hidden" name="question_id" id="question_id" value="">
+                            <input type="hidden" name="ask_user_id" value="">
+                            <select name="category_id" class="hide" id="category_id">
+                                <option value="0">- 请选择分类 -</option>
+                                <option value="3">干货数据</option>
+                                <option value="4">成功案例</option>
+                                <option value="5">牛人榜单</option>
+                                <option value="6">操盘日志</option>
+                                <option value="7">其他</option>
+                            </select>
+
+                            <div class="aw-mod aw-dynamic-index aw-mod-publish">
+                                <div class="aw-mod-head">
+                                    <h2>发起主题/问题</h2>
+                                    <time class="pull-right"></time>
+                                </div>
+                                <div class="aw-mod-body">
+                                    <h3 style="font-size:100%;margin-top:30px;">标题:</h3>
+                                    <!-- 标题 -->
+                                    <div class="aw-publish-title">
+                                        <input type="text" placeholder="标题..." name="question_content"
+                                               id="question_contents"
+                                               onkeyup="get_quick_publich_question_list($(this),$(this).val());"
+                                               onblur="hide_question_list($(this));" value="">
+
+                                        <div class="aw-dropdown aw-question-dropdown">
+                                            <i class="aw-icon i-dropdown-triangle active"></i>
+
+                                            <p class="title">没有找到相关结果</p>
+                                            <ul class="aw-question-dropdown-list"></ul>
+                                        </div>
+                                        <div class="aw-publish-title-dropdown">
+                                            <p class="dropdown-toggle" data-toggle="dropdown">
+                                                <span id="aw-topic-tags-select">选择分类</span>
+                                                <a href="javascript:;"><i class="aw-icon i-triangle-down"></i></a>
+                                            </p>
+
+                                            <div aria-labelledby="dropdownMenu" role="menu"
+                                                 class="dropdown-menu aw-dropdown-menu">
+                                                <span><i class="aw-icon i-dropdown-triangle"></i></span>
+                                                <ul>
+                                                    <li><a data-value="3">干货数据</a></li>
+                                                    <li><a data-value="4">成功案例</a></li>
+                                                    <li><a data-value="6">操盘日志</a></li>
+                                                    <li><a data-value="7">其他</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end 标题 --><br>
+                                    <table class="table" id="stock-log" class="aw-stock-log" style="display: none;">
+                                        <tr class="today-analyse">
+                                            <td colspan="3">今日复盘</td>
+                                        </tr>
+
+                                        <tr id="stock-zh" class="aw-stock-zh">
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>-36.33%</span><i>(-1.01%)</i>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <div>上证综指</div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>-36.33%</span><i>-1.01%</i>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <div>上证综指</div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>-36.33%</span><i>-1.01%</i>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <div>上证综指</div>
+
+                                                    </div>
+                                                </div>
+                                        </tr>
+                                        <tr class="table-in">
+                                            <td colspan="3">
+                                                <table class="in-table">
+                                                    <thead>
+                                                    <tr>
+                                                        <td>名称代码</td>
+                                                        <td>涨跌幅</td>
+                                                        <td>重要性</td>
+                                                        <td>利多利空</td>
+                                                        <td>标签</td>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="interation">
+                                                            <td class="stock">
+                                                                <span>川投能源</span>
+                                                                <div class="stock-num">600674</div>
+                                                            </td>
+                                                        </td>
+                                                        <td class="stock-increase">
+                                                            <span>0.46%</span>
+                                                        </td>
+                                                        <td class="stars">
+                                                            <div class="star_light star"></div>
+                                                            <div class="star_light star"></div>
+                                                            <div class="star_dark star"></div>
+                                                        </td>
+                                                        <td>
+                                                            <input type="radio" name="red_green" class="red_green " value="red"/> <span class="red">利多</span> &nbsp;
+                                                            <input type="radio" name="red_green" class="red_green"value="green"/> <span class="green">利空</span>
+                                                            </td>
+                                                        <td class="stock-select">
+                                                            <select>
+                                                                <option value="0">选项.....</option>
+                                                                <option value="1">早盘拉升</option>
+                                                                <option value="2">低开高走</option>
+                                                                <option value="3">盘中异动</option>
+                                                                <option value="4">尾盘拉升</option>
+                                                                <option value="5">横盘整理</option>
+                                                            </select>
+                                                            <a onclick="removeRow(this)"><img src="images/aw-minus.jpg" width="30px"></a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr id="btn_add">
+                                            <td colspan="3" style="text-align: center; vertical-align: middle;">
+                                                <a onclick="addRow()"><img src="images/aw-plus.jpg" width="50px" /></a>
+                                            </td>
+                                        </tr>
+                                        <!--点击添加-->
+                                        <tr class="operation-history" id="operation-history">
+                                            <td colspan="3">
+                                                操作回顾：<br/><br/>
+                                                <span class="index">添加索引词汇:</span><span class="btn">高抛低吸</span><span
+                                                    class="btn">逢低介入</span><span class="btn">拉高出货</span><span
+                                                    class="btn">获利了结</span><span class="btn">持股观望</span><span
+                                                    class="btn">加仓待涨</span><span class="btn">降低仓位</span><span
+                                                    class="btn">止损平仓</span>
+                                                <br/>
+                                                <textarea name="" id="operation-history-text"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr class="invest-plan" id="invest-plan">
+                                            <td colspan="3">
+                                                投资计划：<br/><br/>
+
+                                                <div class="input-prepend">
+                                                    <span class="add-on">主 板 走 势：</span>
+                                                    <input class="span6" type="text" placeholder="..."
+                                                           id="zhubanzoushi">
+                                                </div>
+                                                <div class="input-prepend">
+                                                    <span class="add-on">仓 位 控 制：</span>
+                                                    <input class="span6" type="text" placeholder="..."
+                                                           id="cangweikongzhi">
+                                                </div>
+                                                <div class="input-prepend">
+                                                    <span class="add-on">预计资金流向：</span>
+                                                    <input class="span6" type="text" placeholder="..." id="yujizijin">
+                                                </div>
+                                                <div class="input-prepend">
+                                                    <span class="add-on">持股目标价位：</span>
+                                                    <input class="span6" type="text" placeholder="..." id="chugumubiao">
+                                                </div>
+
+                                                <textarea name="" id="invest-plan-text"></textarea>
+
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="summernote"></div>
+                                    <script>
+                                        //编辑器
+                                        $(document).ready(function () {
+                                            $("#summernote").summernote({
+                                                oninit: function () {
+                                                    $('.note-editable').css('min-height', '150px');
+                                                }
+                                            });
+                                        });
+                                    </script>
+
+                                </div>
+                                <div class="aw-mod-footer clearfix">
+                                    <a class="pull-right btn btn-large btn-success" id="publish_submit">确认发起</a>
+                                    <a class="pull-right btn btn-large btn-success" id="publish_prepend"
+                                       style="display:none" onclick="prepend()">预览</a>
+                                </div>
+                                <div id="aw-publish-prepend" class="aw-publish-prepend" style="display:none">
+                                    <div class="today-analyse"  ><p class="title">今日复盘</p></div>
+                                    <table class="table" class="aw-stock-log">
+
+                                        <tbody>
+                                        <tr class="aw-stock-zh">
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>-36.33%</span><i>-1.01%</i>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <div>上证综指</div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <div>深圳成指</div>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <span>-36.33%</span><i>-1.01%</i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="span4">
+                                                <div class="total-stock">
+                                                    <div class=" text-center param1">
+                                                        <div>创业板指</div>
+                                                    </div>
+                                                    <div class=" text-center param2">
+                                                        <span>3568.47</span>
+                                                    </div>
+                                                    <div class=" text-center param3">
+                                                        <span>-36.33%</span><i>-1.01%</i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="table-in">
+                                            <td colspan="3">
+                                                <table class="in-table">
+                                                    <thead>
+                                                    <tr>
+                                                        <td>名称代码</td>
+                                                        <td>涨跌幅</td>
+                                                        <td>重要性</td>
+                                                        <td>利多利空</td>
+                                                        <td>标签</td>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="interation">
+                                                        <td class="stock">
+                                                            <span>川投能源</span>
+                                                            <div class="stock-num">600674</div>
+                                                        </td>
+                                                        </td>
+                                                        <td class="stock-increase">
+                                                            <span>0.46%</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="star_light star"></div>
+                                                            <div class="star_light star"></div>
+                                                            <div class="star_dark star"></div>
+                                                        </td>
+                                                        <td>
+                                                            <ul class="red_get">
+                                                                <li class="red_first">利多</li>
+                                                                <li>A股</li>
+                                                            </ul>
+                                                        </td>
+                                                        <td class="stock-select">
+                                                            横盘整理
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+
+                                    </table>
+                                    <div class="aw-history-content">
+                                        <p class="little-title">操作回顾</p>
+                                        <p class="history-content" >刘亦菲，1987年8月25日出生于湖北省武汉市，影视女演员、歌手，毕业于北京电影学院2002级表演系本科班。2002年出演《金粉世家》和《天龙八部》步入演艺圈，2004年主演《仙剑奇侠传》获得关注。2006年主演《神雕侠侣》中的“小龙女”一角而受到广泛关注，同年发行首张个人专辑《刘亦菲》。</p>
+                                    </div>
+                                    <div class="aw-invest-plan">
+                                        <p class="little-title">投资计划</p>
+                                        <p class="zhubanzoushi">主 板 走 势：<span>1987年8月25日出生于湖北省武汉市</span></p> <br/>
+                                        <p class="cangweikongzhi">仓 位 控 制：<span>1987年8月25日出生于湖北省武汉市</span></p> <br/>
+                                        <p class="yujizijin">预计资金流向：<span>1987年8月25日出生于湖北省武汉市</span></p> <br/>
+                                        <p class="chugumubiao">持股目标价位：<span>1987年8月25日出生于湖北省武汉市</span></p> <br/>
+                                        <p class="invest-content" >刘亦菲，1987年8月25日出生于湖北省武汉市，影视女演员、歌手，毕业于北京电影学院2002级表演系本科班。2002年出演《金粉世家》和《天龙八部》步入演艺圈，2004年主演《仙剑奇侠传》获得关注。2006年主演《神雕侠侣》中的“小龙女”一角而受到广泛关注，同年发行首张个人专辑《刘亦菲》。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- 侧边栏 -->
+                    <div class="span3 aw-side-bar">
+                        <!-- 问题发起指南 -->
+                        <div class="aw-side-bar-mod aw-no-border-bottom aw-side-bar-mod-publish">
+                            <div class="aw-side-bar-mod-head">
+                                <h3>问题发起指南</h3>
+                            </div>
+                            <div class="aw-side-bar-mod-body">
+                                <p><b>● 标题:</b> 请用准确的语言描述您发布的问题思想</p>
+
+                                <p><b>● 内容:</b> 详细补充您的问题内容, 并提供一些相关的素材以供参与者更多的了解您所要问题的主题思想</p>
+
+                                <p><b>● 选择话题:</b> 选择一个或者多个合适的话题, 让您发布的问题得到更多有相同兴趣的人参与. 所有人可以在您发布问题之后添加和编辑该问题所属的话题</p>
+                            </div>
+                        </div>
+                        <!-- end 问题状态 -->
+
+                    </div>
+                    <!-- end 侧边栏 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aw-footer-wrap">
+    <div class="aw-footer aw-wecenter">
+        <div class="row">
+            <center>
+  <span class="i_tc">
+  	<a>浙ICP备14016681号</a> &nbsp;&nbsp;
+  	|
+  	&nbsp;&nbsp;<a target="_blank"
+                   href="http://www.weibo.com/zmstock/profile?rightmod=1&wvr=6&mod=personinfo">关注本站微博</a>&nbsp;<a
+          target="_blank" href="#">问题反馈</a></span>
+                <br>
+  <span class="i_tc">
+  使用Chrome浏览本站最佳 &nbsp;|&nbsp;&nbsp;声明：本站所有内容均为网友自发提供，不构成投资建议，请谨慎参考 </span>
+            </center>
+        </div>
+    </div>
+</div>
+<!--底部栏-->
+
+<script src="js/aw-click.js"></script>
+<script>
+    //点击索引词汇添加
+    $("#operation-history td span").click(function () {
+        var new_text = $(this).text();
+        var old_text = $("#operation-history-text").val();
+        $("#operation-history-text").val(old_text + new_text);
+    })
+    $("#operation-history td span.index").off("click");
+    //点击选择分类
+    window.onload = function () {
+        $(".aw-dropdown-menu li").click(function () {
+            $("#aw-topic-tags-select").text($(this).first().text())
+
+            if ($("#aw-topic-tags-select").text() == "操盘日志") {
+                $("#stock-log").css("display", "block");
+                $(".note-editor").css("display", "none");
+                $("#publish_prepend").css("display", "block");
+            } else {
+                $("#stock-log").css("display", "none");
+                $(".note-editor").css("display", "block");
+                $("#publish_prepend").css("display", "none");
+            }
+        });
+        if ($("#aw-topic-tags-select").text() == "操盘日志") {
+            $("#stock-log").css("display", "block");
+        }
+
+        $(".stock-select .dropdown .dropdown-menu li").click(function () {
+            var label = $(this).children().text();
+            $(this).parent().siblings(".dropdown-toggle").children("span").text(label);
+        });
+        //将当前时间添加到页面
+        var now_time = getTime();
+        $(".aw-mod-head time").text(now_time);
+
+    }
+    //点击预览生成页面
+    function prepend() {
+        //将上面的数据填进下面的预览界面
+        var title = $("#question_contents").val();
+        var operationContents = $("#operation-history-text").val();
+        var zhubanzoushi = $("#zhubanzoushi").val();
+        var cangweikongzhi = $("#cangweikongzhi").val();
+        var yujizijin = $("#yujizijin").val();
+        var chugumubiao = $("#chugumubiao").val();
+        var investPlan = $("#invest-plan-text").val();
+        $(".prepend-title").text(title);
+        $(".aw-publish-username a").text($(".aw-user-nav-dropdown>a>span").text());
+        $(".history-content").text(operationContents);
+        $(".zhubanzoushi span").text(zhubanzoushi);
+        $(".cangweikongzhi span").text(cangweikongzhi);
+        $(".yujizijin span").text(yujizijin);
+        $(".chugumubiao span").text(chugumubiao);
+        $(".invest-content").text(investPlan);
+        $("#aw-publish-prepend .table-in tbody").empty();
+        $(".interation").each(function () {
+            var stock = $(this).find(".stock").html();
+            var stockIncrease = $(this).find(".stock-increase").html();
+            var selectText = $(this).find(".stock-select select").find("option:selected").text()
+            var stars = $(this).find(".stars").html();
+            var redGreen = "";
+            if($(this).find(".red_green:checked").val()=="red"){
+                redGreen = '<ul class="red_get"><li class="red_first">利多</li><li>A股</li></ul>';
+            }else if($(this).find(".red_green:checked").val()=="green"){
+                redGreen = '<ul class="green_get"><li class="green_first">利空</li><li>A股</li></ul>';
+            }
+
+            $("#aw-publish-prepend .table-in tbody").append(
+                    '<tr><td>' + stock + ' </td><td class="stock-increase"> ' + stockIncrease + '</td><td> ' + stars + '</td><td> ' + redGreen + '</td> <td class="stock-select">' + selectText+ ' </td></tr>');
+        });
+        $("#aw-publish-prepend .star").unbind();
+        if ($("#aw-publish-prepend").attr("display") != "block") {
+
+            $("#aw-publish-prepend").css("display", "block");
+
+        } else {
+            $("#aw-publish-prepend").css("display", "none");
+        }
+    }
+    ;
+    //获取当前时间
+    function getTime() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        return year + "-" + month + "-" + day;
+    }
+</script>
+
+</body>
+</html>

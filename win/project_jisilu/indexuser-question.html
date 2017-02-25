@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <title>我的论坛</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/link.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/btn-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/icon-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/ui-dialog.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jsl.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/user-setting.css"/>
+    <link href="css/JiSiLu.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript">
+        var _BAFB79922DFEE330B61725535E940D9E = '';
+        var G_POST_HASH = _BAFB79922DFEE330B61725535E940D9E;
+        var G_INDEX_SCRIPT = '';
+        var G_SITE_NAME = '集思录';
+        var G_BASE_URL = 'http://www.jisilu.cn/';
+        var G_STATIC_URL = 'http://www.jisilu.cn/static';
+        var G_UPLOAD_URL = 'http://www.jisilu.cn/uploads';
+        var G_USER_ID = 0;
+        var G_USER_NAME = '';
+        var G_UPLOAD_ENABLE = 'N';
+        var G_QUICK_PUBLISH_HUMAN_VALID = '';
+        var G_UNREAD_NOTIFICATION = 0;
+        var G_NOTIFICATION_INTERVAL = 180000;
+        var G_CAN_CREATE_TOPIC = '';
+
+
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "../../hm.baidu.com/hm.js-164fe01b1433a19b507595a43bf58262"/*tpa=http://hm.baidu.com/hm.js?164fe01b1433a19b507595a43bf58262*/;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script src="js/jquery.js"type="text/javascript"></script>
+    <script src="js/jquery.form.js-v=20151027" type="text/javascript"></script>
+    <script src="js/plug-in_module.js-v=20151027" type="text/javascript"></script>
+    <script src="js/functions.js-v=20151027" type="text/javascript"></script>
+    <script src="js/aw_template.js-v=20151027" type="text/javascript"></script>
+    <script src="js/common.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jslcommon.js-v=20151027" type="text/javascript"></script>
+    <script src="js/app.js-v=20151027" type="text/javascript"></script>
+    <script src="js/dialog-plus-min.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.orange.js-v=20151027" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="aw-top-menu-wrap">
+    <div class="aw-wecenter aw-top-menu">
+        <div class="row">
+            <!-- logo -->
+            <div class="span6 aw-logo">
+                <a href="#">
+                    <img src="" alt=""/>
+                </a>
+                <a href="#" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;">»首 页</a>
+                <a href="index.htm" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;font-weight: normal;letter-spacing: 0.1em">社区-股市合伙人--发现最搭的投资战友</a>
+
+            </div>
+            <!-- end logo -->
+            <!-- 登陆&注册栏 -->
+            <div class="span6 aw-login-register">
+                <div class="pull-right offset1 aw-user-nav-dropdown">
+                    <a href="http://www.jisilu.cn/people/%E5%BF%83%E5%A6%82%E7%90%89%E7%92%83">
+                        <span class="pull-left">心如琉璃</span>
+
+                        <img class="pull-left" alt="心如琉璃" src="http://www.jisilu.cn/uploads/avatar/000/12/40/72_avatar_mid.jpg">
+                    </a>
+                    <div class="dropdown-menu aw-dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <span><i class="aw-icon i-dropdown-triangle active"></i></span>
+                        <ul>
+                            <li><a href="indexuser-people.html" tabindex="-1">主页 <i class="aw-icon i-user-post"></i></a></li>
+                            <li><a href="indexuser-mine.html" tabindex="-1">我的关注</a></li>
+                            <li><a href="indexuser-setting-blacklist.html" tabindex="-1">黑名单</a></li>
+
+                            <li><a href="indexuser-setting.html">设置 <i class="aw-icon i-setting-no-hover"></i></a></li>
+                            <li><a href="index.htm">退出 <i class="aw-icon i-logout"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pull-right aw-logined-nav">
+                    <ul>
+                        <li><a href="indexuser-inbox.html">私信<span id="inbox_unread" class="badge badge-important" style="">1</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end 登陆&注册栏 -->
+        </div>
+    </div>
+    <div class="aw-wecenter aw-nav">
+        <div class="row">
+            <div class="span10 aw-nav-wrap">
+                <div class="aw-nav-left"></div>
+                <div class="aw-nav-middle">
+                    <!-- 导航条 -->
+                    <div class="aw-nav-main pull-left">
+                        <ul class="aw-top-nav">
+                            <li><a href="indexuser-mine.html"><i class="aw-icon i-index-no-hover"></i>我的关注<i class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser.htm"><i
+                                    class="aw-icon i-question-no-hover"></i>广场<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser-findboss.html" ><i
+                                    class="aw-icon i-question-no-hover"></i>发现牛人<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- end 导航条 -->
+                </div>
+
+                <div class="aw-nav-right"></div>
+            </div>
+            <div class="span2 aw-pulish">
+                <a id="header_publish" href="indexuser-faqi.htm" class="aw-btn b-start-question">发起</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aw-container-wrap">
+    <div class="aw-container aw-wecenter">
+        <div class="row aw-content-wrap">
+            <div class="span9 aw-main-content">
+                <div class="aw-mod aw-item aw-question-detail-title">
+                    <div class="aw-mod-head">
+                        <h1>
+                            A基轮动的时候，直接扣除的佣金是否比先扣再返的合算？						</h1>
+                        <div class="aw-question-follow">
+                            <a href="javascript:;" onclick="favorite_question($(this), 49999);" class="btn btn-mini pull-left aw-follow-question aw-active">收藏</a>
+
+                            <a href="javascript:;" onclick="focus_question($(this), 49999);" class="btn btn-mini pull-left aw-follow-question aw-active">关注</a>
+                        </div>
+
+                        <div class="aw-topic-editor" id="question_topic_editor" data-type="question" data-id="49999">
+
+                            <a href="http://www.jisilu.cn/topic/%E4%BD%A3%E9%87%91%E5%90%8E%E8%BF%94" class="aw-topic-name" data-id="3814"><span>佣金后返</span></a>
+
+                        </div>
+
+                    </div>
+                    <div class="aw-mod-body">
+                        <div class="aw-question-detail-txt markitup-box">
+                            以前轮动A基，做的不彻底也没有坚持下来，很大原因就是受不了帐户上的亏损。<br>
+                            <br>
+                            以为是自己的佣金太高了，就新开了一家低佣金的。但是问题来了，佣金是先按标准的千3收取再返的。<br>
+                            <br>
+                            同样的A基轮动，同样的佣金万1，是不是直接收费的肯定比后返的要有利于轮动呢？个人以为直接扣除的比后返的会多买到点A基的份额，虽然不多，但轮动不就是靠多出来的份额盈利吗？（小白的直觉，因为自己也没弄明白轮动的本质，所以前面越轮越亏）<br>
+                            <br>
+                            但问题来了，如果一个是直接收万1，另一个是先收千3再按万0.8返呢？也就是直接收的万1与后返的万0.8哪个对于轮动A基来说更合算？<br>
+                            <br>
+                            大神请现身 <a href="http://www.jisilu.cn/people/%E6%8C%81%E6%9C%89%E5%B0%81%E5%9F%BA" class="aw-user-name" data-id="8132" target="_blank">@持有封基</a> <a href="http://www.jisilu.cn/people/%E8%A5%BF%E8%83%96%E5%AD%90" class="aw-user-name" data-id="19400" target="_blank">@西胖子</a> <a href="http://www.jisilu.cn/people/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E5%85%88%E9%94%8B" class="aw-user-name" data-id="73641" target="_blank">@量化投资先锋</a> <a href="http://www.jisilu.cn/people/%E5%A4%A9%E4%B9%A6" class="aw-user-name" data-id="2" target="_blank">@天书</a> <a href="http://www.jisilu.cn/people/%E5%B8%85%E7%89%9B" class="aw-user-name" data-id="7" target="_blank">@帅牛</a> <a href="http://www.jisilu.cn/people/gecheng" class="aw-user-name" data-id="10573" target="_blank">@gecheng</a>
+
+                        </div>
+                        <div class="aw-question-detail-meta">
+                            <span class="pull-left aw-text-color-999">2015-11-19 16:43</span>
+
+                            <a herf="javascript:;" data-id="49999" data-type="question" class="aw-text-color-999 aw-add-comment"><i class="aw-icon i-remark"></i>0 条评论</a>
+                            <div class="aw-share-dropdown pull-left">
+                                <a class="aw-text-color-999 dropdown-toggle" data-toggle="dropdown"><i class="aw-icon i-share"></i>分享</a>
+                                <div class="dropdown-menu aw-dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <span><i class="aw-icon i-dropdown-triangle"></i></span>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;" onclick="$.dialog('shareOut', {item_type:'question', item_id:49999});" class="aw-text-color-999"><i class="aw-icon i-share-user"></i>站外</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" onclick="$.dialog('shareIn', {item_type:'question', item_id:49999});" class="aw-text-color-999"><i class="aw-icon i-message"></i>私信</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="aw-text-color-999" onclick="$.dialog('report', {item_type:'question', item_id:49999})"><i class="aw-icon i-no-help"></i>举报</a>														<a data-placement="bottom" title="" data-toggle="tooltip" data-original-title="感谢提问者" onclick="question_thanks(49999, this);" class="aw-icon-thank-tips aw-text-color-999"><i class="aw-icon i-thank"></i>感谢</a>
+
+                            <a href="javascript:;" class="aw-text-color-999" title="点击拉黑 xiaopeiake" onclick="user_uninterested($(this), 46889,'xiaopeiake', 49999, 0);">拉黑</a>
+
+                            <!-- 投票栏 -->
+                            <a title="给楼主点赞" class="aw-text-color-999 aw-question-vote-bar  " href="javascript:;" onclick="agreeQuestionVote(this, G_USER_NAME, 49999)"><i data-original-title="给楼主点赞" class="aw-icon i-question-agree" data-toggle="tooltip" title="" data-placement="right"></i><span class="aw-vote-bar-count">0</span> 个赞同</a>
+                            <!-- end 投票栏 -->
+
+                            <br><p class="aw-text-color-999 aw-agree-by hide">
+                            赞同来自:
+
+                        </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aw-mod aw-question-detail-box">
+                    <div class="aw-mod-head">
+                        <ul class="nav nav-tabs aw-reset-nav-tabs">
+                            <li><a href="http://www.jisilu.cn/question/49999?uid=publisher">只看楼主</a></li>
+                            <li><a href="http://www.jisilu.cn/question/49999?uid=focus">关注的人</a></li>
+                            <li><a href="http://www.jisilu.cn/question/49999&amp;sort_key=agree_count&amp;sort=DESC">票数</a></li>
+                            <li class="active"><a href="http://www.jisilu.cn/question/49999?sort_key=add_time&amp;sort=DESC">时间<i class="aw-icon i-triangle-up-mini"></i></a></li>
+
+                            <h2>4 个回复</h2>
+                        </ul>
+                    </div>
+                    <div class="aw-mod-body aw-dynamic-topic">
+
+                        <div class="aw-item" uninterested_count="0" force_fold="0" id="answer_list_493636">
+                            <a name="answer_493636"></a>
+                            <!-- 用户头像 -->
+                            <a class="aw-user-img aw-border-radius-5 pull-right" href="http://www.jisilu.cn/people/xiaopeiake" data-id="46889"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" alt=""></a>								<!-- end 用户头像 -->
+                            <div class="aw-mod-body clearfix"><div class="aw-vote-bar pull-left"><a class="aw-border-radius-5 " href="javascript:;" onclick="agreeVote(this, 'hhhkkkbbb', 493636)"><i data-original-title="赞同回复" class="aw-icon i-up active" data-toggle="tooltip" title="" data-placement="right"></i></a><em class="aw-border-radius-5 aw-vote-bar-count aw-hide-txt active">0</em><a class="aw-border-radius-5 " onclick="disagreeVote(this, 'hhhkkkbbb', 493636)"><i data-original-title="对回复持反对意见" class="aw-icon i-down" data-toggle="tooltip" title="" data-placement="right"></i></a></div>
+                                <!-- 投票栏 -->
+
+                                <!-- end 投票栏 -->
+                                <div class="pull-left aw-dynamic-topic-content">
+                                    <!-- 评论内容 -->
+                                    <div>
+                                        <p><a class="aw-user-name" href="http://www.jisilu.cn/people/xiaopeiake" data-id="46889">xiaopeiake</a> </p>
+                                        <p class="aw-text-color-999 aw-agree-by hide">
+                                            赞同来自:
+
+                                        </p>
+
+                                        <div class="markitup-box">
+                                            记得以前有讨论过这个话题的，可是没找到，有知道的也可以顶出来给大家看看，谢谢																							</div>
+
+
+                                    </div>
+                                    <!-- end 评论内容 -->
+                                    <!-- 社交操作 -->
+                                    <div class="aw-dynamic-topic-meta">
+                                        <span class="pull-left aw-text-color-999">2015-11-19 16:47</span>
+                                        <a class="aw-text-color-999 aw-add-comment" data-id="493636" data-type="answer" href="javascript:;"><i class="aw-icon i-remark"></i>0 条评论</a>
+                                        <!-- 可显示/隐藏的操作box -->
+                                        <div class="aw-dynamic-topic-more-operate pull-left">
+                                            <a href="javascript:;" onclick="$.dialog('shareOut', {item_type:'answer', item_id:493636});" class="aw-text-color-999"><i class="aw-icon i-share"></i>分享</a>
+
+
+
+                                            <a href="javascript:;" class="aw-text-color-999" onclick="$.dialog('report', {item_type:'answer', item_id:493636})"><i class="aw-icon i-no-help"></i>举报</a>
+                                            <a href="javascript:;" onclick="$.dialog('favorite', 493636);" class="aw-text-color-999"><i class="aw-icon i-collect"></i>收藏</a>
+
+                                            <a href="javascript:;" onclick="answer_user_rate(493636, 'thanks', this);" class="aw-icon-thank-tips aw-text-color-999" data-original-title="感谢热心的回复者" data-toggle="tooltip" title="" data-placement="bottom"><i class="aw-icon i-thank"></i>感谢</a>
+
+                                            <a href="javascript:;" class="aw-text-color-999" title="点击拉黑 xiaopeiake" onclick="user_uninterested($(this), 46889,'xiaopeiake',49999,493636);">拉黑</a>
+                                        </div>
+                                        <!-- end 可显示/隐藏的操作box -->
+
+                                    </div>
+                                    <!-- end 社交操作 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aw-item" uninterested_count="0" force_fold="0" id="answer_list_494405">
+                            <a name="answer_494405"></a>
+                            <!-- 用户头像 -->
+                            <a class="aw-user-img aw-border-radius-5 pull-right" href="http://www.jisilu.cn/people/xiaopeiake" data-id="46889"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" alt=""></a>								<!-- end 用户头像 -->
+                            <div class="aw-mod-body clearfix"><div class="aw-vote-bar pull-left"><a class="aw-border-radius-5 " href="javascript:;" onclick="agreeVote(this, 'hhhkkkbbb', 494405)"><i data-original-title="赞同回复" class="aw-icon i-up active" data-toggle="tooltip" title="" data-placement="right"></i></a><em class="aw-border-radius-5 aw-vote-bar-count aw-hide-txt active">0</em><a class="aw-border-radius-5 " onclick="disagreeVote(this, 'hhhkkkbbb', 494405)"><i data-original-title="对回复持反对意见" class="aw-icon i-down" data-toggle="tooltip" title="" data-placement="right"></i></a></div>
+                                <!-- 投票栏 -->
+
+                                <!-- end 投票栏 -->
+                                <div class="pull-left aw-dynamic-topic-content">
+                                    <!-- 评论内容 -->
+                                    <div>
+                                        <p><a class="aw-user-name" href="http://www.jisilu.cn/people/xiaopeiake" data-id="46889">xiaopeiake</a> </p>
+                                        <p class="aw-text-color-999 aw-agree-by hide">
+                                            赞同来自:
+
+                                        </p>
+
+                                        <div class="markitup-box">
+                                            怎么没人啊啊啊啊																							</div>
+
+
+                                    </div>
+                                    <!-- end 评论内容 -->
+                                    <!-- 社交操作 -->
+                                    <div class="aw-dynamic-topic-meta">
+                                        <span class="pull-left aw-text-color-999">2015-11-20 09:07</span>
+                                        <a class="aw-text-color-999 aw-add-comment" data-id="494405" data-type="answer" href="javascript:;"><i class="aw-icon i-remark"></i>0 条评论</a>
+                                        <!-- 可显示/隐藏的操作box -->
+                                        <div class="aw-dynamic-topic-more-operate pull-left">
+                                            <a href="javascript:;" onclick="$.dialog('shareOut', {item_type:'answer', item_id:494405});" class="aw-text-color-999"><i class="aw-icon i-share"></i>分享</a>
+
+
+
+                                            <a href="javascript:;" class="aw-text-color-999" onclick="$.dialog('report', {item_type:'answer', item_id:494405})"><i class="aw-icon i-no-help"></i>举报</a>
+                                            <a href="javascript:;" onclick="$.dialog('favorite', 494405);" class="aw-text-color-999"><i class="aw-icon i-collect"></i>收藏</a>
+
+                                            <a href="javascript:;" onclick="answer_user_rate(494405, 'thanks', this);" class="aw-icon-thank-tips aw-text-color-999" data-original-title="感谢热心的回复者" data-toggle="tooltip" title="" data-placement="bottom"><i class="aw-icon i-thank"></i>感谢</a>
+
+                                            <a href="javascript:;" class="aw-text-color-999" title="点击拉黑 xiaopeiake" onclick="user_uninterested($(this), 46889,'xiaopeiake',49999,494405);">拉黑</a>
+                                        </div>
+                                        <!-- end 可显示/隐藏的操作box -->
+
+                                    </div>
+                                    <!-- end 社交操作 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aw-item" uninterested_count="0" force_fold="0" id="answer_list_494446">
+                            <a name="answer_494446"></a>
+                            <!-- 用户头像 -->
+                            <a class="aw-user-img aw-border-radius-5 pull-right" href="http://www.jisilu.cn/people/jiwjok" data-id="29256"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" alt=""></a>								<!-- end 用户头像 -->
+                            <div class="aw-mod-body clearfix"><div class="aw-vote-bar pull-left"><a class="aw-border-radius-5 " href="javascript:;" onclick="agreeVote(this, 'hhhkkkbbb', 494446)"><i data-original-title="赞同回复" class="aw-icon i-up active" data-toggle="tooltip" title="" data-placement="right"></i></a><em class="aw-border-radius-5 aw-vote-bar-count aw-hide-txt active">0</em><a class="aw-border-radius-5 " onclick="disagreeVote(this, 'hhhkkkbbb', 494446)"><i data-original-title="对回复持反对意见" class="aw-icon i-down" data-toggle="tooltip" title="" data-placement="right"></i></a></div>
+                                <!-- 投票栏 -->
+
+                                <!-- end 投票栏 -->
+                                <div class="pull-left aw-dynamic-topic-content">
+                                    <!-- 评论内容 -->
+                                    <div>
+                                        <p><a class="aw-user-name" href="http://www.jisilu.cn/people/jiwjok" data-id="29256">jiwjok</a> </p>
+                                        <p class="aw-text-color-999 aw-agree-by hide">
+                                            赞同来自:
+
+                                        </p>
+
+                                        <div class="markitup-box">
+                                            影响极小，可以忽略																							</div>
+
+
+                                    </div>
+                                    <!-- end 评论内容 -->
+                                    <!-- 社交操作 -->
+                                    <div class="aw-dynamic-topic-meta">
+                                        <span class="pull-left aw-text-color-999">2015-11-20 09:27</span>
+                                        <a class="aw-text-color-999 aw-add-comment" data-id="494446" data-type="answer" href="javascript:;"><i class="aw-icon i-remark"></i>0 条评论</a>
+                                        <!-- 可显示/隐藏的操作box -->
+                                        <div class="aw-dynamic-topic-more-operate pull-left">
+                                            <a href="javascript:;" onclick="$.dialog('shareOut', {item_type:'answer', item_id:494446});" class="aw-text-color-999"><i class="aw-icon i-share"></i>分享</a>
+
+
+
+                                            <a href="javascript:;" class="aw-text-color-999" onclick="$.dialog('report', {item_type:'answer', item_id:494446})"><i class="aw-icon i-no-help"></i>举报</a>
+                                            <a href="javascript:;" onclick="$.dialog('favorite', 494446);" class="aw-text-color-999"><i class="aw-icon i-collect"></i>收藏</a>
+
+                                            <a href="javascript:;" onclick="answer_user_rate(494446, 'thanks', this);" class="aw-icon-thank-tips aw-text-color-999" data-original-title="感谢热心的回复者" data-toggle="tooltip" title="" data-placement="bottom"><i class="aw-icon i-thank"></i>感谢</a>
+
+                                            <a href="javascript:;" class="aw-text-color-999" title="点击拉黑 jiwjok" onclick="user_uninterested($(this), 29256,'jiwjok',49999,494446);">拉黑</a>
+                                        </div>
+                                        <!-- end 可显示/隐藏的操作box -->
+
+                                    </div>
+                                    <!-- end 社交操作 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aw-item" uninterested_count="0" force_fold="0" id="answer_list_494472">
+                            <a name="answer_494472"></a>
+                            <!-- 用户头像 -->
+                            <a class="aw-user-img aw-border-radius-5 pull-right" href="http://www.jisilu.cn/people/xcgdgp" data-id="51198"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" alt=""></a>								<!-- end 用户头像 -->
+                            <div class="aw-mod-body clearfix"><div class="aw-vote-bar pull-left"><a class="aw-border-radius-5 " href="javascript:;" onclick="agreeVote(this, 'hhhkkkbbb', 494472)"><i data-original-title="赞同回复" class="aw-icon i-up active" data-toggle="tooltip" title="" data-placement="right"></i></a><em class="aw-border-radius-5 aw-vote-bar-count aw-hide-txt active">0</em><a class="aw-border-radius-5 " onclick="disagreeVote(this, 'hhhkkkbbb', 494472)"><i data-original-title="对回复持反对意见" class="aw-icon i-down" data-toggle="tooltip" title="" data-placement="right"></i></a></div>
+                                <!-- 投票栏 -->
+
+                                <!-- end 投票栏 -->
+                                <div class="pull-left aw-dynamic-topic-content">
+                                    <!-- 评论内容 -->
+                                    <div>
+                                        <p><a class="aw-user-name" href="http://www.jisilu.cn/people/xcgdgp" data-id="51198">xcgdgp</a> </p>
+                                        <p class="aw-text-color-999 aw-agree-by hide">
+                                            赞同来自:
+
+                                        </p>
+
+                                        <div class="markitup-box">
+                                            以轮动的收益率而言，佣金低的合算，不过影响基本为0																							</div>
+
+
+                                    </div>
+                                    <!-- end 评论内容 -->
+                                    <!-- 社交操作 -->
+                                    <div class="aw-dynamic-topic-meta">
+                                        <span class="pull-left aw-text-color-999">2015-11-20 09:46</span>
+                                        <a class="aw-text-color-999 aw-add-comment" data-id="494472" data-type="answer" href="javascript:;"><i class="aw-icon i-remark"></i>0 条评论</a>
+                                        <!-- 可显示/隐藏的操作box -->
+                                        <div class="aw-dynamic-topic-more-operate pull-left">
+                                            <a href="javascript:;" onclick="$.dialog('shareOut', {item_type:'answer', item_id:494472});" class="aw-text-color-999"><i class="aw-icon i-share"></i>分享</a>
+
+
+
+                                            <a href="javascript:;" class="aw-text-color-999" onclick="$.dialog('report', {item_type:'answer', item_id:494472})"><i class="aw-icon i-no-help"></i>举报</a>
+                                            <a href="javascript:;" onclick="$.dialog('favorite', 494472);" class="aw-text-color-999"><i class="aw-icon i-collect"></i>收藏</a>
+
+                                            <a href="javascript:;" onclick="answer_user_rate(494472, 'thanks', this);" class="aw-icon-thank-tips aw-text-color-999" data-original-title="感谢热心的回复者" data-toggle="tooltip" title="" data-placement="bottom"><i class="aw-icon i-thank"></i>感谢</a>
+
+                                            <a href="javascript:;" class="aw-text-color-999" title="点击拉黑 xcgdgp" onclick="user_uninterested($(this), 51198,'xcgdgp',49999,494472);">拉黑</a>
+                                        </div>
+                                        <!-- end 可显示/隐藏的操作box -->
+
+                                    </div>
+                                    <!-- end 社交操作 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end 问题详细模块 -->
+
+                <!-- 回复编辑器 -->
+                <div class="aw-mod aw-mod-replay-box">
+                    <a name="answer_form"></a>
+                    <form action="http://www.jisilu.cn/question/ajax/save_answer/" onsubmit="return false;" method="post" id="answer_form">
+                        <input type="hidden" name="post_hash" value="35E74A073E8F3243">
+                        <input type="hidden" name="question_id" value="49999">
+                        <input type="hidden" name="attach_access_key" value="1b0637ccfaf7b37430c25d74d06fa9c3">
+                        <div class="aw-mod-head">
+                            <a href="http://www.jisilu.cn/people/" class="aw-user-name"><img alt="hhhkkkbbb" src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg"></a>
+                            <p><a class="aw-user-name">hhhkkkbbb</a></p>
+                            <p>
+							<span class="pull-right">
+																<label>
+                                                                    <input type="checkbox" checked="checked" value="1" name="auto_focus"> 关注问题								</label>
+																&nbsp;
+															</span>
+                            </p>
+                        </div>
+                        <div class="aw-mod-body">
+                            <div class="markdown"><div id="markItUpAdvanced_editor" class="markItUp"><div class="markItUpContainer"><div class="markItUpHeader"><ul><li class="markItUpButton markItUpButton1 "><a href="" title="粗体">粗体</a></li><li class="markItUpButton markItUpButton2 "><a href="" title="斜体">斜体</a></li><li class="markItUpSeparator">---------------</li><li class="markItUpButton markItUpButton3 "><a href="" title="引用">引用</a></li><li class="markItUpButton markItUpButton4 "><a href="" title="代码">代码</a></li><li class="markItUpSeparator">---------------</li><li class="markItUpButton markItUpButton5 "><a href="" title="普通列表">普通列表</a></li><li class="markItUpButton markItUpButton6 "><a href="" title="数字列表">数字列表</a></li><li class="markItUpSeparator">---------------</li><li class="markItUpButton markItUpButton7 "><a href="" title="超链接">超链接</a></li><li class="markItUpButton markItUpButton8 "><a href="" title="图片">图片</a></li><li class="markItUpButton markItUpButton9 "><a href="" title="视频">视频</a></li><li class="markItUpSeparator">---------------</li><li class="markItUpButton markItUpButton10 "><a href="" title="大标题">大标题</a></li><li class="markItUpButton markItUpButton11 "><a href="" title="小标题">小标题</a></li><li class="markItUpSeparator">---------------</li><li class="markItUpButton markItUpButton12 "><a href="" title="预览模式" class="cur">预览模式</a></li><li class="markItUpButton markItUpButton13 "><a href="" title="清空">清空</a></li><li class="markItUpButton markItUpButton14 toggleMode"><a href="" title="ToggleMode">ToggleMode</a></li></ul></div><textarea name="answer_content" id="advanced_editor" rows="15" class="markItUpEditor"></textarea><div class="markItUpFooter"><div class="markItUpResizeHandle"></div></div></div></div></div>
+                            <p class="aw-text-color-999"><span class="pull-right" id="answer_content_message">&nbsp;</span></p>
+                            <div style="position:relative;" class="clearfix">
+                                <a href="javascript:;" onclick="ajax_post($('#answer_form'));" class="btn btn-large btn-success pull-right btn-submit">回复</a>
+                                <div id="file_uploader_answer"><a href="javascript:;" class="_ajax_upload-button aw-btn b-up-load" style="position: relative; overflow: hidden; direction: ltr;"><input multiple="multiple" type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;"></a><div class="aw-file-uploader _ajax_upload-list clearfix" id="upload-ul"></div></div>
+                            </div>
+
+
+
+                            <div id="markItUpPreviewFrame" class="markItUpPreviewFrame">
+                                <h2 class="title">
+                                    预览模式:
+                                </h2>
+
+                                <div id="markItUpPreviewFrames"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- end 回复编辑器 -->
+            </div>
+            <!-- 侧边栏 -->
+            <div class="span3 aw-side-bar">
+                <!-- 发起人 -->
+                <div class="aw-side-bar-mod">
+                    <div class="aw-side-bar-mod-head">
+                        <h3>发起人</h3>
+                    </div>
+                    <div class="aw-side-bar-mod-body">
+                        <dl>
+                            <dt class="pull-left aw-border-radius-5">
+                                <a href="http://www.jisilu.cn/people/xiaopeiake"><img alt="xiaopeiake" src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg"></a>
+                            </dt>
+                            <dd class="pull-left">
+                                <a class="aw-user-name" href="http://www.jisilu.cn/people/xiaopeiake" data-id="46889">xiaopeiake</a><i data-placement="bottom" title="" onclick="follow_people($(this), 46889);" data-toggle="tooltip" class="aw-icon i-follow aw-active" data-original-title="关注"></i>								<p></p>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- end 发起人 -->
+
+                <!-- 邀请别人回复 -->
+                <div class="aw-side-bar-mod aw-side-bar-invite-replay">
+                    <div class="aw-side-bar-mod-head">
+                        <h3>邀请别人回复</h3>
+                    </div>
+                    <div class="aw-side-bar-mod-body">
+                        <p><a class="aw-website-invite">站内邀请</a> • <a class="aw-email-invite">邮件邀请</a></p>
+                        <!-- 侧边栏邀请box -->
+                        <div class="aw-side-bar-invite-box">
+                            <div class="aw-item clearfix">
+                                <input type="text" onkeyup="get_user_list_data($(this),$(this).val())" onblur="setTimeout(function(){$('.aw-side-bar-invite-box .aw-user-dropdown').hide();},300);" placeholder="仅限邀请站内用户...">
+                                <div class="aw-dropdown aw-user-dropdown">
+                                    <i class="aw-icon i-dropdown-triangle"></i>
+                                    <p class="title">没有找到相关结果</p>
+                                    <ul class="aw-user-dropdown-list"></ul>
+                                </div>
+                                <div class="error-message alert  alert-error hide"></div>
+                                <ul class="aw-side-bar-invite-list">
+                                </ul>
+                            </div>
+                            <div class="aw-item clearfix">
+                                <form method="post" action="http://www.jisilu.cn/question/ajax/email_invite/question_id-49999" onsubmit="return false;" id="email_invite_form">
+                                    <input type="text" name="email" placeholder="邮件邀请回复...">
+                                    <a class="pull-right btn btn-mini btn-success" onclick="ajax_post($('#email_invite_form'));">邀请 »</a>
+                                </form>
+
+                            </div>
+                        </div>
+                        <!-- end 侧边栏邀请box -->
+
+                    </div>
+                </div>
+                <!-- end 邀请别人回复 -->
+
+                <!-- 相关问题 -->
+                <div class="aw-side-bar-mod aw-text-align-justify">
+                    <div class="aw-side-bar-mod-head">
+                        <h3>相关问题</h3>
+                    </div>
+                    <div class="aw-side-bar-mod-body">
+                        <ul class="aw-li-border-bottom">
+                            <li><a href="http://www.jisilu.cn/question/47577">交社保和医药是否合算？</a></li>
+                            <li><a href="http://www.jisilu.cn/question/8644">70万广州100平方公寓，没有产权，租期40年，是否合算？</a></li>
+                            <li><a href="http://www.jisilu.cn/question/25567">求问大神分级B价格高是否可以场内申购合算</a></li>
+                            <li><a href="http://www.jisilu.cn/question/16629">对于贴子里出现的代码，是否能加上链接，做到能直接点击打开相关资料</a></li>
+                            <li><a href="http://www.jisilu.cn/question/21083">A级基金的利息计算，是否还要扣除各种基金管理托管费？</a></li>
+                            <li><a href="http://www.jisilu.cn/question/29649">母鸡可以在二级市场上交易的，如上证50分级，是否可以直接买来分拆？</a></li>
+                            <li><a href="http://www.jisilu.cn/question/33242">今天合并150153创业板B,不知道是否合算</a></li>
+                            <li><a href="http://www.jisilu.cn/question/45565">一个老韭菜的告白-有关于目前开始定投股票作为长线投资是否合适的问题！对面的韭菜你看过来</a></li>
+                            <li><a href="http://www.jisilu.cn/question/46451">股游记35：当我们以为是在套利，是否忽视了黑天鹅？</a></li>
+                            <li><a href="http://www.jisilu.cn/question/16086">低风险投资，是否应该“套利”？</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end 相关问题 -->
+
+                <!-- 问题状态 -->
+                <div class="aw-side-bar-mod aw-side-bar-mod-question-status">
+                    <div class="aw-side-bar-mod-head">
+                        <h3>问题状态</h3>
+                    </div>
+                    <div class="aw-side-bar-mod-body">
+                        <ul>
+                            <li>最新活动: <span class="aw-text-color-blue">2015-11-20 09:46</span></li>
+                            <li>浏览: <span class="aw-text-color-blue">233</span></li>
+                            <li>关注: <span class="aw-text-color-blue">4</span> 人</li>
+
+                            <li class="aw-side-bar-user-list aw-border-radius-5" id="focus_users"><a href="http://www.jisilu.cn/people/jiwjok"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" class="aw-user-name" data-id="29256" alt="jiwjok"></a> <a href="http://www.jisilu.cn/people/xiaopeiake"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" class="aw-user-name" data-id="46889" alt="xiaopeiake"></a> <a href="http://www.jisilu.cn/people/xcgdgp"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" class="aw-user-name" data-id="51198" alt="xcgdgp"></a> <a href="http://www.jisilu.cn/people/dodwhha"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" class="aw-user-name" data-id="133969" alt="dodwhha"></a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end 问题状态 -->
+
+            </div>
+            <!-- end 侧边栏 -->
+        </div>
+    </div>
+</div>
+
+
+<div class="aw-footer-wrap">
+    <div class="aw-footer aw-wecenter">
+        <div class="row">
+            <center>
+  <span class="i_tc">
+  	<a target="_blank"
+       href="#">浙ICP备14016681号</a> &nbsp;&nbsp;
+  	|
+  	&nbsp;&nbsp;<a target="_blank"
+                   href="http://weibo.com/zmstock">关注本站微博</a>&nbsp;<a target="_blank" href="#">问题反馈</a></span>
+                <br>
+  <span class="i_tc"> 
+  使用Chrome浏览本站最佳 &nbsp;|&nbsp;&nbsp;声明：本站所有内容均为网友自发提供，不构成投资建议，请谨慎参考 </span>
+            </center>
+        </div>
+    </div>
+</div>
+
+<a href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});" class="aw-back-top"><i
+        class="aw-btn b-go-to-top"></i></a>
+<a class="scanWeiXinWD"
+   href="javascript:if(confirm('http://www.jisilu.cn/question/11475  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.jisilu.cn/question/11475'"
+   tppabs="http://www.jisilu.cn/question/11475" target="_blank"></a>
+
+
+<!-- DO NOT REMOVE -->
+<div id="aw-ajax-box" class="aw-ajax-box">
+    <div class="modal hide fade alert-box aw-share-box aw-share-box-message in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="left: 449.5px; display: block;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="myModalLabel">分享答案</h3><p class="aw-share-box-tabs"><a class="shareOut active"><i class="aw-icon i-share-user"></i>站外</a><a class="shareIn"><i class="aw-icon i-message"></i>私信</a></p></div><div class="aw-share-box-tabs-content  clearfix"><div class="aw-item hide" style="display: block;"><div class="modal-body  clearfix"><ul id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{text:'我看到一个不错的问题, 想和你分享: A类是最完美的长期低风险投资品（之四） - 低姿态: 两位熟悉情况的消息人士周五对路透社透露，A股发行改革方案有望下周明确，随后全国人大常委会也将落实《证券法》相关条款的修订，意味着注册制实施在即，显示高层加快证券市场改革的决心。  他们还表示，尽管新股...', url:'http://www.jisilu.cn/question/51139?fromuid=0&amp;answer_id=509262&amp;single=true', 'bdPic': ''}"><li><a title="分享到 QQ空间" class="bds_qzone" href="#"><i class="bds"></i>QQ空间</a></li><li><a title="分享到 新浪微博" class="bds_tsina" href="#"><i class="bds"></i>新浪微博</a></li><li><a title="分享到 腾讯微博" class="bds_tqq" href="#"><i class="bds"></i>腾讯微博</a></li><li><a title="分享到 百度空间" class="bds_baidu-zone" href="#"><i class="bds"></i>百度空间</a></li><li><a title="分享到 网易微博" class="bds_t163" href="#"><i class="bds"></i>网易微博</a></li><li><a title="分享到 朋友网" class="bds_tqf" href="#"><i class="bds"></i>朋友网</a></li><li><a title="分享到 开心网" class="bds_kaixin" href="#"><i class="bds"></i>开心网</a></li><li><a title="分享到 人人网" class="bds_renren" href="#"><i class="bds"></i>人人网</a></li><li><a title="分享到 人人网" class="bds_douban" href="#"><i class="bds"></i>豆瓣网</a></li><li><a title="分享到 淘宝网" class="bds_taobao" href="#"><i class="bds"></i>淘宝网</a></li><li><a title="分享到 Facebook" class="bds_fbook" href="#"><i class="bds"></i>Facebook</a></li><li><a title="分享到 Twitter" class="bds_twi" href="#"><i class="bds"></i>Twitter</a></li><li><a title="分享到 Myspace" class="bds_ms" href="#"><i class="bds"></i>Myspace</a></li><li><a title="分享到 Delicious" class="bds_deli" href="#"><i class="bds"></i>Delicious</a></li><li><a title="分享到 linkedin" class="bds_linkedin" href="#"><i class="bds"></i>linkedin</a></li></ul></div></div><div class="aw-item hide" style="display: none;"><div class="modal-body  clearfix"><div id="quick_publish_error" class="error-message alert alert-error hide"><em></em></div><form onsubmit="return false" id="quick_publish" method="post" action="http://www.jisilu.cn/inbox/ajax/send/"><input type="text" class="input" name="recipient" onkeyup="get_user_list_data($(this),$(this).val());" onblur="$(this).next().delay(300).hide(0);" placeholder="搜索用户"><div class="aw-dropdown aw-user-dropdown"><i class="aw-icon i-dropdown-triangle"></i><p class="title">没有找到相关结果</p><ul class="aw-user-dropdown-list"></ul></div><textarea name="message" id="share_out_content"></textarea></form></div><div class="modal-footer"><a data-dismiss="modal" aria-hidden="true">取消</a><button class="btn btn-large btn-success" onclick="ajax_post($('#quick_publish'), _quick_publish_processer); return false;">发送</button></div></div></div></div>
+</div>
+
+<div style="display:none;" id="__crond">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#__crond').html(unescape('%3Cimg%20src%3D%22' + G_BASE_URL + '/crond/run/1447397127%22%20width%3D%221%22%20height%3D%221%22%20/%3E'));
+        });
+    </script>
+</div>
+
+<!-- Escape time: 0.55699515342712 --><!-- / DO NOT REMOVE -->
+<script type="text/javascript" id="bdshare_js" data="type=tools"></script>
+<!--站外分享-->
+<script type="text/javascript" src="www.jisilu.cn/static/js/dc.js" tppabs="http://www.jisilu.cn/static/js/dc.js"></script>
+<script src="js/aw-click.js"></script>
+</body>
+</html>

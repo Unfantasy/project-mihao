@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>罗友报名通道</title>
+    <link rel="stylesheet" href="css/submitcss.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js" ></script>
+    <script src="js/submitjs.js"></script>
+    <script>
+        $(function(){
+        	areaChange("province_code","");
+            $('#name').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写名字');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+
+            $('#phone').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写手机');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#contactInfo').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写联系方式');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#stockinventstyle').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写股票投资风格');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+
+        });
+        function areaChange(idname,supervisor_code){
+   		 if(supervisor_code=="-1"){supervisor_code="";}
+      		 $.ajax({
+      	       url: "${ctx}/area/get_list?supervisor_code=" + supervisor_code + "&t="+new Date().getTime(), 
+                 type: 'post',
+                 dataType: 'json',
+                 success: function (data) {
+               	  if(idname=="city_code"){
+               		  $("#city_code option[value!='-1']").remove();
+               		  $("#district_code option[value!='-1']").remove();
+                  	}
+                	if(idname=="district_code"){
+                		$("#district_code option[value!='-1']").remove();
+                	}
+      				var list = data.result;
+      				$(list).each(function(i) {
+      					var option = new Option();
+      					option.value = list[i].city_code;
+      					option.innerText = list[i].city_name;
+      					$("#"+idname).append(option);
+      				});
+                 }
+             });
+      	   }
+        function f_save(){
+			submitForm();
+		}
+		function submitForm() { 
+			 if($("#name").val()==''){
+				 $("#name").showSubmitWarn('请填写名字');
+                 return false;
+             }
+			 if($("#contactInfo").val()==''){
+				 $("#organization").showSubmitWarn('请填写联系方式');
+                 return false;
+             }
+			 if($("#speech_content").val()==''){
+				 $("#speech_content").showSubmitWarn('请填写股票投资风格');
+                 return false;
+             }
+
+			 var address = $("#address").val();
+			 var province = $("#province_code option:selected").text();
+			 var city = $("#city_code option:selected").text();
+			 var district = $("#district_code option:selected").text();
+			 if(province=="-1"||address==""){
+				 $("#address").showSubmitWarn('请填写地址');
+                 return false;
+			}
+			 var addr="";
+			 if($("#province_code").val()!="-1"){
+				 addr=province;
+			 }
+			 if($("#city_code").val()!="-1"){
+				 addr=addr+city;
+			 }
+			 if($("#district_code").val()!="-1"){
+				 addr=addr+district;
+			 }
+			 addr = addr+" "+address;
+			 $("#address").val(addr);
+			// jquery 表单提交 
+			$("#_form1").ajaxSubmit({
+				type: 'post',
+		        dataType: 'json',
+				success:function(data){
+					if(data.success==true){
+						alert("提交成功！");
+					}else{
+						alert("提交失败");
+					}
+				},error:function(xhr){alert('动态页出错\n\n'+xhr.responseText);}
+			}); 
+			return false; 
+		}
+
+    </script>
+</head>
+<body class="signUp">
+    <h2>罗友报名通道</h2>
+    <form id="_form1" method="post" action="${ctx }/speaker/save" onsubmit="return false;">
+    <div class="main">
+        <div class="field">
+            <p class="fieldLable">姓名/昵称 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <input type="text" class="fieldInput" name="name" id="name"/>
+                <div class="error"></div>
+            </div>
+        </div>
+
+        <div class="field">
+            <p class="fieldLable">联系方式 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>微信或者手机</p>
+                <input type="text" class="fieldInput" name="phone" id="contactInfo"/>
+                <div class="error"></div>
+            </div>
+        </div>
+
+        <div class="field">
+            <p class="fieldLable">股票投资风格 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <textarea rows="3" class="fieldTextarea" name="business" id="stockinventstyle"></textarea>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">最想得到的证券服务 </p>
+            <div class="fieldContent">
+                <textarea rows="3" class="fieldTextarea" name="speech_content" id="wannerservice"></textarea>
+                <div class="error"></div>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <button onclick="f_save()">提交</button>
+</div>
+</form>
+</body>
+</html>

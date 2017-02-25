@@ -1,0 +1,245 @@
+/*common style*/
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100%;
+}
+html, body,ol,ul,li,p,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+html,body{
+    font-family: "方正兰亭中黑", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans", "Noto Sans CJK Sc", "Microsoft YaHei", "Microsoft Jhenghei", sans-serif;
+}
+body {
+    color: #4c4c4c;
+    font-size: .52rem;
+}
+input {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+.nowrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.hidden{
+    visibility: hidden;
+}
+.zmUp{
+    color:#f45531;
+}
+.zmDown {
+    color: #21CC99;
+}
+.zmGray{
+    color:#8F8E94;
+}
+.borderTop{
+    border-top:1px solid #e8e8e8;
+}
+.borderBottom{
+    border-bottom:1px solid #e8e8e8;
+}
+.borderLeft{
+    border-left:1px solid #e8e8e8;
+}
+.borderRight{
+    border-right:1px solid #e8e8e8;
+}
+.border{
+    border:1px solid #e8e8e8;
+}
+.text-center{
+    text-align: center;
+}
+.verticle-center{
+    vertical-align: middle;
+}
+.table{
+    width:100%;
+}
+/*zmTable style*/
+.zmTable{
+    color:#555;
+    border-collapse:collapse ;
+}
+.zmTable thead{
+    background-color: #fbfbfb;
+}
+.zmTable thead td{
+    width:33%;
+    height:1.44rem;
+}
+.zmTable tbody tr{
+    height:2.64rem;
+}
+.zmTable td:nth-child(1){
+    padding-left:.6rem;
+    text-align: left;
+}
+
+/*end zmTable style*/
+/*tip style*/
+.success_messagehtml {
+    z-index: 20000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    line-height: 3;
+    opacity: 1;
+    width: 60%;
+    background-color: #f45531;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+}
+/*end tip style*/
+/*loading style*/
+.loading_area {
+    z-index: 10000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    background-color: rgb(204, 204, 204);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.loading_messagehtml {
+    z-index: 20000;
+    background: url('../images/loading2.gif') no-repeat scroll 0px 0px #fff;
+    background-size: 100% 100%;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 50%;
+    line-height: 32px;
+    position: absolute;
+    opacity: 1;
+    margin: auto;
+    height: 48px;
+    width: 48px;
+    display: none;
+}
+
+/*end loading style*/
+/*alert style*/
+.alertBox {
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: 99999;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.selfAlert {
+    background-color: #fff;
+    width: 70%;
+    max-width: 400px;
+    margin: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 5px;
+    z-index: 100000;
+    display: table;
+}
+
+.selfAlertHd, .selfAlertFt {
+    display: table;
+    width: 100%;
+}
+
+.selfAlertHd {
+    border-bottom: 1px solid #aaa;
+}
+
+.selfAlertHd span, .selfAlertFt span {
+    display: table-cell;
+    height: 50px;
+    line-height: 2;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.selfAlertHd span {
+    color: #000;
+}
+
+.selfAlertFt span {
+    color: #0075ff;
+}
+
+/*end alert style*/
+/*return style*/
+.returnLeft{
+    width: 24px;
+    padding-left:12px;
+}
+.returnRight{
+    width: 12px;
+    padding-right:12px;
+}
+.returnLeft,.returnRight{
+    float: left;
+    height: 24px;
+    position: relative;
+    background-color:#fff;
+}
+.returnLeft:after{
+    content:'';
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    border-right:12px solid #fff;
+    border-bottom:12px solid transparent;
+    border-top:12px solid transparent;
+    right: 0;
+    top: 0;
+    background-color: deepskyblue;
+}
+.returnRight:before{
+    content:'';
+    position: absolute;
+    left: -16px;
+    border-right:12px solid transparent;
+    border-bottom:12px solid #fff;
+    border-top:12px solid #fff;
+}
+/*return style*/
+/*wechat 指引*/
+.notice_img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0,0,0,.7);
+}
+
+.notice_img img {
+    width: 100%;
+}
+/*wechat 指引*/

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/longhubang.css"/>
+</head>
+<body>
+<div>
+    <div class="long_input"><input type="text" id="addstock"value="如002276 中国电信" onfocus="javascript:if(this.value=='如002276 中国电信')this.value='';"/><input type="text" id="addstock1"value="信息1" onfocus="javascript:if(this.value=='信息1')this.value='';"/><input type="text" id="addstock2"value="信息2" onfocus="javascript:if(this.value=='信息2')this.value='';"/><input type="text" id="addstock3"value="信息3" onfocus="javascript:if(this.value=='信息3')this.value='';"/> <button id="long_addstock">添加</button><button id="long_delstock">删除</button></div>
+    <div class="long_input"><input type="text" id="addstock_out"value="如002276 中国电信" onfocus="javascript:if(this.value=='如002276 中国电信')this.value='';"/><input type="text" id="addstock1_out"value="信息1" onfocus="javascript:if(this.value=='信息1')this.value='';"/><input type="text" id="addstock2_out"value="信息2" onfocus="javascript:if(this.value=='信息2')this.value='';"/><input type="text" id="addstock3_out"value="信息3" onfocus="javascript:if(this.value=='信息3')this.value='';"/> <button id="long_addstock_out">添加</button><button id="long_delstock_out">删除</button></div>
+    <button onclick="print()" class="btn btn-default" >生成图片</button>
+    <a href="" id="down_button" onclick="printById('long_picture')"  class="btn btn-default">下载图片</a>
+</div>
+<div id="long_picture">
+<div class="head">
+    <img src="images/longhubang_biaoti.png" alt="龙虎榜标题" class="long_headimg" width="100%"/>
+    <div class="long_time">2015-09-15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 公众号：众米订阅号</div>
+</div>
+<div class="container long_content">
+    <div class="nav">
+
+    <div class="row long_in_out">
+        <ul class="col-md-6 col-xs-12 long_in">
+            <li><div class="long_nav_in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龙虎榜买入&nbsp;</div></li>
+        </ul>
+        <ul class="col-md-6 col-xs-12 long_out">
+            <li><div class="long_nav_out">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龙虎榜卖出&nbsp;</div></li>
+
+        </ul>
+    </div>
+    </div>
+<div class="footer"><br/><br/><img src="images/longhubang_erweima.jpg" alt="众米二维码"/><br/><div>众米 — 有态度的投资方式</div></div>
+</div>
+</div>
+<script src="js/html2canvas.js"></script>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/longhubang.js"></script>
+</body>
+</html>

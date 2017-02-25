@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/zmMobile.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+
+</head>
+<body>
+<script>
+    if(browser().weiXin){
+        showWechatTip();
+    }else{
+        if(isIOS){
+         location.href = 'https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8';
+         }else{
+         location.href = 'http://mimikj.com:8081/mimikj/app/zhongmiApp.apk';
+         }
+    }
+</script>
+</body>
+</html>

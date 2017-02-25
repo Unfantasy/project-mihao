@@ -1,0 +1,180 @@
+html{
+    font-size:25px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+
+.error{
+    color:#f45531;
+    line-height: 2.2;
+    display: none;
+}
+input:focus,textarea:focus{
+    outline-color: #009AFF;
+}
+#province_code,#city_code,#district_code{
+    height: 1.2rem;
+    margin: .2rem 0;
+}
+#province_code{
+    width:48%;
+}
+#city_code{
+    width:48%;
+    float: right;
+}
+#district_code{
+    width:100%;
+}
+/*导航页面 style*/
+/*移动端手机 style*/
+body{
+    padding-bottom:3rem;
+}
+section{
+    width:100%;
+    max-width: 500px;
+    background-color: #F6F6F6;
+    padding:0 2.4rem;
+    text-align: center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+section h3{
+    color:#000;
+    text-align: center;
+    font-size: .74rem;
+    margin:1.5rem 0 .5rem;
+}
+section p{
+    color:#7b8998;
+    font-size:.56rem;
+    line-height: 1.7;
+    margin:0;
+    text-align: left;
+}
+section button{
+    cursor:pointer;
+
+    color:#fff;
+    background:#288cf0;
+    font-size: .74rem;
+    line-height: 2rem;
+    height:2rem;
+    width:100%;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius:4px;
+    margin:1.6rem auto 0;
+}
+
+/*报名页面 style */
+
+.red{
+    color:#f45531;
+}
+h2{
+    font-size:1rem;
+    font-weight: normal;
+    padding:1rem .6rem;
+    margin:0;
+}
+.main{
+    border-top: 1px solid #C3C9D0;
+    border-bottom: 1px solid #C3C9D0;
+}
+.field{
+    padding:.6rem;
+}
+.fieldLable{
+    font-weight: bold;
+    color:#000;
+    font-size: .64rem;
+    margin:0 0 .3rem;
+}
+.fieldContent{
+    font-size: .56rem;
+    color:#545454;
+}
+.fieldContent p{
+    margin:0 0 .1rem;
+}
+.fieldInput{
+    width:100%;
+    height:1.6rem;
+    line-height: 1.6rem;
+    padding:0 .24rem;
+    background-color: rgba(255,255,255,0.65);
+    border: 1px solid #C3C9D0;
+    border-radius:2px;
+    color: #222222;
+    -webkit-tap-highlight-color: transparent;
+    margin:0;
+}
+.fieldTextarea{
+    width:100%;
+    background-color: rgba(255,255,255,0.65);
+    border: 1px solid #C3C9D0;
+    border-radius:2px;
+    color: #222222;
+    padding:.24rem;
+    resize: none;
+}
+.footer{
+    padding:1.3rem .6rem;
+}
+.footer button{
+    background-color:#009AFF;
+    color:#fff;
+    width:100%;
+    text-align: center;
+    border-radius:.2rem;
+    border:none;
+    outline: none;
+    line-height:2.2;
+    font-size:.64rem;
+}
+.citySelect{
+    height: 1.2rem;
+    margin: .2rem 0;
+    width:100%;
+}
+body.signUp{
+    max-width:700px;
+    margin:0 auto;
+    border:1px solid #ddd;
+}
+@media screen and (min-width:600px){
+    html{
+        background-color:#f6f6f6;
+    }
+    body.signUp{
+        background-color:#fff;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+    .fieldInput{
+        width:250px;
+        height:1.3rem;
+
+    }
+    #address{
+        width:100%;
+    }
+    .footer button{
+        width:150px;
+    }
+}

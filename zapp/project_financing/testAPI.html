@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/zmMobile.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+       input{
+           position: absolute;
+           top:0;
+           left:0;
+           width: 100px;
+           height: 100px;
+           opacity: 0;
+           -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+       }
+
+    </style>
+</head>
+<body>
+<button onclick="test()">提交</button>
+
+<!--<input type="date" id="timeStart" value="2015-01-01"/>-->
+<script>
+
+//    //    var DOMAIN = '';
+//    var DOMAIN = 'http://devominapi.jucaidao.com:8866';//test
+//    var data = {'agency':'MI-US-STK','platform':'IB','subAccount':'omin00116030741963','leverage':'2'};
+//    function test(){
+//        $.ajax({
+//            url:DOMAIN+'/api/sub-account/leverage',
+//            type:'POST',
+//            data:data,
+//            dataType:'json',
+//            beforeSend:function(xhr){
+//                xhr.setRequestHeader('Authorization', 'Bearer 6xz9w5kyLVjckpuzeuZETFVYZhzsW7EdTEj8iPhN');
+//            },
+//            success:function(e){
+//                if(e.success==true){
+//                    //成功
+//                }
+//                alert(JSON.stringify(e));
+//            },
+//            error:function(error){alert('Failed:'+JSON.stringify(error))}
+//        });
+//    }
+    //    var DOMAIN = '';
+    var DOMAIN = 'http://devominapi.jucaidao.com:8866';//test
+
+//    var data = {'agency':'MI-US-STK','platform':'IB','subAccount':'omin00116030741963','leverage':'2'};
+    function test(){
+        $.ajax({
+            url:DOMAIN+'/api/report/summary/subAccount/omin0000000087/20160901/20161018',
+            type:'get',
+//            data:data,
+            dataType:'json',
+            beforeSend:function(xhr){
+                xhr.setRequestHeader('Authorization', 'Bearer C9jPKG6YqbvCVQHKARSUa5wAYHVHchLJLTyZYTK8');
+            },
+            success:function(e){
+                if (e.success == true) {
+                    //成功
+                    var rate = 0;
+                    var bankbooks = e.data.bankbooks;
+                    for(var i=0;i< bankbooks.length;i++){
+                        if(bankbooks[i].subject == 'INTEREST'){
+                            rate += Number(bankbooks[i].amount);
+                            console.log('rate:'+rate);
+                        }
+                    }
+                    rate = rate.toFixed(4);
+                    alert(JSON.stringify(e));
+                    console.log(JSON.stringify(e));
+                }else{
+                    alert(JSON.stringify(e));
+                }
+            },
+            error:function(error){
+                if(error.status==401){
+                    showTip('未登录');
+                }else{
+                    alert('Failed:'+JSON.stringify(error))
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

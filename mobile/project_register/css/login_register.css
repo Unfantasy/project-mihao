@@ -1,0 +1,284 @@
+html,body{
+    font-family:"Microsoft Yahei";
+    font-size:14px;
+    margin: 0;
+    padding: 0;
+    color:#000;
+    min-height:100%;
+}
+*{
+    box-sizing: border-box;
+}
+header{
+    padding-top:20px;
+}
+header,section{
+    padding-left:1rem;
+}
+footer{
+    width:100%;
+    height:4rem;
+    border-top:1px solid #b2b2b2;
+    position:fixed;
+    bottom:0;
+}
+h1{
+    font-weight: normal;
+}
+input{
+    width:100%;
+    border:none;
+    border-bottom:1px solid #c8c7cc;
+    font-size:16px;
+    line-height: 1.5;
+    color:#a6a6a6;
+    margin-top:1.5rem;
+    letter-spacing: .1rem;
+    border-radius: 0;
+}
+input:focus{
+    border:none;
+    border-bottom:1px solid #747b84;
+    outline:none;
+}
+a,a:focus,a:active, a:visited{
+    text-decoration:none;
+}
+a{
+    color:#f45531;
+}
+a:hover{
+    cursor: pointer;
+}
+span{
+    color:#747b84;
+}
+p{
+    color:#000;
+    font-size:1rem;
+    line-height:1.5;
+}
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.lt{
+    font-size:12px;
+}
+.lg{
+    font-size:16px;
+}
+.mark{
+    color:#f45531;
+}
+.text_center{
+    text-align: center;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn_default{
+    width:90px;
+    height:35px;
+    border-radius:8px;
+    font-size:14px;
+    line-height: 35px;
+    border:1px solid #a6a6a6;
+    color:#b2b2b2;
+    background-color:#fff;
+    outline: none;
+}
+.btn_red{
+    background-color:#f45531;
+    color:#fff;
+    border:none;
+}
+.footer_right_top{
+    position:absolute;
+    top:-2.5rem;
+    right:1.5rem;
+}
+.footer_left{
+    margin-left:1.5rem;
+    line-height: 4rem;
+}
+.footer_right{
+    float:right;
+    margin:.75rem 1.5rem;
+}
+
+/*login_mailbox style*/
+/* end login_mailbox style*/
+
+/*login_phone style*/
+.login_phone_header{
+    margin-top:7rem;
+}
+.pwd{
+    position:relative;
+}
+.login_show_pwd{
+    width:2.6rem;
+    height:1.5rem;
+    background:url("../images/zhongmi_biyan.png") no-repeat;
+    background-size: 100% 100%;
+    position:absolute;
+    bottom:.8rem;
+    right:1rem;
+}
+.login_hide_pwd{
+    width:2.6rem;
+    height:1.5rem;
+    background:url("../images/zhongmi_kaiyan.png") no-repeat;
+    background-size: 100% 100%;
+    position:absolute;
+    bottom:.8rem;
+    right:1rem;
+}
+/* end login_phone style*/
+
+/*register_mailbox style*/
+.mailbox{
+    margin-top:2rem;
+}
+
+/* end register_mailbox style*/
+
+/*register_phone*/
+.phone{
+    margin-top:2rem;
+}
+/* end register_phone*/
+
+/*set_pwd style*/
+.all_page{
+    width:100%;
+    height:1000px;
+    position:fixed;
+    z-index: 999;
+    top: -1000px;
+    background-color:rgba(0,0,0,0.3);
+}
+.img_code_all{
+    background-color:#fff;
+    padding-top:2rem;
+}
+.top{
+    height:4rem;
+    font-size:1rem;
+    color:#000;
+    line-height: 2.5rem;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.top span{
+    color:#000;
+    margin-left:1rem;
+}
+.verity_code{
+    max-width:70%;
+    font-size:1rem;
+    border: none;
+    margin-top:1rem;
+    margin-left:1rem;
+}
+.verity_code:focus{
+    border: none;
+}
+.middle{
+    padding:1rem 0;
+}
+.bottom{
+    width:100%;
+    padding:0 1rem 1rem;
+}
+.bottom button{
+    width:100%;
+    height:3.5rem;
+    background-color:#f45531;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    font-size:1.4rem;
+}
+/* end set_pwd style*/
+
+/*verification_code style*/
+.input_verification_code{
+    position:relative;
+}
+.seconds {
+    padding-left:1rem;
+    padding-right:1rem;
+    height:1.5rem;
+    border-radius:.6rem;
+    background-color:#f45531;
+    position: absolute;
+    bottom:.6rem;
+    right:1.5rem;
+    text-align: center;
+    color:#fff;
+    line-height:1.5rem;
+}
+/* end verification_code style*/
+
+/*verify_mailbox*/
+.verify_mailbox_header{
+    margin-top:2rem;
+    padding-right:1rem;
+}
+/* end verify_mailbox*/
+
+/*verify_identity style*/
+.verify_identity_section{
+    margin-top:7rem;
+}
+.agree_all{
+    margin-right:1rem;
+}
+.btn_agree_all{
+    width:100%;
+    height:3rem;
+    color:#fff;
+    line-height:3rem;
+    text-align: center;
+    margin:6rem auto 0 auto;
+    background-color:#f45531;
+    border:none;
+    outline: none;
+    border-radius:5px;
+    font-size: 1.2rem;
+}
+/* end verify_identity style*/
+
+/*login_register style*/
+.logo{
+    width:50%;
+    margin-top:6rem;
+}
+.register{
+    width:100%;
+    margin-top:5rem;
+    height:3.75rem;
+    background-color:#f45531;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    font-size:1.5rem;
+}
+.login{
+    width:100%;
+    margin-top:1rem;
+    height:3.75rem;
+    background-color:#fff;
+    border:1px solid #f45531;
+    color:#f45531;
+    border-radius:5px;
+    font-size:1.5rem;
+}
+/* end login_register style*/

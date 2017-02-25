@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>交易管理</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        body,html{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #f5f7fa;
+        }
+        .red{
+            color:#f45531;
+        }
+        .green{
+            color:#21ce99;
+        }
+        .blue td.username,.blue .all_value{
+            background-color: #6b9ae6;
+            color:#fff;
+            height:40px;
+        }
+        .red td.username,.red .all_value{
+            background-color: #eb6265;
+            color:#fff;
+        }
+        .yellow td.username,.yellow .all_value{
+            background-color: #fac319;
+            color:#fff;
+        }
+        table{
+            width:100%;
+        }
+        .user{
+            margin-bottom:8px;
+            color:#000;
+            background-color:#fff;
+            border-bottom:1px solid rgba(0,0,0,.1);
+            border-right:1px solid rgba(0,0,0,.1);
+            font-size:16px;
+            line-height:2.5;
+            padding:0;
+        }
+        .basic_information{
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .basic_information td{
+            border-bottom:1px solid rgba(0,0,0,.1);
+            width:50%;
+        }
+        .basic_information td>span{
+            float:right;
+        }
+        td.username{
+
+            position:absolute;
+            margin-left:-15px;
+            padding-left:15px;
+            width:calc(50% - 7.5px);
+        }
+        .basic_information td>span.name{
+            width: 3em;
+            float: none;
+            display: inline-block;
+            word-break:keep-all;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+        .update_time{
+            width: 70%;
+            text-align: right;
+            font-size:14px;
+            padding-top:2px;
+            padding-right:12px;
+            word-break:keep-all;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+        .position{
+            text-align: center;
+            padding-left:15px;
+            padding-right:15px;
+        }
+        .position_title{
+            line-height: 1.2;
+            margin-bottom:12px;
+            margin-top: 16px;
+            border-bottom:2px solid #000;
+            display:inline-block;
+            width:auto;
+        }
+        .position_title>div{
+            margin-bottom:1px;
+            border-bottom:1px solid #000;
+        }
+        .all_value_hidden{
+            visibility:hidden;
+        }
+
+        .all_value{
+            display: inline-block;
+            width:35%;
+            line-height: 1.7;
+            text-align:center;
+            margin:0 10px;
+        }
+        /*股票table*/
+        .stocks thead{
+            font-size: 14px;
+        }
+        .stocks thead td{
+            border-top:1px solid rgba(0,0,0,.1);
+        }
+        .stocks td{
+            border-bottom:1px solid rgba(0,0,0,.1);
+        }
+        .stocks td:nth-child(1){
+            text-align: left;
+            max-width:5em;
+            word-break:keep-all;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .stocks td:nth-child(2),.stocks td:nth-child(3){
+            text-align: center;
+        }
+        .stocks td:nth-child(4){
+            text-align: right;
+        }
+        .stock_name{
+            padding-top:7px;
+            padding-bottom:7px;
+            line-height: 1.2;
+        }
+        .stock_name>div{
+            color:#bebebe;
+            font-size:14px;
+        }
+        .dangerous_tip,.transaction_detail{
+            color:#000;
+            text-align: left;
+            display: block;
+            border-bottom:1px solid rgba(0,0,0,.1);
+        }
+        .transaction_detail{
+            border-bottom:0;
+        }
+        .dangerous_tip span,.transaction_detail span{
+            color:#ccc;
+            float:right;
+            line-height: 2.5;
+        }
+        .dangerous_tip:hover,.transaction_detail:hover{
+            color:#000;
+            text-decoration: none;
+        }
+        .less_size{
+            font-size:13px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 user">
+            <table class="basic_information">
+                <tr>
+                    <td class="username"><span class="name">刘刚刘刚</span> <span class="update_time less_size"><span>6/16 20:14 </span>更新</span></td>
+                    <td>账号 <span class="less_size">omin0000000002</span></td>
+                </tr>
+                <tr>
+                    <td>总资产 <span>120000</span></td>
+                    <td>初始资产 <span>50000</span></td>
+                </tr>
+                <tr>
+                    <td>盈亏 <span class="number">70000</span></td>
+                    <td>盈亏百分比 <span class="number">8.1%</span></td>
+                </tr>
+            </table>
+            <div class="position">
+                <div class="all_value all_value_hidden">市值：<span>12亿</span></div>
+                <div class="position_title"><div>持仓</div></div>
+                <div class="all_value">市值：<span>12亿</span></div>
+                <table class="stocks">
+                    <thead>
+                    <tr>
+                        <td>名称代码</td>
+                        <td>数量</td>
+                        <td>最新价/成本</td>
+                        <td>浮动收益</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="stock_name" width="5em">
+                            Direxion Daily FTSE 中国三倍做多
+                            <div>JRJC</div>
+                        </td>
+                        <td class="stock_num">1412</td>
+                        <td class="stock_price">47.1/46.2</td>
+                        <td class="stock_earn number">10%</td>
+                    </tr>
+                    <tr>
+                        <td class="stock_name">
+                            金融界
+                            <div>JRJC</div>
+                        </td>
+                        <td class="stock_num">1412</td>
+                        <td class="stock_price">47.1/46.2</td>
+                        <td class="stock_earn number">-10%</td>
+                    </tr>
+                    <tr>
+                        <td class="stock_name">
+                            金融界
+                            <div>JRJC</div>
+                        </td>
+                        <td class="stock_num">1412</td>
+                        <td class="stock_price">47.1/46.2</td>
+                        <td class="stock_earn number">-10%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="dangerous_tip" href="#">预警提醒 <span class="glyphicon glyphicon-menu-right"></span></a>
+                <a class="transaction_detail" href="#">成交明细 <span class="glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        //数字正红负蓝
+        for(var i=0;i<$(".number").length;i++){
+            if($(".number").eq(i).text().indexOf("-")!=-1){$(".number").eq(i).addClass("green");}else{$(".number").eq(i).addClass("red");}
+        }
+        $(".stock_earn").each(function(){
+            if($(this).hasClass("green"))$(this).prev().addClass("green");else if($(this).hasClass("red"))$(this).prev().addClass("red");
+        });
+        for(var i= 0;i<$(".user").length;i++){
+            if(i%3==0){
+                $(".user").eq(i).addClass("blue");
+            }else if(i%3==1){
+                $(".user").eq(i).addClass("red");
+            }else{
+                $(".user").eq(i).addClass("yellow");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

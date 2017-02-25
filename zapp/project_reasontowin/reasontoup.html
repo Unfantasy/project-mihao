@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/zmMobile.css"/>
+    <link rel="stylesheet" href="css/reasontoup.css"/>
+</head>
+<body>
+<div id="app" class="hidden">
+<div class="title borderTop borderBottom">
+    <p>{{time}}</p>
+    <!--<p class="zmGray">上榜理由&nbsp;  <span> </span></p>-->
+</div>
+<table class="totleBusiness table text-center">
+    <thead>
+    <tr>
+        <td>买入总计(万元)</td>
+        <td>卖出总计(万元)</td>
+        <td>净额(万元)</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="num" id="total_buy">--</td>
+        <td class="num " id="total_sell">--</td>
+        <td class="num " id="net_amount">--</td>
+    </tr>
+    </tbody>
+</table>
+<table class="zmTable table text-center verticle-center borderTop">
+    <thead  class="zmGray borderBottom">
+    <tr>
+        <td>买入营业部</td>
+        <td>买入金额(万元)</td>
+        <td>卖出金额(万元)</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="borderBottom" v-for="buy in buyList">
+        <td>{{buy.sales_name}}</td>
+        <td class="num" :class="buy.buy_amount>0?'zmUp':''">{{buy.buy_amount | tradeAmount}}</td>
+        <td class="num" :class="buy.sell_amount>0?'zmDown':''">{{buy.sell_amount | tradeAmount}}</td>
+    </tr>
+    </tbody>
+</table>
+<table class="zmTable table text-center verticle-center">
+    <thead  class="zmGray borderBottom">
+    <tr>
+        <td>卖出营业部</td>
+        <td>买入金额(万元)</td>
+        <td>卖出金额(万元)</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="borderBottom" v-for="sell in sellList">
+        <td>{{sell.sales_name}}</td>
+        <td class="num" :class="sell.buy_amount>0?'zmUp':''">{{ sell.buy_amount | tradeAmount }}</td>
+        <td class="num" :class="sell.sell_amount>0?'zmDown':''">{{ sell.sell_amount | tradeAmount }}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/zmMobile.js"></script>
+<script>
+    //获取数据
+    var DOMAIN = 'http://mimikj.com:6060/mimikj';
+    var open_id = theRequest['open_id']||'';
+    var zmToken = theRequest['auth_token']||'';
+    new Vue({
+        el:'#app',
+        data:{buyList:[],sellList:[],time:''},
+        created:function(){
+            var _this = this;
+            $.get(DOMAIN+'/exchange_open/'+open_id+'/detail',{auth_token:zmToken},function(data){
+                $("#app").removeClass('hidden');
+                if(data.state=='success'){
+                    var result = data.result;
+                    if(result.total_buy!=0)
+                    $('#total_buy').html(result.total_buy).addClass('zmUp');
+                    if(result.total_sell!=0)
+                    $('#total_sell').html(result.total_sell).addClass('zmDown');
+                    if(result.net_amount!=0){
+                        $("#net_amount").html(result.net_amount);
+                        result.net_amount>0?$("#net_amount").addClass('zmUp'):$("#net_amount").addClass('zmDown');
+                    }
+                    _this.buyList = result.buy_list;
+                    _this.sellList = result.sell_list;
+                    _this.time = new Date(result.buy_list[0].create_time).format('MM月dd日');
+                }else if(data.msg=='no_user'){
+                    showTip('此用户不存在');
+                }else if(data.msg=='open_id_is_null'){
+                    showTip('出错了[code:001]');
+                }else{
+                    showTip('出错了，请返回重试');
+                }
+            }).error(function(){showTip('获取失败，请返回重试');$('body').html('');});
+        },
+        filters:{
+            tradeAmount:function(value){
+                if(!value) return '';
+                if(value!=0){
+                    return parseInt(value/100)/100;
+                }else{
+                    return '--';
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

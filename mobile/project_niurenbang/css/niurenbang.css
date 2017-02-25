@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+i {
+    font-style: normal;
+}
+.row{
+    margin-right: 0;
+    margin-left:0;
+}
+b{
+    font-weight: normal;
+}
+a{
+    color: #080808;
+}
+a:hover{
+    color: #080808;
+    text-decoration: none;
+}
+.container-fluid{
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-sm-12,.col-md-12{
+    padding: 0;
+}
+body{
+    width: 100%;
+    background-color: white;
+}
+.long_headimg{
+    width:100%;
+}
+
+.content1{
+    padding: 51px;
+    background: url("../images/niurenbang_caocao.png") no-repeat;
+    position: relative;
+    background-size: 100% auto;
+}
+.content2{
+    padding: 51px;
+    background: url("../images/niurenbang_liubei.png") no-repeat;
+    position: relative;
+    background-size: 100% auto;
+}
+.content3{
+    padding: 51px;
+    background: url("../images/niurenbang_zhangfei.png") no-repeat;
+    position: relative;
+    background-size: 100% auto;
+}
+.content4{
+    padding: 51px;
+    background: url("../images/niurenbang_guanyu.png") no-repeat;
+    position: relative;
+    background-size: 100% auto;
+}
+.content5{
+    padding: 51px;
+    background: url("../images/niurenbang_zhugeliang.png") no-repeat;
+    position: relative;
+    background-size: 100% auto;
+}
+
+.nav{
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    float: none;
+
+}
+.tubiaos{
+    position: absolute;
+    top:305px;
+    left:709px;
+}
+.tubiaos img{
+    padding-right:10px;
+}
+.long_head{
+    margin-top:98px;
+    border-radius:100%;
+    width: 204px;
+    height:204px;
+}
+.name{
+    text-align: center;
+    font-size: 55px;
+}
+.introduce{
+    margin-top: 80px;
+    font-size: 52px;
+    text-align: left;
+}
+.intrContent{
+    max-height: 392px;
+    overflow: hidden;
+    font-size: 42px;
+    line-height: 72px;
+    border-top: 2px solid #D9D0CC;
+}
+
+.seeall{
+    color: #e73232;
+    font-size: 42px;
+    margin-top: 20px;
+
+}
+/*.seeall:hover{
+    color: blue;
+}*/
+
+.newnew{
+    font-size: 52px;
+    text-align: left;
+    margin-top: 180px;
+}
+.table tr .title{
+    position: relative;
+    height: 230px;
+    font-size: 42px;
+    vertical-align: middle;
+}
+.pull-right{
+    position: absolute;
+    top: 100px;
+    right: 0;
+}
+.title3{
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.long_foot{
+    text-align: center;
+    font-size: 45px;
+    vertical-align: middle;
+
+}
+.long_foot table{
+    margin: auto;
+}
+.long_foot .last{
+    font-weight:bold;
+}
+
+.long_foot td{
+    text-align: left;
+    padding-left: 50px;
+}
+.long_foot span{
+    margin-top: 5px;
+}
+.long_foot img{
+    margin-bottom: 12px;
+}
+.namebottom{
+    text-align: center;
+    font-size: 28px;
+}
+.namebottom2{
+    text-align: center;
+    font-size: 24px;
+    color:#d8d8d8;
+    margin-top: 50px;
+}
+.canvas{
+    margin-left: -30px;
+}
+#picture{
+    background-color: white;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>下载</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size:14px;
+            font-family: "方正兰亭中黑","SimHei", Helvetica, Arial, sans-serif;
+
+        }
+        body{
+            position:relative;
+            height:100%;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        .download img{
+            background-color:#fff;
+            width:65%;
+            margin:0px auto 50px;
+            display:block;
+            position:relative;
+            top:50px;
+        }
+        .download p{
+            text-align: center;
+            font-size:1.5rem;
+        }
+        .mark{
+            color:#f45531;
+        }
+        .to-top-3{
+            margin-top:5rem;
+        }
+        footer{
+            position: absolute;
+            width:100%;
+            bottom:2rem;
+        }
+        footer p{
+            text-align: center;
+            font-size:1.5rem;
+            width:100%;
+        }
+    </style>
+    <script>
+        $(function(){
+            var wHeight =  document.documentElement.clientHeight;
+            $("html").height(wHeight);
+        });
+    </script>
+</head>
+<body>
+<div class="download">
+    <img src="images/zhongmi_download.png"/>
+    <p class="to-top-3">扫描二维码，下载众米app</p>
+
+    <p>注册美股交易账户</p>
+
+</div>
+<footer>
+    <p>美股资讯QQ群：<span class="mark">530310464</span></p>
+    <p>微信订阅号：zhongmi941</p>
+</footer>
+</body>
+</html>

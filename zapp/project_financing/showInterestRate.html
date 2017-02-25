@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>利息查询</title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/zmMobile.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F5F7F9;
+            font-family: 'PingFangSC-Regular';
+        }
+
+        .pull-right {
+            float: right;
+        }
+
+        /*rateTimeBox style*/
+        .rateTimeBox {
+            position: relative;
+            font-size: .68rem;
+            color: #030303;
+            margin-top: .8rem;
+            width: 100%;
+            padding-left: .6rem;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .rateTimeBox .label {
+            position: relative;
+            line-height: 1.76rem;
+            height: 1.76rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);;
+        }
+
+        .rateTimeBox .pull-right {
+            float: right;
+            color: #8F8E94;
+            padding-right: 1.4rem;
+        }
+
+        .rateTimeBox > div:last-child {
+            border-bottom: 0;;
+        }
+
+        .rateTimeBox .arrowRight {
+            width: .32rem;
+            height: .52rem;
+            position: absolute;
+            right: .6rem;
+            top: .62rem;
+        }
+
+        .rateTimeBox input[type='date'] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        /*end rateTimeBox style*/
+        .interestRate {
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .interestRate p {
+            margin: 0;
+        }
+
+        .interestRate .rateStatic {
+            color: #030303;
+            font-size: 16px;
+        }
+
+        .interestRate .rate {
+            color: #f45531;
+            font-size: 40px;
+            margin-top: .5rem;
+        }
+
+        .finacingBtnBox {
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        .finacingBtnBox button {
+            background-color: #f45531;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            margin: 0 auto;
+            font-size: 17px;;
+            padding: 13px 0;
+            width: 72%;
+        }
+        button.disabled{
+            background-color: #C7C7CD;
+        }
+    </style>
+</head>
+<body class="showInterestRate">
+<div class="rateTimeBox">
+    <div class="label startTime">
+        <span>开始时间</span>
+        <span class="dateSpan pull-right">选择年月日</span>
+        <input type="date" value="选择年月日" id="timeStart"/>
+        <img src="images/disclosure-arrow.png" class="arrowRight"/>
+    </div>
+    <div class="label endTime">
+        <span>结束时间</span>
+        <span class="dateSpan pull-right">选择年月日</span>
+        <input type="date" value="选择年月日" id="timeEnd"/>
+        <img src="images/disclosure-arrow.png" class="arrowRight"/>
+    </div>
+</div>
+<div class="interestRate">
+    <p class="rateStatic">利息</p>
+    <p class="rate" id="rate">$0.0000</p>
+</div>
+<div class="finacingBtnBox">
+    <button class="disabled finacingBtn" disabled onclick="search()">查询</button>
+</div>
+<input type="hidden" id="subAccount" value=""/>
+<input type="hidden" id="Authorization" value=""/>
+<script>
+    $("#subAccount").val(theRequest['subAccount'] || '');
+    $("#Authorization").val(theRequest['token'] || '');
+    $('input[type="date"]').on('change', function () {
+        $(this).parents('.label').find('.pull-right').text($(this).val());
+        if($('.startTime').find('.dateSpan').text()!='选择年月日'&& $('.endTime').find('.dateSpan').text()!='选择年月日')
+            $('.finacingBtn').removeClass('disabled').removeAttr('disabled');
+        else $('.finacingBtn').addClass('disabled').attr('disabled','disabled');
+    });
+
+    function search() {
+        showLoading();
+        var DOMAIN = 'https://proxy.jucaidao.com/omin';
+//        var DOMAIN = 'http://devominapi.jucaidao.com:8866';//test
+        var begin = $('#timeStart').val().replace(/-/g,'');
+        var end = $('#timeEnd').val().replace(/-/g,'');
+        var subAccount = $("#subAccount").val();
+        var Authorization = 'Bearer '+$('#Authorization').val();
+        $.ajax({
+            url: DOMAIN + '/api/report/summary/subAccount/' + subAccount + '/' + begin + '/' + end,
+            type: 'get',
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', Authorization);
+            },
+            success: function (e) {
+                hideLoading();
+                if (e.success == true) {
+                    //成功
+//                    alert(JSON.stringify(e));
+                    var rate = 0;
+                    var bankbooks = e.data.bankbooks;
+                    for(var i=0;i< bankbooks.length;i++){
+                        if(bankbooks[i].subject == 'INTEREST'){
+                            rate += Number(bankbooks[i].amount);
+                        }
+                    }
+                    rate = parseInt(rate*10000)/10000;
+                    $("#rate").text("$"+rate);
+                }else{
+                    alert(JSON.stringify(e));
+                }
+            },
+            error: function (error) {
+                hideLoading();
+                if(error.status==401){
+                    showTip('登录异常',function(){
+                        if(isIOS){
+                            setupWebViewJavascriptBridge(function(bridge) {
+                                var errorCode = '401';
+                                bridge.callHandler('noUserInHandler', errorCode, function(data) {
+                                    var responseData = data;
+                                    responseCallback(responseData)
+                                })
+                            });
+                        }
+
+                    });
+                }else{
+                    alert('Failed:'+JSON.stringify(error))
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

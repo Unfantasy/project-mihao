@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Cybertron工作室</title>
+    <link rel="shortcut icon" href="images/zm_log.ico"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/summernote.css"/>
+    <link rel="stylesheet" href="css/cy.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/summernote.min.js"></script>
+
+    <script src="js/cy.js"></script>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        input[type="text"].inline-input,input[type="text"].inline-input:focus,input[type="text"].inline-input:hover{
+            background: #fff;
+            border-top: 0 none;
+            border-left: 0 none;
+            border-right: 0 none;
+            border-bottom: 1px solid #d0dde9;
+            border-radius: 0;
+            box-shadow: none;
+            border-color: #dee3ea;
+            outline:none;
+        }
+        #cy_mp3 {
+            display: inline;
+            outline:none;
+        }
+        .the_title{
+            margin:20px 0 30px 40px;
+            width:400px;
+        }
+
+        /*错误信息格式*/
+        .errorinfo{
+            color:#C9302C;
+            font-family:"Microsoft Yahei";
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        $(function(){
+            //两个编辑器
+            $("#summernote1").summernote(
+                    {
+                        oninit: function(){$('.note-editable').css('min-height','150px');}
+                    });
+            $("#summernote2").summernote(
+                    {
+                        oninit: function(){$('.note-editable').css('min-height','150px');}
+                    });
+            //预览事件
+            $("#cy_prepend").click(function(){
+                var title = $(".the_title").val();
+                var content1 = $(".note-editable").eq(0).html();
+                var content2 = $(".note-editable").eq(1).html();
+                var fileObject = $("#cy_mp3");
+                var filePath = $("#cy_mp3").val();
+                var indexPath = "mp3/Bang! Bang!.mp3";
+                //没有上传文件
+                if(filePath==undefined||$.trim(filePath)==""){
+                    //空，默认音乐
+                    $(".audioPlayer").attr("src",indexPath);
+                }else{
+                    $(".audioPlayer").attr("src",filePath);
+                }
+                $("article h1").empty().append('<a ><span class="cy-periods">181</span>'+title+'</a>');
+                $(".cy_content_head").empty().append(content1);
+                $(".cy_content_footer").empty().append(content2);
+            })
+            //判断上传文件类型判断
+            $("#cy_mp3").change(function(){
+                    var fileObject = $(this);
+                    var filepath = $(this).val();
+                    //文件格式错误
+                    var fileArr=filepath.split("\\");
+                    var fileTArr=fileArr[fileArr.length-1].toLowerCase().split(".");
+                    var filetype=fileTArr[fileTArr.length-1];
+                    if(filetype!="mp3"&&filetype!="wav"&&filetype!="wma"&&filetype!="wav"&&filetype!="ogg"&&filetype!="ape"&&filetype!="aac"){
+                        fileObject.focus().next().text("请上传音频文件！");
+                        $(this).val("");
+                    }else{
+                        //文件格式正确
+                        fileObject.next().text("");
+                    }
+                });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row" >
+                    <h2>Cybertron</h2>
+                    标题：<input class="inline-input the_title" name="the_title" placeholder="请输入标题" type="text">
+                    <br/>
+                    <p>音频文件：<input type="file" id="cy_mp3"/><span class="errorinfo"></span>
+                    </p>
+                    <br/>
+                    <p>正文一：</p>
+                    <div id="summernote1"></div>
+                    <p style="margin-top:20px;">正文2：</p>
+                    <div id="summernote2"></div>
+                </div>
+                <div class="row" style="margin-bottom:50px;margin-top:10px;">
+                    <div class="pull-right">
+                        <button class="btn btn-info " id="cy_prepend">预览</button>
+                        <button class="btn btn-info " id="cy_send">发布</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <article>
+                    <header class="text-center" style="margin-bottom:40px;">
+                        <h1><a ><span id="cy-periods">181</span>千疮百孔的 Mac App Store 和与时俱进的 Adobe</a></h1>
+                        <div class="cy_secondtext">
+                            <time datetime="2015-12-07T01:40:41Z" class="cy_time">2015 年 12 月 7 日</time>
+                        </div>
+                        <!--录音-->
+                        <div>
+                            <audio class="audioPlayer" controls loop  preload="metadata" src="mp3/Bang! Bang!.mp3">
+                            Your browser does not support HTML5 <code>audio</code>.
+                            </audio>
+                        </div>
+                        <!-- end 录音-->
+                        <a href="" class="pull-right btn btn-default cy_download">
+                            <span class="glyphicon glyphicon-save"></span>下载
+                        </a>
+                    </header>
+                    <div class="cy_content">
+                        <div class="cy_content_head">
+
+                        </div>
+                        <div class="content">
+                            <p>注：工作室会对于专属会员不定期的福利放出。会员费用：每月三十元，支持mjmike和小章把《Cybertron工作室》做成最好的投资小组。详细情况请点击 <a href="cy-vip-plan.html">《Cybertron工作室》会员计划</a>若您无意入会，但喜欢某一期节目，也欢迎用支付宝支付小费至
+                                <a >mjmike007@126.com</a>，支付宝用户亦可扫描下方二维码：</p>
+                            <p class="cy_barcode"><img src="images/cy-alipay.jpg"/></p>
+                        </div>
+                        <div class="cy_content_footer">
+
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/analytics.js"></script>
+</body>
+</html>

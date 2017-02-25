@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>众米俱乐部讲述大师报名表</title>
+    <link rel="stylesheet" href="css/submitcss.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/submitjs.js"></script>
+
+    <script>
+        $(function(){
+            $('#name').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写名字');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#organization').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写机构');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#place').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写职位');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#email').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写邮箱');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#phone').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写手机');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#business').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写擅长业务领域');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#speech_content').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写申请主讲内容');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#self_description').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写简要自荐说明');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+        });
+    </script>
+</head>
+<body class="signUp">
+    <h2>众米俱乐部讲述大师报名表</h2>
+    <div class="main">
+        <div class="field">
+            <p class="fieldLable">姓名 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>*用于统计您的积分及礼品发放~</p>
+                <input type="text" class="fieldInput" name="name" id="name"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">机构 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>*保证快递小哥能送到您手中~</p>
+                <input type="text" class="fieldInput" name="organization" id="organization"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">职位 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>*是中奖的凭证及我们联系您的唯一方式</p>
+                <input type="text" class="fieldInput" name="place" id="place"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">邮箱 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>*当我们有重大活动时，方便与您取得联系</p>
+                <input type="text" class="fieldInput" name="email" id="email"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">手机 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>填数字就ok啦</p>
+                <input type="text" class="fieldInput" name="phone" id="phone"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">联系地址 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <p>*请详细填写哦</p>
+                <select name="province_code" id="province_code">
+                    <option value="">- 省/自治区/直辖市 -</option>
+                </select>
+                <select name="city_code" id="city_code">
+                    <option value="">- 市 -</option>
+                </select>
+                <select name="district_code" id="district_code">
+                    <option value="">- 区 -</option>
+                </select>
+                <input type="text" class="fieldInput" name="address" id="address" placeholder="详细地址"/>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">擅长业务领域 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <textarea rows="3" class="fieldTextarea" name="business" id="business"></textarea>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">申请主讲内容 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <textarea rows="3" class="fieldTextarea" name="speech_content" id="speech_content"></textarea>
+                <div class="error"></div>
+            </div>
+        </div>
+        <div class="field">
+            <p class="fieldLable">简要自荐说明 <span class="red">*</span></p>
+            <div class="fieldContent">
+                <textarea rows="3" class="fieldTextarea" name="self_description" id="self_description"></textarea>
+                <div class="error"></div>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <button>提交</button>
+</div>
+</body>
+</html>

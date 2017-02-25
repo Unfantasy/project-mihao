@@ -1,0 +1,32 @@
+
+table.jisilu_tcdata {
+	margin:10px 50px 15px 30px;
+  border: 1px solid #CCC;
+  
+}
+
+table.jisilu_tcdata  td{
+	border: 1px solid #CCC;
+	padding: 4px;
+}
+
+td.jisilu_title {
+	background-color: #86C5E3;
+	font-weight: bold;
+	width: 15%;
+}
+
+tr.jisilu_odd td{
+	background-color: #F0F0F6;
+}
+
+td.jisilu_subtitle {
+	font-weight: bold;
+	width: 15%;
+}
+
+td.jisilu_nav {
+     font-size: 14px;
+     padding: 5px;
+     font-weight: bold;
+}

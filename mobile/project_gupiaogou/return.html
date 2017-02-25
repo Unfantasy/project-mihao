@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            --returnColor:deepskyblue;
+            --curColor:deepskyblue;
+            --grayColor:rgb(202,202,202);
+        }
+        *,*:before,*:after{
+            box-sizing: border-box;
+        }
+        .returnLeft{
+            width: 24px;
+            padding-left:12px;
+        }
+        .returnRight{
+            width: 12px;
+            padding-right:12px;
+        }
+        .returnLeft,.returnRight{
+            float: left;
+            height: 24px;
+            position: relative;
+            background-color:#fff;
+        }
+        .returnLeft:after{
+            content:'';
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            border-right:12px solid #fff;
+            border-bottom:12px solid transparent;
+            border-top:12px solid transparent;
+            right: 0;
+            top: 0;
+            background-color: deepskyblue;
+        }
+        .returnRight:before{
+            content:'';
+            position: absolute;
+            left: -16px;
+            border-right:12px solid transparent;
+            border-bottom:12px solid #fff;
+            border-top:12px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<button>复制</button>
+<div style="background-color:rgba(0,0,0,.3);position:relative;top:-50px;width:100px;height:100px;" id="div"></div>
+<br/><br/><br/>
+<button onclick="getClipboardText(this)">get copy content</button>
+<script>
+    function testCopy(event){
+        var value = 'Hello World!';
+        //设置剪贴板数据
+//        function setClipboardText(event, value){
+            if(event.clipboardData){
+                alert(event.clipboardData.setData("text/plain", value));
+//                return event.clipboardData.setData("text/plain", value);
+            }else if(window.clipboardData){
+                alert(window.clipboardData.setData("text", value));
+//                return window.clipboardData.setData("text", value);
+            }
+//        };
+    }
+    //获取剪贴板数据方法
+    function getClipboardText(event){
+        var clipboardData = event.clipboardData || window.clipboardData;
+        alert(clipboardData.getData("text"));
+    };
+    var divStyle = window.getComputedStyle(document.getElementById('div'));
+    var objectLength = 0;
+
+    console.log(divStyle);
+    alert(document.queryCommandEnabled("copy"));
+</script>
+</body>
+</html>

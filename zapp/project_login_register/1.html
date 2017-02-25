@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+       div{
+           width:auto;
+       }
+    </style>
+    <script>
+        function aa(){
+            var phone = '18888888888';
+            var password = '123456';
+            var imgCode = $("#verity_code").val();
+            var captcha_key = $("#captcha_key").val();
+            var client_id = "YyxOKQNKXWXiX4JUKhjs7aM0RDdbM5KTktqffUcB";
+            var agency = "MI-US-STK";
+            var data = {"phone":"18888888888","password":"123456","captcha_key":"2676e56ee2","captcha_value":"593889","client_id":"YyxOKQNKXWXiX4JUKhjs7aM0RDdbM5KTktqffUcB","agency":"MI-US-STK"};
+            $.ajax({
+                type: 'post',
+                url:'https://proxy.jucaidao.com/jucaidao/bgate/register',
+                data:data,
+                dataType: 'json',
+                success:function(e){
+                    alert('Succes');
+                    alert(JSON.stringify(e));
+                },
+                error:function(e){
+                    alert('Fail');
+                    alert(JSON.stringify(e));
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<button onclick="aa()">3333</button>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <title>股市合伙人---发现最搭的投资战友</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/link.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/btn-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/icon-sprite.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/ui-dialog.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jsl.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/JiSiLu.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/indexuser-faqi.css"/>
+    <script type="text/javascript">
+        var _BAFB79922DFEE330B61725535E940D9E = '';
+        var G_POST_HASH = _BAFB79922DFEE330B61725535E940D9E;
+        var G_INDEX_SCRIPT = '';
+        var G_SITE_NAME = '集思录';
+        var G_BASE_URL = 'http://www.jisilu.cn/';
+        var G_STATIC_URL = 'http://www.jisilu.cn/static';
+        var G_UPLOAD_URL = 'http://www.jisilu.cn/uploads';
+        var G_USER_ID = 0;
+        var G_USER_NAME = '';
+        var G_UPLOAD_ENABLE = 'N';
+        var G_QUICK_PUBLISH_HUMAN_VALID = '';
+        var G_UNREAD_NOTIFICATION = 0;
+        var G_NOTIFICATION_INTERVAL = 180000;
+        var G_CAN_CREATE_TOPIC = '';
+    </script>
+    <script src="js/jquery.js"type="text/javascript"></script>
+    <script src="js/jquery.form.js-v=20151027" type="text/javascript"></script>
+    <script src="js/common.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jslcommon.js-v=20151027" type="text/javascript"></script>
+    <script src="js/dialog-plus-min.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.js-v=20151027" type="text/javascript"></script>
+    <script src="js/jsl.orange.js-v=20151027" type="text/javascript"></script>
+    <style>
+        .aw-content-wrap{
+            padding-bottom:50px;
+        }
+        /*我的自选股样式*/
+        .sss-title{
+            margin-top:30px;
+        }
+        .sss-title input[type="file"]{
+            line-height: normal;
+            margin-left:10px;
+            width:30%;
+        }
+
+        .sss-title input[type="text"],.sss-title-prepend span{
+            font-size:20px;
+        }
+        .sss-title-prepend{
+            margin-bottom: 30px;
+            color: #fff;
+            position:relative;
+            margin-top:-70px;
+            padding-left:20px;
+            z-index: 10;
+        }
+        .sss-title-prepend span{
+            width:80%;
+            display: inline-block;
+        }
+        .sss-title-prepend span:nth-child(1){
+            font-size: 28px;
+            line-height: 1.5;
+        }
+        .sss-title-prepend span:nth-of-type(3){
+            font-size: 22px;
+            padding-left:24px;
+            color:#222;
+            height: 22px;
+            margin-top: 12px;
+        }
+        .sss-title-prepend span:nth-of-type(3).up{
+            background:url("images/visitor_details_sprite.png") no-repeat 0px -113px;
+            color:red;
+        }
+        .sss-title-prepend span:nth-of-type(3).down{
+            background:url("images/visitor_details_sprite.png") no-repeat 0 -148px;
+            color:green;
+        }
+        .table td{
+            text-align:center;
+            vertical-align:middle;
+        }
+        .table tbody {
+            font-size: 20px;
+        }
+        .sss-delete{
+            width:20px;
+            margin-bottom:5px;
+        }
+        .sss-footer,.sss-footer-prepend{
+            font-size:16px;
+        }
+        input[type="text"].sss-theme{
+            color:#000;
+            width:50%;
+            border: none;
+            border-bottom:1px solid #ddd;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+            margin-left:10px;
+            margin-right:30px;
+        }
+        input[type="text"].sss-title-input{
+            width:26%;
+        }
+        .footer-span{
+            color:#000;
+        }
+        .footer-span span{
+            color:#333;
+            padding-right:30px;
+        }
+        .prepend{
+            clear:both;
+            position: relative;
+            padding-top:50px;
+        }
+        .sss-title-prepend .sss-img{
+            width:100px;
+            height:100px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right:10px;
+            border-radius: 5px;
+            background: url("images/sss_default.jpg") center center;
+            background-size:cover;
+        }
+        .nav-img{
+            width:100%;
+            height:150px;
+            position: absolute;
+            top:0;
+            background: url("images/sss_default.jpg") no-repeat center center;
+            background-size:cover;
+            -webkit-filter: blur(22px);
+            filter: blur(22px);
+            -moz-filter: blur(22px);
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=64);
+            -khtml-opacity: 0.64;
+            -moz-opacity: 0.64;
+            opacity: 0.64;
+        }
+        .sss-content-prepend{
+            box-shadow: 0 -5px 6px -1px #ccc;
+        }
+        .sss-footer-prepend>span:nth-child(1){
+            width:50%;
+            display: inline-block;
+        }
+        .dividerLineGradient {
+            border: none;
+            color: white;
+            height: 1px;
+            background: white;
+            background-color: #ffffff;
+            margin: -2px 0px 5px;
+            width:500px;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffff, EndColorStr=#ffffff);
+            background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffffff), color-stop(75%, rgba(255, 255, 255, 0)));
+            background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 75%);
+            background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 75%);
+            background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 75%);
+            background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 75%);
+            background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 75%);
+            -pie-background: linear-gradient(#ffffff, rgba(255, 255, 255, 0));
+        }
+        /* end 我的自选股样式*/
+        .aw-main-content {
+            width: 90%;
+            height: 100%;
+            padding: 10px 20px 99999px 30px;
+            margin: 0 0 -99999px;
+             border-right: none;
+        }
+    </style>
+    <script>
+        function readFile(obj){
+            var file = obj.files[0];
+//这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件
+            if(!/image\/\w+/.test(file.type)){
+                alert("请确保文件为图像类型");
+                return false;
+            }
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(e){
+                $("#img_src").val(this.result);
+            }
+        }
+        $(function(){
+            //删除按钮的显示隐藏
+            $(".table tbody tr").mouseover(function(){
+                $(this).find(".sss-delete").css("visibility","visible");
+
+            });
+            $(".table tbody tr").mouseout(function(){
+                $(this).find(".sss-delete").css("visibility","hidden");
+
+            })
+            //删除按钮删除功能
+            $(".sss-delete").click(function(){
+                $(this).parent().parent().detach();
+            });
+            $("#sss-prepend").click(function(){
+                $(".prepend").show();
+                var title1 = $(".sss-title-input-1").val()||"";
+                var title2 = $(".sss-title-input-2").val()||"";
+                var title3 = $(".footer-span span:nth-child(1)").text() || "";
+                var titlesrc = $("#img_src").val() || "images/sss_default.jpg";
+//                console.log(titlesrc);
+                var footer = $(".sss-footer input[type='text']").val()||"";
+                var contentHtml = $(".sss-content").html();
+                var footerHtml = $(".sss-footer>span").prop("outerHTML");
+                $(".sss-title-prepend .sss-img").css({"background-image":"url("+titlesrc+")","background-size":"cover"});
+                $(".nav-img").css({"background-image":"url("+titlesrc+")","background-size":"cover"});
+                $(".sss-title-prepend span:nth-of-type(1)").text(title1);
+                $(".sss-title-prepend span:nth-of-type(2)").text(title2);
+                $(".sss-title-prepend span:nth-of-type(3)").text(title3);
+                var title3Num = title3.replace("%","");
+                if(title3Num>0){
+                    $(".sss-title-prepend span:nth-of-type(3)").addClass("up").removeClass("down");
+                }else if(title3Num<0){
+                    $(".sss-title-prepend span:nth-of-type(3)").addClass("down").removeClass("up");
+                }else{
+                    $(".sss-title-prepend span:nth-of-type(3)").removeClass("down,up");
+                }
+                $(".sss-content-prepend").html(contentHtml);
+                $(".sss-content-prepend tbody tr").unbind("mouseover,mouseout");
+                $(".sss-footer-prepend").html("");
+                $("<span>"+footer+"</span>").appendTo(".sss-footer-prepend");
+                $(".sss-footer-prepend").append(footerHtml);
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+<div class="aw-top-menu-wrap">
+    <div class="aw-wecenter aw-top-menu">
+        <div class="row">
+            <!-- logo -->
+            <div class="span6 aw-logo">
+                <a href="#">
+                    <img src="" alt=""/>
+                </a>
+                <a href="#" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;">»首 页</a>
+
+                <a href="index.htm" style="font-family:Microsoft YaHei;font-size:95%;margin-left:10px; color:#F8F8F8;font-weight: normal;letter-spacing: 0.1em">社区-股市合伙人--发现自己最合适的投资战友</a>
+            </div>
+            <!-- end logo -->
+            <!-- 登陆&注册栏 -->
+            <div class="span6 aw-login-register">
+                <div class="pull-right offset1 aw-user-nav-dropdown">
+                    <a href="indexuser-setting.html">
+                        <span class="pull-left">心如琉璃</span>
+
+                        <img class="pull-left" alt="心如琉璃" src="http://www.jisilu.cn/uploads/avatar/000/12/40/72_avatar_mid.jpg">
+                    </a>
+                    <div class="dropdown-menu aw-dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <span><i class="aw-icon i-dropdown-triangle active"></i></span>
+                        <ul>
+                            <li><a href="indexuser-people.html" tabindex="-1">主页 <i class="aw-icon i-user-post"></i></a></li>
+                            <li><a href="indexuser-mine.html" tabindex="-1">我的关注</a></li>
+                            <li><a href="indexuser-setting-blacklist.html" tabindex="-1">黑名单</a></li>
+
+                            <li><a href="indexuser-setting.html">设置 <i class="aw-icon i-setting-no-hover"></i></a></li>
+                            <li><a href="index.htm">退出 <i class="aw-icon i-logout"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pull-right aw-logined-nav">
+                    <ul>
+                        <li><a href="indexuser-inbox.html">私信<span id="inbox_unread" class="badge badge-important" style="">1</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end 登陆&注册栏 -->
+        </div>
+    </div>
+    <div class="aw-wecenter aw-nav">
+        <div class="row">
+            <div class="span10 aw-nav-wrap">
+                <div class="aw-nav-left"></div>
+                <div class="aw-nav-middle">
+                    <!-- 导航条 -->
+                    <div class="aw-nav-main pull-left">
+                        <ul class="aw-top-nav">
+                            <li><a href="indexuser-mine.html"><i class="aw-icon i-index-no-hover"></i>我的关注<i class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser.htm"><i
+                                    class="aw-icon i-question-no-hover"></i>广场<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li><a href="indexuser-findboss.html" ><i
+                                    class="aw-icon i-topic-no-hover"></i>发现牛人<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                            <li class="pull-right"><a href="indexuser-mimic.html" class="active"><i
+                                    class="aw-icon i-question-no-hover"></i>寻找战友<i
+                                    class="aw-icon i-nav-hover-triangle"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- end 导航条 -->
+
+                </div>
+
+                <div class="aw-nav-right"></div>
+            </div>
+            <div class="span2 aw-pulish">
+                <a id="header_publish" href="indexuser-faqi.htm" class="aw-btn b-start-question">发起</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aw-container-wrap">
+    <div class="aw-container aw-wecenter">
+        <div class="row aw-content-wrap">
+            <div class="span12 aw-main-content aw-all-question">
+                <a href="indexuser-selfselectstock.html" class="btn btn-info pull-right" style="margin-left:20px;">添加自选股</a>
+                <a href="indexuser-mimic.html" class="btn btn-info pull-right">返回</a>
+                <div class="row text-center" style="margin-top: 60px;font-size: 30px;line-height:50px;">我的自选股</div>
+                <div class="sss-title">
+                    <input type="file" onchange="readFile(this)"/>
+                    <input type="text" placeholder="请输入主标题" class="sss-theme sss-title-input sss-title-input-1"/>
+                    <input type="text" placeholder="请输入副标题" class="sss-theme sss-title-input sss-title-input-2"/>
+                </div>
+                <table class="sss-content table">
+                    <thead>
+                    <tr>
+                        <td>日期</td>
+                        <td>名称代码</td>
+                        <td>初始价格</td>
+                        <td>累积收益</td>
+                        <td>涨跌幅<img src="/images/delete.png" class="sss-delete" style="visibility: hidden"></td>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                        <td class="sss-time">2016-4-15</td>
+                        <td class="sss-stock"><span>微软</span> <div class="stock-num">MSFT</div></td>
+                        <td class="sss-init-price">$3.45</td>
+                        <td class="sss-stock-increase"> <span>3.40%</span></td>
+                        <td class="sss-stock-select">
+                            0.02% <img src="/images/delete.png" class="sss-delete" style="visibility: hidden;" onclick="delete_stock_expect(this,70587,'微软')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sss-time">2016-4-15</td>
+                        <td class="sss-stock"><span>名家汇</span> <div class="stock-num">300506</div></td>
+                        <td class="sss-init-price">$3.45</td>
+                        <td class="sss-stock-increase"> <span>304.53%</span></td>
+                        <td class="sss-stock-select">
+                            6.45% <img src="/images/delete.png" class="sss-delete" style="visibility: hidden;" onclick="delete_stock_expect(this,6544,'名家汇')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sss-time">2016-4-15</td>
+                        <td class="sss-stock"><span>仰帆控股</span> <div class="stock-num">600421</div></td>
+                        <td class="sss-init-price">$3.45</td>
+                        <td class="sss-stock-increase"> <span>10.56%</span></td>
+                        <td class="sss-stock-select">
+                            -0.09% <img src="/images/delete.png" class="sss-delete" style="visibility: hidden;" onclick="delete_stock_expect(this,6543,'仰帆控股')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sss-time">2016-4-15</td>
+                        <td class="sss-stock"><span>蓉胜超微</span> <div class="stock-num">002141</div></td>
+                        <td class="sss-init-price">$3.45</td>
+                        <td class="sss-stock-increase"> <span>-1.59%</span></td>
+                        <td class="sss-stock-select">
+                            -2.01% <img src="/images/delete.png" class="sss-delete" style="visibility: hidden;" onclick="delete_stock_expect(this,6542,'蓉胜超微')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sss-time">2016-4-15</td>
+                        <td class="sss-stock"><span>商赢环球</span> <div class="stock-num">600146</div></td>
+                        <td class="sss-init-price">$3.45</td>
+                        <td class="sss-stock-increase"> <span>0.77%</span></td>
+                        <td class="sss-stock-select">
+                            0.29% <img src="/images/delete.png" class="sss-delete" style="visibility: hidden;" onclick="delete_stock_expect(this,6541,'商赢环球')">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="sss-footer">
+                    <input type="text" placeholder="请输入主题" class="sss-theme"/><span class="pull-right footer-span">总收益：<span>-320.85%</span>日期：<span>2016-4-15</span></span>
+                </div>
+                <button class="btn btn-primary pull-right" id="sss-commit" style="margin-bottom:30px;" >发布</button><button class="btn btn-primary pull-right" id="sss-prepend" style="margin-right:10px;">预览</button>
+                <div class="prepend" style="display: none">
+                    <div style="position: relative;height: 130px;overflow: hidden">
+                    <div class="nav-img"></div>
+                    </div>
+                    <div class="sss-title-prepend"><div class="sss-img"></div><div style="display: inline-block;vertical-align: top;"><span></span><div class="dividerLineGradient"></div><span></span><span></span></div></div>
+                    <table class="sss-content-prepend table"></table>
+                    <div class="sss-footer-prepend"><span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="img_src"/>
+<div class="aw-footer-wrap">
+    <div class="aw-footer aw-wecenter">
+        <div class="row">
+            <center>
+  <span class="i_tc">
+  	<a target="_blank"
+       href="#">浙ICP备14016681号</a> &nbsp;&nbsp;
+  	|
+  	&nbsp;&nbsp;<a target="_blank"
+                   href="http://weibo.com/zmstock">关注本站微博</a>&nbsp;<a target="_blank" href="#">问题反馈</a></span>
+                <br>
+  <span class="i_tc"> 
+  使用Chrome浏览本站最佳 &nbsp;|&nbsp;&nbsp;声明：本站所有内容均为网友自发提供，不构成投资建议，请谨慎参考 </span>
+            </center>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- DO NOT REMOVE -->
+<div id="aw-ajax-box" class="aw-ajax-box"><div id="aw-card-tips" class="aw-card-tips aw-card-tips-user" style="left: 290.5px; top: 237.667px;
+"><div class="aw-mod"><div class="aw-mod-head"><a href="http://www.jisilu.cn/people/%E5%86%B2%E5%87%BA%E9%87%8D%E5%9B%B4" class="aw-head-img"><img src="http://www.jisilu.cn/static/common/avatar-mid-img.jpg" alt=""></a><p class="title"><a href="http://www.jisilu.cn/people/%E5%86%B2%E5%87%BA%E9%87%8D%E5%9B%B4" class="name" data-id="4521">冲出重围</a><i class="" title=""></i></p><p class="aw-user-center-follow-meta"><span>威望: <em class="aw-text-color-green">6</em></span><span>赞同: <em class="aw-text-color-oragne">12</em></span></p></div><div class="aw-mod-body"><p>70后股市民工</p></div><div class="aw-mod-footer"><span class="pull-right"><a href="javascript:;" onclick="$.dialog('inbox', '冲出重围');">私信</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="$.dialog('publish', {category_enable:1, ask_user_id:4521});">问Ta</a>&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="user_uninterested($(this), 4521,'冲出重围');">拉黑</a></span>&nbsp;&nbsp;<a class="btn btn-mini btn-default focus aw-active" onclick="follow_people($(this), 4521);">关注</a></div></div></div></div>
+
+
+
+<!-- Escape time: 0.55699515342712 --><!-- / DO NOT REMOVE -->
+<script type="text/javascript" id="bdshare_js" data="type=tools"></script>
+<!--站外分享-->
+<script type="text/javascript" src="js/dc.js"></script>
+<script src="js/aw-click.js"></script>
+</body>
+</html>

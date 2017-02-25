@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实时维持率</title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/financing.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/zmMobile.js"></script>
+    <style>
+        .bannerOpened{
+            display: block;
+        }
+    </style>
+</head>
+<body class="interestRate">
+<section>
+    <div class="bannerOpened">
+        <div class="vertical-middle">
+            <h2>0%</h2>
+        </div>
+    </div>
+    <div class="content">
+        <div class="parameter">
+            <p class="tip">计算方式：</p>
+            <p class="tipContent">杠杆倍数*总资产/锁定金额</p>
+        </div>
+        <div class="parameter">
+            <p class="tip">杠杆倍数：</p>
+            <p class="tipContent">2倍</p>
+        </div>
+        <div class="parameter">
+            <p class="tip">锁定金额：</p>
+            <p class="tipContent">包括持仓金额以及委托未成交订单</p>
+        </div>
+        <div class="parameter">
+            <p class="tip">强平规则：</p>
+            <p class="tipContent">根据用户维持率判断是否强平，维持率低于60%通过电话或者邮件的方式通知用户追加资金，当维持率低于30%时，系统自动卖出股票，进行强行平仓，请注意风险。：</p>
+        </div>
+
+    </div>
+</section>
+<script>
+    var interestRate = '0%';
+    if(theRequest['Cushion'] == Infinity){
+        interestRate = '100%';
+    }else if (!isNaN(theRequest['Cushion'])) {
+        interestRate = parseInt((theRequest['Cushion']*10000))/100+'%';
+    }
+    $('.bannerOpened h2').text(interestRate);
+</script>
+</body>
+</html>

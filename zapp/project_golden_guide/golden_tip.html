@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>入金提示</title>
+    <link rel="stylesheet" href="css/golden_tip.css"/>
+    <style>
+        table{
+            width:100%;
+            border-collapse:collapse
+        }
+        table tr{
+            text-align: left;
+        }
+        .name{
+            border-bottom:1px solid #c8c7cc;
+        }
+        .tip{
+            padding-top:1rem;
+
+        }
+        .tip .content{
+            background-color: #ffffff;
+            padding-left:1rem;
+            line-height: 2.5;
+            border-top:1px solid #c8c7cc;
+            border-bottom:1px solid #c8c7cc;
+        }
+        .tip>span{
+            color:#b2b2b2;
+            font-size:.6rem;
+            line-height:2.5;
+            padding-left:1rem;
+        }
+        .content .bottom{
+            height:2.5rem;
+            line-height: 2.5;
+            font-size:1rem;
+            padding-left:1rem;
+            margin-left:-1rem;
+            border-top:1px solid #c8c7cc;
+        }
+        .bottom .black{
+            display:inline-block;
+            width:5em;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="tip">
+        <span>汇款人信息</span>
+        <div class="content">
+            <table>
+                <tr class="name">
+                    <th class="black normal" style="width:5em">姓名</th>
+                    <th class="gray normal ">高晓松</th>
+                </tr>
+                <tr>
+                    <td class="black">银行账户</td>
+                    <td class="gray ">6222 8888 8765 876</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="tip">
+        <span>收款人信息</span>
+        <div class="content">
+            <table>
+                <tr class="name">
+                    <th class="black normal" style="width:5em">账户名</th>
+                    <th class="gray normal ">北京聚财道有限公司</th>
+                </tr>
+                <tr>
+                    <td class="black">开户行</td>
+                    <td class="gray ">招商银行北京三里屯支行</td>
+                </tr>
+            </table>
+            <div class="bottom"><span class="black">银行账户</span><span class="gray">6222 8888 8765 876</span></div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <span>汇款信息</span>
+        <div class="content">
+
+            <div class="bottom gray">备注中请填入你的交易账号DU73645方便核对</div>
+        </div>
+    </div>
+    <div class="tip">
+        <span>人民币美元转换</span>
+        <div class="content">
+
+            <div class="bottom gray">资金转入时汇率标准$1=￥6.5889</div>
+        </div>
+    </div>
+    <div class="tip">
+        <span>提示</span>
+        <div class="content">
+            <table class="gray">
+                <tr>
+                    <td style="margin-left:1rem;padding-right:1rem;line-height: 2;">提示：在工作日（北京时间9：00——18：00）提交资金转入通知后，最快2个小时——2个工作日即可到达你的交易账户。</td>
+                </tr>
+                <tr>
+                    <td style="margin-left:1rem;padding-right:1rem;line-height: 2;border-top:1px solid #c8c7cc;">遇到入金问题可咨询聚财道客服电话：<span class="blue">400123456</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>

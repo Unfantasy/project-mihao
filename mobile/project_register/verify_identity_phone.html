@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>身份验证</title>
+    <link rel="stylesheet" href="css/login_register.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script>
+        $(function(){
+
+        });
+    </script>
+</head>
+<body>
+<section class="verify_identity_section">
+    <input type="text" placeholder="真实姓名" class="name"/>
+    <input type="text" placeholder="身份证号码" class="identity_num"/>
+    <p class="lt">仔细阅读 <a href="service_agreement_trade.html">《交易服务协议》</a></p>
+
+    <div class="agree_all">
+        <a href="login_phone.html"><button class="btn_agree_all" id="btn_agree_all" onclick="verifyIdentityPhone()">我已阅读并同意上述协议</button></a>
+    </div>
+</section>
+</body>
+</html>

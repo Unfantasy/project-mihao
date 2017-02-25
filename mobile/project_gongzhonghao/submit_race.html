@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>模拟大赛申请表</title>
+    <link rel="stylesheet" href="css/submitcss.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/submitjs.js"></script>
+    <script>
+        $(function(){
+            $('select').on('blur',function(){
+                if($('option:selected').text()=='请选择'){
+                    $(this).showSubmitWarn('请填写城市');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#business').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写姓名');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#speech_content').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写电子邮箱');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+            $('#self_description').on('blur',function(){
+                if($(this).val()==''){
+                    $(this).showSubmitWarn('请填写手机号码');
+                }else{
+                    $(this).hideSubmitWarn();
+                }
+            });
+        });
+    </script>
+
+</head>
+<body class="signUp">
+<h2>模拟大赛申请表</h2>
+<div class="main">
+    <div class="field">
+        <p class="fieldLable">城市 <span class="red">*</span></p>
+        <div class="fieldContent">
+            <select  class="citySelect">
+                <option value="">请选择</option>
+                <option value="ZWFE">北京市</option>
+                <option value="Fdb0">天津市</option>
+                <option value="CJge">河北省</option>
+                <option value="S55w">山西省</option>
+                <option value="qKGb">内蒙古自治区</option>
+                <option value="XVZ2">辽宁省</option>
+                <option value="ZgGv">吉林省</option>
+                <option value="cFYE">黑龙江省</option>
+                <option value="SXps">上海市</option>
+                <option value="XSt1">江苏省</option>
+                <option value="PjG6">浙江省</option>
+                <option value="V6zk">安徽省</option>
+                <option value="uTdu">福建省</option>
+                <option value="VA7d">江西省</option>
+                <option value="P5Pl">山东省</option>
+                <option value="EEUX">河南省</option>
+                <option value="dGAE">湖北省</option>
+                <option value="NDid">湖南省</option>
+                <option value="8xIn">广东省</option>
+                <option value="3ply">广西壮族自治区</option>
+                <option value="yQV0">海南省</option>
+                <option value="DKat">重庆市</option>
+                <option value="4DFR">四川省</option>
+                <option value="TKkT">贵州省</option>
+                <option value="5P6X">云南省</option>
+                <option value="9pcD">西藏自治区</option>
+                <option value="h1Rc">陕西省</option>
+                <option value="I0dk">甘肃省</option>
+                <option value="1JMT">青海省</option>
+                <option value="fFOa">宁夏回族自治区</option>
+                <option value="z9zC">新疆维吾尔自治区</option>
+                <option value="34mO">香港特别行政区</option>
+                <option value="J5PT">澳门特别行政区</option>
+                <option value="0pSJ">台湾</option></select>
+            <div class="error"></div>
+        </div>
+    </div>
+    <div class="field">
+        <p class="fieldLable">姓名 <span class="red">*</span></p>
+        <div class="fieldContent">
+            <input type="text" class="fieldInput" name="name" id="name"/>
+            <div class="error"></div>
+        </div>
+    </div>
+    <div class="field">
+        <p class="fieldLable">电子邮箱 <span class="red">*</span></p>
+        <div class="fieldContent">
+            <input type="text" class="fieldInput" name="email" id="email"/>
+            <div class="error"></div>
+        </div>
+    </div>
+    <div class="field">
+        <p class="fieldLable">手机号码 <span class="red">*</span></p>
+        <div class="fieldContent">
+            <input type="text" class="fieldInput" name="phone" id="phone"/>
+            <div class="error"></div>
+        </div>
+    </div>
+    <div class="field">
+        <p class="fieldLable">提供哪方面合作（选1－2项） <span class="red">*</span></p>
+        <div class="fieldContent">
+            <label for="ways_cooperation"><input type="checkbox" name="ways_cooperation" id="ways_cooperation" />提供用户引流参与</label> <br/>
+            <label for="ways_cooperation2"><input type="checkbox" name="ways_cooperation2" id="ways_cooperation2"/>提供奖金或礼品</label>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <button>提交</button>
+</div>
+</body>
+</html>

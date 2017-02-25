@@ -1,0 +1,47 @@
+body {
+    color: #4c4c4c;
+}
+.title{
+    margin-top:.8rem;
+}
+.titleData{
+    font-size:1.44rem;
+}
+.titleDescription{
+    font-size: .6rem;
+}
+.stockName{
+    font-size: .64rem;
+}
+.stockTime{
+    font-size: .64rem;
+}
+.stockNum{
+    font-size: .48rem;
+}
+.zmTable .num{
+    font-size: .72rem;
+}
+.gdp .zmTable td:nth-child(1){
+    width: 38%;
+}
+#canvasDiv{
+    height:225px;
+}
+/*x坐标 style*/
+.xTime {
+    color: #95a2aa;
+    font-size: 13px;
+    height: 33px;
+    margin-top: -16px;
+}
+
+.firstCoordinate {
+    float: left;
+    padding-left: 4%;
+}
+
+.lastCoordinate {
+    float: right;
+    padding-right: 4%;
+}

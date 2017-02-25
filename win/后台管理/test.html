@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        getShortUrl('http://www.mihaokj.com/html/share.html?username=%E6%9F%AF%E5%8D%97%C2%B7%E9%81%93%E5%B0%94&usernamesrc=http://mimikj.com:8081/mimikj/images/user/2531/user2531.png?up_time=1460603631725&stock=%E5%8F%AF%E7%AB%8B%E5%85%8B&money=69.00&increase=2.51');
+        function getShortUrl(url){
+            data = [{long_url:url,action:'long2short',access_token:'ACCESS_TOKEN'}];
+            $.ajax({
+                url:'https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.short_url){
+                        location.href = data.short_url;
+                    }
+                },
+                error:function(e){alert('Connection Failed');alert(JSON.stringify(e))}
+            });
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap2.js"></script>
+    <script src="js/summernote.min.js"></script>
+    <script src="lang/summernote-zh-CN.js"></script>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/summernote.css"/>
+    <link rel="stylesheet" href="css/personal-info.css" media="screen"/>
+
+
+</head>
+<body>
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="settings-wrapper" id="pad-wrapper">
+            <!-- avatar column -->
+
+            <div class="span3 avatar-box">
+                <div class="personal-image">
+                    <img src="images/icon.png" class="img-circle1 avatar">
+                    <p>上传封面</p>
+                    <form accept-charset="UTF-8" action="/admins/add_artical" enctype="multipart/form-data" id="create_artical" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="hdupbn/fC6hgpnp0aQ+uNbCq/Ngg5Fh7nhKoL2Xq4Rc="></div>
+                        <input id="upload_cover" name="upload[cover]" onchange="changeimg()" type="file"><p></p>
+                        <input id="title" name="title" type="hidden">
+                        <input id="the_text" name="the_text" type="hidden">
+                    </form>
+                </div>
+            </div>
+            <!-- edit form column -->
+            <div class="span8 personal-info">
+                <h5 class="personal-title">新增素材</h5>
+                <form>
+                    <div class="field-box">
+                        <label>标题:</label>
+                        <input class="span5 inline-input" id="the_title" name="the_title" placeholder="请输入标题" type="text">
+                    </div>
+                    <div class="field-box">
+                        <label>正文:</label>
+                        <br>
+                        <br>
+                        <div id="summernote" ></div>
+
+                    </div>
+                    <div class="span8 field-box actions">
+                        <a href="#" class="btn-glow primary" onclick="prepend()">预览</a>
+                        <!--<input type="button" id="prepend" class="btn-glow primary" value="预览">-->
+                        <input type="button" id="send" class="btn-glow primary" value="发送">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function() {
+        $("#summernote").summernote({
+            oninit: function()
+            {
+                $('.note-editable').css('min-height','150px');
+            }
+        });
+    });
+    function changeimg () {
+        document.getElementsByClassName("img-circle1")[0].src=window.URL.createObjectURL(upload_cover.files[0]);
+    }
+
+    //获取数据
+    function getData(){
+        var data = {};
+        data.title = $("#the_title")[0].value;
+
+        return data;
+    }
+    //弹出预览窗口
+    function prepend(){
+        var the_text = $(".note-editable").html();
+        var title = $("#the_title")[0].value;
+
+        if (the_text != '' && title != ''){
+            var iWidth = 400;
+            var iHeight = 500;
+            var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+            var win = window.open("showNew.html", "预览窗口", "width=" + iWidth + ", height=" + iHeight + ",top=" + iTop + ",left=" + iLeft + ",toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,alwaysRaised=yes,depended=yes");
+        }else{
+            alert("标题,正文不可为空");
+        }
+
+    }
+
+
+    /*$("#send").on("click", function(){
+        var the_text = $(".note-editable").html();
+        var title = $("#the_title")[0].value;
+
+        if (the_text != '' && title != '') {
+            $("#title").val(title);
+            $("#the_text").val(the_text);
+            $('#create_artical').submit();
+        }else{
+            alert("标题,正文不可为空")
+        };
+    });*/
+</script>
+
+</body>
+</html>

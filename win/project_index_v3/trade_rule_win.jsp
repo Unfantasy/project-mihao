@@ -1,0 +1,91 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>杭州米号科技有限公司</title>
+    <link href="${ctx }/images/zm_log.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="${ctx }/css/bootstrap.css"/>
+    <link rel="stylesheet" href="${ctx }/css/newmain.css"/>
+    <script src="${ctx }/js/jquery-2.1.4.min.js"></script>
+    <script src="${ctx }/js/bootstrap.js"></script>
+    <script src="${ctx }/js/newmain.js"></script>
+</head>
+<body>
+<%@include file="../../header.jsp" %>
+<section>
+    <div class="container container-c nm-privacy-content">
+        <div class="row "><img src="${ctx }/images/yinsi_gelan.png"/><h2>交易规则提示</h2></div>
+        <div class="row ">
+            <p>本比赛为模拟交易比赛，以一个自然周为一轮比赛周期，不需要注册交易账户以及转入资金。</p>
+            <br/>
+            <p>1. 交易标的</p>
+            <p>国内A股上市公司</p>
+            <p>美国（纳斯达克、纽交所、美交所）上市公司和ETF基金</p>
+            <br/>
+
+            <p>2. 参赛资格</p>
+
+            <p>所有已经注册应用并登录的用户</p>
+            <br/>
+            <p>3. 比赛周期</p>
+
+            <p>周：每周一0:00开始——周六04:00结束，此期间有交易成交记录即视为参与当周比赛</p>
+
+            <p>月：每月会对本月的用户累计获得比赛积分进行统计，根据每周的交易比赛结果计算得出综合排名，不需要再次参与</p>
+            <br/>
+            <p>4. 如何交易</p>
+            <p>买入：</p>
+            <p>选择A股或者美股，确定买入后，成交价位为你确定交易时的最新价格（注意：没有卖盘的涨停个股或者停牌个股是不可以买入的）。非交易时间买入的个股，成交价格为开盘交易后的最新成交价格。</p>
+            <p>卖出：</p>
+            <p>选择已经买入的A股或者美股，确定卖出后，成交价位为你确定交易时的最新价格。非交易时间卖出的个股，成交价格为开盘交易后的最新成交价。结算日没有卖出的个股，默认的卖出价格为当日的收盘价。</p>
+
+            <p><strong>注意：美股可以进行T+0交易，但是每个交易日内，T+0的交易次数不能超过10次。</strong></p>
+            <br/>
+            <p>5.排行规则</p>
+            <p>比赛根据每期参赛者的交易个股的累计收益率计算，并转换成为对应的积分进行排行，按照积分的多少由高到低进行排名。</p>
+            <p>例如该用户交易了个股A1、A2、A3、A4，对应获得个股交易收益率为a1、a2、a3、a4</p>
+            <p>计算公式如下：</p>
+            <p>当期收益率=a1+a2+a3+a4</p>
+
+            <p>你也可以通过其他方式获得比赛积分，每周比赛第一次买入A股股票获得50个积分奖励，第一次买入美股股票获得50个积分奖励。</p>
+
+            <p>积分=当期收益率*100+其他方式获得的积分</p>
+            <br/>
+            <p>6.比赛奖励</p>
+            <p>周：第1名￥300 &nbsp;  第2名￥150 &nbsp; 第3名￥100 &nbsp; 第4名—第10名￥50 &nbsp;  第11名—第50名￥10 &nbsp; 第51名——第100名 众星卡1次使用权</p>
+            <p>月：第1名￥2000 &nbsp;  第2名￥1000 &nbsp; 第3名￥500 &nbsp; 第3名——第10名 米星卡1次使用权</p>
+            <br/>
+            <p>7.比赛排名以及奖励结算</p>
+            <p>每个周比赛结束的周六08:00，对本次比赛进行结算，根据用户的积分进行排名，并获得相应的奖励。获得现金奖励可在你的“钱包”中进行查询，并可以提现到你的本人银行卡中，其他的奖励也会到相应的账户中。</p>
+            <br/>
+            <p>8.分红配送与股票拆分</p>
+
+            <p>不支持现金与股票分红、拆股、并股、配股等除权除息和分红送股等行为，这些在比赛期间交易的个股，会被剔除掉最后的统计。请注意，后续我们会完善相关个股的计算方式。</p>
+            <br/>
+            <p>9.税项</p>
+            <p><strong>依中国大陆现行税法之规定，对优胜者的奖金所得征收20%的个人所得税，众米依法有权代扣代缴。在比赛奖金结算进入获奖者的钱包时，已经进行了个人所得税代扣。如个人所得税税率发生变化的，以奖金支付时中国国家税务总局公布的税率为准。</strong></p>
+            <br/>
+            <p>10.比赛延期或取消</p>
+            <p>众米保留延长每期比赛时间、延迟开始日期或取消比赛的权利，众米只需全权酌情厘定该行动为合理或必需。</p>
+            <br/>
+            <p>11.特别声明</p>
+            <p>众米有权取消违规用户的获奖资格。</p>
+            <p>本次活动最终解释权归众米所有。</p>
+            <p>如您有任何问题，请致电众米客服。</p>
+            <br/>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container-fluid">
+        <div class="row nm-footer">杭州米号科技有限公司版权所有 浙ICP备14016681号 <a href="${ctx }/index_pravicy.jsp">隐私条款</a><br>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602003615" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;width: auto"><img src="${ctx }/images/beiantubiao.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#fff;">浙公网安备 33010602003615号</p></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

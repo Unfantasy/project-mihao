@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>资金提现</title>
+    <link rel="stylesheet" href="css/golden_tip.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <style>
+        i{
+            font-style:normal;
+        }
+        .tip{
+            line-height: 2.5;
+            border-top:1px solid #c8c7cc;
+            border-bottom:1px solid #c8c7cc;
+            background-color: #fff;
+        }
+        .tip .black{
+            padding-left: 1rem;
+            width:5em;
+            display: inline-block;
+        }
+
+        .money_transfer{
+            padding-left:1rem;
+            background-color:#fff;
+            margin-top:4rem;
+            padding-top:1rem;
+        }
+        .money_transfer>span{
+            color:#666;
+        }
+        table{
+            width:100%;
+            border-bottom:1px solid #c8c7cc;
+        }
+        table tr td{
+            font-size:2rem;
+            font-weight:bold;
+            line-height:1.5;
+
+        }
+        .money input{
+            font-size:4rem;
+            border:none;
+            outline: none;
+            width:100%;
+        }
+        .money input:focus{
+            border: none;
+            outline: none;
+        }
+        .dollar{
+            line-height:2;
+            color:#b2b2b2;
+        }
+        .dollar span{
+            padding-left:2rem;
+        }
+        .submit{
+            width:100%;
+            height:3rem;
+            background-color:#f45531;
+            border:none;
+            color:#fff;
+            border-radius:5px;
+            font-size:1rem;
+        }
+        .assist{
+            font-size:.6rem;
+            color:#b2b2b2;
+            letter-spacing: 1px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#money").on("keyup",function(){
+                var exchangeRate = $(".exchange_rate i").text();
+                var money = $("#money").val().NoSpace();
+                if(isNaN(exchangeRate)){
+                    alert("未知错误");
+                    return;
+                }
+                if(!isNaN(money)){
+                    var dollar = parseInt(money/exchangeRate*100)/100;
+                    $(".dollar>i").text(dollar);
+                }
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <main>
+        <div class="money_transfer">
+            <span>提现金额</span>
+            <table>
+                <tr>
+                    <td style="display: inline-block;">￥</td>
+                    <td class="money"><input type="text" value="25421" id="money"/></td>
+                </tr>
+            </table>
+            <div class="dollar">美元：$ <i>234</i><span class="exchange_rate">$1=￥ <i>6.5889</i></span></div>
+        </div>
+        <div class="tip">
+            <span class="black">银行账户</span><span class="gray">6222 8888 8765 876</span>
+        </div>
+        <div style="margin:1rem;">
+            <button class="submit">通知聚财道资金提现</button>
+            <p class="assist">*请使用绑定的银行卡完成资金转入，如使用其他银行卡，会影响资金顺利到账时间和资金安全</p>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 300) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        var src = window.location.search; //获取url中"?"符后的字串
+        var parameters = '';
+        if(src.indexOf("?")!=-1){
+            var parameters = src.substring(src.indexOf("?"));
+        }
+    </script>
+    <style>
+        html{
+            min-height:100%;
+        }
+        body{
+            width:100%;
+            min-height:100%;
+            background:url('images/openApp_bg.png') center center no-repeat;
+            background-size: 100% 100%;
+        }
+        .notice_mark {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99998;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            filter: alpha(opacity=70);
+            -moz-opacity: 0.7;
+            opacity: 0.7;
+        }
+        .notice_img {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99999;
+            display: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .notice_img img{
+            width:100%;
+        }
+        .open_app{
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:100%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding:.5rem 1rem;
+            font-size: .64rem;
+            width:90%;
+            color:#fff;
+            box-sizing: border-box;
+            margin-left:auto;
+            margin-right: auto;
+            margin-bottom:.6rem;
+        }
+        .open_app a:hover{
+            border: none;
+        }
+        .openAppImg1{
+            width:.8rem;
+            vertical-align: baseline;
+            margin-right: .8rem;
+        }
+        .openAppImg2{
+            width:.6rem;
+            vertical-align: baseline;
+            margin-right: .8rem;
+        }
+        #J-call-app{
+            background: rgba(255,255,255,.2);
+        }
+        #J-regist-app{
+            background:#ffbf25;
+        }
+    </style>
+
+</head>
+<body>
+<div class="notice_mark"></div>
+<div class="notice_img">
+    <img src="images/wechat_lead.png" onclick="hideThis(this)">
+</div>
+<div class="open_app">
+    <a id="J-call-app" href="javascript:;"> <img src="images/openApp_dakai.png" class="openAppImg1"/>打开APP</a>
+    <a id="J-regist-app" href="javascript:;"><img src="images/openApp_xiazai.png" class="openAppImg2"/>下载APP</a>
+</div>
+<script>
+    function hideThis(e){
+        $(e).hide();
+        $(".notice_mark").hide();
+    }
+    var configIos = {
+        scheme: 'zhongmiCode://space/'+parameters,
+        path: 'https://itunes.apple.com/us/app/zhong-mi/id946857722?l=zh&ls=1&mt=8'
+    };
+    var configAdr = {
+        scheme: 'zhongmicode://space/'+parameters,
+        path: 'http://mimikj.com:8081/mimikj/app/zhongmiApp.apk'
+    };
+    var pc_path = 'http://mimikj.com:8081/mimikj/app/zhongmiApp.apk';
+
+    //doc加载完成初始化数据
+    $(document).ready(function() {
+        init_argument();
+    });
+
+    /**
+     浏览器版本信息
+     * @type {Object}
+     * @return {Boolean}  返回布尔值
+     */
+    function browser() {
+        var u = window.navigator.userAgent.toLowerCase();
+        var app = navigator.appVersion.toLowerCase();
+        return {
+            txt: u, // 浏览器版本信息
+            version: (u.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1], // 版本号
+            msie: /msie/.test(u) && !/opera/.test(u), // IE内核
+            mozilla: /mozilla/.test(u) && !/(compatible|webkit)/.test(u), // 火狐浏览器
+            safari: /safari/.test(u) && !/chrome/.test(u), //是否为safair
+            chrome: /chrome/.test(u), //是否为chrome
+            opera: /opera/.test(u), //是否为oprea
+            presto: u.indexOf('presto/') > -1, //opera内核
+            webKit: u.indexOf('applewebkit/') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('gecko/') > -1 && u.indexOf('khtml') == -1, //火狐内核
+            mobile: !!u.match(/applewebkit.*mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( u;)? cpu.+mac os x/), //ios终端
+            android: u.indexOf('android') > -1, //android终端
+            iPhone: u.indexOf('iphone') > -1, //是否为iPhone
+            iPad: u.indexOf('ipad') > -1, //是否iPad
+            webApp: !!u.match(/applewebkit.*mobile.*/) && u.indexOf('safari/') == -1, //是否web应该程序，没有头部与底部
+            weiXin:u.match(/MicroMessenger/i) == 'micromessenger'
+        };
+    }
+
+    //页面参数信息体
+    var config = {
+        scheme: '',
+        path: '',
+        device:{
+            weixin:false,
+            ios:false,
+            android:false,
+            other:false
+        }
+    };
+
+    function init_argument() {
+        var b=browser();
+
+        if (b.weiXin) {
+            config.device.weixin = true;
+        }
+
+        if(b.ios||b.iPhone||b.iPad){
+            config.scheme = configIos.scheme;//初始化替换
+            config.path = configIos.path;//初始化替换
+            config.device.ios = true;
+
+        }else if(b.android){
+            config.scheme = configAdr.scheme;//初始化替换
+            config.path = configAdr.path;//初始化替换
+            config.device.android = true;
+        }else {
+            //非客户端浏览器打开
+            config.device.other = true;
+            config.path = pc_path;
+        }
+    }
+
+    function open_appstore() {
+        window.location= config.path;
+    }
+
+    function open_client() {
+        if (config.device.weixin || config.device.other) {
+            open_hint_ui();
+        } else {
+            window.location=config.scheme;
+        }
+
+    }
+
+
+    //非客户端浏览器打开页面
+    function open_hint_ui() {
+        $(".notice_mark").click(function(){
+            $(".notice_mark,.notice_img").hide();
+        });
+        if(config.device.ios){
+            //alert('ios ui');
+            $(".notice_mark,.notice_img").show();
+        }else if(config.device.android){
+            $(".notice_mark,.notice_img").show();
+        }else {
+            open_appstore();
+            //非客户端浏览器打开
+            //$(".notice_mark,.notice_img").show();
+        }
+    }
+
+    window.addEventListener("DOMContentLoaded", function(){
+        document.getElementById("J-call-app").addEventListener('click',open_client,false);
+        document.getElementById("J-regist-app").addEventListener('click',open_appstore,false);
+    }, false);
+
+</script>
+</body>
+</html>

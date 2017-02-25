@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>股市合伙人---发现最搭的投资战友</title>
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <link href="css/common.css-v=20151027.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/icon-sprite.css-v=20151027.css"/>
+    <script src="js/jquery.js"type="text/javascript"></script>
+    <script src="js/canvas_scale.js"></script>
+    <script src="js/bootstrap2.js"></script>
+    <style>
+        body,html{
+            width:100%;
+        }
+
+        .nav-pills{
+            background-color:#F2F2F2;
+        }
+        .nav-pills li a{
+            color:black;
+
+        }
+        .nav{
+            margin-bottom:0px;
+        }
+        .nav-pills>li{
+            width: 25%;
+            text-align: center;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        .container-fluid{
+            padding-right:0;
+        }
+        #phone_top{
+            width:100%;
+            height:50px;
+        }
+        .dropdown-menu{
+            min-width: 50px;
+        }
+        /*重写common中的样式，改为手机上适应的*/
+        .aw-question-list .aw-questoin-content h4{
+            width:100%;
+        }
+        .aw-main-content{
+            width:100%;
+        }
+        .span12{
+            width:100%;
+            margin:0;
+        }
+        .aw-main-content{
+            padding-bottom:0px;
+        }
+        .category{
+            padding-left:15px;
+        }
+        .category .span12 > ul > li.active {
+            background: #225599;
+        }
+        .category .span12 > ul > li{
+            height: 20px;
+            line-height: 20px;
+            border-radius:10px;
+        }
+        .aw-content-wrap{
+            padding: 0;
+        }
+        .category .span12 > ul > li:hover, .category dl:hover {
+            position: relative;
+            z-index: 999;
+            background: #225599;
+        }
+        .aw-main-content{
+            padding-left:20px;
+            padding-top:0px;
+        }
+        .aw-content-wrap .aw-all-question {
+            padding-top: 10px;
+        }
+        .aw-question-detail-box .aw-dynamic-topic .aw-item .aw-user-img{
+            top:32px;
+        }
+        /* end 重写common中的样式，改为手机上适应的 */
+        hr{
+            margin:0;
+        }
+        /*重写mimic中的样式，改为手机上适应的*/
+
+        /* end 重写mimic中的样式，改为手机上适应的*/
+        input[type="text"]{
+            height:30px;
+        }
+
+    </style>
+    <script>
+        //刷新机会
+    </script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <img src="images/banner.png" id="phone_top" alt="顶部图片"/>
+        <!-- 顶部导航栏-->
+        <div class="span12">
+            <ul class="nav nav-pills">
+                <li><a href="phone-indexuser.html">&nbsp;&nbsp;&nbsp;广场</a></li>
+                <li><a href="phone-findboss.html">发现牛人</a></li>
+                <li><a href="phone-mimic.html">寻找战友</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        我
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">我的主页</a></li>
+                        <li><a href="#">私信</a></li>
+                        <li><a href="#">设置</a></li>
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- end 顶部导航栏-->
+    </div>
+    <div class="row aw-content-wrap">
+        <div class="span12 aw-main-content aw-all-question">
+            <!-- 收益列表 -->
+                <a href="phone-findstock.html" class="btn btn-info pull-left">继续添加</a>
+                <a href="phone-mimic.html" class="btn btn-info pull-right">寻找战友</a>
+                <div class="row text-center" style="margin-top: 60px;font-size: 30px;line-height:50px;">我的自选股</div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>名称代码</td>
+                        <td>累积收益</td>
+                        <td>涨跌幅</td>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                        <td class="sss-stock"><span>川投能源</span> <div class="stock-num">600674</div></td>
+                        <td class="sss-stock-increase"> <span>6%</span></td>
+                        <td class="sss-stock-select">
+                            0.46%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sss-stock"><span>川投能源</span> <div class="stock-num">600674</div></td>
+                        <td class="sss-stock-increase"> <span>6%</span></td>
+                        <td class="sss-stock-select">
+                            0.46%
+                        </td>
+                    </tr><tr>
+                        <td class="sss-stock"><span>川投能源</span> <div class="stock-num">600674</div></td>
+                        <td class="sss-stock-increase"> <span>6%</span></td>
+                        <td class="sss-stock-select">
+                            0.46%
+                        </td>
+                    </tr><tr>
+                        <td class="sss-stock"><span>川投能源</span> <div class="stock-num">600674</div></td>
+                        <td class="sss-stock-increase"> <span>6%</span></td>
+                        <td class="sss-stock-select">
+                            0.46%
+                        </td>
+                    </tr><tr>
+                        <td class="sss-stock"><span>川投能源</span> <div class="stock-num">600674</div></td>
+                        <td class="sss-stock-increase"> <span>6%</span></td>
+                        <td class="sss-stock-select">
+                            0.46%
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        <!-- end 收益列表 -->
+    </div>
+</div>
+</body>
+</html>

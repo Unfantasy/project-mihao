@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="images/zm_log.ico" rel="shortcut icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap2.css"/>
+    <script src="js/jquery.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Mecrosoft Yahei";
+        }
+        a:hover, a:active, a:focus {
+            text-decoration: none;
+        }
+
+        #aw_login > div {
+            background-color: #3A3937;
+            width: 100%;
+            height: 210px;
+            font-size: 18px;
+        }
+
+        #aw_login img {
+            padding:20px 0 0 20px;
+            width:50px;
+        }
+        #aw_login .aw-tab-right{
+            color:#fff;
+           line-height: 90px;
+            padding:0 20px 0 0;
+        }
+
+        .aw-mod-body {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            background-color: #fff;
+            border: none;
+            margin-top:20px;
+        }
+
+        .aw-mod-body li {
+            list-style: none;
+        }
+
+        .aw-mod-body input {
+            background-color: #F8F8F7;
+            margin-top: 10px;
+        }
+
+        #mobile {
+            margin-top: 58px;
+        }
+
+        ul {
+            margin-left: 40px;
+        }
+
+        .aw-mod-body ul li input {
+            width: 85%;
+            height: 50px;
+            font-size: 18px;
+            padding-left: 18px;
+            border-left: 1px solid #EBEBEB;
+            -webkit-box-shadow: none -moz-box-shadow : none;
+            box-shadow: none;
+            border: none;
+        }
+        .aw-mod-body ul li input:focus{
+            outline:none;
+            box-shadow: none;
+        }
+
+        /*记住我复选框样式*/
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .aw-mod-body ul li.last label {
+            background: url("images/jizhuwohou.png") no-repeat;
+            padding-left: 25px;
+            background-size: auto 100%;
+            font-size: 20px;
+        }
+
+        /*end 记住我复选框样式*/
+        .aw-mod-body ul li.last a {
+            font-size: 18px;
+            color: #f45531;
+            cursor: pointer;
+        }
+
+        .aw-mod-body ul li.last a:hover {
+            color: #f45531;
+        }
+
+        #register_submit {
+            width: 85%;
+            height: 50px;
+            margin-top: 10px;
+            background-color: #f45531;
+            background-image: none;
+            line-height: 50px;
+            color: #fff;
+            letter-spacing: 10px;
+            font-size: 20px;
+            margin-bottom: 60px;
+            cursor: pointer;
+            background-image: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+
+        #aw-register-mac {
+            width: 55%;
+        }
+
+
+        #btnGetVerifyCode {
+            width: 30%;
+            height: 58px;
+            background-color: #f45531;
+            color: #fff;
+            margin-bottom: 10px;
+            margin-left: -10px;
+            padding-left: 5px;
+        }
+
+        /* 注册提示*/
+        .register_body li {
+            position: relative;
+        }
+
+        .register_body li p {
+            text-align: left;
+            margin:0;
+            padding:0;
+        }
+
+        .aw-reg-err {
+            line-height: 18px;
+            color: #f45531;
+            width: 160px;
+        }
+
+        .aw-reg-right {
+            background: none;
+            border: none;
+        }
+
+        .aw-reg-right .i-followed {
+            position: relative;
+            top: 5px;
+        }
+
+        /* 注册提示*/
+        .aw-register-agreement-txt {
+            max-height: 100px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .aw-regiter-agreement {
+            position: relative;
+            padding: 20px 5px 20px 20px;
+            background: #DEDEDE;
+            border-radius: 10px;
+            width: 500px;
+            margin: 10px 0 0 -25px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .last {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('label').click(function () {
+                alert($("#register_checkbox").prop("checked"));
+                if ($("#register_checkbox").prop("checked")) {
+                    $(this).css("background-image", 'url("images/jizhuwoqian.png")');
+                } else {
+                    $(this).css("background-image", 'url("images/jizhuwohou.png")')
+                }
+            });
+            //注册验证
+            verify_register_form('#register_form');
+        });
+        function getVerifyCode() {
+            var mobileValue = $('#mobile').val();
+            var seccodeVerifyValue = $('#seccode_verify').val();
+            if (!seccodeVerifyValue) {
+                alert('请先输入正确的图片验证码再获取短信验证码！');
+                return false;
+            }
+            if (mobileValue) {
+                $('#li-register-mobile').find('.aw-reg-tips').detach();
+                $('#li-register-mobile').append('<span class="aw-reg-tips">正在发送短信，请稍候...</span>');
+                $.get(G_BASE_URL + '/account/ajax/get_sms_verify_code/', {
+                    mobile: mobileValue,
+                    seccode_verify: seccodeVerifyValue
+                }, function (result) {
+                    if (result.errno == 0) {
+                        $('#li-register-mobile').find('.aw-reg-tips').detach();
+                        $('#li-register-mobile').append('<span class="aw-reg-tips">' + result.err + '</span>');
+                    } else {
+                        ON_ERR = true;
+                        $('#li-register-mobile').find('.aw-reg-tips').detach();
+                        $('#li-register-mobile').append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + result.err + '</span>');
+                    }
+                }, 'json');
+                for (i = 0; i <= DELAY_SECS; i++) {
+                    window.setTimeout("updateVerifyCodeBtn(" + i + ")", i * 1000);
+                }
+            } else {
+                $('#li-register-mobile').find('.aw-reg-tips').detach();
+                $('#li-register-mobile').append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>请先填写手机号</span>');
+            }
+        }
+        function updateVerifyCodeBtn(secs) {
+            if (secs == DELAY_SECS || ON_ERR) {
+                $('#btnGetVerifyCode').val("获取短信验证码").removeAttr("disabled");
+            } else {
+                var dalay = DELAY_SECS - secs;
+                $('#btnGetVerifyCode').val(dalay + "秒后可重新获取").attr('disabled', "true");
+            }
+        }
+        function verify_register_form(element) {
+            $(element).find(':text, :input').on({
+
+                blur: function () {
+                    switch ($(this).attr('name')) {
+                        case 'user_name' :
+                            var _this = $(this);
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 2) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                return;
+                            }
+                            if ($(this).val().length > 16) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                return;
+                            }
+                            else {
+                                $.get(G_BASE_URL + '/users/check_username?username=' + $(this).val(), function (result) {
+                                    var msg = "";
+                                    if (result.success == 1) {
+                                        msg = "用户名已存在";
+                                    }
+                                    if (result.success == -1) {
+                                        msg = "用户名为空";
+                                    }
+
+                                    if (result.success != 0) {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<p class="aw-reg-tips aw-reg-err">' + msg + '</p>');
+                                    }
+                                    else {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<p class="aw-reg-tips aw-reg-right"></p>');
+                                    }
+                                }, 'json');
+                            }
+                            return;
+
+                        case 'email' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            var emailreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                            if (!emailreg.test($(this).val())) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                return;
+                            }
+                            else {
+                                _this.parent().find('.aw-reg-tips').detach();
+                                _this.parent().append('<p class="aw-reg-tips aw-reg-right"></p>');
+                            }
+                            return;
+
+                        case 'mobile' :
+                            var _this = $(this);
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            var mobilereg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+                            if (!mobilereg.test($(this).val())) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                $('#btnGetVerifyCode').attr('disabled', "true");
+                                return;
+                            }
+                            else {
+                                $.get(G_BASE_URL + '/users/check_phone?phone=' + $(this).val(), function (result) {
+                                    if (result.success != 0) {
+                                        var msg = "";
+                                        if (result.success == 1) {
+                                            msg = "手机号码已注册";
+                                        }
+                                        if (result.success == -1) {
+                                            msg = "手机号码格式错误";
+                                        }
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<p class="aw-reg-tips aw-reg-err">' + msg + '</p>');
+                                        $('#btnGetVerifyCode').attr('disabled', "true");
+                                    }
+                                    else {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<p class="aw-reg-tips aw-reg-right"></p>');
+                                        $('#btnGetVerifyCode').removeAttr("disabled");
+                                    }
+                                }, 'json');
+                            }
+                            return;
+
+                        case 'password' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 6) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                return;
+                            }
+                            if ($(this).val().length > 17) {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-err">' + $(this).attr('errortips') + '</p>');
+                                return;
+                            }
+                            else {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<p class="aw-reg-tips aw-reg-right"></p>');
+                            }
+                            return;
+
+                    }
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<section id="aw_login">
+    <div class="container">
+        <img src="images/shouye_icon.png" alt=""/><a href="phone-login.html" class="pull-right aw-tab-right">登陆</a>
+
+        <div class="row">
+
+            <div>
+                <div class="aw-mod">
+                    <div class="aw-mod-body register_body">
+                        <form id="register_form" method="post" onsubmit="return false">
+                            <ul>
+                                <li class="aw-register-first">
+                                    <input class="aw-register-mobile" type="text" placeholder="请输入常用手机号" id="mobile"
+                                           name="mobile" errortips="手机号格式不正确">
+                                </li>
+                                <li>
+                                    <input type="text" id="aw-register-mac" placeholder="请输入短信验证码" name="vcode">
+
+                                    <input disabled="disabled" class=" btn" type="button" id="btnGetVerifyCode"
+                                           value="获取验证码" onclick="getVerifyCode();">
+                                </li>
+                                <li>
+                                    <input class="aw-register-name" type="text" name="user_name" placeholder="请输入2-16位用户名"
+                                           errortips="用户名长度不符合" value="">
+                                </li>
+                                <li>
+                                    <input class="aw-register-pwd" type="password" name="password" placeholder="请输入6-16位密码，区分大小写"
+                                           errortips="密码不符合规则">
+                                </li>
+                                <li class="last">
+                                    <input type="checkbox" id=register_checkbox checked="checked" value="agree"
+                                           name="agreement_chk" tips="请认真阅读用户协议后勾选按钮" errortips="请勾选我同意用户协议">
+                                    <label for="register_checkbox">我已阅读并同意<a href="javascript:;"
+                                                                             onclick="$('.aw-regiter-agreement').show();">《众米服务协议》</a></label>
+
+                                    <div class="aw-regiter-agreement hide">
+                                        <i></i>
+
+                                        <div class="aw-register-agreement-txt" id="register_agreement">
+                                            当您申请用户时，表示您已经同意遵守本规章。<br>
+                                            欢迎您加入本站点参与交流和讨论，本站点为社区，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：<br>
+                                            <br>
+                                            一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息：<br>
+                                            　（一）煽动抗拒、破坏宪法和法律、行政法规实施的；<br>
+                                            　（二）煽动颠覆国家政权，推翻社会主义制度的；<br>
+                                            　（三）煽动分裂国家、破坏国家统一的；<br>
+                                            　（四）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+                                            　（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；<br>
+                                            　（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；<br>
+                                            　（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；<br>
+                                            　（八）损害国家机关信誉的；<br>
+                                            　（九）其他违反宪法和法律行政法规的；<br>
+                                            　（十）进行商业广告行为的。<br>
+                                            <br>
+                                            二、互相尊重，对自己的言论和行为负责。<br>
+                                            三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。<br>
+                                            四、禁止以任何方式对本站进行各种破坏行为。<br>
+                                            五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="register_submit"><a id="register_submit" class=" btn btn-default">注册</a></li>
+
+                            </ul>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
